@@ -1,0 +1,8 @@
+http://www.cnblogs.com/wangweiwen/p/6103744.html
+
+1,先安装vim，注意vim必须7.4以上版本，因为下面的插件要求7.4以后的版本
+2,安装git
+3,mkdir -p ~/.vim && touch ~/.vimrc
+4,git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+5,vi ~/.vimrc写入如下的内容, (见当前目录文件.vimrc);
+6，vim 然后在normal模式下面，输入 “：PluginInstall”，然后回车
