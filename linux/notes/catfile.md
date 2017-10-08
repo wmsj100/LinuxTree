@@ -12,3 +12,7 @@
 - file finename/directoryname 查看文件类型，可以是文件/目录/链接/可执行文件
 
 - linux不是通过后缀来识别文件类型的，文件类型是通过“file”来查看的。
+
+- cat /dev/stdin  读取标准输入流的数据,
+
+- paste f1 f2 | cat -A /dev/stdin 这样就通过屏幕打印出来了标准输入流的内容。
