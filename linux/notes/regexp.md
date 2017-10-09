@@ -56,6 +56,7 @@
 - sed '1~2s/a/A/' 替换步进为2
 - sed 's/s/S/3g' 替换第3个以后的s
 - sed '1,3s/my/your/g; 3,$s/This/That/g' f4 多个匹配，
+[sed教程](https://coolshell.cn/articles/9104.html)
 
 ## awk文本处理语言
 - awk是一种优良的文本处理工具，是一种处理文本的编程语言工具，是linux环境中现有功能最强大的数据处理引擎之一。
