@@ -56,7 +56,28 @@
 - sed '1~2s/a/A/' 替换步进为2
 - sed 's/s/S/3g' 替换第3个以后的s
 - sed '1,3s/my/your/g; 3,$s/This/That/g' f4 多个匹配，
+- sed -e '1,3s/my/your/g' -e '3,$s/This/That/g' f4 这个也是多命令处理。
+- sed 's/my/[-&-]/' f4 可以用&来当作被匹配的变量，然后可以在左右添加东西。
+- sed 's/This is my \([^,$]*\),.*is \(.*\)/\1:\2/' f4 圆括号括起来的正则表达式说匹配字符串可以当作变量来使用，sed中使用\1,\2...
+- sed 'N;s/my/your/' f4 把下一行当作缓冲区做匹配，就是说当前修改不涉及下一行内容。
+- a 就是append，添加到下一行
+- i 就是insert，插入到上一行
+	- sed '1 i this is first line' f4 在第一行前面插入“this is first line”
+	- sed '$ a this is last line' f4 在最后一行后面添加。。。
+	- sed '/my/a ---' f4 在每一行后面都添加---
+	- sed '/fish/a ---' f4 在fish这一行的后面添加---
+- c 替换匹配行
+	- sed '2 c this is second' f4 用“this is second” 体会第二行
+- d 删除匹配行
+	- sed '/fish/d' f4 删除fish这一行
+	- sed '2d' f4 删除第二行
+	- sed '1,2d' f4 删除前俩行
+- p 打印
+	- sed -n '/fish/p' f4 打印fish这一行
+	- sed -n '1,/fish/p' 打印包括fish之前的内容，
+	- sed -n '/fish/,/dog/p' f4 打印fish， dog内容
 [sed教程](https://coolshell.cn/articles/9104.html)
+
 
 ## awk文本处理语言
 - awk是一种优良的文本处理工具，是一种处理文本的编程语言工具，是linux环境中现有功能最强大的数据处理引擎之一。
