@@ -76,6 +76,21 @@
 	- sed -n '/fish/p' f4 打印fish这一行
 	- sed -n '1,/fish/p' 打印包括fish之前的内容，
 	- sed -n '/fish/,/dog/p' f4 打印fish， dog内容
+
+##sed 四个高级命令
+- sed '/dog/,+3s/^/#/g' f5 匹配dog并且之后3行，在开头添加“#”
+- 命令打包，命令可以多个，用分号分开，可以用大括号括起来作为嵌套命令
+	- sed '3,6{/This/d}' f5 删除第3，6行的This
+	- sed '3,6 {/This/{/fish/d}}' f5 在3，6行先匹配到This，然后匹配fish并且删除该行。
+	- sed '1,${/This/d;s/^ *//}' f5 从头到尾，匹配This并且删除，匹配空格开头的删除空格。
+- HoldSpace
+	- g 将hold space中的内容拷贝到pattern space中，原来pattern space中的内容被清除
+	- G 将hold space中的内容append到pattern space后
+	- h 将pattern space中的内容拷贝到hold space中，原来hold space的内容被清除；
+	- H 将pattern space的内容append到hold space后	
+	- x 交换pattern space和hold space的内容
+	- 有一个当前处理区和暂存区，暂存区不可诶被删除
+	- sed '1G;h;$d' f6 这个命令可以倒序输出内容。	
 [sed教程](https://coolshell.cn/articles/9104.html)
 
 
