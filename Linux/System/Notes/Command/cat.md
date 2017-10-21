@@ -14,7 +14,7 @@ cat -A << EOF
 '''
 
 - cat -n file 查看文件，并显示行号，
-
+- date | cat /dev/stdin > f3  这样就可以把输入到屏幕的时间存储到文件f3
 - tac 逆序显示文件
 
 - head/tail 只显示头/尾10行
