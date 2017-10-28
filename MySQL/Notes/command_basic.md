@@ -11,4 +11,4 @@
 - insert into employee(id, name, phone) values(01, 'TOM', 110110); 向表中插入数据。
 - insert into employee values(02, 'Jack', 1191119119)
 - insert into employee(id, name) values(003, 'Rose'); 插入部分数据
-
+- drop database employee; 删除数据库
