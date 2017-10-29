@@ -12,3 +12,7 @@
 - insert into employee values(02, 'Jack', 1191119119)
 - insert into employee(id, name) values(003, 'Rose'); 插入部分数据
 - drop database employee; 删除数据库
+
+## 删除表的一行数据
+- delete from t1 where id=4;  删除表中id值为4的一行，
+	- 如果没有where约束，就会删除整个表的数据
