@@ -21,3 +21,9 @@
 - mysqldump -d study > db.sql;	导出study数据库的所有表的结构，不包含数据
 - mysqldump study > db.sql; 导出数据库study的所有表结构，并且包含插入的数据；
 - mysqldump 这个操作是在退出mysql控制台进行的。
+
+- select version() 查看版本信息
+- select current_date; 查看当前日期
+- select current_time; 获取当前时间
+- select (4-1)*5;  可以进行简单的计算
+- select now(); 获取当前日期和时间；
