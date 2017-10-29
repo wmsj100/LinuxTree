@@ -16,3 +16,8 @@
 ## 删除表的一行数据
 - delete from t1 where id=4;  删除表中id值为4的一行，
 	- 如果没有where约束，就会删除整个表的数据
+
+## 导出mysql数据和表
+- mysqldump -d study > db.sql;	导出study数据库的所有表的结构，不包含数据
+- mysqldump study > db.sql; 导出数据库study的所有表结构，并且包含插入的数据；
+- mysqldump 这个操作是在退出mysql控制台进行的。
