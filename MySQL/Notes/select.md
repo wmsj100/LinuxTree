@@ -56,6 +56,9 @@
 ## 连接查询 join
 - 如果想要显示俩个表或多个表中的数据，这时就必须使用join操作
 - 连接的思想就是把俩个或多个表连接成一个新的表来操作。
+- 当from字句连接俩个表，因为查询需要从俩个表中提取信息；
+- 如果要将一个表的记录和该表的其他记录进行比较，可以将该表联结到自身
+	- select p1.name, p1.sex, p2.name, p2.sex from pet as p1, pet as p2 where p1.species=p2.species and p1.sex='f' and p2.sex='m'  查找pet表中可以进行交配的动物
 
 ### 实例
 - select id,name,people_num from employee, department where employee.in_dpt=department.dpt_name order by id;  查询各员工所在部门的人数，并且结果按照id排序
