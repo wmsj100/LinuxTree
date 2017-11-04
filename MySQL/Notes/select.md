@@ -29,6 +29,9 @@
 - ‘desc’ 降序
 
 ### 实例
+- select * from pet order by name desc, age asc; 同时对多个列进行排序，名称按照升序，年龄按照降序排列。
+
+### 实例
 - select * from employee order by in_dpt desc;  按照降序排序
 
 ## SQL内置函数和计算
@@ -57,3 +60,13 @@
 ### 实例
 - select id,name,people_num from employee, department where employee.in_dpt=department.dpt_name order by id;  查询各员工所在部门的人数，并且结果按照id排序
 - select id,name,peopel_num from employee join department on employee.id_dpt=department.dpt_name order by id; 结果和上面一样。
+
+## 查询版本/ 时间
+- select version(); // 获取mysql版本
+- select current_date; // 获取当前日期
+- select curdate(); // 获取当前日期
+- select current_time; // 获取当前时间
+- select 1+5; // 进行简单的计算
+- select now(); // 获取当前日期和时间
+- select now(); select version(); // 可以在一行同时输入多条命令；
+
