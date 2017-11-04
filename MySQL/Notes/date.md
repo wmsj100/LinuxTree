@@ -12,3 +12,9 @@
 ## timestampdiff 计算俩个日期的差值
 - timestampdiff(year, birth, curdate()); 计算年龄，以出生日期和当前日期并且以年为单位的差值进行计算年龄。
 
+- select name, birth from pet where month(birth)=5;
+	找出5月份过生日的动物
+- select name, birth from pet where month(birth)=month(date_add(curdate(), interval 1 month));
+	找出下个月过生日的人；
+- select name, birth from pet where month(birth)=mod(month(curdate()),12) +1;   利用取模来获取下个月过生日的人
+
