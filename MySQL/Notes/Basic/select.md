@@ -75,7 +75,7 @@
 
 ---
 
-## 技巧
+# 技巧
 - 查询某列最大值所在的行
 	- select * from shop where price=(select max(price) from shop);
 	- select * from shop order by price desc limit 1; 对所有内容按照price降序排列限制为1
@@ -89,3 +89,7 @@
 	- 这样就找出了价格最高和最低的物品
 	- 如果新插入表格值，此时之前定义的用户变量并不会动态更新，它存储的只是创建变量当时的状态，
 
+## 使用俩个关键字进行搜索
+	- select id, color from shirt where id=1 or color='blue' ;
+	- select id, color from shirt where id=1 union select id, color from shirt where color='blue';
+	- 上面俩个效果是一样的，都是对id和color俩个关键字进行过滤搜索
