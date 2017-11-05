@@ -10,3 +10,11 @@
 
 ## 实例
 - load data local infile '/home/wmsj100/Documents/test/SQL6/in.txt' into table employee; 这样就可以插入数据成功。
+# source 恢复数据库
+
+- 用备份的文件恢复数据库。
+
+- source backou.sql 恢复数据库
+- 方法二：
+	- 先创建一个空的数据库test1
+	- mysql test1 < backup.sql; 这样也同样可以恢复数据库的内部结构。 
