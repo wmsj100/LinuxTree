@@ -9,6 +9,7 @@
 ## 类型概览
 - 数据类型 大小 用途 格式
 - INT 4  整数
+- int unsigned 表示无负数，全是自然数表示 [unsigned](http://www.cnblogs.com/blankqdb/archive/2012/11/03/blank_qdb.html)
 - FLOAT 4 单精度浮点数
 - DOUBLE 8 双精度浮点数
 - ENUM  单选，比如性别  ENUM('a', 'b', 'c')

@@ -73,3 +73,19 @@
 - select now(); // 获取当前日期和时间
 - select now(); select version(); // 可以在一行同时输入多条命令；
 
+---
+
+## 技巧
+- 查询某列最大值所在的行
+	- select * from shop where price=(select max(price) from shop);
+	- select * from shop order by price desc limit 1; 对所有内容按照price降序排列限制为1
+- 找出每一类中价格最高的
+	- select article, max(price) as price from shop group by article;
+
+## 使用用户变量 [深入mysql用户变量](http://blog.ihuxu.com/explaination-of-the-mysql-variables-usage-and-the-use-case/#mysql-user-defined-variables)
+- 通过用户变量找出价格最高和最低的物品
+	- select @min_price:=min(price), @max_price:=max(price) from shop;
+	- select * from shop where prce=@min_price or price=@max_price;
+	- 这样就找出了价格最高和最低的物品
+	- 如果新插入表格值，此时之前定义的用户变量并不会动态更新，它存储的只是创建变量当时的状态，
+
