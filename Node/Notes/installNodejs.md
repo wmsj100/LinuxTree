@@ -11,3 +11,4 @@
 	- export PATH=$NODE_HOME/bin:$PATH
 - 保存退出后执行更改生效 source /etc/profile
 - node -v 查看node的版本号
+[centos7 安装nodejs](http://blog.csdn.net/jonatha_n/article/details/75271050)
