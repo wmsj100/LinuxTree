@@ -14,3 +14,13 @@
 	- do sleep(5); 只是等待5s后执行，但是没有结果返回，
 	- select sleep(5); 等待5s后执行，而且会方法一个记录
 
+---
+- analyze table shop； 分析表shop
+- check table shop; 检查表，
+- show character set; 展示所有可用的字符集
+- show columns from shop; ==> desc shop; 显示表结构信息
+- show create database test; 显示创建数据库信息
+- show engines; 显示所有引擎
+- show errors; 显示
+- show grants for 'wmsj'@'localhost' 列出用户的信息
+- 
