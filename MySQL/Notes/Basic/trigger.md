@@ -19,3 +19,30 @@
 		- update 更改某一行时激活触发程序
 		- delete 从表中删除某一行时激活触发程序
 	- trigger_stmt 当触发激活时执行的语句，可以使用begin。。。end执行多个语句；
+
+## 实例
+file sq3
+'''
+create database test3;
+use test3;
+create table t1 (a1 int);
+create table t2(a2 int);
+create table t3(
+a3 int not null auto_increment primary key,
+b3 int default 0
+);
+
+delimiter |
+
+create trigger testref before insert on t1
+for each row begin
+insert into t2 set a2=new.a1;
+update t3 set b3=b3+1 where a3=new.a1;
+end
+|
+delimiter ;
+
+insert into t3(a3) values(0),(0),(0),(0),(0),(0),(0),(0),(0);
+'''
+
+上面这个脚本创建了三个带有触发器的表格，当给表格t1插入数值时候，t2/t3都会同时进行更新，这个功能就想当厉害了，因为现在的业务中就有创建一个vdc管理员，会自动获取所有project，应该就是利用了trigger事件；
