@@ -19,12 +19,43 @@
 		- update 更改某一行时激活触发程序
 		- delete 从表中删除某一行时激活触发程序
 	- trigger_stmt 当触发激活时执行的语句，可以使用begin。。。end执行多个语句；
+- 对于一个表不能有俩个相同触发时间和触发事件的触发器；
+- 通过使用begin。。。end结构，能够定义执行多条语句的触发程序。
+	- 定义执行多条语句的触发程序时，如果使用mysql程序来输入触发程序，需要重新定义分割符，以便能够再触发程序中使用“；”；
+	- 分割符通过“delimeter来定义；
+
+- if...elseif...end if; 这是mysql中的逻辑判断语句；
+
+## 删除触发器
+- drop trigger tableName.tri_t1; 舍弃触发程序
 
 ## 实例
+- create trigger int_sum before insert for each row set @sum = @sum + new.account;
+	- for each row 定义了每次激活触发程序时将执行的程序；对于受触发语句影响的是每一行都要执行一次。
+	- 本例执行语句是简单的set，负责将插入的amount列的值加起来。
+	- 该语句将列引用为new.amount 意思是将要插入新行的amount值
+	- 这个触发器的作用是把每次插入的amount值加起来存储到变量@sum;
+	- set @sum=0; 初始化sum为0；
+	- select @sum as "asdf"; 查看当前的sum变量的值
+
 file sq3
 '''
 create database test3;
 use test3;
+
+### if逻辑判断
+- delimiter |;
+- create trigger up_2 before update on t5
+	for each row
+	begin
+	if new.amount<0 then
+	set new.amount=0;
+	elseif new.amount > 100 then
+	set new.amount = 100;
+	end if;
+	end;
+	|
+	delimiter ;
 create table t1 (a1 int);
 create table t2(a2 int);
 create table t3(
@@ -46,3 +77,5 @@ insert into t3(a3) values(0),(0),(0),(0),(0),(0),(0),(0),(0);
 '''
 
 上面这个脚本创建了三个带有触发器的表格，当给表格t1插入数值时候，t2/t3都会同时进行更新，这个功能就想当厉害了，因为现在的业务中就有创建一个vdc管理员，会自动获取所有project，应该就是利用了trigger事件；
+
+
