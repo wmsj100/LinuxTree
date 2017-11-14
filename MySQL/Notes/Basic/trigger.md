@@ -25,6 +25,7 @@
 	- 分割符通过“delimeter来定义；
 
 - if...elseif...end if; 这是mysql中的逻辑判断语句；
+- **不能将触发程序和视图关联再一起**
 
 ## 删除触发器
 - drop trigger tableName.tri_t1; 舍弃触发程序
