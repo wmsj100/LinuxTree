@@ -42,3 +42,5 @@
 - tar -xzf test1.tar.gz test1
 	- -x 解压缩gzip包
 - 
+
+## 安装tar.gz软件包
