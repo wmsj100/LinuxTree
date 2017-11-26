@@ -44,3 +44,13 @@
 - 
 
 ## 安装tar.gz软件包
+- tar -xzvf *.tar.gz -C ./filepath
+- cd git
+- ./configure 为编译做准备
+- make 进行软件编译
+- make install 编译完成后进行安装
+- make clean 删除安装时生成的临时文件
+
+
+## rpm软件包安装
+- rpm需要自己手动安装时候，建议还是使用“yum install ./*.rpm"这样软件安装时候需要的依赖会自动被下载。
