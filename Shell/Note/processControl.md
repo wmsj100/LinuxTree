@@ -31,4 +31,9 @@ mail: wmsj100@hotmail.com
 		command
 	done
 	'''
-
+- case 
+	- 取值后面必须为单词in，每一模式必须以有括号结束，取值可以为变量或常数。
+	- 每一模式以';;'结束
+- break; continue 跳出循环
+	- break 跳出循环，循环结束
+	- continue 跳过当前循环，执行下一次循环
