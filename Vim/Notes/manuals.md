@@ -1,1 +1,0 @@
-- set compatible? 查看当前兼容设置值
