@@ -12,3 +12,4 @@ mail: wmsj100@hotmail.com
 - 如果只是要修改提交信息，可以使用
 - git commit --amend
 - 这个命令会打开上一次的提交记录的'vim'界面，然后就可以修改提交记录信息年。
+- git rebase --abort 撤销这一次的'git rebase'操作
