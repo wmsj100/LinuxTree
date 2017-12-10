@@ -7,4 +7,5 @@ author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-- usr_06
+## 简介
+- :syntax enable 自动语法高亮
