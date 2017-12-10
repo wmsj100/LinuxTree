@@ -19,6 +19,7 @@ mail: wmsj100@hotmail.com
 - set ignorecase 忽略大小写
 - set hlsearch 高亮显示搜索的值
 - set incsearch 在输入搜索值的过程中就开始跳转页面到搜索值的位置
+- set autowrite 设置自动保存
 
 ## vim 操作命令
 - J 删除换行符
