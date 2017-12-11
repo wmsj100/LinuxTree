@@ -1,8 +1,8 @@
 ---
-- title: 多窗口编辑
-- date: 2017-12-11 11:06
-- tags: [vim]
-- categores: Linux
+title: 多窗口编辑
+date: 2017-12-11 11:06
+tags: [vim]
+categores: Linux
 ---
 
 - :split 把屏幕分成上下俩个窗口，并把光标置于上面的窗口中
