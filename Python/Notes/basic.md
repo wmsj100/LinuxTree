@@ -20,8 +20,8 @@ else:
 - "Year {} Rs. {:.2f}".format(year, value) 字符串格式化
 - a,b=12,23 在一行内给多个变量赋值，通过这个技巧可以交换彼此的值；例如`a,b=b,a`这样'a'和'b'的值就交换了。
 - 用逗号可以创建元组；在赋值语句的右边创建了一个元组，我们称这为元组的封装，赋值语句的左边我们则做的是元组的拆封。
- - data = ('asdf', 'qwer', zxcv')
- - name, age, time = data
- - name; // 'asdf'
- - age // 'qwer'
- - time // 'zxcv'
+    - data = ('asdf', 'qwer', zxcv')
+    - name, age, time = data
+    - name; // 'asdf'
+    - age // 'qwer'
+    - time // 'zxcv'
