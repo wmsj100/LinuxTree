@@ -32,3 +32,13 @@ while b < 100:
 
 - `print`的另一个参数'end' 可以替换默认的换行符。`print(a, end = ' ')`这个是'python3'的语法，'python2'会报错。
 - 'print("-"*50)' 输出50个‘-’
+
+## 循环后面可以添加else
+- 循环后面可以添加`else`,会在循环结束后执行
+    ```python
+    for x in range(5):
+        print(x)
+    else:
+        print("GoodBye")
+    ```
+
