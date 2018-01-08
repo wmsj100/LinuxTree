@@ -31,3 +31,4 @@ mail: wmsj100@hotmail.com
         unittest.main()
     ```
 
+- 首先导入`unittest`模块，然后测试我们需要测试的函数
