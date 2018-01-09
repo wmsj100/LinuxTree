@@ -28,3 +28,11 @@ mail: wmsj100@hotmail.com
 - startwith 检查字符串是否以指定的字符开始；`a.startwith('shi'); // True
 - a[::-1] 反转字符
 - len 获取字符长度
+- str() 返回字符串
+- repr() 等效于str
+
+- print(r"\nasdf") 输出原始字符串，这时候反斜杠不会被当做转义字符进行处理，原始字符是以小写字母'r'开头的。
+---
+
+- raw_input python3中并没有这个方法，所以不建议使用，它只是把所有用户输入的值转换为字符串而以。建议使用input代替
+
