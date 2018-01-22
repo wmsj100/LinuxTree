@@ -7,6 +7,9 @@ author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
+## 解析
+- **字符串是不可改变的**
+
 - title 返回首字母大写
 - upper 字母转换为大写
 - lower 全部转为小写
@@ -36,3 +39,6 @@ mail: wmsj100@hotmail.com
 
 - raw_input python3中并没有这个方法，所以不建议使用，它只是把所有用户输入的值转换为字符串而以。建议使用input代替
 
+---
+
+- 字符串格式化使用'%' 
