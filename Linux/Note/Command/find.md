@@ -21,6 +21,29 @@
 - find -iname "*.txt" 忽略大小写
 - find . \( -name "*.txt" -or -name "*.pdf" \) 打印当前目录下所有以".txt"/ ".pdf"结尾的文件名
 - find . ! -name "*.txt" 打印当前目录下所有不以txt结尾的文件
+- find -maxdepth 0 -name hello   在当前目录查找hello文件或目录
+- find -name "[a-z0-9]*.txt"  在当前目录查找字母或数字名称的txt文件
+- find -empty  查找空白文件
+- find -type f   查找当前目录下的文件
+- find -size +100k -size -1024k 返回文件尺寸大于100k 小于1M的文件
+- find -user testuser  查找文件属主是testuser 的文件或目录
+- find -group 2000 查找文件组的属主是2000的文件或目录
+- find -nouser  查找文件属主在/etc/passwd 中无法查找的文件
+- find -nogroup 查找文件组属主在/etc/group 中无法查找的文件
+- --这种文件是删除用户时候没有删除掉用户创建的文件时候产生的--
+- find -perm 444 查找文件权限是444的
+- find -perm +444 查找文件权限大于444的
+- find -mtime 0 查找今天修改过的文件
+- find -mtime 0 -name "*.js" -exec rm -fr {} \;  删除今天修改过的js文件；
+- find -user root 查找root角色的文件
+- find ! -user root 查找不属于root角色的文件
+
+- xargs  这个命令和 -exec类似，但是这个比后者强大，因为某些发行版-exec参数只能调用很少的shell命令，而且长度有限制，而且某些发行版会为find搜索到的每一个文件启用一个cmd进程，这样会严重影响系统的性能，
+- xargs cmd 把从管道获取的参数作为一个参数列表一次传给cmd程序。
+- find -user root | xargs chmod -o-w  查找root的文件并且取消others的w权限
+
+- suse系统的history 文件是一个空文件，这应该是安全设置。
+- 遇到一个不认识的命令时候，先不要急着百度，先可以man一下，看这个是什么意思。
 
 ## 逻辑操作符
 - and 俩边都为真，简写wei -a
