@@ -1,16 +1,21 @@
 .
 ├── Article
 │   └── Essay
+│       ├── 0101.md
+│       ├── 0109.md
+│       ├── 10122.md
 │       ├── 1128.md
 │       ├── 1226.md
 │       ├── 1227.md
+│       ├── 180103.md
+│       ├── 180204.md
 │       ├── google.md
 │       ├── langfei.md
 │       ├── payTime.md
 │       ├── prayGlod.md
 │       └── writeBlog.md
 ├── CODE_OF_CONDUCT.md
-├── fil1
+├── file.bak
 ├── Git
 │   ├── Notes
 │   │   ├── basic.md
@@ -227,7 +232,8 @@
 │   ├── Note
 │   │   ├── Basic
 │   │   │   ├── Producer_consumer_problem.md
-│   │   │   └── visudo.md
+│   │   │   ├── visudo.md
+│   │   │   └── xWindows.md
 │   │   ├── Command
 │   │   │   ├── adduser.md
 │   │   │   ├── cat.md
@@ -393,11 +399,14 @@
 │               ├── index.js
 │               └── mymodule.js
 ├── Others
+│   ├── jihuashengyu.md
 │   └── LearnWords
 ├── Python
 │   ├── Notes
 │   │   ├── basic.md
 │   │   ├── class.md
+│   │   ├── codeStyle.md
+│   │   ├── collections.md
 │   │   ├── columns.md
 │   │   ├── dataStructure.md
 │   │   ├── dealFile.md
@@ -405,20 +414,36 @@
 │   │   ├── file.md
 │   │   ├── func.md
 │   │   ├── ifElse.md
+│   │   ├── lterators.md
 │   │   ├── module.md
 │   │   ├── pythonMysql.md
+│   │   ├── pythonProject.md
 │   │   ├── string.md
-│   │   └── sys.md
+│   │   ├── sys.md
+│   │   ├── testModel.md
+│   │   └── virtualenv.md
 │   ├── README.md
 │   └── Study
 │       ├── amt.py
 │       ├── average.py
+│       ├── bibao.py
 │       ├── calcuDays.py
 │       ├── chenfabiao.py
 │       ├── circleArea.py
-│       ├── class1.py
+│       ├── collectionsTest1.py
+│       ├── counter_generator.py
 │       ├── countfile.py
 │       ├── downUrl.py
+│       ├── factorial
+│       │   └── myfact
+│       │       ├── fact.py
+│       │       ├── __init__.py
+│       │       ├── MANIFEST.in
+│       │       └── README.rst
+│       ├── factorial.py
+│       ├── factorial.pyc
+│       ├── factorial_test2.py
+│       ├── factorial_test.py
 │       ├── Fibonacci.py
 │       ├── findDigit.py
 │       ├── for1.py
@@ -427,8 +452,33 @@
 │       ├── fun2.py
 │       ├── getFile.py
 │       ├── gongzi.py
+│       ├── h1.py
+│       ├── hello_flask
+│       │   ├── hello_flask.py
+│       │   ├── static
+│       │   └── templates
+│       │       ├── hello.html
+│       │       ├── index.html
+│       │       └── master.html
+│       ├── hello.py
+│       ├── htmlcov
+│       │   ├── coverage_html.js
+│       │   ├── factorial_py.html
+│       │   ├── factorial_test_py.html
+│       │   ├── index.html
+│       │   ├── jquery.ba-throttle-debounce.min.js
+│       │   ├── jquery.hotkeys.js
+│       │   ├── jquery.isonscreen.js
+│       │   ├── jquery.min.js
+│       │   ├── jquery.tablesorter.min.js
+│       │   ├── keybd_closed.png
+│       │   ├── keybd_open.png
+│       │   ├── status.json
+│       │   └── style.css
 │       ├── ifElse.py
 │       ├── liebiao1.py
+│       ├── ltera.py
+│       ├── mounttab.py
 │       ├── myModule
 │       │   ├── bar1.py
 │       │   ├── getVal.py
@@ -535,11 +585,18 @@
 │       ├── params.py
 │       ├── __pycache__
 │       │   ├── bar1.cpython-36.pyc
-│       │   └── getFile.cpython-36.pyc
+│       │   ├── bibao.cpython-36.pyc
+│       │   ├── collections.cpython-36.pyc
+│       │   ├── factorial.cpython-36.pyc
+│       │   ├── getFile.cpython-36.pyc
+│       │   └── ltera.cpython-36.pyc
+│       ├── readCrontab.py
 │       ├── salesmansalary.py
+│       ├── static}
 │       ├── String1.txt
 │       ├── String.txt
 │       ├── student.py
+│       ├── teacher_student.py
 │       ├── while.py
 │       ├── www.baidu.com
 │       ├── xinhao.py
@@ -1166,7 +1223,8 @@
     │   │   │       └── \345\255\227\347\254\246\344\270\262\350\277\236\346\216\245\346\226\271\346\263\225.md
     │   │   └── Summary
     │   │       ├── \344\272\213\344\273\266\345\205\274\345\256\271\346\200\247\345\212\237\350\203\275\346\243\200\346\265\213.md
-    │   │       └── \345\212\250\346\200\201\346\267\273\345\212\240\350\204\232\346\234\254\347\232\204\346\226\271\346\263\225.md
+    │   │       ├── \345\212\250\346\200\201\346\267\273\345\212\240\350\204\232\346\234\254\347\232\204\346\226\271\346\263\225.md
+    │   │       └── \346\200\216\344\271\210\345\212\250\346\200\201\347\232\204\347\273\231\345\257\271\350\261\241\346\267\273\345\212\240key\345\222\214value.md
     │   ├── jQuery
     │   │   ├── Code
     │   │   │   ├── jQuery-Stickup-Code
@@ -1706,4 +1764,4 @@
                 ├── \350\216\267\345\217\226github-API-\350\257\267\346\261\202\346\225\260\346\215\256.md
                 └── \350\247\206\351\242\221\346\227\240\346\263\225\346\222\255\346\224\276.md
 
-283 directories, 1423 files
+290 directories, 1474 files
