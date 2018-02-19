@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>task-27-4</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<style>
+	html,body,div,ul,li{
+		
+		padding: 0;
+		margin: 0;
+	}
+	li{
+		list-style-type: none;
+	}
+	a{
+		text-decoration: none;
+	}
+	html,body,div,ul.wrap,ul.wrap li{
+		width: 100%;
+		height: 100%;
+	}
+	.carousel{
+		position: relative;
+		width: 100%;
+		height: 100%;
+		/*overflow: hidden;*/
+	}
+	.wrap{
+		position: absolute;
+	
+	}
+	.wrap li{
+		float: left;
+		background-size: cover;
+		background-repeat: no-repeat;
+		opacity: 0.8;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+	.opt{
+		position: absolute;
+		bottom: 100px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+	.opt:after{
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.opt li{
+		float: left;
+		margin: 0 10px;
+		width: 50px;
+		height: 8px;
+		background-color: #999;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	li.active{
+		background-color: #E04C4C;
+	}
+</style>
+</head>
+<body>
+    <div class="carousel">
+    	<ul class="wrap">
+    		<li style="background-image: url(img/05.jpg)">as<a href="#"></a></li>
+    		<li style="background-image: url(img/05.jpg)">as<a href="#"></a></li>
+
+    		
+
+    	</ul>
+    	<ul class="opt">
+    		<li class="active"></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ul>
+    </div>
+    <script>
+    // $(".wrap li").width($(window).width());
+    // $(".wrap").width($(window).width()*2);
+$.ajax({
+	url: "task-27-4_get.php",
+	type: "get",
+	data: {
+		"status": "1"
+	},
+	success: function(data) {
+		if (data && JSON.parse(data)[0].status === "success") {
+			var json = JSON.parse(data)[1];
+			$(".wrap").empty().append(addData(json));
+		}
+	},
+	error: function(data) {
+		console.log("error");
+	},
+	complete: function() {
+		listContent();
+	}
+});
+
+function addData(json) {
+	var str = "";
+	for (var key in json) {
+		str +=
+			"<li data-bg-img=" + json[key] + ">" + '<a href="#">' + key + '</a></li>';
+	}
+	return str;
+}
+ //全部都是局部变量
+function listContent() {
+	$wrap = $(".wrap");
+	imgWidth = $(window).width();
+	imgCount = $wrap.children().length;
+	$wrap.append($wrap.children().first().clone());
+	$wrap.prepend($wrap.children().eq(imgCount - 1).clone());
+	var imgRealCount = $wrap.children().length;
+	$wrap.css({
+		left: -imgWidth,
+		width: imgRealCount * imgWidth
+	});
+	$(".wrap li").css({
+		width: imgWidth
+	});
+	var dataImg = $wrap.children().eq(1).data("bgImg");
+	console.log(dataImg);
+	$wrap.children().eq(1).css({
+		"background-image": "url(" + dataImg + ")"
+	});
+	// console.log($wrap.children().eq(2).data("bgImg"));
+	// console.log($child);
+	// return {
+	// 	$wrap: $wrap
+	// }
+
+}
+
+    	var $opt = $(".opt li");
+    		var wrapIdx = 0;
+    		$opt.on("click",function(){
+    			var idx = $(this).index();
+    			console.log(idx);
+    			if(idx > wrapIdx){
+    				playNext(idx - wrapIdx);
+    			}else if(wrapIdx > idx){
+    				playPre(wrapIdx - idx);
+    			}
+    		});
+
+    		function playNext(idx){
+
+    			var idx = idx || 1;
+    			console.log(idx);
+    			wrapIdx += idx;
+    			console.log(wrapIdx);
+    			var dataImg = $wrap.children().eq(wrapIdx).data("bgImg");
+    			$wrap.children().eq(wrapIdx).css({"background-image": "url("+dataImg+")"});
+    			$wrap.animate({left: "-="+imgWidth*(idx-1)},1000,function(){});
+    			
+	    	// console.log(dataImg);
+	    	// $wrap.children().eq(1).css({"background-image": "url("+dataImg+")"});
+    		}
+
+
+    </script>
+</body>
+</html>

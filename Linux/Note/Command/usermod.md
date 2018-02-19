@@ -1,3 +1,0 @@
-- usermod -g 2000  testuser 这个命令会把testuser原来的组删除，重新加入2000
-- usermod -G 2000 testuser  这个命令会保留原来的组信息，重新添加组2000
-- id testuser  查看testuser的详情

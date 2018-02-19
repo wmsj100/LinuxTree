@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<p>第2333个能被2或者被3整除的正整数是…?请把答案填入答题框内…如果有问题请点击右侧按钮查阅题目相关讨论区。 举例:(被2或者被3整除的正整数依次是：2,3,4,6,8,9,10,12,14,15,16,18…)</p>
+	<script>
+		var num = 1;
+		arr = [];
+		cal(1);
+
+		function cal(num) {
+
+			if (arr.length >= 2333) {
+				return
+			} else {
+				if (num % 2 == 0 || num % 3 == 0) {
+					console.log(num)
+					arr.push(num)
+					cal(num + 1)
+				} else {
+					cal(num + 1)
+				}
+			}
+		}
+	</script>
+</body>
+</html>
