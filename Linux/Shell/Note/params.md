@@ -31,10 +31,11 @@ mail: wmsj100@hotmail.com
 
 
 ## 只读变量
-- 'readonly' 可以将变量定义为只读变量
+- 'readonly' 可以将变量定义为只读变量,这个和通过declare来声明创建的只读变量类似，
 - 只读变量的值不能被改变。
 	- readonly a=1
 	- a=2; // error
+    - declare -r a
 
 ## 特殊变量
 - 局部变量 这种变量只有在代码块或者函数中才可见
