@@ -1,11 +1,21 @@
 ---
 title: bash_basic.md
 date: Sun 03 Dec 2017 06:48:34 PM CST
-tag: []
+tag: [shell]
 categories: Linux
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
+
+## shell功能
+- 命令记忆功能
+- 命令和文件名补全
+- 命令别名设置alias
+- 作业控制/前台/后台控制
+- 程序脚本
+- 通配符
+
+## shell脚本执行方式
 
 - 创建一个shell脚本后有以下几种方式来执行
 	- sh test.sh
