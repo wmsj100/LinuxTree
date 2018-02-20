@@ -37,6 +37,44 @@ mail: wmsj100@hotmail.com
 	- a=2; // error
     - declare -r a
 
+## 编辑变量
+
+### # 从前往后删除
+- a=${path#*/ruby-*:}  删除内容至找到ruby开始
+    - # 从开始删除，且删除最短
+    - ## 符合替换文字的“最长的”哪一个
+- a=${path#/*:} 删除最前面的一个目录
+- a=${path##/*:} 删除目录只剩下最后一个目录，俩个#表示删除最长的内容
+
+### % 从后往前删除
+- a=${path%:/home*} 从后面往前删除，删除内容最小匹配，包括:/home也删除- a=${path%%:*bin} 从后往前删除，按照最大匹配，删除值。
+
+### / 替换
+- a=${path/sbin/SBIN}  把匹配到的第一个sbin替换为SBIN
+- a=${path//sbin/SBIN} 把匹配到的所有的sbin替换为SBIN
+
+### 变量的测试与替换
+- a=${a-root} 如果变量a不存在，则创建变量a，并且赋值root
+- a=${a:-root} 如果变量a不存在或赋值为空，则给变量a赋值root  有没有冒号差别很大
+- a=${b+root} b没有设置，a为空;b设置为空，则a为root；b有值，a赋值为root；
+- a=${b:+root} b没有设置或者赋值为空时候，a为空；b有值，a赋值root
+---
+- *+/-/:+/:- 这四个都不会影响到参照b的值*
+---
+- a=${b=root} b不存在，a=b=root; b设置为空，a=b=""; b设置值，a=$b;
+- a=${b:=root} b不存在或设置为空，a=b=root; b设置值，a=$b;
+---
+- =/:= 会影响到参考b的值
+---
+- a=${b?root} b不存在，则root输出至stderr; b设置为空或有值，a=$b;
+- a=${b:?root} 若b不存在或设置为空，root输出至stderr, echo $? // 1; b有值，a=$b;
+
+### 範例
+- 删除mail值的其它信息，只留下用户名
+    - mail=$MAIL; // /var/spool/mail/wmsj100 
+    - b=${mail#*mail/} 删除内容至/mail,包括自身
+    - b=${mail##/*/} 删除俩个斜线之间最大的值
+
 ## 特殊变量
 - 局部变量 这种变量只有在代码块或者函数中才可见
 - 环境变量
