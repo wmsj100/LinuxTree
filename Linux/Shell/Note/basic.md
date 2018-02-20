@@ -1,5 +1,5 @@
 ---
-title: bash_basic.md
+title: shell基础概念
 date: Sun 03 Dec 2017 06:48:34 PM CST
 tag: [shell]
 categories: Linux
@@ -56,7 +56,7 @@ echo "Hello World" > my.txt
 '''
 - 执行脚本会在脚本所在路径生成my.txt文件
 
-- 利用“/dev/null”创建清楚日志的脚本
+- 利用“/dev/null”创建清除日志的脚本
 '''bash
 #!/bin/bash
 LOG_DIR=/var/log
