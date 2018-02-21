@@ -1,3 +1,10 @@
+---
+title: cat查看文件
+date: 2018-02-07
+tag: [linux]
+categories: Linux
+---
+
 #查看文件
 
 - cat命令的功能是将文件或标准输入组合输出到标准输出。
@@ -29,3 +36,6 @@ cat -A << EOF
 - cat /dev/stdin  读取标准输入流的数据,
 
 - paste f1 f2 | cat -A /dev/stdin 这样就通过屏幕打印出来了标准输入流的内容。
+- cat > h1   会在界面输入内容，直到按下 ctrl + d   结束输入，
+- cat h1 h2 > h3 把h1, h2俩个文件的内容输入到文件h3中
+
