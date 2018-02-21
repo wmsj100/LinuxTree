@@ -1,4 +1,13 @@
-# xargs 
+---
+title: xargs参数代换
+date: Wed 21 Feb 2018 09:41:03 PM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
+# xargs 参数代换
 
 - 有些命令只能以命令行参数的形式接收数据，而无法通过stdin接收数据流，在这种情况下，无法通过管道将数据重定向给命令
 
