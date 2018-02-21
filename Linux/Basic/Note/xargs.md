@@ -18,9 +18,15 @@ mail: wmsj100@hotmail.com
 ## 参数
 - n 指定每行最大的参数数量
 - d 指定分割符
+- p 在执行每个命令参数时都会询问用户
+- e end of file 后面接一个字符，当xargs分析到这个字符串时候就停止
 
 ## 范例
-- cat a.txt | xargs 将多行输入转换为当行输出
+- cat a.txt | xargs 将多行输入转换为单行输出
 - echo "1 2 3 4 5 6" | xargs -n 3 将单行输入转换为多行输出
 - echo "1i2i3i4i5i6i" | xargs -d i -n 3 将i作为分割符输出多行
-- find . -name "f1" | xargs wc -l 寻找f1文件，并且计算出该文件的行数。
+- find . -name "f1" | xargs wc -l 寻找f1文件，如果找到多个，则计算出每个文件的行数。
+- ls | xargs wc -l
+- 找出/sbin下面具有特殊权限的文件名，并使用ls -l 列出详细属性
+    - find /sbin -perm /7000 | xargs ls -l
+    - find /sbin -perm /7000 | ls -l 这样只会列出当前目录的详情，错误
