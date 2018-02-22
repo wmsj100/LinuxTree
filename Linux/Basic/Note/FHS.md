@@ -1,3 +1,12 @@
+---
+title: 文件目录结构
+date: Tue 20 Sep 2017 10:35:46 PM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # 文件目录结构
 
 - FHS（filesystem Hierarchy Standard） 文件系统层次结构标准，定义了系统中每个区域的用途，所需要的最小构成的文件和目录同时还给出了例外处理和矛盾处理。

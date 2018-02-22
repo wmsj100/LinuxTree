@@ -1,10 +1,19 @@
+---
+title: grep 查找文件的匹配文本
+date: Tue 22 Feb 2018 9:35:46 PM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # grep 查找文件的匹配文本
 
-- grep  global search regular expression(RE) and print out the line   全面搜索正在表达式并把行打印出来
+- grep  global search regular expression(RE) and print out the line   全面搜索正则表达式并把行打印出来
 - 是一种强大的文本搜索工具，它能使用正在表达式搜索文本，并把匹配的行打印出来。
 - 能够接收正则表达式和通配符，可以使用多个grep命令选项来生成各种格式的输出。
 
-- 能够在一个多多个文件中搜索字符呈模板，
+- 能够在一个或多个文件中搜索字符串模板，
 - 搜索到的文本被送到标准输出，不影响原有文本
 - 可用于shell脚本，通过返回一个状态值来说明搜索状态，如果搜索成功，则返回0，不成功，这返回1；如果搜索的文件不存在，则返回2；利用这些返回值，可以进行一些自动化的文本处理工作。
 
@@ -14,6 +23,8 @@
 - n 输出行号
 - v 反向选择
 - r 递归搜索
+- A after的意思，除了列出该行外，后续的n行也列出来
+- B before 前面的n行也列出来
 - --color=auto 将找到的关键词部分加上颜色显示
 
 ## 实例
@@ -21,6 +32,9 @@
 - cat /etc/passwd | grep 'root' --color=auto
 - cat /etc/passwd | grep -v 'root' 将没有root的打印出来
 - grep -r "main()" 在当前目录下递归搜索包含“mian（）”的文件，经常用于查找某些函数位于哪些源文件代码中。
+- dmsesg | grep -n -A3 -B2 --color=auto 'ath' 分别列出目标行的前面俩行和后面3行
+- grep -ni 't[ae]st' f1 查找不区分大小写字符，查找tast / test 
+- 鸟哥grep练习文件("http://linux.vbird.org/linux_basic/0330regularex/regular_express.txt")
 
 ## 正则表达式
 - E 正则表达式标志

@@ -1,6 +1,22 @@
+---
+title: 正则表达式
+date: Tue 20 Feb 2018 10:35:46 PM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # 正则表达式
 
 - 是一种符号表示法，被用来识别文本模式，
+
+## 特殊符号
+- [:alnum:] 代表英文大小写及数字
+- [:alpha:] 代表英文大小写 
+- [:digit:] 代表数字
+- [:lower:] 代表小写字符
+- [:upper:] 代表大写字符
 
 ## 正则表达式元字节
 - ^ 行起始标记
@@ -42,12 +58,6 @@
 - grep '[0-9]' 匹配数字
 - grep '[[:lower::]]' 匹配小写
 - grep '[[:upper:]]' 匹配大写
-- [:alnum:] 大小写字母及数字
-- [:alpha:] 大小写字母
-- [:blank:] 空格键及tab
-- [:digit:] 数字
-- [:graph:] 除了空白字节外的其他所有按键
-- [:lower:] 代表小写字符
 
 ## 扩展正则
 - grep -E 'zo{1}' 匹配“zo”
