@@ -8,7 +8,7 @@
 # 个人信息
 
  - 王浩/男/1990
- - 本科/黑龙江八一农垦大学工业设计系
+ - 本科/黑龙江八一农垦大学工业设计
  - 工作年限：4年
  - 技术博客：[简书](https://www.jianshu.com/u/c179b17d547a)
  - Github：[https://github.com/wmsj100](https://github.com/wmsj100/)
@@ -101,10 +101,10 @@
 *以下均为我熟练使用的技能*
 
 - Web框架：EasyUI/MiniUI/jQuery UI/TinyUI(华为专用)
-- 前端框架：Bootstrap/AngularJS/EmberJS/HTML5/ionic
+- 前端框架：Bootstrap/AngularJS/EmberJS/HTML5/Backbone
 - 前端工具：Bower/Gulp/LeSS/Echarts
 - 编程语言：JavaScript/CSS/Python/Shell
-- 数据库相关：MySQL/SQLite
+- 数据库相关：MySQL
 - 操作系统：Linux/Windows
 - 版本管理、文档和自动化部署工具：Svn/Git
 ---
