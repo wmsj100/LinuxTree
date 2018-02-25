@@ -3,7 +3,7 @@
 - 手机：18700468541
 - Email：wmsj100@hotmail.com
 - 微信号：wanmeikaixin
-
+---
 
 # 个人信息
 
@@ -11,14 +11,13 @@
  - 本科/黑龙江八一农垦大学工业设计系
  - 工作年限：4年
  - 技术博客：[简书](https://www.jianshu.com/u/c179b17d547a)
- - Github：http://github.com/wmsj100
+ - Github：[https://github.com/wmsj100](https://github.com/wmsj100/)
  - 期望职位：Linux运维工程师
  - 期望薪资：税前月薪9k~，特别喜欢的公司可例外
  - 期望城市：西安
-
 ---
 
-# 工作经历
+# 工作履历
 
 ## 软通动力技术服务有限公司 （ 2016年11月 ~ 至今 ）
 
@@ -108,8 +107,6 @@
 - 数据库相关：MySQL/SQLite
 - 操作系统：Linux/Windows
 - 版本管理、文档和自动化部署工具：Svn/Git
-
 ---
-
 # 致谢
 感谢您花时间阅读我的简历，期待能有机会和您共事。
