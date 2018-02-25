@@ -1,3 +1,12 @@
+---
+title: git中级技能
+date: Mon 25 Dec 2017 11:53:05 PM CST
+tag: [git,config]
+categories: Git
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # git中级技能
 
 - .gitignore  git track（追踪）时候要忽略的文件
@@ -28,7 +37,8 @@
 - 保证良好的性能
 	- git gc 进行压缩操作
 - git blame file1 查看file1 的修改记录
-- git config --global alias.oneline 'git log --pretty=oneline' 添加别名
+- git config --global alias.oneline 'log --pretty=oneline' 添加别名 git oneline 查看单行log
+- git config --global alias.cm 'commit -m' git cm 提交代码
 
 ## 定制git
 - 添加颜色	

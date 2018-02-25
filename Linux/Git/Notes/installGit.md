@@ -1,3 +1,12 @@
+---
+title: 安装git
+date: Mon 25 Dec 2017 11:53:05 PM CST
+tag: [git,install]
+categories: Git
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # 安装git
 - 通过地址[https://www.kernel.org/pub/software/scm/git/](https://www.kernel.org/pub/software/scm/git/);
 - tar -xzvf git.tar.gz -C /path

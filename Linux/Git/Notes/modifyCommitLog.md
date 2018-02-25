@@ -1,8 +1,8 @@
 ---
 title: 修改提交记录
 date: Sun 10 Dec 2017 05:32:01 PM CST
-tag: []
-categories: Linux
+tag: [git,config]
+categories: Git
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---

@@ -1,3 +1,12 @@
+---
+title: git无秘密pull
+date: Mon 25 Dec 2017 11:53:05 PM CST
+tag: [git,config]
+categories: Git
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # Git action (Push Pull Clone) 避免输入用户名和密码方法
 
 文地址：http://www.cnblogs.com/ballwql/p/3462104.html

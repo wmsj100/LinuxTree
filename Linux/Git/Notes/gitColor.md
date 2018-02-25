@@ -1,8 +1,8 @@
 ---
 title: git颜色设置
 date: Mon 25 Dec 2017 11:53:05 PM CST
-tag: []
-categories: Linux
+tag: [git,config]
+categories: Git
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---

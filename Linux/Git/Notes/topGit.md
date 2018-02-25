@@ -1,3 +1,12 @@
+---
+title: git高阶知识
+date: Mon 25 Dec 2017 11:53:05 PM CST
+tag: [git,kill]
+categories: Git
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # git 高阶知识
 
 ## branch分支的提交记录找回
