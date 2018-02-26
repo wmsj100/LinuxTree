@@ -1,3 +1,12 @@
+---
+title: 搜索文件
+date: Tue 20 Feb 2018 10:35:46 PM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # 搜索文件
 
 ## which
@@ -6,7 +15,8 @@
 	- which gcc ; which cd 一般都在 /usr/bin/ 目录中
 
 ## whereis 
-- whereis 搜索数据库中，快速 
+- whereis 搜索数据库中，快速 ,和which类似，都是找寻二进制，但会找到man帮助文档
+
 - locate 通过/var/lib/mlocate/mlocate.db 数据库查找，这个数据库是使用定时任务每天自动执行updatedb命令来更新一次，所以如果是刚刚添加的文件，需要手动执行一次updatedb. 这个查询可以用通配符。  locate /home/wmsj100/Documents/git/*.jpeg
 	- b 定位可执行文件
 	- m 定位帮助文件
