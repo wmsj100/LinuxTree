@@ -9,7 +9,7 @@ mail: wmsj100@hotmail.com
 
 # Linux目录解析
 
-- Linux 关于linux的系统知识目录
+- System 关于linux的系统知识目录
 - Internet 关于网络的知识目录
 - Shell 关于Shell脚本的知识目录
 - Vim vim编辑器的知识目录
