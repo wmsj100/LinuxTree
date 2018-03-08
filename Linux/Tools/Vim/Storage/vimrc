@@ -1,0 +1,37 @@
+set nu
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set ruler
+set history=50
+set autoindent
+set clipboard+=unnamed
+
+autocmd BufNewFile *.md, exec  ":call SetTitle()"
+autocmd BufNewFile README.md, exec ":call README()"
+let $author_name="wmsj100"
+let $author_email="wmsj100@hotmail.com"
+func SetTitle()
+	call setline(1,"---")
+	call append(line("."), "title: ".expand("%"))
+	call append(line(".")+1, "date: ".strftime("%F %T %a"))
+	call append(line(".")+2, "tag: []")
+	call append(line(".")+3, "categories: Linux")
+	call append(line(".")+4, "author: ".$author_name)
+	call append(line(".")+5, "mail: ".$author_email)
+	call append(line(".")+6, "---")
+	call append(line(".")+7, "")
+endfunc
+
+func README()
+	call append(line(".")+8, "#README")
+	call append(line(".")+9, "")
+	call append(line(".")+10, "##目录概要")
+	call append(line(".")+11, "- 该目录主要是关于XX的知识点整理！")
+	call append(line(".")+12, "")
+	call append(line(".")+13, "##目录详情")
+	call append(line(".")+14, "- Note 基础知识点的整理目录")
+	call append(line(".")+15, "")
+	call append(line(".")+16, "##代办事项")
+	call append(line(".")+17, "~~None~~")
+endfunc

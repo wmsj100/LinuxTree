@@ -7,12 +7,14 @@ author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-# 文档介绍
-- Img 关于Linux的一些图片整理目录
+# README
+
+## 目录概要
+
+## 目录详情
 - Note 基础知识点目录
-- Project 关于Linux的项目整理目录
-- SoftWare 收藏的一些好用的Linux软件目录
 - Summary 我自己关于Linux的一些总结目录
+- Storage 关于linux的系统的收藏，包括软件/项目/图片等
 
 ## 注意事项
-- 把Study移动到Project内
+~~None~~
