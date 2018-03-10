@@ -1,17 +1,22 @@
 ---
-title: README
-date: Sun 25 Feb 2018 10:35:05 PM CST
-tag: [README]
+title: README.md
+date: 2018-03-10 23:15:12 Sat
+tag: [readme]
 categories: Storage
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-# 文档说明
+#README
 
-## 目录解析
-- Cafe 思想诞生于咖啡屋，我现在的生活距离咖啡屋好像还挺遥远的
+##目录概要
+- 该目录主要是存储的一些杂乱的内容！
+
+##目录详情
+- Article 文章整理目录
+- GrowUp 我自己成长的过程，包括计划，想法，读的书籍
 - Evolution 整体目录进化过程，也是学习重心的转移过程
-- Trash 还有回收价值的东西储存场所
-- Plan_2018 这是我关于2018年的计划，会不断完善
-- ReadBook 以后我读过的书会不断写到这上面，因为只是读过而不记录是很快会忘记的，现在发现大脑记忆是很不可靠的，必须要依靠很多提示才可以回想起来。
+- WebStorage 收藏的网站目录
+
+##代办事项
+~~None~~
