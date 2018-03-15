@@ -33,6 +33,7 @@ mail: wmsj100@hotmail.com
 ## 目录详情
 - Lang 对于编程语言的学习，`shell`归纳到了`Linux`目录了
 - Linux 关于`Linux`的点点滴滴，包括关联的知识点和常用软件以及收藏项目
+- Python 关于python的知识点，自称体系的智能语言，单独罗列
 - Storage 存储目录结构备份`Evolution`、关于生活思考`Cafe`、可回收垃圾`Trash`
 - AboutMe 我的工作履历，以后随着工作变动，动态更新
 
