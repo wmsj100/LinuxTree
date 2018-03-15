@@ -63,3 +63,5 @@ mail: wmsj100@hotmail.com
 - Python 2017-12-18 重新开始学习
 - 鸟哥的私房菜 2018-02-16 
 - Linux系统命令及Shell脚本实践指南 2018-02-25
+- **Python 2018-03-16**
+- OpenStack 待定
