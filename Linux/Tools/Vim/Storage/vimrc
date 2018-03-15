@@ -25,14 +25,14 @@ func SetTitle()
 endfunc
 
 func README()
-	call append(line(".")+9, "#README")
+	call append(line(".")+9, "# README")
 	call append(line(".")+10, "")
-	call append(line(".")+11, "##目录概要")
+	call append(line(".")+11, "## 目录概要")
 	call append(line(".")+12, "- 该目录主要是关于XX的知识点整理！")
 	call append(line(".")+13, "")
-	call append(line(".")+14, "##目录详情")
+	call append(line(".")+14, "## 目录详情")
 	call append(line(".")+15, "- Note 基础知识点的整理目录")
 	call append(line(".")+16, "")
-	call append(line(".")+17, "##代办事项")
+	call append(line(".")+17, "## 代办事项")
 	call append(line(".")+18, "~~None~~")
 endfunc

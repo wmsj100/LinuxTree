@@ -8,7 +8,7 @@ author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-#README
+# README
 
 ## 前提条件
 - 学习`OpenStack`的准备工作还是有很多的，重中之重就是学好`python`
@@ -24,11 +24,11 @@ mail: wmsj100@hotmail.com
 - db访问
 - [参考资料](http://blog.csdn.net/far_man/article/details/46469371)
 
-##目录概要
+## 目录概要
 - 该目录主要是关于OpenStack的知识点整理！
 
-##目录详情
+## 目录详情
 - Note 基础知识点的整理目录
 
-##代办事项
+## 代办事项
 ~~None~~
