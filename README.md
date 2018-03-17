@@ -33,7 +33,7 @@ mail: wmsj100@hotmail.com
 
 
 ## 目录详情
-- Internet 关于网络的知识是很大的概念，所以从Linux目录剥离出来
+- Network 关于网络的知识是很大的概念，所以从Linux目录剥离出来
 - OpenStack 云操作系统标准，是以后要经常打交道的概念
 - Linux 关于`Linux`的点点滴滴，包括关联的知识点和常用软件以及收藏项目
 - Shell 脚本或命令，运维的主要工具

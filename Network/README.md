@@ -2,7 +2,7 @@
 title: README
 date: Thu 08 Mar 2018 05:51:50 PM CST
 tag: [readme]
-categories: Linux
+categories: Network
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
