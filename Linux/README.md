@@ -1,18 +1,21 @@
 ---
-title: Linux目录
-date: Mon 19 Feb 2018 09:40:27 PM CST
+title: README
+date: 2018-03-05 11:12
 tag: [linux,readme]
 categories: Linux
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-# Linux目录解析
+# README
 
-- System 关于linux的系统知识目录
-- Internet 关于网络的知识目录
-- Shell 关于Shell脚本的知识目录
-- Tools 关于Linux的窗口工具使用
+## 目录概要
 
-## 待办事项
+## 目录详情
+- Note 基础知识点目录
+- Summary 我自己关于Linux的一些总结目录
+- Storage 关于linux的系统的收藏，包括软件/项目/图片等
+- Func 介绍linux系统常用的函数的功能
+
+## 注意事项
 ~~None~~

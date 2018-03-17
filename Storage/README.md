@@ -1,6 +1,7 @@
 ---
 title: README.md
 date: 2018-03-10 23:15:12 Sat
+modify: 2018-03-17 09:58:00 Sat
 tag: [readme]
 categories: Storage
 author: wmsj100
@@ -14,7 +15,8 @@ mail: wmsj100@hotmail.com
 
 ##目录详情
 - Article 文章整理目录
-- GrowUp 我自己成长的过程，包括计划，想法，读的书籍
+- Language 我接触过的编程语言
+- LifePlan 我自己成长的过程，包括计划，想法，读的书籍
 - Evolution 整体目录进化过程，也是学习重心的转移过程
 - WebStorage 收藏的网站目录
 
