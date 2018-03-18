@@ -14,4 +14,9 @@
 - 当一个DNS服务器收到一个DNS回答后，会将其信息缓存一段时间，当再有一个对相同域名的查询时，便可直接回复。
 - 通过DNS缓存，很多查询都只是在本地DNS服务器便可完成。
 - hosts文件可以看作时一个小型的DNS服务器  /etc/hosts
+- /etc/hosts 这个文件记录的是IP和域名的对应记录
 
+### 查看域名IP
+- host google.com 查看google的ip地址	
+- netstat -pantu 查看本机端口
+- telnet 127.0.0.1 22 测试telnet
