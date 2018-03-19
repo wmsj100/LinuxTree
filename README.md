@@ -17,6 +17,7 @@ mail: wmsj100@hotmail.com
  #    #  #    #   ####    ####   #####    ###     ###
 ````
 # README
+> [我的博客](https://wmsj100.github.io/helloWorld/)
 
 ## 引言
 > **日学一技，精益求精！**
@@ -48,6 +49,7 @@ mail: wmsj100@hotmail.com
 - 目录必须添加`README.md`目录介绍
 - 目录内文件数量超过20考虑目录细分
 - 我的互联网学习基于`github`，所有学习笔记都存储在这里，如果`github`打卡中断，在`SayLie`内给出中断的理由;
+- 博客至少要每一个星期更新一次到github
 
 ## Linux运维必学知识
 - linux系统操作 **核心**
