@@ -17,7 +17,7 @@ mail: wmsj100@hotmail.com
  #    #  #    #   ####    ####   #####    ###     ###
 ````
 # README
-> [我的博客](https://wmsj100.github.io/helloWorld/)
+> [我的博客](https://wmsj100.github.io/HelloWorld/)
 
 ## 引言
 > **日学一技，精益求精！**
