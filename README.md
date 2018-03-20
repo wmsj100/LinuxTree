@@ -61,14 +61,11 @@ mail: wmsj100@hotmail.com
 - 云操作系统OpenStack **进阶**
 
 ## 学习履历
-- Linux命令实例练习 （完成）Thu Oct 26 23:44:51 CST 2017
-- ~~RabbitMQ （开始）~~
-- MySQL (开始) Sat Oct 28 13:44:05 CST 2017 
-- ~~JAVA 运维也需要写java  Thu Nov 23 23:26:52 CST 2017~~
-- ~~放弃java改学python 2017-12-18~~
+- Linux命令实例练习 Thu Oct 26 23:44:51 CST 2017
+- MySQL Sat Oct 28 13:44:05 CST 2017 
 - Vim 2017-12-01
-- Python 2017-12-18 重新开始学习
+- Python 2017-12-18 
 - 鸟哥的私房菜 2018-02-16 
 - Linux系统命令及Shell脚本实践指南 2018-02-25
-- 鸟哥的Linux私房菜 -- 服务器篇
-- ~~OpenStack 待定~~
+- [鸟哥的Linux私房菜--服务器篇](http://cn.linux.vbird.org/linux_server/0105beforeserver_2.php#server_network_flow) 2018-03-20
+- ~~OpenStack ~~
