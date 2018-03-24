@@ -24,6 +24,9 @@ mail: wmsj100@hotmail.com
 - db访问
 - [参考资料](http://blog.csdn.net/far_man/article/details/46469371)
 
+## 学习参考
+- [每天五分钟 玩转OpenStack](http://www.cnblogs.com/CloudMan6/p/5224114.html)
+
 ## 目录概要
 - 该目录主要是关于OpenStack的知识点整理！
 
