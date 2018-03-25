@@ -1,13 +1,34 @@
 ---
 title: README
-date: Sun 25 Feb 2018 10:29:21 PM CST
-tag: [README]
-categories: Cafe
+date: 2018-03-10 23:29:23 Sat
+tag: [readme]
+categories: Article
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-# 文档说明
-## 目录说明
-- TreeHole 树洞，是否能见光的东西都可以扔到这里
-- Operations 运维日志
+#README
+
+## 月份简写
+- January Jan
+- February Feb
+- March Mar
+- April Apr
+- May May
+- June Jun
+- July Jul
+- August Aug
+- September Sep
+- October Oct
+- November Nov
+- December Dec
+
+##目录概要
+- 该目录主要是关于日志的记录，按照年份分隔
+
+##目录详情
+- 2017 17年的故事
+- 2018 18年的故事
+
+##代办事项
+~~None~~
