@@ -34,10 +34,10 @@ mail: wmsj100@hotmail.com
 1. 人力资源要求过高：
 	- 在商业运用中，Linux的TCO （服务器操作系统整体拥有成本）要比 Windows Server高很多，很多人会觉得很奇怪，为什么廉价Linux的TCO还要比相对昂贵的Windows Server高，原因很简单，因为Windows Server使用起来很简单，不需要很高超的技术，就可以管理好整个网络。而Linux不同，培养出或者去聘用Linux专家需要很高的成本，因为 Linux本身的复杂性造成了这个因素。
 
-2.幕后软件支持体系
+2. 幕后软件支持体系
 	- Windows Server有着其他服务器操作系统不能媲美的服务器软件支持体系，有微软本身，还有第三方软件厂商。就拿微软来说吧，微软可用于Windows Server的服务器产品有诸如 BizTalk Server ，Exchange Server ，ISA Server，Live Communications Server，SQL Server 等等，第三方有Symantec，CA等众多厂商来支持Windows Server，使用这些产品组合，可以给企业很低廉的价格完成许多的解决方案，而且方便易用，使用 Visual Studio开发服务器上的应用软件很方便，开发周期也短。而Linux虽然也有很多软件制造商支持，但是正如我之前提到过的，因为Linux开发得混乱，所以兼容性就成了一个问题，还有协作能力上也有问题。
 
-3.部分企业对于Linux仍然不太信任
+3. 部分企业对于Linux仍然不太信任
 	- 虽然Linux开发及技术支持开始企业化运作已经几年了，很多企业敢于将自己的业务放在Linux上处理，但是仍然有不少企业不敢尝试这种低廉,甚至免费的操作系统平台，因为他们担心开源软件的支持体系和相关解决方案不够成熟。
 
 - 这三点成为Linux发展的障碍，这也是免费开源软件的通病。
