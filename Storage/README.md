@@ -14,12 +14,5 @@ mail: wmsj100@hotmail.com
 - 该目录主要是存储的一些杂乱的内容！
 
 ##目录详情
-- Article 文章整理目录
-- Language 我接触过的编程语言
-- LifePlan 我自己成长的过程，包括计划，想法，读的书籍
-- Evolution 整体目录进化过程，也是学习重心的转移过程
-- WebStorage 收藏的网站目录
-- BusBook 巴士读书，在车上读的书
-
-##代办事项
-~~None~~
+- ICEBOX 冰箱 接触过的编程语言
+- PLAN 计划，想法，读的书籍
