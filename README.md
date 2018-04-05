@@ -20,8 +20,8 @@ mail: wmsj100@hotmail.com
 # README
 
 ## 目录详情
-- LiXin 基础邻域，包括系统和网络知识
-- LiYang 云邻域，包括云操作系统和虚拟技术
+- LiXin 基础知识点，包括服务器系统和网络知识
+- LiYang 云领域，包括云操作系统和虚拟技术
 - Storage 杂乱
 
 ## 信仰
