@@ -26,6 +26,7 @@ mail: wmsj100@hotmail.com
 
 ## 学习参考
 - [每天五分钟 玩转OpenStack](http://www.cnblogs.com/CloudMan6/p/5224114.html)
+- [OpenStack实战指南](http://www.hzmedia.com.cn/w/reader.aspx?id=80431163-5739-4c9b-8c93-fecc65d228b7_1)
 
 ## 目录概要
 - 该目录主要是关于OpenStack的知识点整理！
