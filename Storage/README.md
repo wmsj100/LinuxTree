@@ -16,3 +16,5 @@ mail: wmsj100@hotmail.com
 ##目录详情
 - ICEBOX 冰箱 接触过的编程语言
 - PLAN 计划，想法，读的书籍
+- LETTERS 
+- OTHERS 杂物间
