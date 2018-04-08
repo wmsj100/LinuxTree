@@ -14,7 +14,5 @@ mail: wmsj100@hotmail.com
 - 该目录主要是存储的一些杂乱的内容！
 
 ##目录详情
-- ICEBOX 冰箱 接触过的编程语言
-- PLAN 计划，想法，读的书籍
-- LETTERS 
-- OTHERS 杂物间
+- OldWorld 接触过的编程语言
+- NewYark 计划，想法，读的书籍
