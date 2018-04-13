@@ -15,5 +15,6 @@ mail: wmsj100@hotmail.com
 
 ## 详情
 - Linux Linux系统知识点
+- Python python的知识体系
 - Network 网络的知识点
 - Windows Windows服务器的知识点
