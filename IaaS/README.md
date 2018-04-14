@@ -11,10 +11,11 @@ mail: wmsj100@hotmail.com
 # README
 
 ## 概要
-- 该目录主要是支撑云相关的基础知识整理！
+- 该目录主要是基础设施的知识整理！
 
 ## 详情
 - Linux Linux系统知识点
 - Python python的知识体系
 - Network 网络的知识点
-- Windows Windows服务器的知识点
+- DataBase 数据库知识点
+- WebUI 前端的知识点

@@ -14,5 +14,5 @@ mail: wmsj100@hotmail.com
 - 该目录主要是存储的一些杂乱的内容！
 
 ##目录详情
-- OldWorld 接触过的编程语言
-- NewYark 计划，想法，读的书籍
+- Lang 接触过的编程语言
+- Others 文档
