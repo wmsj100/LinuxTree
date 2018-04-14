@@ -16,6 +16,8 @@ mail: wmsj100@hotmail.com
 - Summary 我自己关于Linux的一些总结目录
 - Storage 关于linux的系统的收藏，包括软件/项目/图片等
 - Func 介绍linux系统常用的函数的功能
+- SoftWare Linux好用的软件
+- Shell shell脚本
 
 ## 注意事项
 ~~None~~
