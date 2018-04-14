@@ -48,3 +48,5 @@ mail: wmsj100@hotmail.com
 9. Person.objects.filter(name__iregex="^WM") 正在表达式，不区分大小写，找出WM开头
 10. Person.objects.exclude(name__contains="wm") 找出所有不包含wm的人
 11. Person.objects.filter(name__regex="\d$").exclude(name__contains="wmsj") 找出所有以数字结尾但是不包含wmsj的人
+12. Person.objects.all().order_by("name") 按照名称排序
+13. Person.objects.all().order_by("-name") 按照名称逆序
