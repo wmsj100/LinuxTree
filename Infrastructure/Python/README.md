@@ -9,6 +9,7 @@ mail: wmsj100@hotmail.com
 ---
 
 # README
+> 学习python时，如果遇到困境，试着输入`import this`
 
 ## 概要
 - 该目录主要是关于python的知识点整理！
