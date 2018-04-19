@@ -18,4 +18,4 @@ mail: wmsj100@hotmail.com
 - Note 基础知识点的整理目录
 
 ## 代办
-~~None~~
+- sqlite3 安装完成，可以搭建自己的blog了  -- Fri Apr 20 00:12:38 CST 2018
