@@ -41,3 +41,5 @@ class DetailView(generic.DetailView):
 	template_name='polls/detail.html'
 ```
 
+## 新创建app
+- 新创建app后需要把`polls.apps.PollsConfig`添加到`INSTALLED_APPS`
