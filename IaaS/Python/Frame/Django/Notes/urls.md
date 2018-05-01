@@ -15,4 +15,4 @@ mail: wmsj100@hotmail.com
 - `<a href="{% url 'detail' question.id %}">{{ question.question_text }}</a>`
 - 这样就需要在app的对应urls.py文件中添加命名空间
 - `app_name='polls'`
-- 模板使用时候`{% url 'polls.detail' question.id %}`
+- 模板使用时候`{% url 'polls:detail' question.id %}`
