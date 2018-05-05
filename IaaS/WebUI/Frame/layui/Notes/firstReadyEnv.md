@@ -14,6 +14,16 @@ mail: wmsj100@hotmail.com
 - 引用时候要使用模块化方式使用。
 - layui的模块并不是默认就加载的，必须在依赖中显示写明才会加载，另外依赖的模块名必须是一个合法的模块名，不能包含目录，如果需要目录，建议采用extend建立别名
 
+## 使用内部的jQuery
+```js
+layui.use(['form', 'demo', 'jquery'], function(){
+	var form = layui.form;
+	var $ = layui.$;
+	var demo = layui.demo;
+	demo.hello()
+})
+```
+
 ## 范例
 - 在`base.html`中引入`main.js`
 - 在`main.js`中可以把依赖的其它第三方库都通过这里引入，比如`underscore`, `echarts`...，也可以引入自己封装的方法
