@@ -25,3 +25,16 @@ mail: wmsj100@hotmail.com
 	- style-loader 把原来css代码插入到页面的一个style标签
 - cnpm install css-loader style-loader	
 
+## 范例
+- webpack 基本配置文件
+	```webpack
+	var path = require('path');
+	module.exports = {
+		mode: 'development',
+		entry: './t1.js',
+		output: {
+			path: path.resolve(__dirname, 'dist'),
+			filename: 'main.js'
+		}
+	```		
+}
