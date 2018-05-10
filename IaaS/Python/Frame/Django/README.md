@@ -16,6 +16,8 @@ mail: wmsj100@hotmail.com
 - [Django1.11文档](https://yiyibooks.cn/xx/Django_1.11.6/intro/overview.html)
 - [Django入门介绍](https://yiyibooks.cn/xx/Django_1.11.6/intro/whatsnext.html)
 - [Django官方文档](https://docs.djangoproject.com/zh-hans/2.0/)
+- [Django-入门](http://www.cnblogs.com/luxiaojun/p/5791498.html)
+- [Django-models教程](https://www.cnblogs.com/luxiaojun/p/5795070.html)
 
 ## 详情
 - Note 基础知识点的整理目录
