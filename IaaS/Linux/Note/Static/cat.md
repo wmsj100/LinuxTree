@@ -39,3 +39,6 @@ cat -A << EOF
 - cat > h1   会在界面输入内容，直到按下 ctrl + d   结束输入，
 - cat h1 h2 > h3 把h1, h2俩个文件的内容输入到文件h3中
 
+## cat make 
+- cat ~/Download/ubanto.iso >> /dev/sdb4
+- [make u pan](https://blog.csdn.net/longerzone/article/details/12941727)
