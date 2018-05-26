@@ -28,3 +28,4 @@ mail: wmsj100@hotmail.com
 - export PATH=/usr/local/bin:$PATH
 
 - [参考资料](https://blog.csdn.net/nzyalj/article/details/75331822)
+
