@@ -1,16 +1,28 @@
-# .bash_profile
-
-# Get the aliases and functions
-if [ -f ~/.bashrc ]; then
-	. ~/.bashrc
-fi
-
-# User specific environment and startup programs
-
-PATH=$PATH:$HOME/.local/bin:$HOME/bin:/$HOME/SoftWare/node/bin
-
-export PATH
-export linux=/home/wmsj100/Documents/git/LiXin/Linux
-export network=/home/wmsj100/Documents/git/LiXin/NetWork
-export vmware=/home/wmsj100/Documents/git/LiYang/VMware/Notes
-export windows=/home/wmsj100/Documents/git/LiYang/Windows/Notes
+set nu
+syntax on
+set ruler
+set encoding=utf-8
+set autoindent
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set backspace=2
+set smarttab
+set history=1000
+set nobackup
+set ignorecase
+set nohlsearch
+set incsearch
+set formatoptions=tcrqn
+set showmatch
+set matchtime=5
+filetype on
+filetype plugin on
+filetype indent on
+inoremap ( ()<Esc>i
+inoremap [ []<Esc>i
+inoremap { {<CR>}<Esc>O
+inoremap ' ''<Esc>i
+inoremap " ""<Esc>i
+set cursorline
+hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
