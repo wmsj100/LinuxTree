@@ -14,3 +14,6 @@ mail: wmsj100@hotmail.com
 	- 'iab xtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>' 在插入模式输入'xtime' 然后按下空格就可以插入日期
 # 总结
 - 可以自定义插入日期的格式
+# 参考
+- [vim中方便插入时间的几种方法](https://blog.csdn.net/zimmermanlin/article/details/8922067)
+
