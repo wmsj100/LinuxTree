@@ -1,29 +1,23 @@
 ---
 title: README
-date: Mon 19 Feb 2018 10:16:59 PM CST
+date: 2018-04-05 09:03:43 Thu
+modify: 2018-04-05 09:03:43 Thu
 tag: [readme]
-categories: MyChild
+categories: Basic
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-````
-                                   #      ###     ###
- #    #  #    #   ####        #   ##     #   #   #   #
- #    #  ##  ##  #            #  # #    # #   # # #   #
- #    #  # ## #   ####        #    #    #  #  # #  #  #
- # ## #  #    #       #       #    #    #   # # #   # #
- ##  ##  #    #  #    #  #    #    #     #   #   #   #
- #    #  #    #   ####    ####   #####    ###     ###
-````
-
 # README
 
-## 目录详情
-- IaaS 基础知识点，包括服务器系统和网络知识
-- PaaS 云领域，包括云操作系统和虚拟技术
-- Doct 文档存储
+## 概要
+- 该目录主要是基础设施的知识整理！
 
-## 信仰
-- **日学一技，精益求精！**
-- **于千万个理由中坚持！**
+## 详情
+- Linux Linux系统知识点
+- Python python的知识体系
+- Network 网络的知识点
+- DataBase 数据库知识点
+- WebUI 前端的知识点
+- Tools 基础工具介绍
+- History 曾经接触过的语言
