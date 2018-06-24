@@ -14,6 +14,7 @@ email: wmsj100@hotmail.com
 ## 目录介绍
 - Basic ts的基础知识
 - Frames 基于ts的框架
+- ECMAScript6 es6的知识点
 
 ## 参考
 - [中文翻译](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
