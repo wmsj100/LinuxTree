@@ -16,6 +16,7 @@ mail: wmsj100@hotmail.com
 - `Shift <` 向左缩进
 
 - `Shift V`进入多行选择的可视模式也可以进行上面的操作
+- `.` 通过按下`.`来重复执行上次操作
 
 ## 参考
 - [多行操作](https://blog.csdn.net/topasstem8/article/details/6678215)
