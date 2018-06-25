@@ -15,3 +15,4 @@ mail: wmsj100@hotmail.com
 
 ## 参考
 - [angualr中文](https://www.angular.cn/tutorial/toh-pt0)
+- [Angular 2.x 从0到1 (一）史上最简单的Angular2教程](https://segmentfault.com/a/1190000008213941)
