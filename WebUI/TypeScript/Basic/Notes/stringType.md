@@ -13,15 +13,16 @@ mail: wmsj100@hotmail.com
 ## 概述
 - 字符串字面量类型用来约束取值只能是某几个值中的一个;
 
-```ts
-type EventNames = 'click' | 'scroll' | 'mousemove';
-function handleEvent(ele: Element, event: EventNames){
-    //
-}
+	```ts
+	type EventNames = 'click' | 'scroll' | 'mousemove';
+	function handleEvent(ele: Element, event: EventNames){
+		//
+	}
 
-handleEvent(document.getElementById('hello'), 'scroll');
-```
-- 上例中定义了一个字符串字面量类型,它只能取三种类型中的一种,否则编译器会报错.
+	handleEvent(document.getElementById('hello'), 'scroll');
+	```
+	- 上例中定义了一个字符串字面量类型,它只能取三种类型中的一种,否则编译器会报错.
+
 
 ## 参考
 - [字符串字面量](https://ts.xcatliu.com/advanced/string-literal-types.html)
