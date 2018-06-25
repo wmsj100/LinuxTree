@@ -62,5 +62,21 @@ mail: wmsj100@hotmail.com
 	- 如果不需要换行，可以使用`trim`方法消除它。
 	- 模板字符串中嵌入变量，需要将变量写在`${}`中，内部可以放入任意`JS`表达式，可以进行运算以及对象属性引用。
 	- `${}`之间还可以调用函数，如果函数返回值不是字符串，会按照转换规则转换为字符串
+
+## 标签模板
+- 函数后面紧跟字符串构成标签模板,
+- 标签模板不是模板,是函数调用的一种特殊形式,
+	```ts
+	let a = 5;
+	let b = 6;
+	function tag(s, v1, v2){
+		console.log(s); // ["Hello ", " world ", ""]
+		console.log(v1, v2); // 11, 30
+	}
+	tag`Hello ${a + b} world ${a * b}`;
+	```
+- tag函数的第一个参数是一个数组,该数组的成员是模板字符串中没有变量替换的部分,
+- tag函数的其他参数,都是模板字符串各个变量被替换后的值,
+
 ## 参考
-- []()
+- [字符串扩展](http://es6.ruanyifeng.com/?search=%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0&x=10&y=9#docs/string#padStart%EF%BC%8CpadEnd)
