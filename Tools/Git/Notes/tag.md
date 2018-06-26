@@ -14,3 +14,4 @@ mail: wmsj100@hotmail.com
 - git tag -n 查看当前所有标签的信息描述
 - git tag -a v2.0.0 -m '版本v2.0'
 - git push --tags || git push origin --tags 推送本地所有标签到服务器
+- git tag -d tagName 删除tagName 标签名称
