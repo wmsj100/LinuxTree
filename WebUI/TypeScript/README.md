@@ -15,7 +15,6 @@ email: wmsj100@hotmail.com
 - Articles 关于TS的思考文章
 - Basic ts的基础知识
 - Frames 基于ts的框架
-- ECMAScript6 es6的知识点,把ES6归档到TS内是因为TS要包含ES6，是它的超集
 
 ## 参考
 - [中文翻译](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
