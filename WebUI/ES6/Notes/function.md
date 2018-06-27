@@ -89,6 +89,7 @@ mail: wmsj100@hotmail.com
 	let get1 = id => ({id: id, name: 'tom'});
 	```
 
+- 对于函数式编程,没有循环这个操作,都是通过递归来实现的,所以通过尾递归操作来避免溢出就是很有效的操作.- 函数的参数后面可以像对象的属性一样在最后一个参数后添加逗号不会报错
 
 ## 参考
 - [箭头函数](http://es6.ruanyifeng.com/?search=%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0&x=10&y=9#docs/function)
