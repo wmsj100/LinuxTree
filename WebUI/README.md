@@ -21,5 +21,6 @@ mail: wmsj100@hotmail.com
 - Typescript ts的知识点，包含基础语法以及基于ts的框架，如angular；
 - Node node的知识体系，ts的很多操作的编译过程是在node中完成的。
 - ES6 ECMAScript6语法基础知识
+- Angular2 关于Angular2的知识点
 
 ## 参考

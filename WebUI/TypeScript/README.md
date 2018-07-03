@@ -14,7 +14,6 @@ email: wmsj100@hotmail.com
 ## 目录介绍
 - Articles 关于TS的思考文章
 - Basic ts的基础知识
-- Frames 基于ts的框架
 
 ## 参考
 - [中文翻译](https://zhongsp.gitbooks.io/typescript-handbook/content/doc/handbook/Basic%20Types.html)
