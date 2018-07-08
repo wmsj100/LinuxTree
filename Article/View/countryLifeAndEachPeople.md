@@ -5,7 +5,7 @@ modify:
 tag: [view]
 categories: Article
 author: 李晓
-origin: 吉林大学经济学院
+origin: [吉林大学经济学院](https://mp.weixin.qq.com/s/w4gEgxS177t90V-tGAHuJA)
 mail: editor@ckreview.cn
 ---
 
