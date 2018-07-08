@@ -1,1 +1,2 @@
-*.js linguist-language=notes
+*.js linguist-language=Angular
+*.html linguist-language=Angular
