@@ -1,7 +1,7 @@
 ---
 title: 基础概念 
 date: 2018-07-01 11:52:14	
-modify: 
+modify: 2018-07-08 12:49:29	
 tag: [basic]
 categories: Angular2 
 author: wmsj100
@@ -32,5 +32,10 @@ mail: wmsj100@hotmail.com
 ## *ngIf
 - `*ngIf="usernameRef.errors?.required"` 表示如果`errors`为空的时候就不调用后面的值,如果不为空,就调用后面的值,
 - 如果不这样写会调用.
+
+## 流程
+- Angular有一个强大的概念`模块`,但引导一个`Angular`应用时,并不是直接引导一个组件,而是创建了一个`NgModule`,它指向了你要加载的组件.
+- 要想在模板中使用组件,必须现在`NgModule`中声明它.
+
 ## 参考
 - []()
