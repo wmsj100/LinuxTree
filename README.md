@@ -9,6 +9,7 @@ mail: wmsj100@hotmail.com
 ---
 
 # README
+> 不积跬步无以至千里
 
 ## 概要
 - 该目录主要是基础设施的知识整理！
