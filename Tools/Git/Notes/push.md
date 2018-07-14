@@ -1,12 +1,21 @@
 ---
 title: git-系列-远程--本地-clone操作
 date: 2016-03-24 12:18:58
+modify: 2018-07-14 16:45:32	
 tags: [Git]
 categories: Frame
+auth: wmsj100
+email: wmsj100@hotmail.com
 ---
 
 ## 概述
 - git push origin dev:develop 推送本地分支`dev`到远程`origin`的`develop`分支
+
+## 推送多分支
+- 假如现在有俩个推送源`github`,`gitlab`;如何通过一个命令来实现同时推送到多个
+- ` git remote set-url --add origin git@gitlab.com:wmsj100/HelloWorld.git`
+- 上面这个命令会把`gitlab`的源地址添加到配置文件`.git/config`的`origin`地址
+- 如果使用`git push`会同时推送到`github`,`gitlab`,但是拉取代码使用的是`git fetch`地址`github`
 
 ## 总结
 > ###上面的操作是从本地到远程的push操作，我比较认可这种方式，但是，这种方式只适合自己创建并且管理项目的情况。如果是遇到协同办公的场景，就只能是从远程pull项目到本地，而这就是此次要讨论的内容。
