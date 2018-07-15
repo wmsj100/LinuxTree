@@ -28,6 +28,7 @@ mail: wmsj100@hotmail.com
 
 ## 别名和工厂函数
 - `{ provide: 'ApiServiceAlias', useClass: ApiService },` 把服务`ApiService`设置为别名`ApiServiceAlias`;
+
 	```ts
 	{
 		  provide: 'SizeService', useFactory: (viewport: any) => {
@@ -37,6 +38,7 @@ mail: wmsj100@hotmail.com
 		},
 	```
 - 这样就把服务注入了注入器中了,使用时需要按照下面这样调用就可以了.
+
 	```ts
 	constructor(
 		@Inject('ApiServiceAlias') private aliasService: any,
@@ -54,6 +56,7 @@ mail: wmsj100@hotmail.com
 
 ### 组件内的工厂函数
 - 把要调用的服务在组件内注入,这样的工厂函数是随需创建的,比如调整浏览器宽度,不需要重新刷新页面点击按钮就会重新执行工厂函数,可以完美解决上面的问题;
+
 	```ts
 	import { Component, OnInit, ReflectiveInjector, Inject } from '@angular/core';
 	  userInjectors(): void {
@@ -69,3 +72,24 @@ mail: wmsj100@hotmail.com
 	  }
 	```
 
+## 替换值
+- 使用依赖注入的另一个理由是在运行期间改变被注入对象的硬编码值,
+- 适用于单元测试或集成测试.
+- 比如在开发环境下运行该应用,可能会接触与生存环境下不同的API服务器.
+- 这时候要允许调用者定义或改写API的URL
+
+	```ts
+	export const API_URL = 'API_URL';
+
+	export class ApiService {
+		constructor(@Inject(API_URL) private apiUrl: string) { }
+
+		get(): void {
+			console.log(`Calling ${this.apiUrl}/endpoint...`);
+		}
+	}
+
+	const isProduction = false;
+	{ provide: API_URL, useValue: isProduction ? 'https://production-api.sample.com' : 'http://dev-api.sample.com' }
+	```
+- 通过设置`app.moudle.ts`内的`isProduction`的布尔值来确认`API_URL`的值,这样就可以在开发环境和生产环境分别设置不同的值.
