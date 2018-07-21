@@ -20,3 +20,18 @@ mail: wmsj100@hotmail.com
 ## 参考
 - [RxJS官网](https://rxjs-dev.firebaseapp.com/)
 - [RxJS中文官网](https://cn.rx.js.org/)
+
+## 备注
+
+```sh
+remote:
+remote: ========================================================================
+remote:
+remote:                        GitLab.com is [undergoing
+remote:   maintenance](https://about.gitlab.com/2018/07/19/gcp-move-update/)!
+remote:   Hold on to your hats, we’re going dark for approximately 1 hour from
+remote:                         13:00 on 2018-07-21 UTC
+remote:
+remote: ========================================================================
+To gitlab.com:wmsj100/HelloWorld.git
+```
