@@ -65,6 +65,20 @@ mail: wmsj100@hotmail.com
 	  }
 	```
 
+## `Subject`主体
+- 一种特殊类型的`Observable`,允许将值多播给多个观察者,所以`Subject`是多播的.
+- 而普通的`Subject`是单播的.
+- 对于`Subject`可以提供一个观察者并使用`subscribe`方法就可以开始正常接收值.
+- 从观察者角度而言,它无法判断`Observable`执行是来自普通的`Observable`还是`Subject`.
+- `Subject`有如下方法的对象`next(v), error(e), complete()`.
+- 要给`Subject`提供新值,只要调用`next(thevalue)`,它会将值多播给已经注册监听该`Subject`的观察者.
+- 因为`Subject`是观察者,意味着可以把`Subject`作为参数传给任何`Observable`的`subscribe`方法.
+
+## `ReplaySubject`
+- 它可以发送旧值给新的订阅者,但它还可以记录`Observable`执行的一部分.
+- 它记录`Observable`执行中的多个值,并将其回放给新的订阅者.
+- `const subject = new ReplaySubject(3)` 表示为新的订阅者缓冲3个值
+
 ## 范例
 - 调用`RxJS`模块
 
