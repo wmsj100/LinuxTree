@@ -10,6 +10,7 @@ email: wmsj100@hotmail.com
 
 ## 概述
 - git push origin dev:develop 推送本地分支`dev`到远程`origin`的`develop`分支
+- `git push --set-upstream origin master` 设置默认提交路径
 
 ## 推送多分支
 - 假如现在有俩个推送源`github`,`gitlab`;如何通过一个命令来实现同时推送到多个
