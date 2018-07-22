@@ -30,3 +30,8 @@ mail: wmsj100@hotmail.com
 
 ## 技术栈
 - Yarn[官网](https://yarnpkg.com/zh-Hans/) 能替代`npm`的包管理器
+
+## API
+> 支持跨域获取数据的api
+- [精品API](https://www.cnblogs.com/trackingmore/p/7156877.html)
+- [https://www.swapi.co/](https://www.swapi.co/) 获取的是星球大战的数据
