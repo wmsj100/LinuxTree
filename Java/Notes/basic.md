@@ -1,5 +1,16 @@
+---
+title: 基础知识
+date: 2018-08-12 20:32:07	
+modify: 
+tags: [basic]
+categories: Java
+auth: wmsj100
+email: wmsj100@hotmail.com
+---
+
 # 基础知识
 
+## 版本
 - Java SE java标准版，包括java最基础的部分，是java技术基础和核心。初学建议从Java SE开始学。
 - Java EE java企业版，应用大型企业开放
 - Java ME 嵌入式开发。
@@ -7,6 +18,11 @@
 - JDK java开发工具包，没有jdk就没有办法进行java程序的开发。
 - JRE java运行环境，如果需要运行一个java程序，就得安装JRE
 
+## java文件
+- 源文件,实际编写的java文件,相当于买的鱼
+- 编译器,相当于菜刀
+- 字节码文件, 相当于去掉鱼鳞和内脏的鱼
+- 解释器,相当于锅灶,用于炖熟鱼
 ---
 - java的源代码以“.java”结尾，默认不能被机器执行。
 - 需要编译器对源代码进行编译，编译成字节码文件，以“.class”结尾，与平台无关，
