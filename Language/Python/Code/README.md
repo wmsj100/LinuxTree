@@ -15,6 +15,7 @@ mail: wmsj100@hotmail.com
 
 ## 列表
 - first_middle_last_name 存储姓名,根据姓或者名返回全名
+- range 手动实现range方法
 
 ## 参考
 - []()
