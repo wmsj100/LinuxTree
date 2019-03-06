@@ -16,6 +16,8 @@ mail: wmsj100@hotmail.com
 ## 列表
 - first_middle_last_name 存储姓名,根据姓或者名返回全名
 - range 手动实现range方法
+- gassNum 在指定范围内自动猜测随机生成的数字需要多少次
+- jiechen 分别通过递归和循环来实现阶乘效果
 
 ## 参考
 - []()
