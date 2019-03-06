@@ -16,9 +16,11 @@ mail: wmsj100@hotmail.com
 
 ## 详情
 - Linux Linux系统知识点
-- Python python的知识体系
+- Language 学习过的语言
 - Network 网络的知识点
-- DataBase 数据库知识点
-- WebUI 前端的知识点
-- Tools 基础工具介绍
-- History 曾经接触过的语言
+- Others 其他文件,比如简历
+
+## 技术路线
+- python入门工程运维和自动化编程
+- 网络=> 了解网络知识,路由器/ 交换机
+- Open Stack 了解云系统
