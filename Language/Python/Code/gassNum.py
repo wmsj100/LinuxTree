@@ -1,6 +1,6 @@
 import random
 
-limit=2
+limit=10000
 tag = random.randint(1, limit)
 print "limit value is " + str(tag)
 def gass():
@@ -31,4 +31,20 @@ def dealNum(num, tag, gassList):
         result = (num + gassList['up'])/2 + 1
     return int(result)
 
-gass()
+def gass1(lower=0, upper=limit, index=0):
+    'use digui'
+    index +=1
+    if lower == upper:
+        upper -= 1
+        print "gass %d count value is %d" % (index, upper)
+        return upper
+    else:
+        middle = (lower + upper) // 2
+        if middle > tag:
+            return gass1(lower, middle, index)
+        else:
+             return gass1(middle+1, upper, index)
+
+
+gass() # Your gass 12 and you gass value is 9431
+gass1() # gass 15 count value is 9431
