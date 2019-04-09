@@ -18,6 +18,5 @@ mail: wmsj100@hotmail.com
 - range 手动实现range方法
 - gassNum 在指定范围内自动猜测随机生成的数字需要多少次
 - jiechen 分别通过递归和循环来实现阶乘效果
+- auto_complete 搜索框实时推荐值效果
 
-## 参考
-- []()
