@@ -1,3 +1,11 @@
+---
+title: 表格
+date: 2019-04-09 22:15:26	
+modify:
+tags: [Basic]
+categories: MySQL
+---
+
 # 表格信息
 
 - create table shop1 like shop; 基于表ship创建一个类似的空白表
@@ -8,6 +16,8 @@
 - show index from pet; 查询pet的索引情况，其中可以看到pet的一些信息，包括total等值。
 - drop database 用于丢弃数据库中所有表格，并且删除数据。
 - drop index idx_id on person; 从表person中删除索引
+- delete from student; 删除表中所有数据
+- delete from student where id!=3; 删除表格中除id=3外的所有数据
 - alter table shop1 rename shopp1; 重命名表格
 - rename table shop2 to shopp2;	重命名表格
 - do 用于执行表达式，但是不返回任何结果。
