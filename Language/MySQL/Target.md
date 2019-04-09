@@ -1,3 +1,11 @@
+---
+title: 目标
+date: 2018-06-19 14:37:18	
+modify:
+tags: [note]
+categories: MySQL
+---
+
 # 目标
 
 ## 本地mysql桩数据
