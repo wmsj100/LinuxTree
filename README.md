@@ -18,6 +18,7 @@ mail: wmsj100@hotmail.com
 - Linux Linux系统知识点
 - Language 学习过的语言
 - Computer 关于操作系统的知识点
+- HardWare 嵌入式/硬件
 - Docts 其它文档类
 
 ## 技术路线
