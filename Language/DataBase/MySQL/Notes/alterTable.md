@@ -1,3 +1,11 @@
+---
+title: 表头增删改查
+date: 2019-04-09 14:01:54	
+modify:
+tags: [Basic]
+categories: MySql
+---
+
 # 修改和删除
 
 ## 重命名表
