@@ -7,8 +7,8 @@ author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-- yum install mariadb mariadb-server 安装
+- yum install mariadb mariadb-server mariadb-client -y 安装
 - systemctl star mariadb 安装完成后启动mariadb
 - systemctl enable mariadb 设置开机启动
-- mysql_secure_installation 进行简单的mysql配置
+- mysql_secure_installation 进行简单的mysql配置 可以全部设置默认为Y
 - grant all on *.* to wmsj100@localhost identified by "wmsj100" 创建一个有任何权限的用户
