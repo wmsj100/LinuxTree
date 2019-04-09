@@ -20,5 +20,5 @@ mail: wmsj100@hotmail.com
 - Article 关于python的文章
 - Code 代码收藏
 
-## 代办
-~~None~~
+## 网站
+- [python学习资料](https://my.oschina.net/u/3887904/blog/1842003)
