@@ -1,8 +1,21 @@
+---
+title: select
+date: 2019-04-10 08:04:36	
+modify:
+tags: [basic]
+categories: MySQL
+---
+
 # select 选取数据
 
 - select name,age from employee;
 - select name,age from employee where age > 25; 
 - select name,age,phone from employee where name='Mary'; 查询Mary的信息
+- select * from students where score!=85; 查找成绩不等于85的学生
+
+## 投影查询
+- 可以查询某几列并且设置别名
+- select name n,score s from students;
 
 ## and / or
 - select name,age from employee where age > 30 or age < 25; 选择年龄大于25或者小于30
@@ -21,12 +34,25 @@
 
 ### 实例
 - select * from employee where name like 'w%'; 查询名字以w开头的人
+- select * from students where name like '_红';
 
 ## order by 排序
 - order by 可以对结果进行排序，默认是升序，
 - 可以指定关键词进行排序方式； 
 - ‘asc’ 升序
 - ‘desc’ 降序
+- order by 字句一定要放在where的后面
+
+## 分页
+- limit 3 offset 2; 查询第2页，每页显示3条
+- limit 2,3 同上，简写形式
+- 随着offset的值越大，查询效率会越低
+
+## 聚合查询
+- count 可以统计总数
+- select count(*) boys from students;
+- select count(*) boys from students where gender='M';
+- select avg(score) avg,gender,class_id from students group by class_id, gender; 查询出每个班级男生女生的平均分
 
 ### 实例
 - select * from pet order by name desc, age asc; 同时对多个列进行排序，名称按照升序，年龄按照降序排列。
@@ -52,6 +78,7 @@
 
 ### 实例
 - select of_dpt, count(proj_name) as count_project from project where of_dpt in (select in_dpt from employee where name='Tom');   查询Tom所在项目组完成的项目个数。
+- select students.name,classes.name from students,classes where students.class_id=classes.id order by students.score desc; 查询学生名称/ 学生所在班级，并且按照学生的成绩降序排序
 
 ## 连接查询 join
 - 如果想要显示俩个表或多个表中的数据，这时就必须使用join操作
@@ -63,6 +90,8 @@
 ### 实例
 - select id,name,people_num from employee, department where employee.in_dpt=department.dpt_name order by id;  查询各员工所在部门的人数，并且结果按照id排序
 - select id,name,peopel_num from employee join department on employee.id_dpt=department.dpt_name order by id; 结果和上面一样。
+- select students.name,classes.name from students join classes on students.class_id=classes.id;
+- select s.name,c.name,s.score from students s inner join classes c on s.class_id = c.id; 内连接
 
 ## 查询版本/ 时间
 - select version(); // 获取mysql版本
