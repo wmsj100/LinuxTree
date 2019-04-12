@@ -1,8 +1,9 @@
 ---
 title: 基本运算符 
 date: Sun 03 Dec 2017 08:49:55 PM CST
-tag: []
-categories: Linux
+modify: 2019-04-12 14:59:54	
+tag: [basic]
+categories: Shell
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
@@ -34,7 +35,9 @@ mail: wmsj100@hotmail.com
 - = 检测俩个字符串是否相等，
 - != 不想等
 - -n 检测字符串长度是否为0，不为零返回true
+- -z 检测字符串长度是否为0，为零返回true
 - str 判断字符串是否为空，不为空返回true。
+
 
 ## 文件判断运算符
 - e 文件存在
