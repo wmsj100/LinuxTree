@@ -1,6 +1,7 @@
 ---
-title: 变量和参数
-date: Sun 03 Dec 2017 08:22:56 PM CST
+title: 变量和参数 date: Sun 03 Dec 2017 08:22:56 PM CST
+date: 2019-04-12 13:14:33	
+modify:
 tag: [shell,params]
 categories: Linux
 author: wmsj100
@@ -13,6 +14,18 @@ mail: wmsj100@hotmail.com
 - '$var1'是'${var1}'的简写，某些上下文中'$var1'可能会引起错误，此时就需要使用'${var1}';
 - 加花括号帮助解释器识别变量的边界，推荐给所有的变量加花括号
 - 已经定义的变量可以被重新定义
+
+## 变量
+- 变量名称前添加`$`，花括号是可选的，添加是为了清晰识别边界，推荐给所有变量添加花括号
+- 以双引号包围变量的值时，输出时候会想解析里面的变量和命令，
+- $() 把shell命令包裹在圆括号内部，
+	- log=$(cat text.txt) echo $log  会把txt文件的内容一行输入
+
+## 只读变量
+- readonly url 把url变量设置为只读变量，这样变量的值不允许被修改
+
+## 删除变量
+- unset url 删除变量，再次打印该变量，会输出空值
 
 ## 查看环境变量
 - env 查看环境变量
