@@ -41,6 +41,11 @@ mail: wmsj100@hotmail.com
 - shell变量: shell程序设置的特殊变量，shell变量中有一部分时环境变量，有一部分时局部变量，
 ## 编辑变量
 
+## 变量替换
+- -e 对转义字符进行替换
+	- echo "value is $a \n" #vlaue is 2 \n
+	- echo -e "value is $a \n" # value is 2
+
 ### # 从前往后删除
 - a=${path#*/ruby-*:}  删除内容至找到ruby开始
     - # 从开始删除，且删除最短
