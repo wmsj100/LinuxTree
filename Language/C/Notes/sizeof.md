@@ -13,8 +13,9 @@ mail: wmsj100@hotmail.com
 ## 概述
 - 获取变量占用的位数
 - 调用时候有俩种方式：
-	- sizeof a
+	- sizeof a 如果跟的是变量名，可以省略()，如果是数据类型，必须带上()
 	- sizeof(a)
+	- sizeof(10)
 
 ## 范例
 ```c
