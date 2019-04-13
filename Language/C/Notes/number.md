@@ -21,6 +21,11 @@ mail: wmsj100@hotmail.com
 - 32位环境： short: 2Bit, int: 4Bit, long: 4Bit
 - 64位环境： short: 2Bit, int: 4Bit, long: 8Bit
 
+## 进制
+- 0b/0B 二进制
+- 0	八进制
+- 0x/0X 十六进制
+
 
 ## 参考
-- []()
+- [进制](http://c.biancheng.net/cpp/html/3421.html)
