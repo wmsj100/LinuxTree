@@ -1,3 +1,11 @@
+---
+title: find
+date: 2019-04-20 09:11:55	
+modify:
+tags: [find]
+categories: Linux
+---
+
 # find
 
 - find命令的主要作用是沿着文件层次的结构向下遍历，匹配符合条件的文件，并执行相应的操作。
@@ -13,6 +21,7 @@
 	- -n 表示文件更改时间距离现在小于n天
 	- +n 表示文件更改时间距离现在大于n天
 - atime ctime
+- path 路径， find . -type f ! -name "*.md" ! path "./.git/*" 在当前路径下搜索不是.md结尾的文件，并且过滤掉.git目录
 
 ## 练习
 
