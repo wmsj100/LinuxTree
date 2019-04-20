@@ -17,5 +17,27 @@ mail: wmsj100@hotmail.com
 - default表示无法匹配到值时候执行
 - case后面的条件执行完成需要添加'break'跳出判断
 
+## 范例
+```c
+#include "stdio.h"
+#include "string.h"
+
+int main()
+{
+    char score,result[30]="the valus is ";
+    scanf("%c", &score);
+    switch(score){
+        case 'a': strcat(result,"aa"); break;
+        case 'b': strcat(result,"bb"); break;
+        case 'c': strcat(result,"cc"); break;
+        case 'd': strcat(result,"dd"); break;
+        default: strcat(result,"default"); break;
+
+    }
+    printf("%c %s", score, result);
+    return 0;
+}
+```
+
 ## 参考
 - [switch](http://c.biancheng.net/cpp/html/2911.html)
