@@ -1,0 +1,21 @@
+---
+title: switch
+date: 2019-04-21 00:11:15	
+modify: 
+tag: [switch,basic]
+categories: C
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
+# switch
+
+## 概述
+- switch用于多条件判断，通常和if可以互换，
+- case后面的值只能为整数，字符串也是整数的一种，或者结果为整数的运算表达式，
+- case后面不能有变量
+- default表示无法匹配到值时候执行
+- case后面的条件执行完成需要添加'break'跳出判断
+
+## 参考
+- [switch](http://c.biancheng.net/cpp/html/2911.html)
