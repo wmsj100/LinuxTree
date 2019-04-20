@@ -16,6 +16,7 @@ mail: wmsj100@hotmail.com
 - git remote add origin git@github.com:wmsj100/LinuxTree.git
 - git remote rename origin githua 重命名
 - git remote renove origin 移除地址源
+- git push --set-upstream origin master 设置默认提交remote源
 
 ## 参考
 - []()
