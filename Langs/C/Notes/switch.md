@@ -17,6 +17,13 @@ mail: wmsj100@hotmail.com
 - default表示无法匹配到值时候执行
 - case后面的条件执行完成需要添加'break'跳出判断
 
+## case
+- case后的值只能为整数类型的，
+- 字符串不允许，只能是字符，字符使用单引号包裹
+- case 'a' ok
+- case "a" fault
+- case 8+4 ok
+
 ## 范例
 ```c
 #include "stdio.h"
