@@ -20,6 +20,9 @@ mail: wmsj100@hotmail.com
 ## 遍历
 - `str[i] == *(p+i) == p[i]`
 
+## 取值
+- `(str+1)[5]` 表示以`str+1`为起点，先后偏移5个字符，等价于`str[6]`
+
 ## 范例
 ```c
 #include<stdio.h>
