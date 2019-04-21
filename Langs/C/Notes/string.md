@@ -1,7 +1,7 @@
 ---
 title: 字符串
 date: 2019-04-15 20:24:40	
-modify: 
+modify: 2019-04-21 09:36:19	 
 tag: [string]
 categories: C
 author: wmsj100
@@ -20,7 +20,20 @@ mail: wmsj100@hotmail.com
 ## 方法
 - strcat(str1, str2) 把str2连接到str1，str1必须长度足够，否则发生溢出
 - strcpy(str1, str2) 把str2拷贝到str1
-- strcmp(str1, str2) 比较字符串大小，str1>str2:1; str1<str2:-1; str1==str2: 0
+- strcmp(str1, str2) 比较字符串大小，str1>str2:1; str1<str2:-1; str1==str2: 0 \>
+- strlen(str); 获取字符串长度
+
+## 赋值 
+- char str[30]={"wmsj10.com"}
+- char str[30]="wmsj100.com"
+- 字符数组只有在定义的时候可以一次性写入多个字符组成字符串，一旦定义完成就只能一个一个字符赋值了
+
+## 字符串结束标志
+- `\0`: C语言规定字符串以这个字符结束，
+- C语言在处理字符串时候只有遇到`\0`才会结束字符串，否则会一直处理后面内存位置
+- 通常`\0`是C语言隐式添加的，后台默默进行，不感知
+- 如果是逐个字符给字符数组赋值，不会添加`\0`
+- char str[4]="abc" 这个字符串长度是4，最后位置`\0`是隐式添加的，如果长度为3，就无法容纳`\0`，导致读取错误
 
 ## 参考
 - []()
