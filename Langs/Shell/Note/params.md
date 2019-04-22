@@ -1,12 +1,22 @@
 ---
 title: 变量和参数
 date: 2017-12-03 08:22:56	
-modify: 2019-04-12 13:20:51	
+modify: 2019-04-22 23:00:43	
 tag: [shell,params]
 categories: Linux
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
+
+## 概述
+- 在shell中每一个变量的值都是字符串，无论给变量赋值时候有没有引号包裹，值都会以字符串形式存储
+- 这意味着shell不会区分变量类型，即使给变量赋值整数或小数，都会被视为字符串
+
+## 定义变量
+- var=value
+- var='value'
+- var="value"
+- 注意等号左右不能有空格，shell中尽量不要使用多余的空格，
 
 ## 定义和使用变量
 - 变量的名字就是保存值的地方，引用变量的值就叫做变量替换
@@ -82,3 +92,5 @@ mail: wmsj100@hotmail.com
     - b=${mail#*mail/} 删除内容至/mail,包括自身
     - b=${mail##/*/} 删除俩个斜线之间最大的值
 
+## 参考
+- [变量](http://c.biancheng.net/cpp/view/2739.html)
