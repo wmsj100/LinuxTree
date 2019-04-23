@@ -17,7 +17,7 @@ mail: wmsj100@hotmail.com
 - 条件结束使用俩个分号`;;`
 - `*` 使用这个字符匹配无法匹配的条件
 
-```shell
+```sh
 #!/bin/bash
 read num
 

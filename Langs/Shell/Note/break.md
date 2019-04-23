@@ -16,7 +16,7 @@ mail: wmsj100@hotmail.com
 - continue 表示跳过当前循环
 
 ## 范例
-```shell
+```sh
 #!/bin/bash
 
 for val1 in 1 2 3
@@ -32,7 +32,7 @@ do
 done
 ```
 
-```shell
+```sh
 #!/bin/bash
 for val1 in 3 4 5
 do

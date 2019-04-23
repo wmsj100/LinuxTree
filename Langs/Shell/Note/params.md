@@ -38,7 +38,7 @@ mail: wmsj100@hotmail.com
 - unset url 删除变量，再次打印该变量，会输出空值
 
 ## 只读变量
-- 'readonly' 可以将变量定义为只读变量,这个和通过declare来声明创建的只读变量类似，
+- `readonly`可以将变量定义为只读变量,这个和通过`declare`来声明创建的只读变量类似，
 - 只读变量的值不能被改变。
 	- readonly a=1
 	- a=2; // error

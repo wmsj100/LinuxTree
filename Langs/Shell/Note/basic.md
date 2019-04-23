@@ -50,7 +50,7 @@ mail: wmsj100@hotmail.com
 		- 可执行文件会绿色显示。
 
 ## 实例
-'''bash
+'''sh
 #!/bin/bash
 echo "Hello World" > my.txt
 '''

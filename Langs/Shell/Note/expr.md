@@ -16,11 +16,14 @@ mail: wmsj100@hotmail.com
 - `*` 必须进行转义
 
 ## 范例
-- a=`expr 1 + 2`
-- a=`expr 1 - 2`
-- a=$(expr 1 \* 2)
-- a=$(expr 1 / 2)
-- a=$(expr 1 % 2)
+```sh
+a=`expr 1 + 2`
+a=`expr 1 - 2`
+a=$(expr 1 \* 2)
+a=$(expr 1 / 2)
+a=$(expr 1 % 2)
+a=$(expr $b + $c)
+```
 
 ## 参考
 - [expr运算](http://c.biancheng.net/cpp/view/2736.html)

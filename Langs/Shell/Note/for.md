@@ -17,7 +17,7 @@ mail: wmsj100@hotmail.com
 - 使用关键字`do`开始，`done`结束循环
 
 ## 范例
-```shell
+```sh
 #!/bin/bash
 a=(1 23 45 678)
 b="this is a test case"

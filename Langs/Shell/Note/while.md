@@ -16,7 +16,7 @@ mail: wmsj100@hotmail.com
 - while循环必须设置边界值，防止死循环
 
 ## 范例
-```shell
+```sh
 
 #!/bin/bash
 num=0

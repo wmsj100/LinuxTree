@@ -20,7 +20,7 @@ mail: wmsj100@hotmail.com
 
 ## 使用
 - 通常在if条件句中使用
-```shell
+```sh
 if [ $a -eq $b ]
 then
 	echo "a is equal b"

@@ -16,8 +16,8 @@ mail: wmsj100@hotmail.com
 - 使用关键字`do/done`包裹循环体
 
 ## 范例
-```shell
-i#!/bin/bash
+```sh
+#!/bin/bash
 num=0
 
 until [ ! $num -lt 10 ]

@@ -11,7 +11,7 @@ mail: wmsj100@hotmail.com
 - # 注释， “#!除外，它用于指定当前脚本的解释器”
 - ; 命令分隔符，可以在同一行写俩个或俩个以上的命令
 	- 实例
-	'''bash
+	```sh
 	#!/bin/bash
 	echo hello; echo there
 	filename=ttt.sh
@@ -20,10 +20,10 @@ mail: wmsj100@hotmail.com
 	else
 		echo "File $filename not found."; touch $filename
 	fi; echo "File test complete."
-	'''
-- ;; 双分号，终止'case'选项
+	```
+- `;;` 双分号，终止'case'选项
 	- 实例
-	'''bash
+	```sh
 	#!/bin/bash
 	varname=b
 
@@ -31,7 +31,7 @@ mail: wmsj100@hotmail.com
 		[a-z]) echo "abc";;
 		[0-9]) echo "123";;
 	esac
-	'''
+	```
 - . 等价于source 用于在当前bash环境下读取并执行目标脚本的命令。
 - 引号，区分单引号和双引号
 	- 单引号，会阻止解释所有的特殊字符，包括变量； echo '$name' >> '$name'
@@ -55,12 +55,12 @@ mail: wmsj100@hotmail.com
 		- 在与'>'重定向操作符结合使用时，将会把一个文件清空，但是并不会修改这个文件的权限，如果这个文件之前不存在，那么会创建这个文件。
 		- : > test.sh 
 - ? 三元操作符
-	'''bash
+	```sh
 	#!/bin/bash
 	a=10
 	(( t=a<50?8:9 ))
 	echo $t // 8
-	'''
+	```
 - $ 变量替换，可以读取变量值
 
 - () 括号中的命令会在子bash中执行，该执行结果并不会反映到当前bash环境中，被当作局部变量进行处理了。
