@@ -25,5 +25,9 @@ mail: wmsj100@hotmail.com
 - 查找子字符串
 	- echo `expr index "$str" as` # 查找as在字符串str中的位置
 
+## 方法
+- a="./aaa.md"
+- echo ${a#*/} 获取文件名
+
 ## 参考
 - [字符串](http://c.biancheng.net/cpp/view/7001.html)
