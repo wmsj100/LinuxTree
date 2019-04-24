@@ -1,6 +1,7 @@
 ---
 title: pipe管道命令
 date: Wed 21 Feb 2018 11:47:49 AM CST
+modify: 2019-04-24 09:28
 tag: [linux,basic]
 categories: Linux
 author: wmsj100
@@ -21,7 +22,7 @@ mail: wmsj100@hotmail.com
 - last | cut -d ' ' -f 1 输出登陆的用户名
 
 ## grep 分析数据
-- grep主要用于分析行内由没有目标数据，由就把该行获取。
+- grep主要用于分析行内有没有目标数据，有就把该行获取。
 - last | grep 'root' 选择‘root’行
 - last | grep -v 'root' 反选root行
 - last | grep -c 'root' 计算root次数
@@ -29,8 +30,8 @@ mail: wmsj100@hotmail.com
 
 ## sort 排序
 - sort -f 忽略大小写
-- sort -n 使用纯数字进行排序，默认时字符排序
-- sort -r 方向排序
+- sort -n 使用纯数字进行排序，默认是字符排序
+- sort -r 反向排序
 - sort -t ':' -k 3 以‘：’为分割符，按照第3个区间排序
 - sort -t ':' -k 3 -n 以第3个区间按照数字进行排序
 

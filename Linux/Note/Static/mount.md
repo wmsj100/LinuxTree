@@ -17,4 +17,6 @@ mail: wmsj100@hotmail.com
 - kpartx -av /dev/loop0 给各分区创建虚拟设备的影射
 - mkdir -p /media/mirror_{1..3} 在meida创建3个文件夹
 - mount /dev/mapper/loopimg1 /media/mirror_1 加载分区。
+
+## 注意
 - mount -a 在不重启电脑的情况下重新挂载/etc/fstab分区设置，修改分区挂载后建议先这样设置，防止设置错误直接重启导致电脑无法重启

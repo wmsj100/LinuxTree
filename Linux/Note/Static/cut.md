@@ -1,3 +1,12 @@
+---
+title: cut
+date: Mon 19 Feb 2018 09:29:02 AM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # cut 将文本按列切分的小工具
 
 - 它可以指定分隔每列的定界符。

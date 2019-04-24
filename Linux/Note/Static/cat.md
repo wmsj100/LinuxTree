@@ -12,7 +12,7 @@ categories: Linux
 	- A --show-all 显示所有符号
 	- b --number-nomblank 对非空输出行编号
 	- n --number 对输出的所有行编号，
-	- s 有连续俩行以行的空白行，就代换为以行空白行
+	- s 有连续俩行以上的空白行，就代换为一行空白行
 
 '''shell
 cat -A << EOF

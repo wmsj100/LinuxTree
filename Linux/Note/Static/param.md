@@ -1,3 +1,11 @@
+---
+title: param变量名
+date: Mon 19 Feb 2018 09:29:02 AM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
 # 变量名称解析
 
 - declare tmp 声明一个变量名“tmp”，也可以不用声明直接进行赋值操作 tmp=wmsj100

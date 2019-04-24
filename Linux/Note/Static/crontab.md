@@ -50,9 +50,9 @@ mail: wmsj100@hotmail.com
 - crontab -l 查看任务列表
 - crontab -r 删除任务
 
-- 每个用户使用“crontab -e”添加任务，都会在“/var/spool/cron/crontabs/”中添加一个该用户自己的任务文档，这样目的时为了隔离。
+- 每个用户使用“crontab -e”添加任务，都会在“/var/spool/cron/crontabs/”中添加一个该用户自己的任务文档，这样目的是为了隔离。
 
-- /etc/crontab 如果时系统级别的定时任务，需要写在这个文件内。
+- /etc/crontab 如果是系统级别的定时任务，需要写在这个文件内。
 
 - cron服务监测的最小单位是分钟，所以cron会每分钟去读取一次/etc/crontab与/var/spool/cron/crontabs里面的内容。
 

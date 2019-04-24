@@ -21,6 +21,7 @@ Proto Recv-Q Send-Q Local Address           Foreign Address         State       
 tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      4936/sshd
 tcp        0      0 0.0.0.0:3306            0.0.0.0:*               LISTEN      27839/mysqld
 
+可以看到mysql的3306端口已经开始监听
 
 ## 参考
 - [netstat](https://baijiahao.baidu.com/s?id=1622422454033168404&wfr=spider&for=pc)

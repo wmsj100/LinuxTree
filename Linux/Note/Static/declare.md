@@ -1,7 +1,7 @@
 ---
 title: declare声明变量类型
 date: Tue 20 Feb 2018 12:13:21 PM CST
-tag: [linux]
+tag: [linux,shell]
 categories: Linux
 author: wmsj100
 mail: wmsj100@hotmail.com

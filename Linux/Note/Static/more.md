@@ -1,4 +1,12 @@
-# more 一页一页显示内容
+---
+title: more
+date: Mon 19 Feb 2018 09:29:02 AM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+ more 一页一页显示内容
 
 - +n 从第n行开始
 - -n 定义最开始的屏幕大小为n行

@@ -1,3 +1,11 @@
+---
+title: mv
+date: Mon 19 Feb 2018 09:29:02 AM CST
+tag: [linux]
+categories: Linux
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
 # mv 移动或更名文件或文件夹
 
 - 经常用来备份文件或者目录
