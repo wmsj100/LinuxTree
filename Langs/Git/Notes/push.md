@@ -18,6 +18,9 @@ email: wmsj100@hotmail.com
 - 上面这个命令会把`gitlab`的源地址添加到配置文件`.git/config`的`origin`地址
 - 如果使用`git push`会同时推送到`github`,`gitlab`,但是拉取代码使用的是`git fetch`地址`github`
 
+## 强制推送
+- git push -f
+
 ## 总结
 > ###上面的操作是从本地到远程的push操作，我比较认可这种方式，但是，这种方式只适合自己创建并且管理项目的情况。如果是遇到协同办公的场景，就只能是从远程pull项目到本地，而这就是此次要讨论的内容。
 <!-- more -->
