@@ -35,7 +35,7 @@ mail: wmsj100@hotmail.com
 - 小数默认都是double类型
 - long a = 100; 需要先将100从int类型转换位long类型，然后赋值给变量a；
 - int a = 100; 不需要进行类型转换就可以直接赋值
-- float a = 1.23; 需要先将1.23从double类型转换位float类型，然后赋值给变量a
+- float a = 1.23; 需要先将1.23从double类型转换为float类型，然后赋值给变量a
 - double a = 1.23; 这个就不需要类型转换
 
 ## 默认后缀

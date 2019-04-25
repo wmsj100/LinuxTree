@@ -1,5 +1,5 @@
 ---
-title: 整数在内存中的存储
+title: 内存中的整数
 date: 2019-04-13 18:24:10	
 modify: 
 tag: [number,mem,system,Linux]
@@ -8,7 +8,7 @@ author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-# 整数在内存中的存储
+# 内存中的整数
 
 ## 概述
 - 加法和减法是计算机最基本的运算，所以他们是计算机硬件支持的。

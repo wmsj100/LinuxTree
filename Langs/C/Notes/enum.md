@@ -18,7 +18,7 @@ mail: wmsj100@hotmail.com
 - enum week{ Mon = 1, Tues, Wed, Thurs, Fri, Sat, Sun };
 
 ## 注意
-- 枚举列表中的`Mon/Tues`等这些变量是全局的，不能在定义相同名字的变量
+- 枚举列表中的`Mon/Tues`等这些变量是全局的，不能再定义相同名字的变量
 - Mon/Tues等都是常量，不能对它们赋值，只能将他们的值赋给其它变量
 
 ## 总结
