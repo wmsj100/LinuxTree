@@ -9,4 +9,4 @@ categories: C
 # 字符串标准库
 
 ## 常用方法
-- 
+- strlen 获取字符串长度
