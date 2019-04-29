@@ -14,6 +14,7 @@ mail: wmsj100@hotmail.com
 - 关于C的知识点目录
 
 ## 目录
+- Articles 关于C的文章
 - Notes 语法笔记
 - Stdlib 关于标准库的笔记
 

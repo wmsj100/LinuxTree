@@ -13,3 +13,4 @@ mail: wmsj100@hotmail.com
 ## 概述
 - 用来描述静态变量，
 - `co.st int a=1` 这样变量就不可变更，否则编译报错
+- 其实就是定义一个`Readonly`的变量
