@@ -18,6 +18,7 @@ mail: wmsj100@hotmail.com
 - `*` 使用这个字符匹配无法匹配的条件
 - case可以对判断条件进行合并匹配模式 `y|Y|yes|YES)`
 - case的条件中也可以执行多条命令，需要把俩个分号换行
+- case 还可以进行可选字符匹配判断 `[Yy][Ee][Ss]`
 
 ```sh
 #!/bin/bash
@@ -64,6 +65,27 @@ case "$curtime" in
         echo "Please anser yes or not"
         exit 1
         ;;
+esac
+exit 0
+```
+
+- case 可选字符判断
+```sh
+echo "yes/no for curtime"
+read curtime
+case "$curtime" in
+    [Yy] | [Yy][Ee][Ss] )
+        echo "Good morning"
+        echo "bright sunshine"
+        ;;
+    [Nn] | [Nn][Oo][Tt] )
+        echo "afternoon"
+        echo "night is will come"
+        ;;
+    * )
+        echo "Sorry, error input"
+        echo "please input yes/no"
+        exit 1
 esac
 exit 0
 ```
