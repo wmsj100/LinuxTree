@@ -16,6 +16,7 @@ mail: wmsj100@hotmail.com
 - 判断条件使用圆括号分隔
 - 条件结束使用俩个分号`;;`
 - `*` 使用这个字符匹配无法匹配的条件
+- case可以对判断条件进行合并匹配模式 `y|Y|yes|YES)`
 
 ```sh
 #!/bin/bash
@@ -31,6 +32,18 @@ case $num in
     *)  echo "not gass"
         ;;
 esac
+```
+
+- 合并模式范例
+```sh
+echo "input yes/no for curtime"
+read curtime
+case $curtime in
+    y|Y|yes|YES) echo "morning";;
+    n*|N*) echo "afternoon";;
+    *) echo "error input";;
+esac
+exit 0
 ```
 
 ## 参考
