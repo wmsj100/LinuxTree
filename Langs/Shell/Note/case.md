@@ -17,6 +17,7 @@ mail: wmsj100@hotmail.com
 - 条件结束使用俩个分号`;;`
 - `*` 使用这个字符匹配无法匹配的条件
 - case可以对判断条件进行合并匹配模式 `y|Y|yes|YES)`
+- case的条件中也可以执行多条命令，需要把俩个分号换行
 
 ```sh
 #!/bin/bash
@@ -42,6 +43,27 @@ case $curtime in
     y|Y|yes|YES) echo "morning";;
     n*|N*) echo "afternoon";;
     *) echo "error input";;
+esac
+exit 0
+```
+
+- case 执行多命令
+```sh
+echo "yes/no fro curtime"
+read curtime
+case "$curtime" in
+    y | yes | Y| Yes )
+        echo "curtime time is morning"
+        echo "Up bright and early this morning"
+        ;;
+    N* | n* )
+        echo "Good Afternoon"
+        ;;
+    * )
+        echo "Sorry, answer is not recognized"
+        echo "Please anser yes or not"
+        exit 1
+        ;;
 esac
 exit 0
 ```
