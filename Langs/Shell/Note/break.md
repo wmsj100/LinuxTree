@@ -16,6 +16,21 @@ mail: wmsj100@hotmail.com
 - continue 表示跳过当前循环
 
 ## 范例
+- 文件遍历
+```sh
+touch fred1 fred2 fred4
+mkdir fred3
+for file in fred*
+do
+        if [ -d "$file" ];then
+                break
+        fi
+done
+echo "the dir name is $file"
+rm -rf fred*
+```
+
+- 多条件判断，break
 ```sh
 #!/bin/bash
 
@@ -32,6 +47,7 @@ do
 done
 ```
 
+- continue
 ```sh
 #!/bin/bash
 for val1 in 3 4 5
