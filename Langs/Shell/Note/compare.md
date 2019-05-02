@@ -12,6 +12,7 @@ mail: wmsj100@hotmail.com
 - shell中有三种条件类型：字符串比较、算术比较、文件条件比较
 - shell 中进行条件判断建议显示返回数值，这样通过`echo $?`可以获取函数的返回值来确定当前执行是否成功
 - exit 0/1 0表示成功 1表示异常
+- 函数的返回值可以直接在if条件中进行判断 `if yes_or_not $1`
 
 ## 字符串比较
 - = 比较字符串相等
@@ -46,6 +47,41 @@ if [ $a -eq $b ]
 then
 	echo "a is equal b"
 fi
+```
+
+## 范例
+- 函数返回值当作if条件
+```sh
+yes_or_not(){
+    echo "is your name $*"
+    read answer
+    while true
+    do
+        case $answer in
+            [yY] | [Yy][Ee][Ss])
+                echo "good name"
+                return 0
+                ;;
+            [nN] | [nN]*)
+                echo "bad name"
+                return 1
+                ;;
+            *)
+                echo "error name"
+                echo "please reinput yes or not"
+                read answer
+                ;;
+            esac
+        done
+}
+
+if yes_or_not "$1" # 对函数返回值直接进行if判断
+then
+    echo "Hi $1,nice name"
+else
+    echo "Hi $1, bad name"
+fi
+exit 0
 ```
 
 ## 参考
