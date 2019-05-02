@@ -22,6 +22,7 @@ categories: Linux
 	- +n 表示文件更改时间距离现在大于n天
 - atime ctime
 - path 路径， find . -type f ! -name "*.md" ! path "./.git/*" 在当前路径下搜索不是.md结尾的文件，并且过滤掉.git目录
+- find . -newer test_exit.sh ! -path "./.git/*" -type f 查找一个文件，比`test_exit.sh`新，且不包含`.git`目录，且是文件
 
 ## 练习
 
@@ -31,7 +32,7 @@ categories: Linux
 - find . \( -name "*.txt" -or -name "*.pdf" \) 打印当前目录下所有以".txt"/ ".pdf"结尾的文件名
 - find . ! -name "*.txt" 打印当前目录下所有不以txt结尾的文件
 - find -maxdepth 0 -name hello   在当前目录查找hello文件或目录
-- find -name "[a-z0-9]*.txt"  在当前目录查找字母或数字名称的txt文件
+- find -name "[a-z0-9]*.txt"  在当前目录查找字母或数字名称的txt文件 \*
 - find -empty  查找空白文件
 - find -type f   查找当前目录下的文件
 - find -size +100k -size -1024k 返回文件尺寸大于100k 小于1M的文件
@@ -58,20 +59,21 @@ categories: Linux
 - and 俩边都为真，简写wei -a
 - or 一个为真， 简写为-o
 - not 匹配条件是假，简写为 ！
-- （） 显示的说明优先级，提高可读性，需要用反斜杠对括号进行转义
+- () 显示的说明优先级，提高可读性，需要用反斜杠对括号进行转义
 
 ---
 
-- find . -type l -name "*.txt" 打印当前目录下所有以txt结尾的符号链接
-- find . -type f -name "*.php" -perm 777 查找当前目录下的所有权限为777的php文件
+- find . -type l -name "*.txt" 打印当前目录下所有以txt结尾的符号链接 \*
+- find . -type f -name "*.php" -perm 777 查找当前目录下的所有权限为777的php文件 \*
 - find . -type f -user root 打印当前目录下所有root拥有的文件
 - find . -type f \( ! -perm 777 -and ! -perm 644 \) 打印当前目录下所有权限不是777 和644的文件
+- find . \( -newer test_export1.sh -or -name "test_f*" \) -type f ! -path "./.git/*" 查找文件比`test_export1.sh`新或者名称为`test_f`开头的类型是文件，且要过滤掉`.git`目录
 
 ## exec 高级命令
-- find . -name "*.php" -exec ls -l {} \; 查找php文件并且显示其详情
+- find . -name "*.php" -exec ls -l {} \; 查找php文件并且显示其详情 \*
 	- {} 是一个占位符，在find执行过程中会不断替换成当前找到的文件
 	- \; 是-exec命令结束的标记，通过反斜杠进行转义。
-
+- find . -newer test_func_return1.sh ! -path "./.git/*" -type f -exec ls -l {} \; \*
 - find . -type f -user wmsj100 -exec cat {} \; > all.c 获取所有的wmsj100的文件并且输出到all.c
 - find . -name "*.c" -exec ./command.sh {} \; 通常情况下-exec后面只能使用当个命令，如果使用多个命令，可以将多个命令写入sh文件，然后在-exec中使用这个脚本。
 
