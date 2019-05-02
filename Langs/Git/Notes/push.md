@@ -18,6 +18,17 @@ email: wmsj100@hotmail.com
 - 上面这个命令会把`gitlab`的源地址添加到配置文件`.git/config`的`origin`地址
 - 如果使用`git push`会同时推送到`github`,`gitlab`,但是拉取代码使用的是`git fetch`地址`github`
 
+## git push and git pull false
+1. 首先，可以试图用`git push origin wmsj100`推送自己的修改；
+2. 如果推送失败，则因为远程分支比你本地更新，需要先用`git pull`试图合并；
+3. 如果合并有冲突，则解决冲突，并在本地提交；
+4. 没有冲突或者是解决掉冲突后，再用`git push origin wmsj100`推送就能成功！
+> 如果`git pull`提示“no tracking information",则说明本地分支和远程分支的链接没有创建，用命令`git branch --set-upstream branch-name origin/branch-name`。
+
+如果是在当前分支又通过`git checkout -b dev` 创建了新的分支`dev` 那么分支`dev` 会继承之前分支上面所以的提交信息，通过`git log` 查看提交历史的时候，并不是空白，而是包含了之前的所有信息，
+
+所以为了查看的额方便，最好在项目开始的时候就创建好3个分支，或者还是像自己之前的那样，对于每个模块进行单独的git备份，因为方便回溯版本，但是这样就碎片化太严重了，还是统一管理的好。这个项目就这样吧，下一次切记。
+
 ## 强制推送
 - git push -f
 
