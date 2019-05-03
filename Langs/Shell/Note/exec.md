@@ -16,7 +16,7 @@ mail: wmsj100@hotmail.com
 
 ## 范例
 - 将当前shell替换成wall程序，wall程序是一个广播程序
-```shell
+```sh
 echo "hello"
 exec wall "this is a broadcase"
 echo "exit over" # 该命令不会被执行，shell程序已经被切换成wall了，
