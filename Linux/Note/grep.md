@@ -59,8 +59,9 @@ mail: wmsj100@hotmail.com
 - grep -r 'root' * 在当前目录及其子目录搜索带有'root'的文件
 - grep -r -l 'root' *  在当前目录及其子目录搜索带有’root ' 的文件，只显示文件位置，不显示匹配的文件内容
 - grep -n 'root' * 匹配当前目录文件中有root的文件，并且显示行号
+- cat word.txt | grep "^[^wW]*$" 匹配文件中不包含`w/W`字符的行
 
-正则表达式
+## 正则表达式
 - grep -n 'w[wm]sj' * 在当前目录匹配含有 wmsj 或 wwsj的文件，并且显示行号
 - grep -n '[^g]oo' h1  在h1文件内搜索不以g开头的oo所在的行
 - grep -n '[^a-z]' h1  搜索不以小写字母开头的行

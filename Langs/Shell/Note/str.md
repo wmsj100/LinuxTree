@@ -28,6 +28,10 @@ mail: wmsj100@hotmail.com
 ## 方法
 - a="./aaa.md"
 - echo ${a#*/} 获取文件名
+- echo ${a%bin*} 从a尾部开始删除与bin*匹配的最小部分，然后返回剩余部分
+- `echo ${a%%bin*}` 从a尾部开始删除与`bin*`最长匹配，然后返回剩余部分
+- `echo ${a#*bin}` 从a头部开始删除与`*bin`的最小匹配，然后返回剩余部分
+- `echo ${a##*bin:}` 从a头部开始删除与`*bin:`的最长匹配，然后返回剩余部分
 
 ## 参考
 - [字符串](http://c.biancheng.net/cpp/view/7001.html)
