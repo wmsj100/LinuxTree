@@ -8,19 +8,19 @@
 #
 
 note_name=$1
+note_name=${note_name%.md}
 date_str=`date +"%Y-%m-%d %H:%M:%S %A"`
-touch "$note_name"
 echo "---
-title: $1
+title: $note_name
 date: $date_str
 modify:
-tag: [$1]
+tag: [$note_name]
 categories: `dirname ${PWD#/*/}}`
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-# $1
+# $note_name
 
 ## 概述
 
@@ -30,5 +30,5 @@ mail: wmsj100@hotmail.com
 
 ## 参考
 - []()
-" > $note_name
+" > ${note_name}.md
 
