@@ -15,7 +15,6 @@ mail: wmsj100@hotmail.com
 
 ## 目录
 - Network: 关于网络的知识点
-- DataStract: 关于数据结构
 - RTOS: 实时操作系统，在规定时间内返回结果
 - SuanFa 常见计算机算法
 
