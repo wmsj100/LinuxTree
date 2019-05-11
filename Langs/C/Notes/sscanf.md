@@ -1,7 +1,7 @@
 ---
 title: sscanf
 date: 2019-04-23 20:34:37	
-modify: 
+modify: 2019-05-11 19:01:08 Saturday
 tag: [sscanf,func,basic]
 categories: C
 author: wmsj100
@@ -12,6 +12,7 @@ mail: wmsj100@hotmail.com
 
 ## 概述
 - 将参数str字符串根据参数format字符串来转换格式化数据，转换后的结果存于对应的参数内
+- scanf默认是从标准输入获取数据，而sscanf是从前面的字符串参数中解析并获取数据
 
 ## 范例
 - 格式化获取数据
