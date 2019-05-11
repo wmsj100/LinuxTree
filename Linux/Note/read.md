@@ -1,15 +1,53 @@
 ---
-title: read获取用户键盘输入
-date: Tue 20 Feb 2018 12:07:21 PM CST
-tag: [linux,shell]
-categories: Linux
+title: read
+date: 2019-05-10 00:00:34 Friday
+modify:
+tag: [read]
+categories: pi/Github/LinuxTree/Langs/C
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-- read 读取来自键盘的输入并存储到变量中。
-    - read -p 后面可以接提示符
-    - read -t 后面接等待的秒数
-    - read -p "Please input your name: " -t 30 named 有提示信息，提示用户在30s内输入用户名，并且存储到变量named 中。
-- read atest 把用户键盘输入的值存储到变量`atest`中，通过`echo $atest`可以输出用户输入的信息。
+# read
+
+## 概述
+- 从文件描述符`fildes`相关联的文件中读入`nbytes`个字节的数据，并且把它们放到数据区`buf`中
+- 也就是从文件中读取数据到内存中
+
+## 用法
+- `size_t read(int fildes, void *buf, size_t nbytes)`
+- `buf`表示要接收读取到的内容
+- 读取成功会返回实际读入的字节数，
+- 如果返回`0`表示未读入任何数据
+- 返回`-1`表示读入报错
+
+## 范例
+- 从标准输入读取数据
+```c
+#include<stdlib.h>
+#include<unistd.h>
+#include<stdio.h>
+
+int main()
+{
+	char buffer[128];
+	int nread;
+	nread = read(0, buffer, 128);
+	printf("nread is %d", nread);
+	if(nread == -1)
+	{
+		write(2, "A read error occured\n", 26);
+	}
+
+	if((write(1, buffer, nread)) != nread)
+	{
+		write(2, "A write error has occured\n", 27);
+	}
+	exit(0);
+}
+//echo "hello there" | ./t2 #这样进行调用
+```
+
+## 参考
+- []()
 
