@@ -17,12 +17,27 @@ set formatoptions=tcrqn
 set showmatch
 set matchtime=5
 filetype on
-filetype plugin on
 filetype indent on
 inoremap ( ()<Esc>i
 inoremap [ []<Esc>i
-inoremap { {<CR>}<Esc>O
+inoremap { {}<Esc>i
+inoremap < <><Esc>i
+inoremap ` ``<Esc>i
 inoremap ' ''<Esc>i
 inoremap " ""<Esc>i
-set cursorline
-hi CursorLine   cterm=NONE ctermbg=darkred ctermfg=white guibg=darkred guifg=white
+
+set background=dark
+" plugin
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'aperezdc/vim-template'
+
+call vundle#end()
+filetype plugin indent on
+iab xtime <c-r>=strftime("%Y-%m-%d %H:%M:%S %A")<cr>
+
