@@ -1,9 +1,9 @@
 ---
 title: 安装vim8
-date: 2018-05-05 23:51:21 Sat
-modify: 2018-05-05 23:51:21 Sat
-tag: [vim]
-categories: Linux
+date: 2018-05-07 00:43:22 Mon
+modify: 2018-05-07 00:43:22 Mon
+tag: [update]
+categories: VIM
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
@@ -11,21 +11,11 @@ mail: wmsj100@hotmail.com
 # 安装vim8
 
 ## 概述
-- yum install vim 这样只能安装到vim7,如果使用插件，会提示版本低
-- 升级gcc
-- sudo yum install centos-release-scl -y
-- sudo yum install devtoolset-3-toolchain -y
-- sudo yum install gcc-c++
-- sudo scl enable devtoolset-3 bash
-- yum install ncurses-devel
-
-## 下载vim
-- git clone https://github.com/vim/vim.git
+- 之前很多次都想要升级vim8，因为我使用的版本太低了，安装的插件无法使用，但是之前是苦于无法下载vim8，
+- 现在vim已经转移到了github，所以下载就完全不是问题了。
 - cd vim/src
-- ./configure --with-features=huge -enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config
+- ./configure --with-features=huge --enable-pythoninterp --with-python-config-dir=/usr/lib/python2.7/config/ --enable-python3interp --with-python3-config-dir=/usr/local/lib/python3.6/config-3.6m-x86_64-linux-gnu/ --enable-multibyte --enable-cscope --enable-gui=auto --enable-xim --with-x --enable-fontset --disable-selinux
+- make
 - sudo make
-- sudo make install
 - export PATH=/usr/local/bin:$PATH
-
-- [参考资料](https://blog.csdn.net/nzyalj/article/details/75331822)
-
+- source ~/.bash_profile; source ~/.vimrc
