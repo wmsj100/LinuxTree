@@ -10,12 +10,13 @@
 note_name=$1
 note_name=${note_name%.md}
 date_str=`date +"%Y-%m-%d %H:%M:%S %A"`
+cate=`dirname ${PWD#*/}`
 echo "---
 title: $note_name
 date: $date_str
 modify:
 tag: [$note_name]
-categories: `dirname ${PWD#/*/}}`
+categories: "${cate##*/}"
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
