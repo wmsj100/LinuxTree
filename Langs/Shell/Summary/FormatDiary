@@ -29,11 +29,11 @@ format_diary()
 				title=`sed -n "$((end_line - start_line))"p $file | awk '{print $NF}'`
 				file_name=`basename $file`
 				file_name=${file_name%.*}
+				echo $file | grep "[0-9]\{4\}\-[0-9]\{1,\}\-[0-9]\{1,\}_[0-9]\{1,\}\-[0-9]\{1,\}\-[0-9]\{1,\}\.md$" &>/dev/null
+				[ $? -eq 0 ] || return 1
 				date=`echo $file_name | awk -F '_' '{print $1}'`
 				time=`echo $file_name | awk -F '_' '{print $NF}' | awk -F '-' '{print $1":"$2":"$3}'`
-				echo $date $time
-				echo "$title"
-				pwd
+				#echo $date $time
 				[ -f $model_file ] || return 1
 				cp $model_file ${model_file}_tmp
 				sed -i "s/date:.*/date: ${date} ${time}/g" ${model_file}_tmp
