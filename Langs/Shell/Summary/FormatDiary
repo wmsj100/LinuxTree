@@ -1,0 +1,50 @@
+#!/bin/bash
+
+format_diary()
+{
+	local path=${1:-""}
+	local file=""
+	local start_line=0
+	local end_line=0
+	local title=""
+	local date=""
+	local model_file=/home/pi/Tools/model
+
+	if [ $# -eq 0 ];then
+		echo "please input params,!!!"
+		return 1
+	fi
+
+	[ -z "$path" ] && return 1
+
+	path=`realpath $path`
+	[ -d "$path" ] || return 1
+	
+	for file in `find "$path" -name "*.md" -type f`;do
+		[ -f "$file" ] || return 1
+		start_line=`cat "$file" | grep -n "^\-\-\-\s*$" | head -n 1 | awk -F ':' '{print $1}'`
+		end_line=`cat "$file" | grep -n "^\-\-\-\s*$" | head -n 2 | tail -n 1 | awk -F ':' '{print $1}'`
+		if [[ "$start_line">0 && "$end_line">0 && "$end_line">"$start_line" ]];then
+			if [[ $((end_line - start_line)) == 2 ]];then
+				title=`sed -n "$((end_line - start_line))"p $file | awk '{print $NF}'`
+				file_name=`basename $file`
+				file_name=${file_name%.*}
+				date=`echo $file_name | awk -F '_' '{print $1}'`
+				time=`echo $file_name | awk -F '_' '{print $NF}' | awk -F '-' '{print $1":"$2":"$3}'`
+				echo $date $time
+				echo "$title"
+				pwd
+				[ -f $model_file ] || return 1
+				cp $model_file ${model_file}_tmp
+				sed -i "s/date:.*/date: ${date} ${time}/g" ${model_file}_tmp
+				sed -i "s/title:.*/title: ${title}/g" ${model_file}_tmp
+				sed -i "${start_line},${end_line} d" $file
+				cat $file >> ${model_file}_tmp
+				mv ${model_file}_tmp $file
+			fi
+		fi
+	done
+
+}
+
+format_diary $@
