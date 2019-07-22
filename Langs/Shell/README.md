@@ -19,3 +19,6 @@ mail: wmsj100@hotmail.com
 ## 目录详情
 - Note shell的基础知识点
 - Study 关于shell脚步的练习
+
+## 知识点
+- shellcheck 关于shell语法的静态检查
