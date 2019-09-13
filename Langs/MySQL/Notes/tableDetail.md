@@ -9,6 +9,7 @@ categories: MySQL
 # 表格信息
 
 ## 增加
+- create table if not exists student(id int , name varchar(23));
 - create table shop1 like shop; 基于表ship创建一个类似的空白表
 - create table shop2 select * from shop; 完全克隆shop包括表结构和数据
 
@@ -24,6 +25,7 @@ categories: MySQL
 - alter table shop1 rename shopp1; 重命名表格
 - alter table student add class_id int default 1; 给表格添加列class_id,默认值为1
 - alter table student modify class_id int(10); 修改表格student的class_id列的特性
+- alter table student drop column id; 删除表总的id列
 - rename table shop2 to shopp2;	重命名表格
 -  update student set class_id=1 where name=wmsj100; 修改表的值
 
