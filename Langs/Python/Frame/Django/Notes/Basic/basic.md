@@ -23,6 +23,10 @@ mail: wmsj100@hotmail.com
 - TIME_ZONE='Asia/Shanghai' # 设置时区为上海
 - LANGUAGE-CODE='zh-ch' # 设置语言为中文
 
+## 创建数据库表
+- makemigrations 创建更改的文件
+- migrate	将生成的py文件应用到数据库
+
 ## 通用视图
 - 根据URL中的参数从数据库中获取数据，载入模板文件然后返回渲染后的模板，
 - 通用视图期望从URL中捕获名为`pk`的主键值，因此定义url时需要写入`pk`
