@@ -18,4 +18,5 @@ mail: wmsj100@hotmail.com
 
 ## 
 ## 参考
-- []()
+- [格式化磁盘](http://www.diskgenius.cn/download.php)
+- [安装树莓派系统](http://shumeipai.nxez.com/2013/09/07/raspberry-pi-under-windows-system-installation-to-sd-card.html)
