@@ -23,3 +23,5 @@ mail: wmsj100@hotmail.com
 ## 代办
 ~~None~~
 
+## 教程
+- [vim配置/插件教程](https://vimjc.com/archives/page/10/)
