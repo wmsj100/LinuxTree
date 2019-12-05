@@ -1,7 +1,7 @@
 ---
 title: float小数
 date: 2019-04-13 20:42:15	
-modify: 
+modify: 2019-12-05 10:00:00 
 tag: [float]
 categories: C 
 author: wmsj100
@@ -25,7 +25,7 @@ mail: wmsj100@hotmail.com
 - %E: 以指数形式输出float，输出中E大写
 - %le: 以指数输出double，e小写
 - %lE: 以指数输出double，E大写
-- %g: 以占位最短的方式输出小数，可能是数学表示，也可能是科学计数，e小写
+- %g: 以占位最短的方式输出小数，可能是数学表示，也可能是科学计数，e小写, 只保留6位有效数字,包括整数部分和小数部分
 - %lg: 灵活输出double，e小写
 - %G: 灵活输出float，E大写
 - %lG: 灵活输出double，E大写
