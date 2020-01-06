@@ -22,3 +22,5 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [Nginx配置详解](https://www.cnblogs.com/knowledgesea/p/5175711.html)
+- [Nginx配置文件详细介绍](https://blog.csdn.net/houkai18792669930/article/details/93387477)
