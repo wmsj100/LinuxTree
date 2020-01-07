@@ -16,9 +16,7 @@ mail: wmsj100@hotmail.com
 - Note 基础知识点目录
 - Summary 我自己关于Linux的一些总结目录
 - Storage 关于linux的系统的收藏，包括软件/项目/图片等
-- Func 介绍linux系统常用的函数的功能
 - SoftWare Linux好用的软件
-- Frame 常用框架
 - Network 关于网络的知识点
 
 ## 书单
