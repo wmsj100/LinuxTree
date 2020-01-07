@@ -1,0 +1,23 @@
+#!/bin/bash
+
+trans_dos_to_unix(){
+	local path=${1:-""}
+	local exclude=${2:-"./.git/*"}
+	local file_type=${3:-".md"}
+	local file=""
+
+	[ -z "$path" ] && return 1;
+	path=$(realpath $path)
+
+	echo "begining"
+
+	for file in $(find $path ! -path "$exclude" -type f -name "*$file_type");do
+		[ -z "$file" ] && continue;
+		echo "$file"
+		dos2unix $file &>/dev/null;
+	done
+
+	echo "ending"
+}
+
+trans_dos_to_unix $@
