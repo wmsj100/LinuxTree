@@ -1,7 +1,7 @@
 ---
 title: README.md
 date: 2018-05-06 12:30:47 Sun
-modify: 2018-05-06 12:30:47 Sun
+modify: 2020-01-08 16:14:32
 tag: []
 categories: Linux
 author: wmsj100
@@ -12,6 +12,10 @@ mail: wmsj100@hotmail.com
 
 ## 详情
 - Note 基础知识点的整理目录
+- IDE vim的插件管理系统
+- Frame vim的常用插件
+- Articles vim的文章
+- Img 图片收藏
 
 ## 记录
 - [vim配置](http://www.cnblogs.com/witcxc/archive/2011/12/28/2304704.html)
