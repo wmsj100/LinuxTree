@@ -17,6 +17,14 @@ email: wmsj100@hotmail.com
 - 每个网站可以添加一个配置文件
 - 在访问的电脑上配置`hosts`文件，把域名指向目标虚拟机，然后直接访问域名就可以访问网站
 
+## 命令
+
+- nginx的配置文件位于`/etc/nginx/config.c/`目录内
+- `sudo nginx -s start`
+- `sudo nginx -s stop`
+- `sudo nginx -s reload` 重新加载配置文件，对配置文件修改后执行这个命令
+- `sudo service nginx restart` 如果配置文件修改后，重新加载还是没有生效，可以执行这个命令来重启nginx
+
 ## 范例
 
 ```nginx
