@@ -1,7 +1,7 @@
 ---
 title: 修改apt源
 date: 2020-01-05 20:58:57
-modify: 
+modify: 2020-01-08 14:18:50
 tags: [Notes]
 categories: RaspberryPi
 author: wmsj100
@@ -20,6 +20,11 @@ email: wmsj100@hotmail.com
 - `sudo apt update`
 - `sudo apt upgrade`
 
+## 推荐
+
+- 还是推荐使用阿里云的源，这个更新更快
+- `deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main` for /etc/apt/source.list
+- `deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi` for /etc/apt/source.list.d/raspi.list
 ## 参考
 
 - [树莓派更好源](https://www.jianshu.com/p/768f0181672b)
