@@ -16,6 +16,7 @@ mail: wmsj100@hotmail.com
 ## 目录
 - RaspberryPi 树莓派，当前最流行的微型电脑，打算入手一台，可以当作微型服务器，实现很多种功能
 - microBit	BBC联合其他厂商实现的硬件，支持python编程 [官网](https://microbit.org/zh-CN/code/)
+- Windows 微软系统或服务器知识点积累
 
 ## 参考
 - [microBit](https://microbit.org/zh-CN/code/)
