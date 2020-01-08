@@ -36,6 +36,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'aperezdc/vim-template'
+Plugin 'boydos/emmet-vim'
 
 call vundle#end()
 filetype plugin indent on
