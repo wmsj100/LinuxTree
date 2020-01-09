@@ -18,7 +18,9 @@ email: wmsj100@hotmail.com
 
 - Notes: 关于Nginx的知识点
 - Statics: 静态图片存储
+- Summary: 总结性的内容
 
 ## 收藏
 
 - [李洋的nginx学习笔记](https://www.cnblogs.com/Forever-x/p/10934998.html)
+- [服务器运维架构](http://www.ha97.com/tag/nginx)
