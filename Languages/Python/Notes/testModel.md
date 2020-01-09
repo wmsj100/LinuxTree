@@ -18,17 +18,19 @@ mail: wmsj100@hotmail.com
 - 在面向对象编程中，一个单元就是一个方法， 包括基类（超类）/ 抽象类/ 派生类的方法。
 
 ## 实例
-    ```python
-    import unittest
-    from factorial import fact
+~~~python
+```python
+import unittest
+from factorial import fact
 
-    class TestFactorial(unittest.TestCase):
-        def test_fact(self):
-            res = fact(5)
-            self.assertEqual(res, 121)
+class TestFactorial(unittest.TestCase):
+    def test_fact(self):
+        res = fact(5)
+        self.assertEqual(res, 121)
 
-    if __name__ == '__main__':
-        unittest.main()
-    ```
+if __name__ == '__main__':
+    unittest.main()
+```
+~~~
 
 - 首先导入`unittest`模块，然后测试我们需要测试的函数
