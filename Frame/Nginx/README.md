@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2020-01-07 23:00:06
-modify: 
+modify: 2020-01-09 08:02:10
 tags: [readme]
 categories: Nginx
 author: wmsj100
@@ -19,3 +19,6 @@ email: wmsj100@hotmail.com
 - Notes: 关于Nginx的知识点
 - Statics: 静态图片存储
 
+## 收藏
+
+- [李洋的nginx学习笔记](https://www.cnblogs.com/Forever-x/p/10934998.html)
