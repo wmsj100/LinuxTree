@@ -1,3 +1,13 @@
+---
+title: 关于python
+date: 2017-12-18 19:24:43
+modify: 2020-01-09 19:24:43 
+tags: [Article]
+categories: Python
+author: wmsj100
+email: wmsj100@hotmail.com
+---
+
 ## 进度存档
 - 大概半年前就有开始学'python'，那时候就是照着书学习基础语法，每天计划翻几页，坚持了有一个月的时间吧，后来就放弃了，感觉没有使用价值，距离使用好像很遥远，后来就开始学习'linux'了，完全就放弃了'python'；
 - 现在重新开始拿起'python'理由是什么，
