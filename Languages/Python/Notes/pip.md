@@ -1,7 +1,7 @@
 ---
 title: pip
 date: 2018-03-18 22:38:10 Sun
-modify: 2018-03-18 22:38:10 Sun
+modify: 2020-01-09 22:18:20
 tag: [pip,python,tool]
 categories: Python
 author: wmsj100
@@ -15,3 +15,14 @@ mail: wmsj100@hotmail.com
 - tar -zxvf pip.tar.gz
 - sudo python setup.py install 安装pip
 - pip -V 查看pip版本号
+
+## 配置pip源
+
+- mkdir ~/.pip
+- vi ~/.pip/pip.conf
+	```pip.conf
+	[global]
+	index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+	```
+- 重新开一个会话窗口，就可以执行pip命令了
+- `sudo pip3 install virtualenv`
