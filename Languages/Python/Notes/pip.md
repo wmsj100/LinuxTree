@@ -26,3 +26,4 @@ mail: wmsj100@hotmail.com
 	```
 - 重新开一个会话窗口，就可以执行pip命令了
 - `sudo pip3 install virtualenv`
+- 如果要执行上面的sudo命令来执行pip，需要在/root/下也创建相应的pip的配置文件
