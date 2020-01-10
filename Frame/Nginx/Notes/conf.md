@@ -20,6 +20,11 @@ email: wmsj100@hotmail.com
 - `/usr/sbin/nginx -t`  `nginx: configuration file /etc/nginx/nginx.conf test failed`
 - `vi /etc/nginx/nginx.conf` 进入配置文件查看
 
+## conf不生效
+
+- conf文件必须是文件本身，不能是软链接，刚开始nginx的反向代理不生效就是因为我在conf目录下的配置文件是软链接
+- `sudo nginx -s reload` conf配置文件修改完成后需要执行重新加载
+
 ## 参考
 
 - [Nginx配置详解](https://www.cnblogs.com/knowledgesea/p/5175711.html)
