@@ -22,7 +22,7 @@ email: wmsj100@hotmail.com
 
 ## conf解释
 
-```nginx.conf
+```nginx
 #定义Nginx运行的用户和用户组
 user www www;
 
