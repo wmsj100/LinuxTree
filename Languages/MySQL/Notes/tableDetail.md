@@ -1,19 +1,23 @@
 ---
 title: 表格
 date: 2019-04-09 22:15:26	
-modify:
+modify: 2020-01-11 23:02:47 
 tags: [Basic]
 categories: MySQL
+author: wmsj100
+email: wmsj100@hotmail.com
 ---
 
 # 表格信息
 
 ## 增加
+
 - create table if not exists student(id int , name varchar(23));
 - create table shop1 like shop; 基于表ship创建一个类似的空白表
 - create table shop2 select * from shop; 完全克隆shop包括表结构和数据
 
 ## 删除
+
 - drop database 用于丢弃数据库中所有表格，并且删除数据。
 - drop index idx_id on person; 从表person中删除索引
 - drop table tst1,tst2,tst3; 一次性删除表tst1/2/3
@@ -22,6 +26,7 @@ categories: MySQL
 - delete from student where id!=3; 删除表格中除id=3外的所有数据
 
 ## 修改
+
 - alter table shop1 rename shopp1; 重命名表格
 - alter table student add class_id int default 1; 给表格添加列class_id,默认值为1
 - alter table student modify class_id int(10); 修改表格student的class_id列的特性
@@ -30,6 +35,7 @@ categories: MySQL
 -  update student set class_id=1 where name=wmsj100; 修改表的值
 
 ## 查找
+
 - show create table pet; 查看表格的创建信息
 - desc pet; 查看表格的信息，用表格形式展示；
 - select databese(); 获取数据库的名称；
@@ -45,3 +51,9 @@ categories: MySQL
 - show engines; 显示所有引擎
 - show errors; 显示
 - show grants for 'wmsj'@'localhost' 列出用户的信息
+
+## 表连接
+
+- select emp.* from emp,dept where emp.deptno=dept.deptno 表内连接
+- select * from emp where deptno in (select deptno from dept); 子查询
+- 很多情况下表连接要优于子查询
