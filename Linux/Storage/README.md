@@ -14,6 +14,6 @@ mail: wmsj100@hotmail.com
 
 ## 目录详情
 
-- Img 关于Linux的一些图片整理目录
+- Statics 关于Linux的一些图片整理目录
 - Project 关于Linux的项目整理目录
 - SoftWare 收藏的一些好用的Linux软件目录

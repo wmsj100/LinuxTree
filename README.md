@@ -20,4 +20,3 @@ mail: wmsj100@hotmail.com
 - Linux Linux系统知识点
 - Languages 学习过的语言
 - HardWare 关于嵌入式硬件
-- Frame 关于Linux系统中涉及到的框架以及工具或者库

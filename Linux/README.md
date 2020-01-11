@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-03-05 11:12
-modify: 2020-01-07 13:57:40
+modify: 2020-01-11 10:48:10 
 tag: [linux,readme]
 categories: Linux
 author: wmsj100
@@ -18,6 +18,7 @@ mail: wmsj100@hotmail.com
 - Storage 关于linux的系统的收藏，包括软件/项目/图片等
 - SoftWare Linux好用的软件
 - Network 关于网络的知识点
+- VirtualCloud 虚拟云系统openstack/vmware/windows server
 
 ## 书单
 
