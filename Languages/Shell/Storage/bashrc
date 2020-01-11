@@ -113,6 +113,18 @@ if ! shopt -oq posix; then
 fi
 export PATH=$PATH:/home/pi/Tools
 export diary=/home/pi/Github/MyDream/Diary/2020/January
-export linux=/home/pi/Github/LinuxTree/Linux/Note
-export nginx=/home/pi/Github/LinuxTree/Linux/Frame/Nginx/Notes
-export webui=/home/pi/Github/LinuxTree/WebUI
+export linux=/home/pi/Github/LinuxTree/Linux/Notes
+export nginx=/home/pi/Github/LinuxTree/Linux/NetWork/Frame/Nginx/Notes
+export webui=/home/pi/Github/LinuxTree/Languages/WebUI
+export raspberry=/home/pi/Github/LinuxTree/HardWare/RaspberryPi/Notes
+export myweb=/home/pi/Documents/myweb
+export article=/home/pi/Github/MyDream/Article/NowTime/2020
+export code_python=/home/pi/Documents/python
+export python=/home/pi/Github/LinuxTree/Languages/Python/Notes
+export active=/home/pi/Software/virtualenv/bin/activate
+export flask=/home/pi/Github/LinuxTree/Languages/Python/Frame/Flask
+export mysql=/home/pi/Github/LinuxTree/Languages/MySQL/Notes
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
