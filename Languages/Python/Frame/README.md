@@ -15,6 +15,8 @@ mail: wmsj100@hotmail.com
 
 ## 详情
 - Django 基于python的一个MVC的基于数据驱动的框架
+- Flask  基于python的一个轻量化的框架
+- Uwsgi 基于python的一个web服务网关接口框架，可以实现python和nginx的交换
 
 ## 代办
 ~~None~~
