@@ -26,6 +26,35 @@ email: wmsj100@hotmail.com
 
 - del 删除对象，如果对象的引用计数器变为零时，垃圾回收会删除这个对象
 
+## 判断父类
+
+- `issubclass(a1, Filter)` 通过这个方法进行判断Filter是a1的基类
+- a1.__bases__ 查看a1的基类
+- type(a) <class 'jichen.a1'> 通过新式类创建的实例可以通过type来判断哪个类实例化的
+
+## 多个超类
+
+- 一个类可以继承自多个类，
+- 如果多个类中有冲突的方法或者属性，那么先继承的覆盖后继承的
+```python
+class Cal:
+    aa='cal'
+    def calculate(self, value):
+        self.value = eval(value)
+
+class Talk:
+    aa='talk'
+    def talk(self):
+        print("current value is %d" % self.value)
+
+class test1(Cal, Talk):
+    pass
+a=test1()
+a.aa # 'cal'
+a.calculate('1+3*4')
+a.talk() # 'current value is 13
+```
+
 ## 范例
 
 - 继承的典型范例
