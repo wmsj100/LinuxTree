@@ -19,6 +19,8 @@ def func(str):
 	return str.isalnum()
 list(filter(func,['as', '23', ',.', '*('])) # ['as', '23']
 ```
+- 上面的例子可以通过列表推导式替代
+- `[ x for x in list1 if x.isalnum() ]`
 
 ## 参考
 
