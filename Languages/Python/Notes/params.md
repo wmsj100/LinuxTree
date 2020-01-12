@@ -40,6 +40,23 @@ email: wmsj100@hotmail.com
 	{'people': 'yellow', 'blod': 'red'}
 	```
 
+## 参数收集逆过程
+
+- 在函数调用过程中加入星号
+```python
+def hello(**args):
+    print(args['name'], args['age'])
+
+data = { 'name': 'wmsj100', 'age': 32}
+
+hello(**data)
+
+def hello2(args):
+    print(args['name'], args['age'])
+
+hello2(data)
+```
+- 在函数定义和调用过程中都使用了星号
 
 ## 参考
 
