@@ -19,6 +19,7 @@ mail: wmsj100@hotmail.com
 - Frame python的框架
 - Article 关于python的文章
 - Code 代码收藏
+- Summary 知识点总结
 
 ## 爬虫
 - pip install requests selenium beautifulsoup4 pyquery pymysql pymongo redis flask django jupyter
