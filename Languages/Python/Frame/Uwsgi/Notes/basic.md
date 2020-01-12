@@ -22,6 +22,7 @@ email: wmsj100@hotmail.com
 
 - `sudo apt install uwsgi`
 - `uwsgi --socket :8083 --wsgi-file /home/pi/Documents/mydjango/test.py` 这样可以启动一个端口为8083的web服务器，
+- `uwsgi --http :8084 --wsgi-file /test.py` 这样可以开启一个http的端口服务器
 - test.py的内容如下
 ```python
 def application(env, start_response):
