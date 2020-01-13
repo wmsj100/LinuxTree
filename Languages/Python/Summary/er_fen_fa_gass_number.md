@@ -43,7 +43,6 @@ def gassNum(top=100):
 
     gass(**result)
 
-
 def gass(**args):
     middle = args['middle'] = int((args['lower'] + args['upper'])/2)
     target = args['target']
@@ -59,8 +58,6 @@ def gass(**args):
             args['lower'] = middle+1
         gass(**args)
 
-        
-
 gassNum(100)
 
 # Please input number(1-100)74
@@ -71,6 +68,70 @@ gassNum(100)
 # {'lower': 69, 'upper': 74, 'middle': 71, 'target': 74, 'count': 5}
 # {'lower': 72, 'upper': 74, 'middle': 73, 'target': 74, 'count': 6}
 # {'lower': 74, 'upper': 74, 'middle': 74, 'target': 74, 'count': 7}
+```
+
+- 代码优化，提供上下限自定义功能，函数提供参数校验，不允许多余参数传入
+```python
+"""
+猜数字，灵活定义数字的上下限
+输入一个在upper/lower范围内的值，电脑猜测并给出猜测过程
+"""
+
+def getInput(upper=100,lower=0):
+    while True:
+        passwd = input("please input your passwd: ")
+        if passwd.isdigit():
+            passwd = int(passwd)
+            if upper < passwd or lower > passwd:
+                print("Please input value should between %d ~ %d" % (lower,upper))
+            else:
+                break
+        else:
+            print("input error...,please again")
+    return passwd
+
+def gassNumber(lower=0,upper=100,middle=0,pwd=0,count=0):
+    middle = int((lower + upper)/2)
+    count += 1
+    result = {
+        'lower': lower,
+        'upper': upper,
+        'middle': middle,
+        'pwd': pwd,
+        'count': count
+    }
+
+    print(result)
+    
+    if pwd == middle:
+        return result
+    else:
+        if middle > pwd:
+            result['upper'] = middle - 1
+        else:
+            result['lower'] = middle + 1
+        gassNumber(**result)
+    
+def init(upper=100,lower=0):
+    passwd = getInput(upper=upper,lower=lower)
+    gassNumber(pwd=passwd,upper=upper,lower=lower)
+
+init(upper=999,lower=34)
+please input your passwd: 20
+Please input value should between 34 ~ 999
+please input your passwd: 33333
+Please input value should between 34 ~ 999
+please input your passwd: 56
+# {'lower': 34, 'upper': 999, 'middle': 516, 'pwd': 56, 'count': 1}
+# {'lower': 34, 'upper': 515, 'middle': 274, 'pwd': 56, 'count': 2}
+# {'lower': 34, 'upper': 273, 'middle': 153, 'pwd': 56, 'count': 3}
+# {'lower': 34, 'upper': 152, 'middle': 93, 'pwd': 56, 'count': 4}
+# {'lower': 34, 'upper': 92, 'middle': 63, 'pwd': 56, 'count': 5}
+# {'lower': 34, 'upper': 62, 'middle': 48, 'pwd': 56, 'count': 6}
+# {'lower': 49, 'upper': 62, 'middle': 55, 'pwd': 56, 'count': 7}
+# {'lower': 56, 'upper': 62, 'middle': 59, 'pwd': 56, 'count': 8}
+# {'lower': 56, 'upper': 58, 'middle': 57, 'pwd': 56, 'count': 9}
+# {'lower': 56, 'upper': 56, 'middle': 56, 'pwd': 56, 'count': 10}
 ```
 
 ## 思考
