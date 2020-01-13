@@ -25,4 +25,6 @@ mail: wmsj100@hotmail.com
 
 - [思否(segmentfault)](https://segmentfault.com/ls/1650000021313333)
 - [w3cschool](https://www.w3cschool.cn/vip?fcode=popup)
-- 网易公开课
+- [C语言中文网](http://c.biancheng.net/cpp/linux/)
+- [网易公开课](https://www.icourse163.org/course/PKU-1205809805)
+- [python网络爬虫](https://edu.hellobi.com/course/157/overview)
