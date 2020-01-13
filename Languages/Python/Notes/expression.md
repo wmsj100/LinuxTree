@@ -1,6 +1,7 @@
 ---
 title: 表达式和运算符
-Sat 23 Dec 2017 10:44:23 AM CST
+Date: 23 Dec 2017 10:44:23 AM CST
+modify: 2020-01-13 10:30:26 
 tag: [python]
 categories: Linux
 author: wmsj100
@@ -8,6 +9,7 @@ mail: wmsj100@hotmail.com
 ---
 
 # 运算符
+
 - // 表示整除 4//3; 1
 - % 求余数
 - divmod(num1, num2) 返回一个包含俩个值的元组，第一个是num1和num2相整除得到的值，第二个值是num1和num2求余得到的值。
@@ -23,10 +25,9 @@ mail: wmsj100@hotmail.com
 - a*=4 == a = a*4
 
 ## 类型转换
+
 - float(string) 字符串 》 浮点数
 - int(string) 字符串 》 整数值
 - str(integer) 整数》 字符串
 - str(float) 浮点数》字符串
-
 - range(1,11) 获取数组，开始值是1，结束值是11-1； [1,2,3,...10]
-- 
