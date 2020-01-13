@@ -117,11 +117,12 @@ def init(upper=100,lower=0):
     gassNumber(pwd=passwd,upper=upper,lower=lower)
 
 init(upper=999,lower=34)
-please input your passwd: 20
-Please input value should between 34 ~ 999
-please input your passwd: 33333
-Please input value should between 34 ~ 999
-please input your passwd: 56
+
+# please input your passwd: 20
+# Please input value should between 34 ~ 999
+# please input your passwd: 33333
+# Please input value should between 34 ~ 999
+# please input your passwd: 56
 # {'lower': 34, 'upper': 999, 'middle': 516, 'pwd': 56, 'count': 1}
 # {'lower': 34, 'upper': 515, 'middle': 274, 'pwd': 56, 'count': 2}
 # {'lower': 34, 'upper': 273, 'middle': 153, 'pwd': 56, 'count': 3}
