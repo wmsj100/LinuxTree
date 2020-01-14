@@ -26,3 +26,4 @@ mail: wmsj100@hotmail.com
 
 ## 网站
 - [python学习资料](https://my.oschina.net/u/3887904/blog/1842003)
+- [python最佳实践指南(开源书籍)](https://pythonguidecn.readthedocs.io/zh/latest/)
