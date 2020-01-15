@@ -28,5 +28,12 @@ email: wmsj100@hotmail.com
 	- next(reversed(a))
 - 排序迭代(sorted): 直接返回一个排序后的list
 
+## 创建迭代器
+
+- iter: 可以创建一个迭代器
+- next(iter): 可以读取下一个迭代器的值，最后以StopIteration结束
+- 迭代器只能读取一次，也就是说迭代器只能list化一次，第二次list(iter),返回一个空数组
+
 ## 参考
+
 
