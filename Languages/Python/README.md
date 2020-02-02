@@ -16,6 +16,10 @@ mail: wmsj100@hotmail.com
 
 - 该目录主要是关于python的知识点整理！
 
+## 成长路线
+
+![python学习路线](http://c.biancheng.net/uploads/allimg/190814/2-1ZQ416452U13.png)
+
 ## 详情
 
 - Notes 基础知识点的整理目录
