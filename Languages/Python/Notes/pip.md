@@ -18,12 +18,29 @@ mail: wmsj100@hotmail.com
 
 ## 配置pip源
 
+### linux
+
 - mkdir ~/.pip
 - vi ~/.pip/pip.conf
-	```pip.conf
-	[global]
-	index-url = https://pypi.tuna.tsinghua.edu.cn/simple
-	```
+```pip.conf
+[global]
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
 - 重新开一个会话窗口，就可以执行pip命令了
 - `sudo pip3 install virtualenv`
 - 如果要执行上面的sudo命令来执行pip，需要在/root/下也创建相应的pip的配置文件
+
+### windows
+
+- mkdir ~/pip
+- vi ~/pip/pip.ini
+```pip.ini
+[global]
+
+timeout = 6000
+
+index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+
+trusted-host = pypi.tuna.tsinghua.edu.cn
+```
+- 进入cmd，执行`pip install --user pipenv` 安装
