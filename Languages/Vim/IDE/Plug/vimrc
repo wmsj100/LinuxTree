@@ -24,3 +24,5 @@ Plug 'aperezdc/vim-template'
 Plug 'boydos/emmet-vim'
 call plug#end()
 map <F2>  :NERDTreeToggle<CR>
+# xtime click space to install current date 2020-02-02 12:29:34 
+iab xtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
