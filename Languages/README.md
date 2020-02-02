@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-03-05
-modify: 2019-04-21 21:55:29	
+modify: 2020-02-02 15:48:43 
 tag: linux,editor,tool
 categories: Linux
 author: wmsj100
@@ -11,9 +11,11 @@ mail: wmsj100@hotmail.com
 # README
 
 ## 概述
+
 - 这是接触过大额语言和好用的工具的知识点整理
 
 ## 目录详情
+
 - Scratch 一个积木式的编程语言
 - Abandon 之前接触过的语言
 - C C语言
@@ -26,5 +28,10 @@ mail: wmsj100@hotmail.com
 - VsCode IDE
 - WebUI 前端知识
 
+## 有趣接口
+
+- [https://httpbin.org/ip](https://httpbin.org/ip) 请求返回当前接口
+
 ## 软件收藏
+
 - [Sumatra PDF](https://www.sumatrapdfreader.org/downloadafter.html)
