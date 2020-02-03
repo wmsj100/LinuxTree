@@ -31,6 +31,7 @@ mail: wmsj100@hotmail.com
 ## 有趣接口
 
 - [https://httpbin.org/ip](https://httpbin.org/ip) 请求返回当前接口
+- [https://www.json.cn/](https://www.json.cn/) 解析json字符串
 
 ## 软件收藏
 
