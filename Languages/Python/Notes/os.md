@@ -47,6 +47,33 @@ email: wmsj100@hotmail.com
 - `os.path.getsize(name)` 获取文件的size，字节单位
 - `os.path.abspath(name)` 获取绝对路径
 - `os.path.join(path, name)` 连接目录或文件，按照目录分隔符
+- `os.path.realpath(__file__)` 获取文件所在的绝对路径
+- `os.walk(dirname)` 便利文件夹下的所有文件，返回三个参数: root: 当前便利目录；dir: 当前目录下的文件夹；files: 当前目录下的文件
+```python
+for root, dirs, files in os.walk('.'):
+	print('root is ',root)
+	print('dirs is ',dirs)
+	print('files is ', files)
+# root is  .
+# dirs is  ['dir1']
+# files is  ['DSC_0970.JPG', 'file1.py', 'test.txt', 'test1.py']
+# root is  .\dir1
+# dirs is  ['a']
+# files is  []
+# root is  .\dir1\a
+# dirs is  ['bdir']
+# files is  []
+# root is  .\dir1\a\bdir
+# dirs is  ['c']
+# files is  []
+# root is  .\dir1\a\bdir\c
+# dirs is  ['d']
+# files is  []
+# root is  .\dir1\a\bdir\c\d
+# dirs is  []
+# files is  []
+```
+
 
 ## 参考
 
