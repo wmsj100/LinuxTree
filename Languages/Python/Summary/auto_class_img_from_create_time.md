@@ -44,8 +44,9 @@ import json
 import shutil
 import time
 
-BaseDir = r'E:\old\云相册\2011\寒假\201112'
+BaseDir = r'E:\360云盘\云相册'
 TargetDir = r'E:\Code\python\360yunpan'
+Separator = '_'
 
 
 def confirm_dir_exist(dir_path):
@@ -80,6 +81,8 @@ def forEachDir(targetDir=None):
     # save_data = {'target_files': target_files, 'abandon_files': abandon_files}
     # save_to_database(BaseDir, save_data)
     save_to_database(BaseDir, DataObj)
+    print("image total is %d" % len(DataObj))
+    print("all file is %d" % len(target_files))
 
 
 def analysis_file(file_path, DataObj):
@@ -92,13 +95,11 @@ def analysis_file(file_path, DataObj):
         if file_name.startswith('IMG_'):
             date_str = analysis_time_str(file_path, 'IMG_')
         elif file_name.startswith('C360_'):
-            date_str = file_name[5:15]
+            date_str = Separator.join(file_name[5:15].split("-"))
         elif file_name.startswith('Camera_'):
             date_str = analysis_time_str(file_path, 'Camera_')
         elif file_name.startswith('VID_'):
             date_str = analysis_time_str(file_path, 'VID_')
-        elif file_name.startswith('_DSC'):
-            date_str = analysis_default(file_path, 'wangping')
         elif file_name.startswith('20'):
             date_str = analysis_20(file_path)
         else:
@@ -129,7 +130,7 @@ def analysis_time_str(file_path, type=''):
             day = file_name[start+6:start+8]
             # 月份不大于12，day不大于31
             if int(month) <= 12 and int(day) <= 31:
-                date_str = '-'.join([year, month, day])
+                date_str = Separator.join([year, month, day])
             else:
                 date_str = analysis_default(file_path)
         else:
@@ -144,17 +145,14 @@ def analysis_20(file_path):
     if file_name.lower().endswith('.jpg'):
         date_str = analysis_time_str(file_path, '20jpg')
     elif file_name.lower().endswith('.png'):
-        date_str = file_name[:10]
+        date_str = Separator.join(file_name[:10].split('-'))
 
     return date_str
 
-def analysis_default(file_path, type=""):
+def analysis_default(file_path):
     ''' 默认的处理方式'''
     file_meta = os.stat(file_path)
-    date_str = time.strftime("%Y-%m-%d", (time.localtime(file_meta.st_mtime)))
-    if type:
-        if type == 'wangping':
-            date_str = ''.join([date_str, '_wangping'])
+    date_str = time.strftime("%Y{sep}%m{sep}%d".format(sep=Separator), (time.localtime(file_meta.st_mtime)))
 
     return date_str
 
@@ -170,7 +168,7 @@ def struct_date_dir(file_path, file_name, date_str, DataObj):
 
 def save_to_database(BaseDir, save_data):
     '''存储数据到文件'''
-    with open(os.path.join(BaseDir, 'database.json'), 'w') as file:
+    with open(os.path.join(TargetDir, 'database.json'), 'w') as file:
         file.write(json.dumps(save_data))
 
 
@@ -183,3 +181,4 @@ def init():
 if __name__ == '__main__':
     init()
 ```
+
