@@ -34,6 +34,8 @@ email: wmsj100@hotmail.com
 ## 做法
 
 - 先收集所有文件的信息
+- 现在整理好了，要怎么调用，重复生成时候要去重
+- 数据存储到mysql
 - 
 
 ## 代码
@@ -163,22 +165,22 @@ def struct_date_dir(file_path, file_name, date_str, DataObj):
     new_file_path = os.path.join(dir_path, file_name)
     DataObj.append({'old': file_path, 'new': new_file_path})
     confirm_dir_exist(dir_path)
-    shutil.copy2(file_path, new_file_path)
-
+    if not os.path.isfile(new_file_path):
+        shutil.copy2(file_path, new_file_path)
+    else:
+        print("{file} is already exist!".format(file=new_file_path))
 
 def save_to_database(BaseDir, save_data):
     '''存储数据到文件'''
     with open(os.path.join(TargetDir, 'database.json'), 'w') as file:
         file.write(json.dumps(save_data))
 
-
 def init():
-    if os.path.exists(TargetDir):
-        shutil.rmtree(TargetDir)
+    # if os.path.exists(TargetDir):
+    #     shutil.rmtree(TargetDir)
     forEachDir(BaseDir)
 
 
 if __name__ == '__main__':
     init()
 ```
-
