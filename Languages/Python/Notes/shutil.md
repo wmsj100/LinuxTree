@@ -77,3 +77,4 @@ shutil.copyfile('test.txt', 't2.txt')
 ## 参考
 
 - [shutil](https://www.cnblogs.com/xiangsikai/p/7787101.html)
+- [python shutil解析](https://blog.csdn.net/qq_38640439/article/details/81410116)
