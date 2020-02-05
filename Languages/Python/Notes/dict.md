@@ -13,7 +13,25 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 字典只是python内置的一种映射
+- 字典是一种无序的、可变的序列，是python中唯一的映射类型。
+![](http://c.biancheng.net/uploads/allimg/190212/2-1Z212152450U3.gif)
 - 字典本身的功能强大，而且对于查询的效率要比列表高，数据量越大，这种优势体现越明显。
+
+## 创建方法
+
+- `dict(name='wmsj100', age=21)` 使用此方法，key值不能带引号
+- `dict([['one', 1], ['two', 2]])`
+- `dict(zip(['one', 'tow'], [1, 2]))`
+- `dict.fromkeys(['name', 'age'], defaultValue)` 创建字典，所有key值有相同的默认值`defaultvalue`
+- 空字典要远远大于空数组和空元组
+```python
+a = dict()
+a.__sizeof__() # 216
+b = list()
+b.__sizeof__() # 40
+c = tuple()
+c.__sizeof__() # 24
+```
 
 ## 方法
 
@@ -32,5 +50,11 @@ email: wmsj100@hotmail.com
 - `dict.update(dict1)` 用字典dict2来更新字典dict，有相同的值就用后者更新前者
 - `dict.values()` 返回字典的values的迭代器对象
 
+## 格式化字符串
+
+- `a='name is {name}, age is {age}, url is {url}'.format(name='wmsj100', age=22, url='http://www.wmsj100.com')`
+- `'name is wmsj100, age is 22, url is http://www.wmsj100.com'`
+
 ## 参考
 
+- [python字典格式化字符串](http://c.biancheng.net/view/vip_6002.html)
