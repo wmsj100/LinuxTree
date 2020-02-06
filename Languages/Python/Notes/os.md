@@ -25,6 +25,13 @@ email: wmsj100@hotmail.com
 - `os.getenv('path')` 获取环境变量
 - `os.getcwd()` 获取当前路径
 
+## 系统
+
+- `os.system(command)` 函数用来运行shell命令
+	- `os.system("ping -c 1 google.com")` ping谷歌
+- `os.sep` 获取操作系统特定路径分隔符
+- `os.environ` 获取系统环境变量
+
 ## 操作目录
 
 - `os.listdir()` 返回指定目录的文件或目录信息
