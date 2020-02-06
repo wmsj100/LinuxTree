@@ -1,48 +1,17 @@
-#! /bin/sh
-#
-# module.sh
-# Copyright (C) 2019 pi <pi@raspberrypi>
-#
-# Distributed under terms of the MIT license.
-# My note module sh
-#
+#!/bin/bash
 
-create()
-{
-	note_name=$1
-    note_name=${note_name%.md}
-    date_str=`date +"%Y-%m-%d %H:%M:%S %A"`
-    cate=`dirname ${PWD#*/}`
-    echo "---
-    title: $note_name
-    date: $date_str
-    modify:
-    tag: [$note_name]
-    categories: "${cate##*/}"
-    author: wmsj100
-    mail: wmsj100@hotmail.com
-    ---
-    
-    # $note_name
-    
-    ## 概述
-    
-    ## 用法
-    
-    ## 范例
-    
-    ## 参考
-    - []()
-    " > ${note_name}.md
-}
-
-main()
-{
-	if [ $# -eq 0 ];then
-		echo "please input file name like 'a.md'"
+createTemplate(){
+	if [ $# -lt 1 ];then
+		echo "Please input title"
 		return 1
 	fi
-	create $@
+
+	local title=$1
+	local date=$(date +"%Y-%m-%d %H:%M:%S")
+	local tag=$(basename `pwd`)
+	local categories=$(basename $(dirname $(pwd)))
+	local template="---\ntitle: ${title}\ndate: ${date}\nmodify: \ntags: [$tag]\ncategories: ${categories}\nauthor: wmsj100\nemail: wmsj100@hotmail.com\n---\n\n# ${title}\n\n## 概要\n\n## 参考\n"
+	echo -e $template > ${PWD}/${title}.md
 }
 
-main $@
+createTemplate $@
