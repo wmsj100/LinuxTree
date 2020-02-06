@@ -31,3 +31,4 @@ mail: wmsj100@hotmail.com
 	- [python网络爬虫](https://edu.hellobi.com/course/157/overview)
 - 有趣网站
 	- [壁纸网站](https://wallpaper.wispx.cn/) 有bing壁纸
+	- [古诗文网](https://www.gushiwen.org/)
