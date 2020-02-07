@@ -15,6 +15,39 @@ email: wmsj100@hotmail.com
 - 常见的递归就是阶乘和幂运算
 - 阶乘最经典就是通过递归来实现
 - 凡是可以通过递归实现的都可以通过循环来实现
+- 递归一定要向已知方向行进
+
+## 典型递归范例
+
+```python
+"""
+f(0) = 1，f(1) = 4，f(n + 2) = 2*f(n+ 1) +f(n)，其中 n 是大于 0 的整数
+"""
+
+def fn(n):
+    if n == 0:
+        return 1
+    elif n == 1:
+        return 4
+    else:
+        return 2*fn(n-1) + fn(n-2)
+
+print(fn(10)) #10497
+
+"""
+f(20) = 1，f(21) = 4，f(n + 2) = 2*f(n+ 1) +f(n)，其中 n 是大于 0 的整数
+"""
+
+def fn2(n):
+    if n == 20:
+        return 1
+    elif n == 21:
+        return 4
+    else:
+        return fn2(n+2) - 2*fn(n+1)
+
+print(fn2(10)) #-70592323
+```
 
 ## 阶乘
 
