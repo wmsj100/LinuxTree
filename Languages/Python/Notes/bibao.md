@@ -1,7 +1,7 @@
 ---
 title: 闭包
 date: 2020-01-12 12:27:20
-modify: 
+modify: 2020-02-07 16:43:14 
 tags: [Notes]
 categories: Python
 author: wmsj100
@@ -16,6 +16,20 @@ email: wmsj100@hotmail.com
 - 每次调用外部函数，内部函数都会被重新绑定，
 
 ## 范例
+
+- 幂的闭包,感觉这也是解释闭包的很经典的方法
+```python
+def fn(n):
+    def fn2(m):
+        return m**n
+    return fn2
+
+pinf = fn(2)
+lif = fn(3)
+
+print(pinf(5))
+print(lif(5))
+```
 
 - 手动实现乘法的闭包
 ```python
