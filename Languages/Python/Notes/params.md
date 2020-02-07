@@ -21,6 +21,8 @@ email: wmsj100@hotmail.com
 	- def hello(name, age):
 - 关键字参数
 	- def hello(name='wmsj100', age=32)
+- 查看函数默认参数
+	- hello.__default__ ('wmsj100', 32) 返回函数的默认值参数
 
 ## 收集参数
 
