@@ -51,3 +51,4 @@ vacuum	= true
 
 ## 参考
 
+- [nginx+uwsgi+flask](https://www.missshi.cn/api/view/blog/5b1511a213d85b1251000000)
