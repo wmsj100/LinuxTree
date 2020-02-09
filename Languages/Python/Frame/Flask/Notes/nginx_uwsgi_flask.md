@@ -28,6 +28,7 @@ processes = 1
 threads = 1
 daemonize = /home/ubuntu/Github/python_study/flask/study3/server.log
 pidfile=/home/ubuntu/Github/python_study/flask/study3/uwsgi.pid
+py-autoreload = 1
 ```
 - `socket`: 一个套接字，相当于为外界留出一个uwsgi服务器的接口。
 	- `socket`不等于http，换句话说用这个配置起来的uwsgi服务器是无法直接通过http请求成功访问的，
@@ -38,6 +39,7 @@ pidfile=/home/ubuntu/Github/python_study/flask/study3/uwsgi.pid
 - `processes`和`threads`: 指出了启动uwsgi服务器之后，服务器会打开几个并行的进程，每个进程会开几个线程来等待处理请求。
 - `daemonize`: 表示把uwsgi服务器作为后台进程启动，项的值指向一个文件表明后台中的所有的输出都重定向到这个日志文件。
 - `pidfile`: uwsgi服务启动之后会自动放到后台执行，这个文件存储uwsgi的pid的值。
+- `py-autoreload`: 自动加载变更文件，只用于开发环境，生产环境不能开启，影响执行效率
 
 ### socket和http
 
