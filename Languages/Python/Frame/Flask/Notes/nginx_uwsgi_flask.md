@@ -81,6 +81,34 @@ server {
 
 - 这样配置完成后来自80端口的请求先到达nginx，然后nginx通过socket方式转发给uwsgi，uwsgi通过入口文件run:app方式来启动程序并进行处理，然后把结果返回给nginx。
 
+## 程序入口文件代码
+
+- main.py
+```python
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return "Hello wmsj100"
+
+@app.route('/name')
+def name():
+    return "Your name is wanghao"
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
+```
+
+- run.py
+```python
+from main import app
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0')
+```
+
 ## 参考
 
 - [nginx_uwsig_flask](https://www.cnblogs.com/lfxiao/p/10103490.html)
