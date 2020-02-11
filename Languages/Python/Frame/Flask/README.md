@@ -14,6 +14,11 @@ email: wmsj100@hotmail.com
 
 - flask是python的一个轻量级框架
 
+## 目录
+
+- `Notes`: flask的基础知识
+- `Storages`: 存储的flask的配置文件
+
 ## 参考
 
 - [flask文档](https://dormousehole.readthedocs.io/en/latest/index.html)
