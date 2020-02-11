@@ -22,6 +22,12 @@ mail: wmsj100@hotmail.com
 - 在模块的头部用`"""`包裹的内容为说明文档
 - 导入模块后，可以通过`module_name.__doc__`来读取说明文档
 
+## 包
+
+- 包是一个文件夹，里面有一个文件`__init__.py`，该文件可以为空。
+- 导入包的模块`from bao import test1 test2`，
+- `from bao import *` 这样的语法不能导入bao下的任何模块，必须指定导入的具体模块名
+
 ## 范例
 
 - 一个好的类封装
