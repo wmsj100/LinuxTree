@@ -1,32 +1,57 @@
 ---
 title: 模块
 date: Sun 31 Dec 2017 03:53:39 PM CST
+modify: 2020-02-11 08:07:07 
 tag: [python]
-categories: Linux
+categories: Python
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
+# 模块
+
 ## 基础概念
+
 - import bar 通过导入同目录文件名来导入模块
-- 包 `__init__.py`文件的目录可以用来作为一个包，目录里所有的`.py`文件都是这个包的子模块
-- `help() ==> modules` 在'python'的帮助面板中输入`modules`可以查看所有可用的内建模块
-
-## os
-- 提供了与操作系统相关的功能
-- os.getuid() 获取当前有效用户的id
-- os.uname() 获取操作系统的信息
-- os.getcwd() 获取当前工作目录
-- os.chdir(path) 改变工作目录到'path'
-- os.listdir(path) 获取目录`path`内的所有文件
-
-## Requests 模块
-- 提供了接口操作的功能
-- 这个是第三方的模块，需要单独安装
-- pip3 install Requests
-    ```python
-    import requests
-    req = requests.get('http://www.baidu.com')
-    req.status_code // 200
-    ```
+- `__name__`: 模块名称，当文件直接被调用时候
+	- `__name__ == '__main__'` 当模板被python直接调用
+	- `__name__ == 'module_name` 当模块被通过`import`引入调用时候，该模块的`__name__`为该模块名
     
+## 为模块编写说明文档
+
+- 在模块的头部用`"""`包裹的内容为说明文档
+- 导入模块后，可以通过`module_name.__doc__`来读取说明文档
+
+## 范例
+
+- 一个好的类封装
+```python
+class Clang:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+
+    def __get_info(self):
+        return (self.__name, self.__age)
+
+    def __set_info(self, args):
+        self.__name, self.__age = args
+
+    def __del_info(self):
+        self.__name = 'xxx'
+        self.__age = 0
+
+    def get_name(self):
+        print('name is ',__name__)
+
+    info = property(__get_info, __set_info, __del_info)
+
+if __name__ == '__main__':
+    test = Clang('wmsj100', 32)
+    print(test.info)
+	test.info = 44,55
+    print(test.info)
+	del test.info
+    print(test.info)
+    print('name is ',__name__)
+```
