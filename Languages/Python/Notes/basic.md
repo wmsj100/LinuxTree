@@ -1,7 +1,7 @@
 ---
 title: python基础知识
 date: Tue 19 Dec 2017 11:03:08 PM CST
-modify: 2020-02-02 12:30:30 
+modify: 2020-02-12 18:30:27
 tag: [basic]
 categories: Python
 author: wmsj100
@@ -17,6 +17,7 @@ mail: wmsj100@hotmail.com
 - Jython: python的java实现
 - IrconPython: 针对.Net框架的python实现
 - PythonNet: 是一个近乎无缝的集成。
+- 使用相对导入来导入模块，这样包名称变更后影响很小，可能只需要1秒时间来更改包名称就可以了。
 
 ## 范例
 
