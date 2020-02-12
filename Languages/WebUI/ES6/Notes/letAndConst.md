@@ -1,7 +1,7 @@
 ---
 title: let和const
 date: 2018-06-24 16:00:46	
-modify: 
+modify: 2020-02-12 13:15:17 
 tag: [basic]
 categories: ES6 
 author: wmsj100
@@ -11,9 +11,21 @@ mail: wmsj100@hotmail.com
 # let和const
 
 ## 概述
+
 - ES6目标：是js可以用来编写复杂的大型应用程序，成为企业级开发语言；
+- let只作用于申明的变量只在let命令所在的代码块内有效。
+```js
+{
+	let a = 1;
+	var b = 2;
+}
+a # error
+b # 2
+```
 
 ## let声明
+
+- let不存在变量提升，不能再声明前使用，var可以，值为`undefined`
 - let 块作用域变量声明，这个作用在`for`循环中特别有用
 	```ts
 	for(let i=0;i<3; i++){
@@ -25,6 +37,7 @@ mail: wmsj100@hotmail.com
 - var创建的变量会出现变量提升，即可以在声明之前使用，值为`undefined`；let不允许这样，否则报错；
 
 ### 暂时性死区
+
 - 只要块级作用域内存在`let`命令，它所声明的变量就“绑定”这个区域，不再受外部影响。
 	```ts
 	var tmp = 123;
@@ -64,6 +77,7 @@ mail: wmsj100@hotmail.com
 	```
 
 ## 块级作用域
+
 - ES5只有全局作用域和函数作用域，没有块级作用域，
 	```ts
 	var tmp = new Date();
@@ -83,6 +97,7 @@ mail: wmsj100@hotmail.com
 - 尽可能使用函数表达式而不是声明声明，
 
 ## const
+
 - 声明一个只读变量，一旦声明，就不能改变；意味着`const`一旦声明必须立即初始化，不能留到以后赋值；
 - const变量和`let`类似，也存在暂时性死区。
 - 和`let`一样，也不能重复声明；
@@ -105,11 +120,13 @@ mail: wmsj100@hotmail.com
 - ES6有六种声明命令的方法；`var/ function/let/const/class/import`
 
 ## 顶层对象
+
 - ES5中顶层对象的属性和全局变量是挂钩的，这被认为是JS语言设计的败笔之一。
 - ES6规定，var/function命令声明的全局变量，依旧是顶层对象的属性；
 	- `let`,`const`, `class`命令声明的全局变量，不属于顶层对象的属性。
 
 
 ## 参考
-- []()
+
+- [let和const](http://es6.ruanyifeng.com/#docs/let)
 
