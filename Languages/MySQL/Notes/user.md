@@ -18,7 +18,9 @@ categories: MySQL
 - `select * from mysql.db where user='pi'\G;` 查看用户的数据库权限
 - `revoke insert on test.* from 'user1'@'localhost'; 回收user1对数据库test所有表的插入权限
 - `show grants from user1;` 查看用户user1的所有权限
+- `grant ALL PRIVILEGES on flask1.* to 'ubuntu'@'localhost';` 把数据库flask1的所有权限都授权给ubuntu.
 
 ## 参考
 - [mysql权限](https://www.cnblogs.com/Csir/p/7889953.html)
 - [mysql权限范例](https://www.cnblogs.com/wangchaoyuana/p/7545419.html)
+- [mysql数据库授权](https://www.cnblogs.com/NiceCui/p/8588361.html)
