@@ -110,6 +110,16 @@ a.author.email
 	- `Article.objects.all().prefetch_related('tags').first()'
 	- `a.tags.all()` 查询每篇文章对应的所有标签。
 
+## defer 排除
+
+- `Author.objects.defer('name')` 排除name
+- `'SELECT "app1_author"."id", "app1_author"."qq", "app1_author"."addr", "app1_author"."email" FROM "app1_author"'`
+
+## only 仅选择需要
+
+- `Author.objects.only('name')` 仅选择name
+- `'SELECT "app1_author"."id", "app1_author"."name" FROM "app1_author"'`
+
 ## 参考
 
 - [djando 数据库](https://code.ziqiangxuetang.com/django/django-models.html)
