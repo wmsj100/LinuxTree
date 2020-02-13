@@ -120,6 +120,12 @@ a.author.email
 - `Author.objects.only('name')` 仅选择name
 - `'SELECT "app1_author"."id", "app1_author"."name" FROM "app1_author"'`
 
+## 数据库表结构变更
+
+- django现在自动表结构变更需要重新生成
+- `python manage.py makemigrations` 如果是有新增字段，django会自动提示新增字段的默认值
+- `python manage.py migrate app1 003` 把app1的数据库结构回退到003版本。
+
 ## 参考
 
 - [djando 数据库](https://code.ziqiangxuetang.com/django/django-models.html)
