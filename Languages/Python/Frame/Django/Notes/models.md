@@ -39,6 +39,14 @@ mail: wmsj100@hotmail.com
 2. p = Person(name="wmsj100", age=12); p.save()
 3. p = Person(name="wmsj100"); p.age = 12; p.save()
 4. Person.objects.get_or_create(name="wmsj100", age=12) 这个方法可以避免创建重复的值，但是速度相对较慢，返回一个元组
+4. 一次插入多条语句
+```python
+a=Blog(title='aa', content='bb')
+b=Blog(title='bb', content='cc')
+c = Blog(title='cc', content='dd')
+Blog.objects.bulk_create([a,b,c])
+#[<Blog: aa>, <Blog: bb>, <Blog: cc>]
+```
 
 ## 获取对象
 
