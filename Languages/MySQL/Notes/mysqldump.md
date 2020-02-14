@@ -1,10 +1,24 @@
-# 备份
+---
+title: mysqldump
+date: 2020-02-14 20:31:54
+modify: 
+tags: [Notes]
+categories: MySQL
+author: wmsj100
+email: wmsj100@hotmail.com
+---
 
-- 导出的文件只是保存数据库中的数据；
-- 备份则把数据库的结构/ 约束/ 索引/ 视图等全部另存为一个sql文件；
-- mysqldump 是备份命令。
+# mysqldump
 
-- mysqldump -u root database > back.sql
-- mysqldump -u root database table > back.sql;
+## 概要
 
- 
+- 导出数据命令
+- 导出操作只有root有权限
+
+## 导出数据库指定表数据
+
+- `sudo mysqldump django1 -u root --tables blog > /tmp/blog.sql`
+
+## 参考
+
+- [mysqldump导出](https://www.cnblogs.com/linjiqin/p/11888943.html)
