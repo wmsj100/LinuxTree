@@ -42,6 +42,14 @@ mail: wmsj100@hotmail.com
 	- `<h3 v-on:click="dosmt">click</h3>`
 	- `<h3 @click="dosmt">click</h3>`
 
+## v-if or v-show
+
+- v-if是真正的条件渲染，因为它会确保在切换过程中条件块内的事件监听和子组件适当被销毁和重建。
+- v-if 也是惰性的，如果初始条件为假，则什么也不做，知道条件第一次变为真时才开始渲染
+- v-show简单很多，就是通过切换display:none，切换css的样式，DOM块始终会渲染
+- v-if有很高的切换开销，v-show有很高的初始化渲染开销。
+- 如果是频繁切换，则使用v-show，如果运行条件少，就使用v-if
+
 ## 范例
 
 ## 参考
