@@ -126,6 +126,14 @@ var app2 = new Vue({
 	- app2.obj = Object.assign({}, app2.obj, {name: 'wmsj100', age:32}) 
 	- 上面是vue提供的更新属性的方法
 
+## template
+
+- v-for也可以像v-if一样作用于template标签
+
+## 组件
+
+- v-for可以用于组件component,当用于组件时，key必须指定。
+
 
 ## 总结
 
