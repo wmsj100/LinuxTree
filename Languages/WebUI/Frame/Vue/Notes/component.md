@@ -71,5 +71,110 @@ email: wmsj100@hotmail.com
 </script>
 ```
 
+## 组件写复杂模板
+
+- 复杂模板可以用'`'包裹，
+- 多个属性可以绑定到一个属性进行传递，
+- 绑定的属性prop是在当前标签上传输下去的，定义模板时候只是申明了哪些属性是允许传递数据的
+```html
+<div id="app4">
+	<my-blog v-for="post in posts" v-bind:key="post.id" v-bind:post="post"></my-blog>
+</div>
+<script>
+	Vue.component('my-blog', {
+		props: ['post'],
+		template: `
+		<div>
+		<p>{{ post.title }}</p>
+		<p>{{ post.content }}</p>
+		</div>
+		`
+	});
+	new Vue({el: '#app1'});
+	new Vue({el: '#app2'});
+
+	new Vue({
+		el: '#app4',
+		data: {
+			posts: [
+				{id: 1, content: 'this is content',  title: 'one blog'},
+				{id: 2, content: 'this is content',  title: 'two blog'},
+				{id: 3, content: 'this is content',  title: 'three blog'},
+				{id: 4, content: 'this is content',  title: 'four blog'},
+			],
+		}
+	});
+```
+
+## 组件事件联动
+
+- 可以在自定义组件调用时候添加自定义事件进行绑定，
+- 子组件内部通过`v-on:click="$emit('enlarge-text')"`这样来实现实现组件内触发父组件事件触发
+- 对于组件自定义事件监听的属性名必须符合h5标准，只能是中横线模式，不能是驼峰，也不能有大写，
+- 如果写做`v-on:enlargeText='enlarge'`这样子组件调用这个方法就会报错，不生效。
+```html
+<div id="app4" :style="{fontSize: postFontSize + 'em'}">
+	<my-blog v-for="post in posts" v-bind:key="post.id" v-on:enlarge-text="enlarge" v-bind:post="post"></my-blog>
+</div>
+<script>
+	Vue.component('my-blog', {
+		props: ['post'],
+		template: `
+		<div>
+		<p>{{ post.title }}</p>
+		<p>{{ post.content }}</p>
+		<button class="btn btn-warning" v-on:click="$emit('enlarge-text')" >large text</button>
+		</div>
+		`
+	});
+
+	new Vue({
+		el: '#app4',
+		data: {
+			postFontSize: 1,
+			posts: [
+				{id: 1, content: 'this is content',  title: 'one blog'},
+				{id: 2, content: 'this is content',  title: 'two blog'},
+				{id: 3, content: 'this is content',  title: 'three blog'},
+				{id: 4, content: 'this is content',  title: 'four blog'},
+			],
+		},
+		methods: {
+			enlarge: function(){
+				this.postFontSize += 0.1;
+			}
+		}
+	});
+</script>
+```
+
+## v-model组件
+
+- 子组件内部的input如果想要和父组件的变量联用，需要满足下面条件
+	- 子组件的input必须将`value`属性绑定到名为`value`的prop上
+	- input事件被触发时，将新的值通过自定义的`input`事件抛出
+	- `v-on:input="$emit('input', $event.target.value)"`
+```html
+<div id="app4">
+	<p>{{ searchTxt }}</p>
+	<custom-input v-model="searchTxt"></custom-input>
+</div>
+<script>
+	Vue.component('custom-input', {
+		props: ['value'],
+		template: `
+		<input type="" v-bind:value="value" v-on:input="$emit('input', $event.target.value)">
+		`
+	});
+
+	new Vue({
+		el: '#app4',
+		data: {
+			searchTxt: 'wmsj',
+		},
+	});
+</script>
+```
+
 ## 参考
 
