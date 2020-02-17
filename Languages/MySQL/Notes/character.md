@@ -1,7 +1,7 @@
 ---
 title: 字符集
 date: 2019-04-09 21:56:08	
-modify: 
+modify: 2020-02-17 16:19:01  
 tag: [basic]
 categories: MySQL 
 author: wmsj100
@@ -28,6 +28,9 @@ mail: wmsj100@hotmail.com
 - show create database test \G; 查看创建数据库时候的信息，可以查看到字段`character`
 - alter database test character set utf8; 修改数据库字符集为`utf8`
 - alter tabel test_student convert to character set utf8; 把表的所有字段都转换为utf8
+- show variables like 'character_set_database' 查看数据库的编码
+- alter table app1_blog title title vharchar(20) character set utf8; 修改表的某个字段的编码
+- show create table app1_blog 查看表的编码格式
 
 
 ## 参考
