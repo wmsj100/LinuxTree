@@ -1,6 +1,7 @@
 ---
 title: shell基础概念
 date: Sun 03 Dec 2017 06:48:34 PM CST
+modify: 2020-02-18 08:26:27 
 tag: [shell]
 categories: Linux
 author: wmsj100
@@ -15,6 +16,7 @@ mail: wmsj100@hotmail.com
 - 程序脚本
 - 通配符
 
+- > 重定向 `>/dev/null 2>&1`
 - type 通过type可以知道命令是内置命令还是外部命令或者是命令别名
 
 - 变量 可以用一个固定的字符表示变动的内容，比如Mail可以针对不同登陆用户获取到相应的邮件。
