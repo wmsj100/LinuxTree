@@ -1,7 +1,7 @@
 ---
 title: 函数 
 date: 2018-06-26 22:25:27	
-modify: 
+modify: 2020-02-16 12:41:50  
 tag: [function]
 categories: ES6
 author: wmsj100
@@ -11,6 +11,7 @@ mail: wmsj100@hotmail.com
 # 函数
 
 ## 概述
+
 - 允许函数的参数写入默认值
 	```ts
 	function Point(x=0, y=0){
@@ -63,12 +64,14 @@ mail: wmsj100@hotmail.com
 	- 所以指向y后,x为2;
 
 ## rest参数
+
 - rest参数(形式为...变量名),用于获取函数多余的参数,形成一个数组.
 	- `const sortN = (...numbers) => numbers.sort();`
 - rest参数后面不可以有其他参数,否则会报错
 - 函数的`length`属性不包括`rest`参数
 
 ## 箭头函数
+
 - `ES6`允许使用`箭头``=>`定义函数
 	```ts
 	var f = v=>v;
@@ -88,8 +91,10 @@ mail: wmsj100@hotmail.com
 	```ts
 	let get1 = id => ({id: id, name: 'tom'});
 	```
+- 箭头函数内部没有`this/super/arguments`
 
 - 对于函数式编程,没有循环这个操作,都是通过递归来实现的,所以通过尾递归操作来避免溢出就是很有效的操作.- 函数的参数后面可以像对象的属性一样在最后一个参数后添加逗号不会报错
 
 ## 参考
+
 - [箭头函数](http://es6.ruanyifeng.com/?search=%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0&x=10&y=9#docs/function)
