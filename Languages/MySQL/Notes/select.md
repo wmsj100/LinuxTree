@@ -1,7 +1,7 @@
 ---
 title: select
 date: 2019-04-10 08:04:36	
-modify:
+modify: 2020-02-18 22:40:54 
 tags: [basic]
 categories: MySQL
 ---
@@ -42,6 +42,7 @@ categories: MySQL
 - ‘asc’ 升序
 - ‘desc’ 降序
 - order by 字句一定要放在where的后面
+- ` select * from app1_areatree where type='country' and date='02.18' order by totalConfirm desc;`
 
 ## 分页
 - limit 3 offset 2; 查询第2页，每页显示3条
