@@ -16,6 +16,7 @@ mail: wmsj100@hotmail.com
 ## 详情
 - Note 基础知识点的整理目录
 - Storage 存储webpack配置
+- Plugin webpack的常用插件
 
 ## 收藏
 - [官方文档](https://doc.webpack-china.org/guides/getting-started)
