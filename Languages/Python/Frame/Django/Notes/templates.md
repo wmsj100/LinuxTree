@@ -20,6 +20,11 @@ email: wmsj100@hotmail.com
 - 调用或者引入模板都需要添加app名称`{% extends 'app1/base.html' %}` `return render(request, 'app1/home.html')`
 - 再`base.html`可以通过`{% include 'app1/nav.html' %}` 导入文件
 
+## 渲染变量
+
+- 其实昨天我就有在想我在数据库中查询到的数据该怎么传输到页面呢，是必须要让值转换为`values`字典类型然后在传输吗？
+- 刚刚试的结果是查询到的queryset结构也是类数组，可以在页面直接执行for循环，然后读取需要的值就可以了。
+
 ## 参考
 
 - [django 模板](https://code.ziqiangxuetang.com/django/django-template.html)
