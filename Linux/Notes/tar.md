@@ -1,6 +1,7 @@
 ---
 title: 文件打包与解压缩
 date: Sun 18 Feb 2018 05:02:50 PM CST
+modify: 2020-02-19 08:09:52 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -54,7 +55,7 @@ mail: wmsj100@hotmail.com
 	- -J 打包xz压缩包
 - tar -xzf test1.tar.gz test1
 	- -x 解压缩gzip包
-- 
+- `tar -Jcf bak.tar.xz bak.log --remove-files` 打包压缩包并且删除源文件
 
 ## 安装tar.gz软件包
 - tar -xzvf *.tar.gz -C ./filepath
