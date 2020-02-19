@@ -56,6 +56,7 @@ mail: wmsj100@hotmail.com
 - tar -xzf test1.tar.gz test1
 	- -x 解压缩gzip包
 - `tar -Jcf bak.tar.xz bak.log --remove-files` 打包压缩包并且删除源文件
+- `tar --concatenate --file a.tar b.tar` 合并b.tar到a.tar包
 
 ## 安装tar.gz软件包
 - tar -xzvf *.tar.gz -C ./filepath
