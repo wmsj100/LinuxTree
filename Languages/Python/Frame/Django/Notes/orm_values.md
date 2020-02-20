@@ -26,6 +26,12 @@ email: wmsj100@hotmail.com
 	- `Article.objects.values('category_id')`
 	- `Article.objects.values('category')`
 
+## value_list
+
+- 返回的不是字典，而是只包含值的元组
+- `Article.objects.values_list('title', 'user')`
+- `<QuerySet [('one python title', 1), ('two shell', 1), ('我被修改类', 1)]>`
+
 ## 参考
 
 - [django orm values](https://www.django.cn/course/show-18.html)
