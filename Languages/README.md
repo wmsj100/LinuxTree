@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-03-05
-modify: 2020-02-02 15:48:43 
+modify: 2020-02-20 19:25:24 
 tag: linux,editor,tool
 categories: Linux
 author: wmsj100
@@ -21,6 +21,7 @@ mail: wmsj100@hotmail.com
 - C C语言
 - Git 版本控制系统工具`git`的知识点整理
 - MySQL 数据库
+- Redis 内存数据库redis
 - Python Python语言
 - Shell Linux的Shell语言
 - SQLite 嵌入式的数据库
