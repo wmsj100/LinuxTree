@@ -1,6 +1,7 @@
 ---
 title: Linux任务计划
 date: Tue 20 Feb 2018 10:35:46 PM CST
+modify: 2020-02-20 11:00:21 
 tag: [linux,config]
 categories: Linux
 author: wmsj100
@@ -35,6 +36,7 @@ mail: wmsj100@hotmail.com
 - /etc/crontab 查看系统的例行任务
 - 这里的任务只有在root端口以邮件的方式查看任务 mail 邮件可以看到执行结果
 - */1 * * * * root echo "hello world" 每分钟以root权限执行命令输出“hello world”
+- */10 * * * * ./shell.sh  每10分钟执行脚本一次
 
 ### 範例
 - * * * * * service httpd restart 每分钟重启http服务
