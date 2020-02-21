@@ -53,3 +53,38 @@ local_name.location # oss-cn-beijing
 ```
 
 ## 判断bucket是否存在
+
+```python
+try:
+	bucket.get_bucket_info()
+except oss2.exceptions.NoBucket:
+	return False
+except:
+	raise
+return True
+```
+
+## 获取存储空间信息
+
+- info=bucket.get_bucket_info()
+- info.name bucket名称
+- info.storage_class 存储类型
+- info.creation_date 创建日期 2020-02-21T04:04:16.000Z'
+- b.intranet_endpoint 'oss-cn-beijing-internal.aliyuncs.com'
+- b.extranet_endpoint 'oss-cn-beijing.aliyuncs.com'
+- b.owner.id 创建者id
+- b.acl.grant bucket的类型，默认私有
+- b.data_redundancy_type LRS 加密类型
+
+## 存储空间权限
+
+- 有三种权限，默认是私有
+	- oss2.BUCKET_ACL_PRIVATE
+	- oss2.BUCKET_ACL_PUBLIC_READ
+	- oss2.BUCKET_ACL_PUBLIC_READ_WRITE
+- `bucket.put_bucket_acl(oss2.BUCKET_ACL_PUBLIC_READ_WRITE)` 更改为公共读写
+- `bucket.get_bucket_info().acl.grant` 变更权限后可以进行查看
+
+## 删除存储空间
+
+- `bucket.delete_bucket()` 只能删除一个空的存储空间
