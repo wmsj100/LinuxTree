@@ -21,6 +21,12 @@ email: wmsj100@hotmail.com
 - 对于oss的所有操作都是通过ram的子用户身份进行，因为这种角色的用户权限是受限的且随时可以禁用和取消
 - RAM用户对应一个操作实体
 
+## sdk用户权限配置
+
+- 创建用户会展示一个`accessKeyID`和`accessKeySecret`俩个关键字
+- 只会展示一次，需要妥善保管。
+- 可以配置`~/.ossutilconfig`中配置，也可以sdk访问时候配置。
+
 ## 参考
 
 - [oss ram](https://ram.console.aliyun.com/overview)
