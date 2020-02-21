@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-03-05
-modify: 2020-02-20 19:25:24 
+modify: 2020-02-21 21:30:48 
 tag: linux,editor,tool
 categories: Linux
 author: wmsj100
@@ -38,3 +38,8 @@ mail: wmsj100@hotmail.com
 ## 软件收藏
 
 - [Sumatra PDF](https://www.sumatrapdfreader.org/downloadafter.html)
+
+## 总结
+
+- 为了安装jeyll一个静态模板安装了ruby，一大堆东西，后来发现没有hexo好用，一直都是用hexo，所以卸载了，
+- 查找卸载方法，各种黑科技但不解决问题，后来试了下`sudo apt remove ruby` 一条命令就ok了，全部卸载干净`sudo apt autoremove`
