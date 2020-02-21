@@ -18,7 +18,9 @@ mail: wmsj100@hotmail.com
 - Storage 关于linux的系统的收藏，包括软件/项目/图片等
 - SoftWare Linux好用的软件
 - Network 关于网络的知识点
-- VirtualCloud 虚拟云系统openstack/vmware/windows server
+- System 虚拟云系统openstack/vmware/windows server
+- Hardware 硬件
+- CloudServer 云服务厂商的服务
 
 ## 书单
 
