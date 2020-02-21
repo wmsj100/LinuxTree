@@ -26,6 +26,7 @@ email: wmsj100@hotmail.com
 
 - Notes: 基础知识。
 - Summary: 总结
+- Storage: 自己写的脚本
 
 ## 参考
 
