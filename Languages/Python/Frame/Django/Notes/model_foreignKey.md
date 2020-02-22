@@ -80,6 +80,11 @@ Choice.objects.filter(question__pub_date__year=current_year)
 
 ```
 
+## 删除外键的值
+
+- `c=q.choice_set.filter(choict_text__startswith='Just hacking')); c.delete()`
+- 通过主键question的值先过滤出要删除的值，然后调用delete方法
+
 ## 参考
 
 - [django文档](https://docs.djangoproject.com/zh-hans/3.0/intro/tutorial02/)
