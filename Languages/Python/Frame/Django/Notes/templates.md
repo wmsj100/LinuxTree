@@ -13,6 +13,7 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 存放模板文件的位置
+- 不要在模板中写硬编码URL，这样会和url的python代码强耦合
 
 ## 操作
 

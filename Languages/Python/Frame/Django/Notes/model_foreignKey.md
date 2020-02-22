@@ -85,6 +85,19 @@ Choice.objects.filter(question__pub_date__year=current_year)
 - `c=q.choice_set.filter(choict_text__startswith='Just hacking')); c.delete()`
 - 通过主键question的值先过滤出要删除的值，然后调用delete方法
 
+## 模板展示外键
+
+- `for choice in question.choice_set.all`
+- 本来是需要调用`all()`方法的，但是模板中是不支持`()`，所以模板只写`all`就可以
+```html
+<h1>{{ question.question_text }}</h1>
+<ul>
+	{% for choice in question.choice_set.all %}
+	<li>{{ choice.choice_text }}</li>
+	{% endfor %}
+</ul>
+```
+
 ## 参考
 
 - [django文档](https://docs.djangoproject.com/zh-hans/3.0/intro/tutorial02/)
