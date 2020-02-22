@@ -31,3 +31,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [oss 文档](https://help.aliyun.com/document_detail/97728.html?spm=a2c4g.11186623.6.885.2fbe61bbWzQpat)
