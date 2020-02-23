@@ -2,8 +2,8 @@
 title: README
 date: 2018-03-05
 modify: 2020-02-21 21:30:48 
-tag: linux,editor,tool
-categories: Linux
+tag: [EADME]
+categories: Language
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
@@ -28,6 +28,7 @@ mail: wmsj100@hotmail.com
 - Vim vim编辑器，所有类Unix系统默认安装的编辑器
 - VsCode IDE
 - WebUI 前端知识
+- Sphinx 一个项目API文档生成工具
 
 ## 有趣接口
 
