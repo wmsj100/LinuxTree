@@ -23,6 +23,9 @@ mail: wmsj100@hotmail.com
 ## 详情
 
 - Note 基础知识点的整理目录
+- Articles
+- Storage
+- Summary
 
 ## Django架构
 

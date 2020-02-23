@@ -1,7 +1,7 @@
 ---
 title: urls
 date: 2018-05-01 16:10:50 Tue
-modify: 2020-02-19 17:18:49 
+modify: 2020-02-23 13:03:22 
 tag: [urls]
 categories: Django
 author: wmsj100
@@ -78,6 +78,8 @@ def comments(request, page_num=0):
 ## url重定向
 
 - url重定向方便于之前保存了页签但是不至于把url\完全废弃，所以使用了重定向技术。
+- 在view页面中重定向页面时候需要的url就通过reverse进行反向解析
+- `from django.utils import reverse`
 - 下面就是一个url的重定向，当请求
 	- `http://myweb.com:8007/myblog/oldtag/oldtag_page23489/`会自动跳转到下面的链接
 	- `http://myweb.com:8007/myblog/tags_page/tag-23489/`
