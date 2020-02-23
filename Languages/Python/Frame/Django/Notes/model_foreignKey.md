@@ -1,7 +1,7 @@
 ---
 title: model_datetime
 date: 2020-02-22 18:00:00
-modify: 
+modify: 2020-02-23 12:50:41  
 tags: [Notes]
 categories: Django
 author: wmsj100
@@ -96,6 +96,24 @@ Choice.objects.filter(question__pub_date__year=current_year)
 	<li>{{ choice.choice_text }}</li>
 	{% endfor %}
 </ul>
+```
+
+## 查询关联外键的值
+
+- Choice中的question外键到Question
+- 现在想查询所有包含choice的question，这个怎么实现，一次查询肯定做不到，
+- 需要先统计Choice中包含的question.id,使用集合推导式，获取到所有id的集合
+- 然后通过上面统计的出的id进行filter过滤
+```python
+class ResultsView(generic.DetailView):
+    model = Question
+    template_name = 'polls/results.html'
+
+    def get_queryset(self):
+        choice_question_set = {
+                choice.question_id for choice in Choice.objects.all()
+                }
+        return  Question.objects.filter(id__in=choice_question_set)
 ```
 
 ## 参考

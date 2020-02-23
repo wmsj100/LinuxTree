@@ -34,6 +34,7 @@ mail: wmsj100@hotmail.com
 - [https://httpbin.org/ip](https://httpbin.org/ip) 请求返回当前接口
 - [https://yesno.wtf/api](https://yesno.wtf/api) 请求返回yes/no，并且附带表示响应的动态图片
 - [https://www.json.cn/](https://www.json.cn/) 解析json字符串
+- [https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5](https://view.inews.qq.com/g2/getOnsInfo?name=disease_h5) 腾讯疫情接口
 
 ## 软件收藏
 
