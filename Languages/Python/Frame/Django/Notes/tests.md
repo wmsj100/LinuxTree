@@ -72,3 +72,8 @@ Destroying test database for alias 'default'...
 	- 在类中寻找测试方法，以test开头的方法
 	- 在`test_was_publisted_recently_with_future_qustion`中创建实例
 	- 使用`assertIs()`期望返回False，
+
+- test的client.get的response
+```response
+[{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x7fad01524a60>>, 'request': <WSGIRequest: GET '/test1/'>, 'user': <SimpleLazyObject: <function AuthenticationMiddleware.process_request.<locals>.<lambda> at 0x7fad015249d8>>, 'perms': <django.contrib.auth.context_processors.PermWrapper object at 0x7fad0150c8d0>, 'messages': <django.contrib.messages.storage.fallback.FallbackStorage object at 0x7fad014e6978>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'paginator': None, 'page_obj': None, 'is_paginated': False, 'object_list': <QuerySet []>, 'recently_questions': <QuerySet []>, 'view': <test1.views.IndexView object at 0x7fad014e69b0>}]
+```

@@ -20,6 +20,7 @@ email: wmsj100@hotmail.com
 - 为每个app创建目录`app/templates/app`，这样可以避免模板名称和其他app的模板重复导致查找文件出错
 - 调用或者引入模板都需要添加app名称`{% extends 'app1/base.html' %}` `return render(request, 'app1/home.html')`
 - 再`base.html`可以通过`{% include 'app1/nav.html' %}` 导入文件
+- 模板中要使用css时候需要通过`{% load static %}` 然后就可以以link的形式引入css或者图片
 
 ## 渲染变量
 

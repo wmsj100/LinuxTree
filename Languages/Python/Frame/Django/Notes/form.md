@@ -55,4 +55,6 @@ def vote(request, question_id):
     return HttpResponse("You're voting on question {}.".format(question_id))
 ```
 - reverse: 用于避免了在视图函数中硬编码URL。
+	- reverse可以通过`args`来接受参数，
+	- `reverse('polls:restul.html', args=(question.id))`
 - 一个好的页面反馈是在post提交成功之后要执行重定向，所以建议在每个post后都添加一个`HttpResponseRedirect`

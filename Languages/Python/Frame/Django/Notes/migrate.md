@@ -1,7 +1,7 @@
 ---
 title: migrate
 date: 2020-02-19 21:05:15
-modify: 
+modify: 2020-02-25 16:08:04 
 tags: [Notes]
 categories: Django
 author: wmsj100
@@ -26,6 +26,9 @@ email: wmsj100@hotmail.com
 	- `python manage.py makemigrations`
 	- `python manage.py migrage`
 	- 然后就可以重新生成数据库了。
+
+- 也可以从一个app导入另一个app数据，但是需要修改导出的json文件的model的名称，然后导入就成功了。
+- 也可以通过mysql来操作。
 
 ## 参考
 
