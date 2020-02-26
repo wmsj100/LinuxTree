@@ -19,6 +19,7 @@ mail: wmsj100@hotmail.com
 - [Django入门介绍](https://yiyibooks.cn/xx/Django_1.11.6/intro/whatsnext.html)
 - [Django-入门](http://www.cnblogs.com/luxiaojun/p/5791498.html)
 - [Django-models教程](https://www.cnblogs.com/luxiaojun/p/5795070.html)
+- [刘江博客](https://www.liujiangblog.com)
 
 ## 详情
 
