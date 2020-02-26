@@ -25,6 +25,7 @@ mail: wmsj100@hotmail.com
 - Articles 文章或者感想
 - Summary	技术总结
 - Statics	静态文件存储
+- Storage 存储的sql数据片段，
 
 ## 总结
 
