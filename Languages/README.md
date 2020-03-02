@@ -31,6 +31,7 @@ mail: wmsj100@hotmail.com
 - Sphinx 一个项目API文档生成工具
 - Hexo 一个静态博客系统
 - Jenkins 一个开源的持续集成和持续交付工具
+- SaltStack 一个基于python的基础设施管理工具，
 
 ## 有趣接口
 
