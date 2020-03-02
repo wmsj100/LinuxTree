@@ -20,6 +20,10 @@ email: wmsj100@hotmail.com
 
 - Notes: 基础知识点
 
+## 源
+
+- [清华源](https://mirrors.tuna.tsinghua.edu.cn/jenkins/war/)
+
 ## 参考
 
 - [https://jenkins.io/zh/](https://jenkins.io/zh/) 官方文档
