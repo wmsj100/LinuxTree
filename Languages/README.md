@@ -30,6 +30,7 @@ mail: wmsj100@hotmail.com
 - WebUI 前端知识
 - Sphinx 一个项目API文档生成工具
 - Hexo 一个静态博客系统
+- Jenkins 一个开源的持续集成和持续交付工具
 
 ## 有趣接口
 
