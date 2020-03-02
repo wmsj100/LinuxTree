@@ -46,7 +46,13 @@ mail: wmsj100@hotmail.com
 - [Sumatra PDF](https://www.sumatrapdfreader.org/downloadafter.html)
 - [markdown在线工具](https://www.zybuluo.com/mdeditor)
 
+## 数据源
+
+- [清华源](https://mirrors.tuna.tsinghua.edu.cn/)
+
 ## 待学习
 
 - Redis
 - Sphinx
+- jenkins
+- docker
