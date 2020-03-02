@@ -1,8 +1,11 @@
 --- 
 title: 创建用户
 date: 2019-09-13 10:17:17 Friday	
+modify: 2020-03-02 08:12:31 
 tag: Notes
 categories: MySQL
+auth: wmsj100
+email: wmsj100@hotmail.com
 ---
 
 # 创建用户
@@ -20,6 +23,10 @@ categories: MySQL
 - `show grants from user1;` 查看用户user1的所有权限
 - `show grants for 'ubuntu'@'localhost'` 查看用户的所有权限
 - `grant ALL PRIVILEGES on flask1.* to 'ubuntu'@'localhost';` 把数据库flask1的所有权限都授权给ubuntu.
+
+## 修改用户名
+
+- `set password for ubuntu@localhost=password('123456')` 修改密码为123456
 
 ## 参考
 - [mysql权限](https://www.cnblogs.com/Csir/p/7889953.html)
