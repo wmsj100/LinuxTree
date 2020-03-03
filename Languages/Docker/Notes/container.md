@@ -22,6 +22,8 @@ email: wmsj100@hotmail.com
 - `docker container start 6ee3d518b856` 启动容器
 - `docker container ls -a` 默认只列出运行中的容器，通过这个命令可以列出所有容器
 - `docker container rm 6ee3d518b856` 删除指定容器
+	- 删除容器之前需要先stop容器
+	- 删除镜像image之前需要先删除容器
 
 ## 参考
 
