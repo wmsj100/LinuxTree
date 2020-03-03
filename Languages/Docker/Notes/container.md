@@ -13,6 +13,11 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 容器的基础命令
+- 容器和虚拟机的区别是容器更小更更快更轻量级。
+- `docker container run`来启动容器
+- `-it`参数可以将当前终端连接到容器的shell终端上。
+- 容器会随着其中运行的应用的推出而终止
+- `docker version` 查看docker的daemon
 
 ## 命令
 
