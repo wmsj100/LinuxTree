@@ -21,6 +21,7 @@ mail: wmsj100@hotmail.com
 
 ## 参考
 
+- [docker 开源书籍](https://yeasy.gitbooks.io/docker_practice/content/introduction/what.html)
 - [树莓派安装docker](http://shumeipai.nxez.com/2019/05/20/how-to-install-docker-on-your-raspberry-pi.html)
 - [阮一峰docker](http://www.ruanyifeng.com/blog/2018/02/docker-tutorial.html)
 - [docker源网站](https://www.daocloud.io/dce)
