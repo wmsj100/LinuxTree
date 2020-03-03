@@ -31,5 +31,10 @@ mail: wmsj100@hotmail.com
 }
 ```
 
+## 查看运行状态
+
+- `service docker status`
+- `systemctl is-active docker` active
+
 ## 参考
 
