@@ -37,6 +37,9 @@ obtqji3qrbzqeqnakeflzlvec *   VM-0-13-ubuntu      Ready               Active    
 hyevys1afw0jdyacwrv4pd8v3     ip-10-23-186-31     Ready               Active                                  1.13.0
 ```
 - `docker swarm update --autolock=true` 可以锁定主管理节点，这样重启管理节点后其他管理节点并不会自动结果管理权限，需要生成的key值来授信，重新在lock管理节点输入`docker swarm unlock`,然后输入lock生成的key值，这样可以重新接入swarm，执行`docker node ls`也可以重新看到节点信息了。
+- docker的管理节点本身也是worker节点，所以它下发的service任务也会在当前管理节点部署。
+- `docker swarm leave` 工作节点可以通过这个命令来脱离集群
+- `docker swarm leave --froce` 管理节点可以强制脱离或者解散集群
 
 ## 参考
 
