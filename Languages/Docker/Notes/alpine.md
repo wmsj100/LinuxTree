@@ -20,6 +20,7 @@ email: wmsj100@hotmail.com
 - `docker container run -d --name c1 --network localnet alpine sleep 1d` 
 - 这样就可以基于那个镜像制作一个容器。
 - `docker container run -it --name c2 --network localnet alpine sh` 接入alpine容器
+- 这个linux中基础命令是齐全的，该有的都有。连dos2unix都由
 
 ## 参考
 
