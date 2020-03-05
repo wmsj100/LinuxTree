@@ -31,6 +31,18 @@ a8e3a752a9ec: Pushed
 latest: digest: sha256:4df31fa9eb8abc3760498ecab264b566a6255fb12c79367a870cf4c77285fe22 size: 1159
 ```
 - 等待上传成功后就可以使用search功能查找了，这个有一个延迟，需要等待一会儿才可以看到
+- 删除本地镜像后可以尝试下载镜像
+```
+(py3env) ubuntu:~/Code/Docker$ docker pull wmsj100/web_rasp:latest
+latest: Pulling from wmsj100/web_rasp
+3a2c5e3c37b2: Pull complete
+53f9ec9a51a9: Pull complete
+66685153b949: Pull complete
+a38438b09ae2: Pull complete
+Digest: sha256:4df31fa9eb8abc3760498ecab264b566a6255fb12c79367a870cf4c77285fe22
+Status: Downloaded newer image for wmsj100/web_rasp:latest
+docker.io/wmsj100/web_rasp:latest
+```
 
 ## 参考
 
