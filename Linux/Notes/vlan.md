@@ -18,26 +18,41 @@ email: wmsj100@hotmail.com
 
 ## 创建vlan
 
-- `cd /etc/sysconfig/network-scripts`
-- `sudo cp ifcfg-enp5s0 ifcfg-enp5s0.10` 拷贝主网卡到一个子网配置文件
-```ifcfg-enp5s0.10
-PHYSDEV=enp5s0
-VLAN=yes
-TYPE=Vlan
-VLAN_ID=10
-REORDER_HDR=yes
-GVPR=no
-MVRP=no
-BOOTPROTO=none
-IPADDR=192.168.10.2
-PREFIX=24
-GATEWAY=192.168.10.1
+- `modprobe --first-time 8021q` 确认已经载入该模块
+- `modinfo 8021q` 显示该模块信息
+- `/etc/sysconfig/network-scripts/ifcfg-enp5s0` 该文件配置上级接口
+```ifcfg-enp5s0
+TYPE=Ethernet
+PROXY_METHOD=none
+BROWSER_ONLY=no
+BOOTPROTO=dhcp
 DEFROUTE=yes
-IPV4_FAILURE_FATAL=yes
-NAME=enp5s0.10
-ONBOOT=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_FAILURE_FATAL=no
+IPV6_ADDR_GEN_MODE=stable-privacy
+NAME=enp5s0
+UUID=89dafce6-9998-4539-a47d-0d66e68a8e23
+DEVICE=enp5s0
+ONBOOT=no
 ```
-- `nmcli c reload` 重新加载所有的网络配置文件
+- `/etc/sysconfig/network-scripts/ifcfg-enp5s0.10` 配置vlan接口
+```ifcfg-enp5s0.10
+DEVICE=enp5s0.10
+BOOTPROTO=none
+ONBOOT=yes
+IPADDR=192.168.10.1
+PREFIX=24
+NETWORK=192.168.10.0
+VLAN=yes
+VLAN_ID=10
+```
+- `sudo nmcli connection reload` 重载全部配置文件
+- `sudo ip link add link enp5s0 name enp5s0.10 type vlan id 10` 在以太网接口enp5s0中创建名为vlan10，id为10的802.1Q VLAN接口
+- `ip -d link show enp5s0.10` 查看vlan
+- `ip link delete enp5s0.10` 删除vlan
 - `ifconfig enp5s0.10`
 ```
 [wmsj100@localhost network-scripts]$ ifconfig enp5s0.10
@@ -52,4 +67,4 @@ enp5s0.10: flags=4099<UP,BROADCAST,MULTICAST>  mtu 1500
 
 ## 参考
 
-- [centos 创建vlan](https://blog.51cto.com/4153087/2089390)
+- [centos 配置vlan](https://www.cnblogs.com/wangmo/p/11714387.html)
