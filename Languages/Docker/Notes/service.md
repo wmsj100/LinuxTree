@@ -37,5 +37,21 @@ email: wmsj100@hotmail.com
 
 - `docker service scale web-fs=10`可以把服务副本数从5个增加到10，
 
+## 滚动升级
+
+- `docker service update --image wmsj100/web:v2 --update-parallelism 2 --update-delay 20s web-fs`
+- 升级service web-fs，每次升级俩个节点，每次升级间隔20s
+
+## 指定覆盖网络创建服务
+
+- `docker network create -d overlay uber-net`
+- `docker network ls` 查看创建的覆盖网络
+- `docker service create --name web-fs --network uber-net -p 8011:8080 --replicates 12 wmsj100/web:latest`
+- 指定服务网络uber-net来创建service web-fs, 集群创建12个容器
+
+## 日志
+
+- `docker service logs web-fs` 查看当前service的日志
+
 ## 参考
 
