@@ -43,3 +43,4 @@ hyevys1afw0jdyacwrv4pd8v3     ip-10-23-186-31     Ready               Active    
 
 ## 参考
 
+- [docker swarm](https://www.cnblogs.com/ityouknow/p/8903975.html)

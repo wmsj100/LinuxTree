@@ -18,3 +18,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [docker machine](https://www.cnblogs.com/ityouknow/p/8674247.html)
