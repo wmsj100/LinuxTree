@@ -14,6 +14,23 @@ email: wmsj100@hotmail.com
 
 - 安装virtualbox的过程
 
+## 安装
+
+- `sudo yum install VirtualBox-6.1.x86_64` 开始下载和安装virtualbox
+- 下载完成后会提示缺少一些库，需要单独安装，还有virtualbox kernel
+- `sudo yum install gcc make perl`
+- `sudo yum install kernel-devel kernel-devel-4.18.0-147.5.1.el8_1.x86_64`
+- `sudo /sbin/vboxconfig` 重启和构建kernel
+- 如果构建失败，就去看失败日志，`/var/log/vbox-setup.log`提示缺少文件，下载安装
+- `sudo yum install elfutils-libelf-devel`
+- `sudo /sbin/vboxconfig` 重启和构建kernel
+```
+[wmsj100@localhost ~]$ sudo /sbin/vboxconfig
+vboxdrv.sh: Stopping VirtualBox services.
+vboxdrv.sh: Starting VirtualBox services.
+vboxdrv.sh: Building VirtualBox kernel modules.
+```
+
 ## 步骤
 
 ```
