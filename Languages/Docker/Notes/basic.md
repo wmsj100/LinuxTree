@@ -20,6 +20,11 @@ mail: wmsj100@hotmail.com
 - `wget -qO- https://get.docker.com/ |sh` 这样安装的是官方的最新版本，建议按照这个安装，而且这样安装的是社区版本。
 - sudo curl -sSL https://get.docker.com | sh
 
+- 手动添加docker证书
+	- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+	- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+	- sudo apt update
+
 - `sudo usermod -aG docker pi` 把当前用户添加到docker组
 
 - sudo systemctl daemon-reload
