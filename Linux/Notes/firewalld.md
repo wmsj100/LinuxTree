@@ -36,3 +36,4 @@ email: wmsj100@hotmail.com
 ## 参考
 
 - [centos firewall常用操作](https://www.cnblogs.com/inos/p/10985042.html)
+- [firewall-cmd 常用命令](https://www.cnblogs.com/klvchen/p/10063875.html)
