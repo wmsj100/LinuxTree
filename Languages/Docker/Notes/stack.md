@@ -37,5 +37,11 @@ nbbtr59nrk6n        seastacks_visualizer        replicated          1/1         
 z82pyvp4iko5        seastacks_reverse_proxy     replicated          1/1                 dockersamples/atseasampleshopapp_r
 ```
 
+## 总结
+
+- 使用stack技术完全不用单独去设置环境,包括网络和挂载卷,这些都是在配置文件写好然后执行时候自动创建和卸载网络,
+- 但是使用service不同,需要单独配置网络,事后也需要单独去清除环境
+- stack完全是自动化的过程
+
 ## 参考
 
