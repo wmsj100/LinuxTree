@@ -26,6 +26,16 @@ email: wmsj100@hotmail.com
 - `docker secret create` 创建密钥
 - `docker stack rm seastack` 删除
 - `docker stack deploy seastack` 按照配置文件进行升级操作
+- `docker stack service seastack` 查看当前stack的具体service部署情况
+```
+ubuntu@wmsj100:~/Templates/atsea-sample-shop-app$ docker stack services seastacks
+ID                  NAME                        MODE                REPLICAS            IMAGE                                                     PORTS
+1x22smaeuitj        seastacks_database          replicated          1/1                 dockersamples/atsea_db:latest
+b32uws8etc8j        seastacks_appserver         replicated          2/2                 dockersamples/atsea_app:latest
+ipm2cl43y49z        seastacks_payment_gateway   replicated          1/1                 dockersamples/atseasampleshopapp_payment_gateway:latest
+nbbtr59nrk6n        seastacks_visualizer        replicated          1/1                 dockersamples/visualizer:stable                           *:8001->8080/tcp
+z82pyvp4iko5        seastacks_reverse_proxy     replicated          1/1                 dockersamples/atseasampleshopapp_r
+```
 
 ## 参考
 
