@@ -29,6 +29,7 @@ email: wmsj100@hotmail.com
 	- 对于公有云这样的主题，在初始化swarm时候，需要配置地址ip和监听ip，
 	- advertise-addr: 用来指定其他节点连接到当前管理节点的ip和端口，使用公网ip
 	- listen-addr: 用来承载swarm流量的ip和端口，需要指定本机的局域网ip和端口
+- `docker swarm join-token --rotate manager` 更新管理者的token,对于已经加入的管理者或者是工作者不会有影响,新加入的必须使用新的token
 - `docker node ls` 查看swarm节点
 ```
 (py3env) ubuntu:/tmp/tmp$ docker node ls

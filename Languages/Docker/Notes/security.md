@@ -40,6 +40,19 @@ email: wmsj100@hotmail.com
 	- 支持周期性证书自动更新的CA配置
 	- 加密集群存储(配置DB)
 	- 加密网络
+- TLS和双向认证
+	- 每个加入swarm的管理者或者工作者都需要发布自己的客户端证书.这个证书用于双向认证.
+	- 证书中定义了节点相关信息
+	- `docker swarm update --cert-expiry 720h` 设置CA证书过期时间为30天
+	- `docker swarm ca` 查看ca
+- 集群存储
+	- 保存了集群配置和状态数据
+	- 基于etcd的某种实现,并且会在swarm内所有管理者之间进行自动复制
+	- 存储默认也是加密的.
+	- swarm模式在docker规划中占据重要地位,如果不是用swarm模式运行docker,很多docker特性无法使用.
+- Docker安全扫描
+- Docker内容信任
+- Docker密钥
 
 ## 参考
 
