@@ -22,6 +22,12 @@ mail: wmsj100@hotmail.com
 
 ## 网站收藏
 
+- 加速源
+	- [科大加速](http://mirrors.ustc.edu.cn/)
+	- [清华源](https://mirror.tuna.tsinghua.edu.cn/help/alpine/)
+	- [阿里云](https://mirrors.aliyun.com/alpine/)
+	- [网易云](http://mirrors.163.com/)
+
 - 学习网站
 	- [思否(segmentfault)](https://segmentfault.com/ls/1650000021313333)
 	- [w3cschool](https://www.w3cschool.cn/vip?fcode=popup)

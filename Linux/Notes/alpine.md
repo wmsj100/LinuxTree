@@ -13,6 +13,7 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 这是docker官方的linux发行版本,体积很小,面向安全的轻量级系统
+- `cat /etc/os-version` 查看系统发行版本`
 
 ## 配置源
 
