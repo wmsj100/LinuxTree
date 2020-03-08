@@ -19,6 +19,8 @@ email: wmsj100@hotmail.com
 - FROM: 制定基础镜像,必须是第一个命令,如果不以任何镜像为基础,写`FROM scratch`
 - MAINTAINER: 维护者姓名
 - ENV: 为容器设定环境变量
+	- ENV key1=val1 key2=val2
+	- 设置让其后面的RUN命令使用,容器运行时候这个变量也会保存
 - ADD: 复制,把文件复制到镜像中,Dockfile所在目录为根目录,
 	- `ADD src /src` 若src是一个目录,只会拷贝src目录的内容,目录名称不会拷贝
 - COPY: 和ADD类似,只能拷贝本地文件,
