@@ -1,7 +1,7 @@
 ---
 title: MySQL
 date: 2019-04-09 21:03:41	
-modify: 
+modify: 2020-03-08 20:16:41  
 tag: [readme]
 categories: MySQL
 author: wmsj100
@@ -24,8 +24,6 @@ mail: wmsj100@hotmail.com
 - Notes 基础知识储备
 - Articles 文章或者感想
 - Summary	技术总结
-- Statics	静态文件存储
-- Storage 存储的sql数据片段，
 
 ## 总结
 
@@ -33,4 +31,5 @@ mail: wmsj100@hotmail.com
 - 打算先学习数据库也好。
 
 ## 参考
+
 - [SQL教程廖雪峰的官方网站](https://www.liaoxuefeng.com/wiki/001508284671805d39d23243d884b8b99f440bfae87b0f4000/00152781979845823af16bd78094353a46c8f601ae34937000)
