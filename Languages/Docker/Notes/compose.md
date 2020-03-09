@@ -13,8 +13,25 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - `docker-compose`是docker的一个python插件，被docker公司收购并且用于管理多容器
+- 知道了是一个python插件还是想着如何下载这个二进制文件,
+- `pip install docker-compose` 就可以下载
+- 是一个用户定义和运行多个容器的Docker应用程序,通过YMAL文件来配置应用服务.
+- 是Docker官方开源项目,负责对Docker容器集群的快速编排.
+
+## 简介
+
+- `Docker-compose`将所管理的容器分为三层,分别是工程(project)/服务(service)/容器(container)
+- `Docker-compose`运行目录下所有的文件(docker-compose.yml,extends文件或者环境变量文件)组成一个工程,若无特殊指定工程名即为当前目录名.
+- 一个工程当中可以包含多个服务,每个服务中定义了容器运行的镜像,参数,依赖.
+- 一个服务当中可包括多个容器实例
+- `Docker-compose`工程配置文件默认为`docker-compose.yml`,可以通过环境变量`COMPOSE_FILE`或`-f`参数自定义配置文件,其定义了多个有依赖关系的服务及每个服务运行的容器.
+- 
 
 ## 使用
+
+- 在Dockfile中定义应用环境,使其可以在任何地方复制
+- 在docker-compose.yml中定义组成应用程序的服务,以便他们可以在隔离环境中一起运行
+- 最后运行`docker-compose up/down`来启动应用程序.
 
 - `docker-compose`默认读取项目的`docker-compose.yml`文件
 - 通过`compose`文件定义的多容器应用被称为'compose应用'
@@ -34,3 +51,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [docker-compose 详解](https://www.cnblogs.com/minseo/p/11548177.html)

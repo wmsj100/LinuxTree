@@ -23,6 +23,8 @@ email: wmsj100@hotmail.com
 	- 设置让其后面的RUN命令使用,容器运行时候这个变量也会保存
 - ADD: 复制,把文件复制到镜像中,Dockfile所在目录为根目录,
 	- `ADD src /src` 若src是一个目录,只会拷贝src目录的内容,目录名称不会拷贝
+	- ADD 会自动解压缩常见的压缩包
+	- `ADD nginx-1.8.0.tar.gz /usr/local/`
 - COPY: 和ADD类似,只能拷贝本地文件,
 - VOLUME: 挂载功能,将本地目录或者其他容器内的目录挂载到这个容器中,一般挂载数据文件
 	- `VOLUME /var/log /data`
