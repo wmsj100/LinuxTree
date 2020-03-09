@@ -45,6 +45,21 @@ eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
 
 - ifconfig eth0
 
+## 常用操作
+
+- 添加ip段
+- `ifconfig eth0 192.168.10.1 netmask 255.255.255.0 broadcast 192.168.10.255` 
+	- 给网卡eth0添加ip 192.168.10.1
+	- netmask: 255.255.255.0
+	- 可以添加,但是没有什么好的办法删除添加的ip
+- 这样添加后会自动挂载网卡
+- `ifconfig eth0 up` 激活网卡
+- `ifconfig eth0 down` 注销网卡
+- `ifconfig eth0 mtu 1400` 调整最大传输单元
+- 修改MAC地址
+	- `ifconfig eth0 down` 必须先卸载网卡
+	- `ifconfig eth0 hw ether 00:0c:29:0d:ce:95 up` 这样就重新修改了网卡的mac地址并且激活
+
 ## 参考
 
 - [ifconfig](https://www.cnblogs.com/0to9/p/9591315.html)
