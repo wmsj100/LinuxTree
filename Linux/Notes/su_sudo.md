@@ -1,6 +1,7 @@
 ---
 title: 切换用户/用户权限
 date: Sun 25 Feb 2018 12:52:22 PM CST
+modify: 2020-03-10 15:59:55 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -10,6 +11,7 @@ mail: wmsj100@hotmail.com
 # 切换用户 su && sudo
 
 ## su 切换用户
+
 - su 不加参数默认切换到root用户,之前的用户环境不变
 - su - 切换到root角色，同时把bash环境切换到root的自定义设置
 - 
@@ -17,6 +19,9 @@ mail: wmsj100@hotmail.com
 - 使用su进行用户切换都需要输入切换用户的密码，root例外
 
 ## sudo 使用其它用户身份执行命令
+
+- `sudo apt install sudo`
+- 之前都一直不知道这是一个软件,以为就是系统的功能,其实是为了普通用户可以执行root的权限的配置,免去了su这样的切换动作.
 - sudo并不是切换了用户，而是使用其它用户的身份和权限执行了命令
 - sudo passwd user11 使用root身份修改用户user1密码
 - visudo root角色通过这个角色进入sudo文件进行编辑

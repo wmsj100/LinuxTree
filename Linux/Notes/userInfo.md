@@ -1,6 +1,7 @@
 ---
 title: 用户信息
 date: Tue 20 Feb 2018 10:35:46 PM CST
+modify: 2020-03-10 13:24:05 
 tag: [linux,user,sys]
 categories: Linux
 author: wmsj100
@@ -12,6 +13,7 @@ mail: wmsj100@hotmail.com
 ## useradd 创建用户
 - useradd test1 
 - useradd -g group1 test1
+- useradd -m test1 创建用户同时创建家目录
 
 ## usermod 修改用户信息
 - usermod 就是对 /etc/passwd 和 /etc/shadow 文件做一些修改
