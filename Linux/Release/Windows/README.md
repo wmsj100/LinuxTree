@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-04-01 10:18:56 Sun
-modify: 2018-04-01 10:18:56 Sun
+modify: 2020-03-10 16:43:41 
 tag: [readme]
 categories: Linux
 author: wmsj100
@@ -18,6 +18,13 @@ mail: wmsj100@hotmail.com
 
 ## 目录详情
 - Note 基础知识点的整理目录
+- Articles 收藏的文章
+- Summary 总结性知识点
+
+## 软件收藏
+
+- [typora](https://www.typora.io/#windows) 一款markdown编辑软件
+- jq 一款格式化json的工具
 
 ## 代办事项
 ~~None~~
