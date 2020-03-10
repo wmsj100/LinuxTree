@@ -26,7 +26,8 @@ export GOPATH=/home/ubuntu/GoLang
 export PATH=$PATH:/usr/local/go/bin
 ```
 - `source ~/.bashrc`
-- `go version`
+- `go version` 查看go的版本
+- `go env` 查看go的环境变量
 
 ## 系统发行版
 

@@ -31,3 +31,4 @@ mail: wmsj100@hotmail.com
     - wmsj100 ALL=(ALL) NOPASSWD: ALL 允许wmsj100用户不输入密码执行sudo命令
     - 将最后一个参数设置为ALL是很不安全的，因为这样用户和root的权限是一样的。
     - wmsj100 ALL=(ALL) NOPASSWD:/sbin/shutdown,/usr/bin/reboot 用户wmsj100可以执行重启或者关闭服务的权限
+- `visudo` 只有通过这个命令才可以修改sudo的规则

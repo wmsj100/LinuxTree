@@ -25,3 +25,4 @@ email: wmsj100@hotmail.com
 ## 参考
 
 - [YouCompleteMe解析](https://blog.csdn.net/weixin_44638957/article/details/91985270)
+- [vim配置](https://www.jianshu.com/p/8426cef1f4f5)
