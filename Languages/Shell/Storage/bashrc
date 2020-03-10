@@ -10,13 +10,13 @@ esac
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
-#HISTCONTROL=ignoreboth
+HISTCONTROL=ignoreboth
 
 # append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-#HISTSIZE=1000
+HISTSIZE=1000
 HISTFILESIZE=2000
 
 # check the window size after each command and, if necessary,
@@ -57,17 +57,16 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='${debian_chroot:+($debian_chroot)}\u:\w\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u: \w\a\]$PS1"
+    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
 *)
     ;;
@@ -117,37 +116,14 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export python=/home/ubuntu/Github/LinuxTree/Languages/Python/Notes
-export mysql=/home/ubuntu/Github/LinuxTree/Languages/MySQL/Notes
-export diary=/home/ubuntu/Github/MyDream/Diary/2020/March
-export code_python=/home/ubuntu/Github/python_study
-export linux=/home/ubuntu/Github/LinuxTree/Linux/Notes
-export active=/home/ubuntu/Code/Python/virtual/py3env/bin/activate
-export PATH=$PATH:/home/ubuntu/Tools:/home/ubuntu/supervisord
-export shell=/home/ubuntu/Github/LinuxTree/Languages/Shell/Note
-export FLASK_ENV=development
-export NODE_HOME=/home/ubuntu/Software/node_12_15
-export node=/home/ubuntu/Github/LinuxTree/Languages/NodeJS/Notes
-export myblog=/home/ubuntu/Github/python_study/flask/myblog
-export npm_package_path=/usr/local/lib/node_modules
-export vue=/home/ubuntu/Github/LinuxTree/Languages/WebUI/Frame/Vue/Notes
-# Install Ruby Gems to ~/gems
-export GEM_HOME="$HOME/gems"
-export PATH="$HOME/gems/bin:$PATH"
-export es6=/home/ubuntu/Github/LinuxTree/Languages/WebUI/Frame/ES6/Notes
-export django=/home/ubuntu/Github/LinuxTree/Languages/Python/Frame/Django/Notes
-alias superv='supervisorctl -c /home/ubuntu/supervisord/supervisord.conf'
-alias restartmyweb='superv restart myweb'
-export vue_study=/home/ubuntu/Github/python_study/website/vue_study
-export typescript=/home/ubuntu/Github/python_study/website/typescript
-export study6=/home/ubuntu/Github/python_study/django/study6
-export code_angular=/home/ubuntu/Github/python_study/website/angular
-export code_less=/home/ubuntu/Github/python_study/website/less
-export code_hexo=/home/ubuntu/Code/Website/hexoBlog
-export oss=/home/ubuntu/Github/LinuxTree/Linux/CloudServer/OSS/Notes
-export languages=/home/ubuntu/Github/LinuxTree/Languages
-source $active
-export layui=/home/ubuntu/Github/LinuxTree/Languages/WebUI/Frame/layui/Notes
-export webui=/home/ubuntu/Github/LinuxTree/Languages/WebUI
-export myweb=/home/ubuntu/Code/myweb
-export docker=/home/ubuntu/Github/LinuxTree/Languages/Docker/Notes
+# python virtualenvwrapper config
+export VIRTUALENV_USE_DISTRIBUTE=1
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+export WORKON_HOME=$HOME/.virtualenvs
+source /home/ubuntu/.local/bin/virtualenvwrapper.sh
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export PIP_RESPECT_VIRTUALENV=true
+
+# alias
+alias  ssh='ssh -o ServerAliveInterval=60'
+# alias end
