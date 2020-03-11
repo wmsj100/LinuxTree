@@ -22,9 +22,13 @@ email: wmsj100@hotmail.com
 
 ## 推荐
 
-- 还是推荐使用阿里云的源，这个更新更快
+```
+deb http://mirrors.ustc.edu.cn/raspbian/raspbian/ buster main contrib non-free rpi
+deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi
+```
 - `deb-src http://mirrors.aliyun.com/raspbian/raspbian/ buster main` for /etc/apt/source.list
 - `deb http://mirrors.aliyun.com/raspbian/raspbian/ buster main contrib non-free rpi` for /etc/apt/source.list.d/raspi.list
+
 ## 参考
 
 - [树莓派更好源](https://www.jianshu.com/p/768f0181672b)
