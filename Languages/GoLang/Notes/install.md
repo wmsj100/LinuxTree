@@ -16,7 +16,10 @@ email: wmsj100@hotmail.com
 
 ## 安装
 
-- `wget https://studygolang.com/dl/golang/go1.14.linux-amd64.tar.gz`
+- amd64位架构
+	- `wget https://studygolang.com/dl/golang/go1.14.linux-amd64.tar.gz`
+- armv6l
+	- `wget https://studygolang.com/dl/golang/go1.14.linux-armv6l.tar.gz`
 - `sudo tar -xcvf go1.14.linux-amd64.tar.gz -C /usr/local`
 - `mkdir -p ~/GoLang/{src,bin,pkg}`
 - `vi ~/.bashrc`
@@ -24,6 +27,8 @@ email: wmsj100@hotmail.com
 # go config
 export GOPATH=/home/ubuntu/GoLang
 export PATH=$PATH:/usr/local/go/bin
+export GOPROXY=https://goproxy.cn
+export GO111MODULE=auto
 ```
 - `source ~/.bashrc`
 - `go version` 查看go的版本
