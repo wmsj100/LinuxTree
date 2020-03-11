@@ -22,6 +22,8 @@ mail: wmsj100@hotmail.com
 
 ## 网站收藏
 
+- 搜索引擎
+	- [https://mengso.com/](https://mengso.com/)
 - 加速源
 	- [科大加速](http://mirrors.ustc.edu.cn/)
 	- [清华源](https://mirror.tuna.tsinghua.edu.cn/help/alpine/)
