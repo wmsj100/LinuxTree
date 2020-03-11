@@ -3,7 +3,7 @@ title: mariadb_can_start
 date: 2020-03-11 13:11:27
 modify: 
 tags: [Summary]
-categories: Arch
+categories: ArchLinux
 author: wmsj100
 email: wmsj100@hotmail.com
 ---
@@ -93,7 +93,7 @@ Mar 11 13:10:02 ArchOS mysqld[2481]: 2020-03-11 13:10:02 0 [Note] Server socket 
 Mar 11 13:10:02 ArchOS mysqld[2481]: 2020-03-11 13:10:02 0 [Note] Reading of all Master_info entries succeeded
 Mar 11 13:10:02 ArchOS mysqld[2481]: 2020-03-11 13:10:02 0 [Note] Added new Master_info '' to hash table
 Mar 11 13:10:02 ArchOS mysqld[2481]: 2020-03-11 13:10:02 0 [Note] /usr/bin/mysqld: ready for connections.
-Mar 11 13:10:02 ArchOS mysqld[2481]: Version: '10.4.12-MariaDB'  socket: '/run/mysqld/mysqld.sock'  port: 3306  Arch Linux
+Mar 11 13:10:02 ArchOS mysqld[2481]: Version: '10.4.12-MariaDB'  socket: '/run/mysqld/mysqld.sock'  port: 3306  ArchLinux Linux
 Mar 11 13:10:03 ArchOS systemd[1]: Started MariaDB 10.4.12 database server.
 ```
 

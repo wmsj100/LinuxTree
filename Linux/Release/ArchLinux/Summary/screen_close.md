@@ -3,7 +3,7 @@ title: 笔记本屏幕关闭
 date: 2020-03-10 18:26:15
 modify: 
 tags: [Summary]
-categories: Arch
+categories: ArchLinux
 author: wmsj100
 email: wmsj100@hotmail.com
 ---

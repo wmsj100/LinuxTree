@@ -2,7 +2,7 @@
 title: README
 date: 2020-03-10 17:33:17
 modify: 
-tags: [Arch]
+tags: [ArchLinux]
 categories: Release
 author: wmsj100
 email: wmsj100@hotmail.com
