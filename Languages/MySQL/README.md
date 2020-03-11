@@ -22,7 +22,7 @@ mail: wmsj100@hotmail.com
 ## 目录
 
 - Notes 基础知识储备
-- Articles 文章或者感想
+- Summary 文章或者感想
 - Summary	技术总结
 
 ## 总结
