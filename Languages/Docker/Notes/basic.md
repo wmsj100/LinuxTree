@@ -16,11 +16,17 @@ mail: wmsj100@hotmail.com
 
 ## 安装
 
-- `sudo apt install docker.io` 这样安装的版本较低
 - `wget -qO- https://get.docker.com/ |sh` 这样安装的是官方的最新版本，建议按照这个安装，而且这样安装的是社区版本。
-- sudo curl -sSL https://get.docker.com | sh
+- 镜像源安装
+	- `https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/raspbian/dists/buster/pool/stable/armhf/`
+	- 分析这个目录,一般选版本Linux/raspbian/dists/buster/pool/stable/armhf/ 这样就是镜像
+	- 安装过程的顺序是containerd.io > docker-ce-cli > docker-ce
+	- 安装时候都选最新版本安装
+	- `wget https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/raspbian/dists/buster/pool/stable/armhf/containerd.io_1.2.6-3_armhf.deb`
+	- `https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/raspbian/dists/buster/pool/stable/armhf/docker-ce-cli_19.03.7~3-0~raspbian-buster_armhf.deb`
+	- `https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/raspbian/dists/buster/pool/stable/armhf/docker-ce_19.03.7~3-0~raspbian-buster_armhf.deb`
 
-- 手动添加docker证书
+- 证书可选可不选,因为框架一般不需要那么频繁升级,手动添加docker证书
 	- curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 	- sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 	- sudo apt update
