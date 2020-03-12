@@ -26,11 +26,25 @@ email: wmsj100@hotmail.com
 ## 项目中添加submodule
 
 - `git submodule add git@github.com:wmsj100/test1.git`
+- `git status` 可以看到添加了文件`.gitmodules test1`
+	- .gitmodules包含了submoudle的主要信息
+	- test1 指定子项目的commit id,就能指定到对应的git header上面
+	- 这俩个文件都需要提交到父项目的git中
 
-## 操作
+## 更新submodule
 
-- 在当前项目添加依赖项目
-- `git submodule add 
+- `git submodule update --init --recursive` 可以直接批量递归把所有的submodule下载,这个在第一次使用,可以让所有submodule的状态重置到当前父项目记录的commit id
+- `git submodule foreach --recursive git pull origin master` 这样是在持续更新submodule
+- `git pull` 进入每一个submodule中执行更新命令
+- 如果submodule有新的commit id产生,需要在父项目产生一个新的提交
+- 对于submodule的更新是需要父项目主动来控制子项目的commit id是否要更新,不会因为子项目已经更新了,主项目就自动跟随更新,这样的设置是合理的.
+- `git clone git@gitee.com:wmsj100/subtest1.git --recursive` 直接按照递归的方式下载整个项目
+- 依次递归更新每一层级的项目
+	- `git clone git@gitee.com:wmsj100/subtest1.git` 下载主项目
+	- `cd subtest1`
+	- `git submodule init` 初始化submodule
+	- `git submodule update` 下载当前层级的submodule,不是递归下载,只是下载当前层级所有的submodule,如果要继续,需要在分别进入子submodule中执行`git submodule init/git submoudle update`
 
 ## 参考
 
+- [git submodule简介](https://segmentfault.com/a/1190000003076028)
