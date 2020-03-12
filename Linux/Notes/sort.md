@@ -1,6 +1,17 @@
+---
+title: sort
+date: 2020-03-12 11:36:27 
+modify: 
+tags: [basic]
+categories: Linux
+author: wmsj100
+email: wmsj100@hotmail.com
+---
+
 # sort 排序
 
 ## 参数
+
 - n 根据数字值排序
 - k 指定排序关键字
 - b 默认情况下，从每行的第一个字符开始，这个选项将忽略开头的空白，从第一个非空白字符开始排序
@@ -27,3 +38,4 @@ c  7 18/10/2014
 
 - sort -k 3.4nb data.txt 按照第3个字段的第4个字符顺序排序
 	- 3.4 表示始于第3个字段的第4个字符，按照数值排序。
+- `cat ~/Document/test1.dic | sort -k 3 -nr | less` 查看test文件,按照第3个字段数字从大到小排序导入到less管道
