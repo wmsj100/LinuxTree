@@ -1,7 +1,7 @@
 ---
 title: 列表基础知识
 date: 2019-03-03 10:11:38	
-modify: 2020-01-10 15:22:26 
+modify: 2020-03-13 22:00:29 
 tag: [list]
 categories: Python
 author: wmsj100
@@ -11,6 +11,9 @@ mail: wmsj100@hotmail.com
 # 列表基础知识
 
 ## 概述
+
+- 列表和js的数组类似,不定长,不定类型,任意类型数值都可以append/insert/extend进入list
+- 静态语言是没有数组的操作方法的,因为数组定长
 
 - append 
 - count a.count('a') 获取列表a中'a'出现的次数
