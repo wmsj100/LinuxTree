@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-04-05 09:03:43 Thu
-modify: 2020-01-13 10:12:33 
+modify: 2020-03-14 14:31:55 
 tag: [readme]
 categories: README
 author: wmsj100
@@ -9,11 +9,13 @@ mail: wmsj100@hotmail.com
 ---
 
 # README
-> 不积跬步无以至千里
+
+> 不积跬步无以至千里,不积小河无以成江海
 > 日学一技，精益求精
 
 ## 概要
-- 该目录主要是基础设施的知识整理！
+
+- 记录学习的点滴,成就技能树
 
 ## 详情
 
