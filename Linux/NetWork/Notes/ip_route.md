@@ -28,3 +28,4 @@ email: wmsj100@hotmail.com
 ## 参考
 
 - [ip route](https://baijiahao.baidu.com/s?id=1618978745521215381&wfr=spider&for=pc)
+- [ip route add for network](https://my.esecuredata.com/index.php?/knowledgebase/article/2/add-a-static-route-on-centos)
