@@ -23,6 +23,7 @@ email: wmsj100@hotmail.com
 - `ip route flush 10.10.10.0/24` 清理所有10.10.10.0/24相关的所有路由
 - `ip route add default via 192.168.0.103` 添加默认路由
 - `ip route change 10.10.10.0/24 via 10.10.10.1` 修改路由
+- `ip route add 172.16.5.0/24 via 10.0.0.101 dev eth0` 给网络`172.16.5.0/24`添加`10.0.0.101`的网关
 
 ## 参考
 
