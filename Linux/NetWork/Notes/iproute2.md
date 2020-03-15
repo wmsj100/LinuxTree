@@ -73,3 +73,4 @@ ubuntu@Ubuntu:~/Documents/Github/LinuxTree/Linux/NetWork/Notes$ ip -statistics a
 ## 参考
 
 - [linux ip知识点盘点](https://www.cnblogs.com/0to9/p/9591315.html)
+- [ip vs ifconfig](https://www.tecmint.com/ifconfig-vs-ip-command-comparing-network-configuration/)
