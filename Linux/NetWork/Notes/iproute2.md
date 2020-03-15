@@ -31,6 +31,21 @@ email: wmsj100@hotmail.com
 	- `ip addr del 192.168.0.2/24 dev eth0`
 - 显示统计接口
 	- `ip -s link ls eth0`
+	- ifconfig方法是自带流量统计的,ip方法也可以实现这个功能
+	- ip -statistics address show enp2s0
+```
+ubuntu@Ubuntu:~/Documents/Github/LinuxTree/Linux/NetWork/Notes$ ip -statistics address show enp2s0
+2: enp2s0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
+    link/ether 10:e7:c6:12:c8:15 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.20.1/24 brd 192.168.20.255 scope global enp2s0
+       valid_lft forever preferred_lft forever
+    inet6 fe80::12e7:c6ff:fe12:c815/64 scope link
+       valid_lft forever preferred_lft forever
+    RX: bytes  packets  errors  dropped overrun mcast
+    134329751  156251   0       0       0       39
+    TX: bytes  packets  errors  dropped carrier collsns
+    204055577  183058   0       0       0       0
+```
 - 网卡和链路配置
 	- `ip link show` 显示链路
 	- `ip link show wlan0` 查看无线网卡的链路
