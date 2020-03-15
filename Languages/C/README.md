@@ -1,23 +1,23 @@
 ---
 title: README
 date: 2019-04-12 10:05:03	
-modify: 2019-12-04 11:23:00	 
-tag: [c,basic]
+modify: 2020-03-15 09:48:46 
+tag: [README]
 categories: C
 author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-# C语言
+# README
 
 ## 概述
+
 - 关于C的知识点目录
 
 ## 目录
-- Articles 关于C的文章
+
 - Notes 语法笔记
-- Stdlib 关于标准库的笔记
-- Concept 关于C语言的一些概念性质，比Notes的小知识点更加深入
+- Summary 关于C的自我总结
 
 ## 方向
 
@@ -27,6 +27,7 @@ mail: wmsj100@hotmail.com
 - 游戏的后台服务器大部分也是基于 Linux的，也会用到以上技能。
 
 ## 缘由
+
 - 14年在太原的一个书店买了第一本也是到现在唯一的C语言入门书籍，忘记了当时买的动机，那时候完全没有编程基础，连前端的html也不会写，然后学习C的过程可想而知，
 - 现在因为面试的工作需要用到C语言，所以重新拿起来，发现书其实挺好的，只是当时自己的程度不够体会不到这种好
 - 我很庆幸自己没有局限到一门语言上，通过前端入门编程，然后到Linux的shell，再到python，现在到C，之后打算嵌入式，还有网络也想学，还有算法和数据库的知识，
@@ -34,4 +35,5 @@ mail: wmsj100@hotmail.com
 - 这算是给自己的寄语吧，祝福自己学习C的过程中可以坚持下来
 
 ## 网站收藏
+
 - [C语言中文网](http://c.biancheng.net/cpp/)
