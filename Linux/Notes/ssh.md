@@ -43,6 +43,11 @@ mail: wmsj100@hotmail.com
 - 默认如果连接到服务器的ssh客户端如果长时间没有操作,服务器会自动断开,可以在本地配置来保持这种连接性
 - `alias  ssh='ssh -o ServerAliveInterval=60'` 通过创建这样的快捷键来实现
 
+## 配置文件
+
+- `/etc/ssh/sshd_config` ssh的配置文件
+- `ClientAliveInterval 60` 设置客户端60就接受一次来自服务端的请求保持连接激活状态
+
 ## 参考
 
 - [ssh客户端](https://blog.csdn.net/m0_37822234/article/details/82494556)
