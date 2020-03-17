@@ -64,6 +64,11 @@ and the invocation line used to run it.
 - 编译成功
 - `python3 install.py --go-completer` 添加go语言的补全
 
+## 编译报错
+
+- 提示clang未下载
+- `wget https://dl.bintray.com/ycm-core/clangd/clangd-9.0.0-x86_64-unknown-linux-gnu.tar.bz2` 到目录`YouCompleteMe/third_party/ycmd/clang_archives`然后重新编译
+
 ## 参考
 
 - [YouCompleteMe解析](https://blog.csdn.net/weixin_44638957/article/details/91985270)

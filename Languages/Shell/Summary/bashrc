@@ -88,7 +88,7 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='ls -alF'
+alias ll='ls -alh'
 alias la='ls -A'
 alias l='ls -CF'
 
@@ -119,11 +119,38 @@ fi
 # python virtualenvwrapper config
 export VIRTUALENV_USE_DISTRIBUTE=1
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-export WORKON_HOME=$HOME/.virtualenvs
-source /home/ubuntu/.local/bin/virtualenvwrapper.sh
+export WORKON_HOME=/home/wmsj100/.virtualenvs
+source /home/wmsj100/.local/bin/virtualenvwrapper.sh
 export PIP_VIRTUALENV_BASE=$WORKON_HOME
 export PIP_RESPECT_VIRTUALENV=true
+export PATH=$PATH:/home/wmsj100/.local/bin
+# python virtualenvwrapper config end
+
+# go config
+export GOPATH=/home/wmsj100/Workspace/GoLang
+export PATH=$PATH:/usr/local/go/bin
+export GOPROXY=https://goproxy.cn
+export GO111MODULE=auto
+# go config end
 
 # alias
 alias  ssh='ssh -o ServerAliveInterval=60'
 # alias end
+
+# host
+export pi=pi@192.168.20.2
+export arch=wmsj100@192.168.0.101
+export txhost=ubuntu@111.229.241.222
+export ubuntu=wmsj100@192.168.0.103
+# host end
+
+# params
+export linux=/home/wmsj100/Documents/GitHub/LinuxTree/Linux/Notes
+export docker=/home/wmsj100/Documents/GitHub/LinuxTree/Languages/Docker/Notes
+export python=/home/wmsj100/Documents/GitHub/LinuxTree/Languages/Python/Notes
+export network=/home/wmsj100/Documents/GitHub/LinuxTree/Linux/NetWork/Notes
+export diary=/home/wmsj100/Documents/GitHub/MyDream/Diary/2020/March
+export vim=/home/wmsj100/Documents/GitHub/LinuxTree/Languages/Vim/Notes
+export shell=/home/wmsj100/Documents/GitHub/LinuxTree/Languages/Shell/Note
+export golang=/home/wmsj100/Documents/GitHub/LinuxTree/Languages/GoLang/Notes
+# params end

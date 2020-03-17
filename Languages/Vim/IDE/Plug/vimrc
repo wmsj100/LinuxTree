@@ -22,6 +22,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'aperezdc/vim-template'
 Plug 'boydos/emmet-vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'fatih/vim-go'
 call plug#end()
 map <F2>  :NERDTreeToggle<CR>
 iab xtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
+let g:ycm_global_ycm_extra_conf='/home/wmsj100/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
