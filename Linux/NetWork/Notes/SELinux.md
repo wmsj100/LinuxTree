@@ -20,3 +20,4 @@ email: wmsj100@hotmail.com
 -
 ## 参考
 
+- [弄懂selinux](https://www.cnblogs.com/kelelipeng/p/10371593.html)

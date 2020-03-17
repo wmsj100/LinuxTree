@@ -21,5 +21,7 @@ email: wmsj100@hotmail.com
 - 这些规则分别指定了源地址/目的地址/传输协议(TCP/UDP/ICMP)和服务类型(HTTP/FTP/SMTP)
 - 当数据包和规则匹配时,iptables就根据规则所定义的方法来处理这些数据包,如放行(accept)/拒绝(reject)/丢弃(drop)等.
 - 配置防火墙的主要工作就是添加/修改和删除这些规则.
+
 ## 参考
 
+- [iptables 讲解](https://www.jianshu.com/p/ee4ee15d3658)

@@ -13,6 +13,12 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 添加路由信息
+- 路由信息是在内核中配置的,内核是运行在内存中的,如何确认内核有没有开启路由转发功能呢?
+- `cat /proc/sys/net/ipv4/ip_forward`
+	- 1 代表启动
+	- 0 代表没有启动
+	- `vi /etc/sysctl.conf` 可以修改配置文件
+- 路由器本身就是一个NAT设备,因为一边是public,一边是private,
 
 ## 常用命令
 
