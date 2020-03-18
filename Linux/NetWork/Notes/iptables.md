@@ -86,6 +86,15 @@ email: wmsj100@hotmail.com
 	- mac只能针对当前局域网,不能跨路由,也不能是internet外部来源
 - D 删除
 	- `sudo iptables -D INPUT 3` 删除INPUT的第三条规则
+
+## 保存
+
+- 当前没有好的方法去保存,只能手动来处理,或者是借助安装软件来实现
+- `sudo make /etc/iptables`
+- `sudo su` 需要切换到root才能实现下面的导出动作,提示bash没有权限
+- `iptables-save > /etc/iptables/rules.v4`
+- `iptables-restore < /etc/iptables/rules.v4` 可以恢复
+- `iptables-restore -n < /etc/iptables/rules.v4` 保存当前的配置
 	
 
 ```
@@ -171,3 +180,4 @@ COMMIT
 ## 参考
 
 - [iptables 讲解](https://www.jianshu.com/p/ee4ee15d3658)
+- [ubuntu iptable store to file](https://upcloud.com/community/tutorials/configure-iptables-ubuntu/)
