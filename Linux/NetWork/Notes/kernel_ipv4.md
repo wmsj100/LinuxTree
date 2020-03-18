@@ -40,6 +40,7 @@ email: wmsj100@hotmail.com
 - 网络接口的参数设置存放在`/proc/sys/net/ipv4/conf/`
 - 每个接口都以接口代号作为其代表
 - 所有这些配置都可以通过`echo 1 > ...`这样来开启,但还是建议修改配置文件`/etc/sysctl.conf`
+- `echo 0 /proc/sys/net/ipv4/conf/eth0/forwings` 这样这张网卡的流量转发功能就关闭了,即便是`/proc/sys/net/ipv4/ip_forward`开启也是没用的,不能通过这张网卡转发去ping`192.168.30.1`,转发途径被阻断了.
 
 ## 参考
 

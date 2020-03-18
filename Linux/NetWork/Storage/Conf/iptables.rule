@@ -1,0 +1,96 @@
+#!/bin/bash
+
+EXTIF="wlx081079db1327"
+INIF="enp2s0"
+INNET="192.168.20.0/24"
+export EXTIF INIF INNET
+
+#第一部分 针对本机的防火墙设置
+# 先设置好内核的网络功能
+echo "1" > /proc/sys/net/ipv4/tcp_syncookies
+echo "1" > /proc/sys/net/ipv4/icmp_echo_ignore_broadcasts
+
+for i in /proc/sys/net/ipv4/conf/*/{rp_filter,log_martians};do
+	echo "1" > $i
+done
+
+for i in /proc/sys/net/ipv4/conf/*/{accept_source_route,accept_redirects,send_redirects};do
+	echo "0" > $i
+done
+
+# 2 清除规则,设置默认策略及开放lo与相关设置
+iptables -F
+iptables -X
+iptables -Z
+iptables -P INPUT DROP
+iptables -P OUTPUT ACCEPT
+iptables -P FORWARD ACCEPT
+iptables -A INPUT -i lo -j ACCEPT
+iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+
+# 3 启动额外的防火墙 script 模块
+if [ -f /usr/local/etc/iptables/iptables.deny ];then
+	sh /usr/local/etc/iptables/iptables.deny
+fi
+
+if [ -f /usr/local/etc/iptables/iptables.allow ];then
+	sh /usr/local/etc/iptables/iptables.allow
+fi
+
+if [ -f /usr/local/etc/iptables/httpd-err/iptables.http ];then
+	sh /usr/local/etc/iptables/httpd-err/iptables.http
+fi
+
+# 4 允许某些类型的ICMP数据包进入
+AICMP="0 3 3/4 4 11 12 14 16 18"
+for tyicmp in $AICMP;do
+	iptables -A INPUT -i $EXTIF -p icmp --icmp-type $tyicmp -j ACCEPT
+done
+
+# 5 允许某些服务进入
+#iptables -A INPUT -i $EXTIF -p TCP --dport 22 --sport 1024:65534 -j ACCEPT #SSH
+#iptables -A INPUT -i $EXTIF -p TCP --dport 21 --sport 1024:65534 -j ACCEPT #FTP
+#iptables -A INPUT -i $EXTIF -p TCP --dport 25 --sport 1024:65534 -j ACCEPT #SMTP
+#iptables -A INPUT -i $EXTIF -p UDP --dport 53 --sport 1024:65534 -j ACCEPT #DNS
+#iptables -A INPUT -i $EXTIF -p TCP --dport 53 --sport 1024:65534 -j ACCEPT #DNS
+#iptables -A INPUT -i $EXTIF -p TCP --dport 80 --sport 1024:65534 -j ACCEPT #HTTP
+#iptables -A INPUT -i $EXTIF -p TCP --dport 443 --sport 1024:65534 -j ACCEPT #HTTPS
+#iptables -A INPUT -i $EXTIF -p TCP --dport 110 --sport 1024:65534 -j ACCEPT #POP3
+
+# 第二部分 针对后端主机的防火墙设置
+# 1 先加载一些又用的模块
+modules="ip_tables iptable_nat ip_nat_ftp ip_nat_irc ip_conntrack ip_conntrack_ftp ip_conntrack_irt"
+
+for mod in $modules
+do
+	testmod=`lsmod | grep "^${mod}" | awk '{print $1}'`
+	if [ "$testmod" == "" ];then
+		modprobe $mod
+	fi
+done
+
+# 2 清除NAT table规则
+iptables -F -t nat
+iptables -X -t nat
+iptables -Z -t nat
+iptables -t nat -P PREROUTING ACCEPT
+iptables -t nat -P POSTROUTING ACCEPT
+iptables -t nat -P OUTPUT ACCEPT
+
+# 3 若有内部接口存在(双网卡) 开放成为路由器,且IP 分享器
+if [ "$INIF" != "" ];then
+	iptables -A INPUT -i $INIF -j ACCEPT
+	echo "1" > /proc/sys/net/ipv4/ip_forward
+
+	if [ "$INNET" != "" ];then
+		for innet in $INNET
+		do
+			iptables -t nat -A POSTROUTING -s $innet -o $EXTIF -j MASQUERADE
+		done
+	fi
+fi
+
+# 4 NAT 服务器后端的LAN内对外之服务器设置
+#
+# 5 存储
+iptables-save
