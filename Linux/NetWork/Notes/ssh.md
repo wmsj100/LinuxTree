@@ -47,6 +47,15 @@ mail: wmsj100@hotmail.com
 
 - `/etc/ssh/sshd_config` ssh的配置文件
 - `ClientAliveInterval 60` 设置客户端60就接受一次来自服务端的请求保持连接激活状态
+ 
+## 修改ssh端口
+
+- `sudo vi /etc/ssh/sshd_config`
+- `Port 22`
+- `Port 23`
+- `sudo systemctl restart sshd.service` 重启ssh服务,
+- `ss -nltp` 会发现22和23端口同时在监听
+- `ssh -p 23 pi@192.168.20.2` 指定端口启动
 
 ## 参考
 
