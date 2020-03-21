@@ -1,0 +1,45 @@
+system
+    sudo
+    bash-completion
+    netctl
+    gcc
+    make
+    cmake
+    ssh/openssh
+    ufw # ubuntu default firewall
+    blkid # scan disk info for UUID
+    lsblk
+
+tool
+    git # github only support rsa
+    tree
+    vim
+        Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+        Plug 'altercation/vim-colors-solarized'
+        Plug 'aperezdc/vim-template'
+        Plug 'boydos/emmet-vim'
+        Plug 'Valloric/YouCompleteMe'
+        Plug 'fatih/vim-go'
+    code # visudo code
+    gnome-todo
+    Nutstore
+network
+    nmap
+    tcpdump
+    traceroute
+    quagga # 动态路由,zebra ripd
+service
+    nginx
+    mysql-server mysql-client
+    mariadb-server mariadb-client
+    docker-ce
+language
+    python
+    python3-pip
+    pip
+        virtualenvwrapper # mkvirtualenv -p python3 env36
+        supervisor
+        uwsgi
+        django
+        pymysql
+        requests

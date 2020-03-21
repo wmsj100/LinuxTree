@@ -7,7 +7,8 @@ author: wmsj100
 mail: wmsj100@hotmail.com
 ---
 
-文件系统EXT3，EXT4和XFS的区别：
+# 文件系统EXT3，EXT4和XFS的区别：
+
 1. EXT3
 （1）最多只能支持32TB的文件系统和2TB的文件，实际只能容纳2TB的文件系统和16GB的文件
 （2）Ext3目前只支持32000个子目录

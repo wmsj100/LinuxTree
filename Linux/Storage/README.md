@@ -17,3 +17,4 @@ mail: wmsj100@hotmail.com
 ## 目录详情
 
 - Images 关于Linux的一些图片整理目录
+- Softlist.yml Linux常用软件列表
