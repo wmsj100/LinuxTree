@@ -95,11 +95,20 @@ email: wmsj100@hotmail.com
 - `pacman -S netctl`
 - `pacman -S dialog`
 - `pacman -S wpa_supplicant` 这样启动机器后就可以通过`wifi-menu -o`来生成配置文件
+- `pacman -S dhcpcd` 必须安装这个软件,否则网卡无法启动
+	- `systemctl status netctl@wlan0-wmsj100` 来查看运行日志获取到的信息.
 
 ### 重启
 
 - `exit` 退出系统
 - `umount -R /mnt` 递归下载/mnt绑定的分区
+
+### 配置网络
+
+- `wifi-menu -o` 选择wifi并且连接,顺利会直接连接网络,如果无法连接,也会生成一个配置文件`/etc/netctl/wlano-wmsj100`
+- `netctl start wlan0-wmsj100` 如果上面无法启动,执行这个命令来启动网络,如果有报错,可以先把wlan0停掉`ip link set wlan0 down`
+- `systemctl status netctl@wlan0-wmsj100` 通过这个命令来查看日志,可能会有某个服务未启动未找到,比如`wpa_susplicant/dhcpds`等,确保这俩个软件安装
+- 确保要连接的wifi是可以连接的,基本上排查了上面因素,网络就可以连接了.
 
 ## 参考
 
