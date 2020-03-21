@@ -23,6 +23,7 @@ tool
     code # visudo code
     gnome-todo
     Nutstore
+    jq # json format
 network
     nmap
     tcpdump
