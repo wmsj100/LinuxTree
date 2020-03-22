@@ -13,6 +13,7 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 使用`sudo pacman -S mariadb`安装了mariadb数据库后无法启动
+- 其实安装完成后就有一个提示,按照提示初始化表和需要的库就好,自己认真一些就可以避免这些问题
 ```
 Mar 11 13:00:28 ArchOS systemd[1]: mariadb.service: Main process exited, code=exited, status=1/FAILURE
 -- Subject: Unit process exited
