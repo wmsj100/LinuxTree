@@ -24,10 +24,9 @@ mail: wmsj100@hotmail.com
 
 - Notes 基础知识点的整理目录
 - Frame python的框架
-- Article 关于python的文章
 - Model 代码收藏
 - Summary 知识点总结
-- Statics 静态图片资源
+- Storage 静态图片资源
 
 ## 爬虫
 
