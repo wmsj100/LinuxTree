@@ -1,7 +1,7 @@
 ---
 title: README
 date: Thu 08 Mar 2018 06:02:13 PM CST
-modify: 2020-03-10 16:32:54 
+modify: 2020-03-23 20:53:36 
 tag: [readme]
 categories: Linux
 author: wmsj100
@@ -16,5 +16,6 @@ mail: wmsj100@hotmail.com
 
 ## 目录详情
 
-- Images 关于Linux的一些图片整理目录
-- Softlist.yml Linux常用软件列表
+- 'Images' 关于Linux的一些图片整理目录
+- 'Softlist.yml' Linux常用软件列表
+- 'trojan-quickstart.md': 自动化安装trogan的脚本
