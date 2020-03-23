@@ -17,7 +17,7 @@ email: wmsj100@hotmail.com
 ## 使用
 
 - `cat a.json | jq` 直接再控制台输出
-- `cat a.json | jq 1>a.json` 把输出内容重定向到`a.json`
+- `cat a.json | jq . >a.json` 把输出内容重定向到`a.json`
 
 ## 参考
 
