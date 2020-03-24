@@ -33,6 +33,7 @@ mail: wmsj100@hotmail.com
 	- [网易云](http://mirrors.163.com/)
 
 - 学习网站
+	- [digitalocean 一个介绍开源知识的社区](https://cloud.digitalocean.com)
 	- [开源中国博客](https://www.oschina.net/blog)
 	- [思否(segmentfault)](https://segmentfault.com/ls/1650000021313333)
 	- [w3cschool](https://www.w3cschool.cn/vip?fcode=popup)
