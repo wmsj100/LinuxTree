@@ -40,6 +40,10 @@ email: wmsj100@hotmail.com
 - 浏览器进行配置并启动switchomega插件
 - 也可以在控制台手动出发软件`trojan`
 
+## 日志
+
+- `sudo systemctl start trojan` 这样启动的trojan日志被系统收集在`journalctl`中,可以通过该命令来查看当前的访问日志.
+
 ## 通用方法
 
 - 下载二进制包,解压到目录,并进入目录
