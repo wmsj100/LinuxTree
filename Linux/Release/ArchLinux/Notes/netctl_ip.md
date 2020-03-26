@@ -40,6 +40,30 @@ IP=dhcp
 Key=wifipasswd
 ```
 
+### 网卡设置静态IP
+
+- netctl的所有配置文件模板在example在目录中可以找到,所以根据自己的目的拷贝一个,然后修改相关参数就可以,比如ip/网卡
+```
+Description='A basic static ethernet connection'
+Interface=enp5s0
+Connection=ethernet
+IP=static
+Address=('192.168.20.3/24')
+#Routes=('192.168.0.0/24 via 192.168.1.2')
+Gateway='192.168.20.1'
+DNS=('192.168.20.1')
+
+## For IPv6 autoconfiguration
+#IP6=stateless
+
+## For IPv6 static address configuration
+#IP6=static
+#Address6=('1234:5678:9abc:def::1/64' '1234:3456::123/96')
+#Routes6=('abcd::1234')
+#Gateway6='1234:0:123::abcd'
+```
+
+
 ## 参考
 
 - [arch wiki](https://wiki.archlinux.org/index.php/Netctl_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))
