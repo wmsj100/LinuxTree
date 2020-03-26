@@ -24,7 +24,7 @@ Connection=ethernet
 IP=static
 Address=('192.168.20.3/24')
 #Routes=('192.168.0.0/24 via 192.168.1.2')
-Gateway='192.168.20.1'
+#Gateway='192.168.20.1'
 DNS=('192.168.20.1')
 
 ## For IPv6 autoconfiguration

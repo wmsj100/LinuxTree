@@ -50,7 +50,7 @@ Connection=ethernet
 IP=static
 Address=('192.168.20.3/24')
 #Routes=('192.168.0.0/24 via 192.168.1.2')
-Gateway='192.168.20.1'
+#Gateway='192.168.20.1'
 DNS=('192.168.20.1')
 
 ## For IPv6 autoconfiguration
@@ -62,7 +62,8 @@ DNS=('192.168.20.1')
 #Routes6=('abcd::1234')
 #Gateway6='1234:0:123::abcd'
 ```
-
+- 配置文件中的`Gateway`不能配置,因为如果是双网卡,都添加Gateway之后,路由就会有俩个default,这样就会冲突,默认选择第一个,可能就无法ping通外网了.
+- 所以这个内网的网卡不需要设置gateway
 
 ## 参考
 
