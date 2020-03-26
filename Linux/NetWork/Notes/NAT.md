@@ -39,9 +39,22 @@ email: wmsj100@hotmail.com
 
 ## 常用命令
 
-- `sudo iptables -t nat -A POSTROUTING -s eth0 -o wlan0 -j MASQUERATDE` 这样就会把来自内网eth0的流量请求通过wlan0接口转发出去,实现SNAT功能
+- `sudo iptables -t nat -A POSTROUTING -s 192.168.20.0/24 -o wlan0 -j MASQUERATDE` 这样就会把来自内网eth0的流量请求通过wlan0接口转发出去,实现SNAT功能
 - `sudo iptables -t nat -A PREROUTING -i wlx081079db1327 -p tcp --dport 80 -j DNAT --to-destionation 192.168.20.2:80` 这样就实现了DMZ功能,即向外网开放局域网的服务,外网通过访问public IP 192.168.0.103即可访问到局域网中192.168.20.2:80提供的网络服务
 - `sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-ports 8001` 对本机的端口进行转换
+
+## 问题定位
+
+### 网卡设置了nat流量转发,但是无法通过树莓派来实现转发效果
+
+- 最可能就是网卡没有开启流量转发的配置开关
+- `echo 1 > /proc/sys/net/ipv4/ip_forward`
+- `echo 1 > /proc/sys/net/ipv4/conf/wlan0/forwarding`
+
+### 开启nat流量转发功能后无法实现ping域名功能
+
+- 最可能就是dns的解析配置有问题,
+- `vi /etc/resolv.conf` 修改到正确的dns配置`nameserver 192.168.43.1`或者是路由器的配置
 
 ## 参考
 
