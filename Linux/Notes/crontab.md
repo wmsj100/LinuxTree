@@ -39,12 +39,12 @@ mail: wmsj100@hotmail.com
 - */10 * * * * ./shell.sh  每10分钟执行脚本一次
 
 ### 範例
-- * * * * * service httpd restart 每分钟重启http服务
-- * 23-3/1 * * * service httpd restart 每天从23点到3点每小时重启一次http服务
-- 30 23 * * * service httpd restart 每天23:30分重启http服务
-- 30 23 1 * * service httpd restart 每月1日23:30分重启http服务 
-- 30 23 1 1 * service httpd restart 每年1月1日23:30 重启服务
-- 30 23 * * 0 service httpd restart 每周日23:30分重启服务
+- `* * * * * service httpd restart` 每分钟重启http服务
+- `* 23-3/1 * * * service httpd restart `每天从23点到3点每小时重启一次http服务
+- `30 23 * * * service httpd restart` 每天23:30分重启http服务
+- `30 23 1 * * service httpd restart `每月1日23:30分重启http服务 
+- `30 23 1 1 * service httpd restart` 每年1月1日23:30 重启服务
+- `30 23 * * 0 service httpd restart `每周日23:30分重启服务
 
 - ***** touch /home/wmsj100/Documents/test/$(date +\%Y\%m\%d\%H\%M\%S)
 
