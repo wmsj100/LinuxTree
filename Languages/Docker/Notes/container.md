@@ -52,6 +52,7 @@ F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 - 因为容器如果不能运行任何进程则无法存在。
 - `docker container run --name myapp -it ubuntu:latest /bin/bash` 创建容器并且指定名称
 - `docker container run -d --name always --restart always alpine sleep 1d` 这样创建的容器是直接在后台执行，不会进入交换模式
+- `docker container run -itd --name test1 docker.io/centos:7` 这样创建容器并且运行，不需要指定容器运行的命令
 
 ## 暂时退出容器
 

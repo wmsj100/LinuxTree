@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-04-05 09:03:43 Thu
-modify: 2020-03-14 14:31:55 
+modify: 2020-03-31 14:42:23 
 tag: [readme]
 categories: README
 author: wmsj100
@@ -31,6 +31,7 @@ mail: wmsj100@hotmail.com
 	- [清华源](https://mirror.tuna.tsinghua.edu.cn/help/alpine/)
 	- [阿里云](https://mirrors.aliyun.com/alpine/)
 	- [网易云](http://mirrors.163.com/)
+	- [华为云](https://mirrors.huaweicloud.com/)
 
 - 学习网站
 	- [digitalocean 一个介绍开源知识的社区](https://cloud.digitalocean.com)
