@@ -21,6 +21,7 @@ mail: wmsj100@hotmail.com
 - ArchLinux
 - RaspberryPi 树莓派，当前最流行的微型电脑，打算入手一台，可以当作微型服务器，实现很多种功能
 - microBit	BBC联合其他厂商实现的硬件，支持python编程 [官网](https://microbit.org/zh-CN/code/)
+- KunPen 华为云的鲲鹏架构
 
 ## 参考
 

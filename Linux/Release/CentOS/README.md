@@ -21,3 +21,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [centos 官方wiki](https://wiki.centos.org/Documentation)
