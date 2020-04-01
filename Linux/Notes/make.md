@@ -1,7 +1,7 @@
 ---
 title: make
 date: 2020-03-28 22:13:20
-modify: 
+modify: 2020-04-01 11:36:01  
 tags: [Notes]
 categories: Linux
 author: wmsj100
@@ -29,6 +29,21 @@ email: wmsj100@hotmail.com
 - 它的很多问题因现代大型的软件项目的出现而暴露出来.
 - 但很多人争论说它在常见的情况下可以很好的工作,而且使用非常简单,功能强大,表达清楚.
 - 无论如何,make仍然被用来编译很多完整的操作系统,而且现在替代品们在基本的操作上与它没有太大的差别.
+
+## 编译报错
+
+- 下面是一个执行gcc编译的报错
+```
+checking for suffix of object files... configure: error: in `/root/Downloads/gcc-5.4.0/aarch64-unknown-linux-gnu/libgcc':
+configure: error: cannot compute suffix of object files: cannot compile
+See `config.log' for more details.
+make[2]: *** [configure-stage1-target-libgcc] Error 1
+make[2]: Leaving directory `/root/Downloads/gcc-5.4.0'
+make[1]: *** [stage1-bubble] Error 2
+make[1]: Leaving directory `/root/Downloads/gcc-5.4.0'
+make: *** [all] Error 2
+```
+- 编包的报错会在每个包内部生成config.log，即可以进入/root/Downloads/gcc-5.4.0/aarch64-unknown-linux-gnu/libgcc,然后查看config.log
 
 ## 参考
 
