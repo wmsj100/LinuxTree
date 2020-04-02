@@ -12,8 +12,26 @@ email: wmsj100@hotmail.com
 
 ## 概要
 
+- RPM: Redhat Package Manager
+- 通过自定义rpm包，统一管理，或者一键环境安装，就需要使用rpmbuild来进行编译。
+- 制作RPM包最主要的就是写SPEC文件，完成来就会用rpmbuild命令根据SPEC文件制作RPM包。
 - 这个文件会指引你在CentOS下安装及设置一个用来创建RPM的环境
 - 切勿以root身份来创建RPM,这个工作应该永远在一个没有特殊权限的户口内执行.以root的身份来创建RPM可能会损坏系统.
+
+## rpmbuild搭建
+
+- `yum install pcre-devel zlib-devel openssl-devel make cmake gcc gcc-c++ bison ncurses-devel rpm-build  -y`
+- `yum install rpmdevtools` 安装rpm开发包
+- `rpmdev-setuptree` 会自动生成`BUILD/SOURCES/RPMS/SPECS/SRPMS/.rpmmacros`等文件和目录
+- `rpmdev-newspec` 会在当前目录生成一个默认的spce模板
+
+## rpmbuild目录介绍
+
+- BUILD: 编译rpm包的临时目录
+- RPMS: 最终生成的可安装rpm包的所在目录
+- SOURCES: 所有源代码和补丁文件的存放目录
+- SPECS: 存放SPEC文件的目录
+- SRPMS: 软件最终的rpm源码格式存放路径
 
 ## 命令
 
@@ -26,3 +44,5 @@ email: wmsj100@hotmail.com
 ## 参考
 
 - [centos rpmbuild wiki](https://wiki.centos.org/zh/HowTos/SetupRpmBuildEnvironment)
+- [rpmbuild 构建](http://www.myjishu.com/?p=259)
+- [rpmbuild 构建](https://blog.csdn.net/u012373815/article/details/73257754)

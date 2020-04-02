@@ -54,6 +54,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 - `yum update` 全部更新，升级所有包，以及升级软件和系统内核`
 - `yum update tree` 更新指定程序包
 - `yum upgrade tree` 升级指定程序包
+- `sudo yum install --downloadonly --downloaddir=/home/redhat/download vim` 通过yum只是下载到指定目录，这种适用于离线安装包
 
 ## yum解决依赖的原理
 
