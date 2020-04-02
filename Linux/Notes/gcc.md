@@ -46,6 +46,12 @@ email: wmsj100@hotmail.com
 	- 配置gpm时候报错提示没有“m4”，`yum install m4`重新开始配置
 	- 配置mpc时候报错`configure: error: libmpfr not found or uses a different ABI (including static vs shared).` 提示mpfr没有找到，所以需要先安装mpfr，就是说mpc依赖与mpfr
 
+## 报错缺少动态库
+
+- 编译gcc时候还是报错缺少动态库，在根目录查找是有这个动态库的，
+- 查询资料有俩个方法可以解决，一个是在编译时候指定当前动态库，当时测试失败了，升级gcc-5.4.0
+- 导出环境变量`export DL_LIBRARY_PATH_=/usr/local/lib`，然后再执行编译就好了。
+
 ## 参考
 
 - [gcc 源码安装](https://www.cnblogs.com/as007012/articles/10045011.html)
