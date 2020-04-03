@@ -33,6 +33,17 @@ email: wmsj100@hotmail.com
 - SPECS: 存放SPEC文件的目录
 - SRPMS: 软件最终的rpm源码格式存放路径
 
+## rpmbuild命令
+
+- `bp` 只执行%pre段(解开源码包并打补丁，即只做准备)
+- `bc` 执行spec的%pre和%build段(准备并安装)
+- `bi` 执行spec的%pre/%build/%install(准备，编译并安装)
+- `bl` 检查spec的%file(查看文件是否齐全)
+- `ba` 建立源码与二进制包(常用):即编译后做成*.rpm和*.src.rpm
+- `bb` 建立二进制包(常用):即编译后做成*.rpm
+- `bs` 只建立源码包:即只做成*.src.rpm
+- tc/ti/tb/ts功能类似，只是所需参数由spce文件变成tar包
+
 ## 命令
 
 - `sudo yum install rpm-build` 安装rpm-build
