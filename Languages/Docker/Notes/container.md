@@ -27,6 +27,7 @@ email: wmsj100@hotmail.com
 - `docker container stop $(docker container ls -q)` 这样可以批量停止容器
 - `docker container start 6ee3d518b856` 启动容器
 - `docker container ls -a` 默认只列出运行中的容器，通过这个命令可以列出所有容器
+- `docker container rename centos7_wmsj100 centos7_wmsj` 重命名容器
 - `docker container rm 6ee3d518b856` 删除指定容器
 	- 删除容器之前需要先stop容器
 	- 删除镜像image之前需要先删除容器
@@ -82,6 +83,13 @@ F S UID        PID  PPID  C PRI  NI ADDR SZ WCHAN  STIME TTY          TIME CMD
 
 - 容器启动后会执行默认命令来启动应用，这样可以简化容器的操作
 - `docker image inspect test` 查看`CMD`可以看到执行的命令
+
+## 重启
+
+- 因为容器本身是基于宿主主机内核来启动的，所以对于容器来说，不需要执行重启动作，
+- `docker container stop centos7` 这样就相当于关机
+- `docker container start centos7` 启动容器
+- 需要重启是因为我安装了mysql卸载后还可以通过`systemctl status mysql.service`来查看mysql状态
 
 ## 参考
 
