@@ -17,7 +17,6 @@ mail: wmsj100@hotmail.com
 - Storage 关于linux的系统的收藏，包括软件/项目/图片等
 - SoftWare Linux好用的软件
 - Network 关于网络的知识点
-- Service 云服务厂商的服务
 - Release 不同的发行版
 
 ## 软件
