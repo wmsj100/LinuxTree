@@ -24,7 +24,7 @@ mail: wmsj100@hotmail.com
 ## 软件收藏
 
 - [typora](https://www.typora.io/#windows) 一款markdown编辑软件
-- jq 一款格式化json的工具
+- [openoffice](http://www.openoffice.org/download/) apache旗下的开源的跨平台的办公室软件套件,有了开源的方案，国产的wps还有市场吗
 
 ## 代办事项
 ~~None~~
