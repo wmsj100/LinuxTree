@@ -34,6 +34,10 @@ mail: wmsj100@hotmail.com
 - SaltStack 一个基于python的基础设施管理工具，
 - GoLang go语言
 - OpenStack 云操作系统
+- Hadoop 大数据软件架构
+- MongoDB NoSQL数据库
+- ZooKeeper
+- OSS 阿里云的对象存储服务
 
 ## 有趣接口
 
