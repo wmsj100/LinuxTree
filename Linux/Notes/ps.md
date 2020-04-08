@@ -1,7 +1,7 @@
 ---
 title: ps
 date: 2019-05-11 22:56:35 Saturday
-modify:
+modify: 2020-04-08 11:23:44 
 tag: [basic,ps]
 categories: Linux
 author: wmsj100
@@ -11,9 +11,11 @@ mail: wmsj100@hotmail.com
 # ps
 
 ## 概述
+
 - ps 查看进程的命令
 
 ## 用法
+
 - ps aux 查看详细进程，罗列所有的进程信息
 - ps axjf 查看进程时连同进程树显示出来
 - ps -l 显示当前bash相关的进程
