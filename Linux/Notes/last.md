@@ -20,6 +20,7 @@ email: wmsj100@hotmail.com
 - `utmpdump /var/log/wtmp > /tmp/wtmp.file`
 - `vi /tmp/wtmp.file` 修改信息
 - `utmpdump -r < /tmp/wtmp.file > /var/log/wtmp`
+- 这样修改之后，history中还有记录，这个也需要清除
 
 ## 参考
 
