@@ -22,6 +22,7 @@ email: wmsj100@hotmail.com
 
 ## 常用命令
 
+- `yum install iproute` 安装，一般都默认有安装，可能容器没有安装
 - 显示ip地址
 	- `ip a` 显示ip地址
 	- `ip address show`
