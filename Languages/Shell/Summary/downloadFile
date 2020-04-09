@@ -1,0 +1,108 @@
+#! /bin/bash
+#
+# DownFile.sh
+# Copyright (C) 2020  <wanghao@0000206327>
+#
+# Distributed under terms of the MIT license.
+# 脚本需要通过yum|apt下载软件，所以先自行update本地数据库
+# 当前脚本会依赖ssh/scp expect
+# 文件默认下载到当前执行目录
+# 脚本修改为交互式，直接执行命令进入交换界面
+
+RemoteIP=159.138.0.217
+PASSWD=CloudBU@123
+URL=""
+CURDIR=$(realpath .)
+File=""
+
+# get file url
+getURL(){
+	while [ -z "$URL" ];do
+		read -p "Please input address like https://XXX.tar.gz: " URL
+	done
+	File=$(basename $URL)
+}
+
+# get download path
+getDir(){
+	tmp=""
+	read -p "Default download path $CURDIR (Y/n) " tmp
+
+	case "$tmp" in
+		n*|N*) 
+			tmp=""
+			while [ -z "$tmp" ];do
+				read -p "Please input download path " tmp
+			done
+			CURDIR="$tmp"
+			;;
+	esac
+}
+
+remoteCMD(){
+	if [ $# -ne 1 ];then
+		echo "please input params"
+		exit 1
+	fi
+	
+	type="$1"
+
+	if [ "$type" = "download" ];then
+		cmd="ssh $RemoteIP wget $URL -O /tmp/$File"
+	elif [ "$type" = "copy" ];then
+		cmd="scp $RemoteIP:/tmp/$File $CURDIR"
+	elif [ "$type" = "clear" ];then
+		cmd="ssh $RemoteIP rm -f /tmp/$File" 
+	else
+		echo "params must be download|copy"
+		exit 1
+	fi
+
+expect <<EOF
+	set timeout -1
+	spawn $cmd
+	expect {
+		"yes/no" { send "yes\n";exp_continue }
+		"password" { send "$PASSWD\n" }
+	}
+	expect eof
+EOF
+
+}
+
+# environment prepare
+envPre(){
+	# 判断包管理器工具,可以自己随意添加
+	CMD=$(which yum || which apt || which pacman || "none")
+	if [ "$CMD" == "none" ];then
+		echo "you system is not support"
+		exit 1
+	fi
+	
+	# 判断当前登录用户
+	if [ $(whoami) != "root" ];then
+		CMD="sudo $CMD"
+	fi
+	
+	which scp &>/dev/null
+	if [ $? -ne 0 ];then
+		$CMD install -y openssh-clients 
+	fi
+	
+	which expect &>/dev/null
+	if [ $? -ne 0 ];then
+		$CMD install -y expect 
+	fi
+}
+
+init(){
+	getURL
+	getDir
+	envPre
+	remoteCMD "download"
+	remoteCMD "copy"
+	remoteCMD "clear"
+	echo "$CURDIR/$FILE download complete!!!"
+}
+
+init
