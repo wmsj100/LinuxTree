@@ -9,7 +9,7 @@
 # 文件默认下载到当前执行目录
 # 脚本修改为交互式，直接执行命令进入交换界面
 
-RemoteIP=159.138.0.217
+RemoteIP=root@159.138.0.217
 PASSWD=CloudBU@123
 URL=""
 CURDIR=$(realpath .)
