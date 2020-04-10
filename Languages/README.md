@@ -37,7 +37,7 @@ mail: wmsj100@hotmail.com
 - Hadoop 大数据软件架构
 - MongoDB NoSQL数据库
 - ZooKeeper
-- OSS 阿里云的对象存储服务
+- Cloud 云服务的概念
 
 ## 有趣接口
 

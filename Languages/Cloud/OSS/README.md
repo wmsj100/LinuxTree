@@ -19,7 +19,6 @@ email: wmsj100@hotmail.com
 - Notes: 基础知识。
 - Summary: 总结
 - Storage: 自己写的脚本
-- Distribute: 关于分布式的概念
 
 ## 备忘
 
