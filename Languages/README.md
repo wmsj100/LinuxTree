@@ -16,28 +16,15 @@ mail: wmsj100@hotmail.com
 
 ## 目录详情
 
-- Scratch 一个积木式的编程语言
 - Abandon 之前接触过的语言
 - C C语言
 - Git 版本控制系统工具`git`的知识点整理
-- MySQL 数据库
-- Redis 内存数据库redis
 - Python Python语言
 - Shell Linux的Shell语言
-- SQLite 嵌入式的数据库
 - Vim vim编辑器，所有类Unix系统默认安装的编辑器
-- VsCode IDE
 - WebUI 前端知识
-- Sphinx 一个项目API文档生成工具
 - Hexo 一个静态博客系统
-- Jenkins 一个开源的持续集成和持续交付工具
-- SaltStack 一个基于python的基础设施管理工具，
 - GoLang go语言
-- OpenStack 云操作系统
-- Hadoop 大数据软件架构
-- MongoDB NoSQL数据库
-- ZooKeeper
-- Cloud 云服务的概念
 
 ## 有趣接口
 
@@ -51,14 +38,10 @@ mail: wmsj100@hotmail.com
 
 - [Sumatra PDF](https://www.sumatrapdfreader.org/downloadafter.html)
 - [markdown在线工具](https://www.zybuluo.com/mdeditor)
+- [sphinx 文档](https://zh-sphinx-doc.readthedocs.io/en/latest/tutorial.html)
 
 ## 数据源
 
 - [清华源](https://mirrors.tuna.tsinghua.edu.cn/)
 
 ## 待学习
-
-- Redis
-- Sphinx
-- jenkins
-- docker

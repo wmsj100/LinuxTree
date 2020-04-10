@@ -21,6 +21,7 @@ mail: wmsj100@hotmail.com
 
 - Linux Linux系统知识点
 - Languages 学习过的语言
+- Cloud 关于云服务的知识点，涉及云上的框架和软件
 
 ## 网站收藏
 
