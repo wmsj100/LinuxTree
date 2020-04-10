@@ -19,6 +19,7 @@ email: wmsj100@hotmail.com
 
 - Distribute: 关于分布式的概念
 - OSS: 对象存储服务
+- BigData: 大数据的理论知识
 
 ## 参考
 
