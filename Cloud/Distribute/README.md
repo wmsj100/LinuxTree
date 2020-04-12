@@ -22,3 +22,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [关于分布式的介绍](http://www.distorage.com/page/4/)
