@@ -4,18 +4,24 @@
 # Copyright (C) 2020  <wanghao@0000206327>
 #
 # Distributed under terms of the MIT license.
-# # v0.1更新内容如下
+# # ===================> v0.2更新内容如下<====================
 # 脚本需要通过yum|apt下载软件，所以先自行update本地数据库
 # 当前脚本会依赖ssh/scp expect
 # 文件默认下载到当前执行目录
 # 脚本修改为交互式，直接执行命令进入交换界面
-# # v0.5 升级内容如下:
+# # ===================> v0.3升级内容如下<====================
 # 香港主机的临时下载目录从固定的/tmp到/tmp的随机目录,防止文件冲突
 # 支持的下载文件从之前固定的文件地址增加到类似git clone https://github.com/vim/vim.git  这种方式
 # 如果是以git方式下载,会增加压缩,回传的是在指定目录下的压缩包文件,缩短回传时间
+# # ===================> v0.2升级内容如下<====================
+# 直接脚本直接调用和交互式切换,如果有传参,则直接调用,没有传参,则进入交互式
+# 参数: 俩个参数
+# param1: 文件下载路径(. 当前路径,获取其他自定义目录)
+# parma2: 文件地址(https://xxx.xxx.tar.gz) 或者类似git clone https://github.com/vim/vim.git  
+# # 如果是git协议下载,必须是https方式,如果是ssh方式因为涉及到上传公钥会导致下载失败,可以切换为https
+# 范例: downloadFile . git clone https://github.com/wmsj100/study_shell.git (在当前目录会下载文件study_shell.tar.gz)
 
 # get file url
-
 getURL(){
 	while [ -z "$URL" ];do
 		read -p "Input address https://XXX.tar.gz: " URL
@@ -118,14 +124,51 @@ curHostCMD(){
 	rm -rf $TMPDir
 }
 
-init(){
+# direct use,just use like downloadFile xxx.tar.gz .
+judgeDealType(){
+	local curdir=$(realpath $1)
+	local url=""
+	shift
+	local url="$@"
+	
+	if [ ! -d "$curdir" ];then
+		echo "Your current Path is $curdir,Please inpur correct path for download file"
+		exit 1
+	fi
+
+	CURDIR="$curdir"
+	URL="$url"
+
+	if [ "$#" -eq 1 ];then
+		CMDType="file"
+	else
+		CMDType="dir"
+	fi
+
+	automaticCmd
+}
+
+# interaction type,need input address and download path
+interactionShell(){
 	getURL
 	getDir
+	automaticCmd
+}
+
+automaticCmd(){
 	printEnv
 	envPre
 	remoteCMD 
 	curHostCMD
 	echo "$CURDIR/$File download complete!!!"
+}
+
+init(){
+	if [ "$#" -gt 0 ];then
+		judgeDealType $@
+	else
+		interactionShell
+	fi
 }
 
 # Global params end 
