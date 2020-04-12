@@ -14,6 +14,11 @@ email: wmsj100@hotmail.com
 
 - 排版工具
 
+## 参数
+
+- `$NF` 获取最后一列
+- `NF` 获取列数
+
 ## 常用命令
 
 - `grep -nrw 'blog' . | awk -F ':' '{print $1}'` 找出所有包含blog的文件，并且按照分隔符':'打印第一列。
