@@ -4,23 +4,27 @@
 # Copyright (C) 2020  <wanghao@0000206327>
 #
 # Distributed under terms of the MIT license.
+# # v0.1更新内容如下
 # 脚本需要通过yum|apt下载软件，所以先自行update本地数据库
 # 当前脚本会依赖ssh/scp expect
 # 文件默认下载到当前执行目录
 # 脚本修改为交互式，直接执行命令进入交换界面
-
-RemoteIP=root@159.138.0.217
-PASSWD=CloudBU@123
-URL=""
-CURDIR=$(realpath .)
-File=""
+# # v0.5 升级内容如下:
+# 香港主机的临时下载目录从固定的/tmp到/tmp的随机目录,防止文件冲突
+# 支持的下载文件从之前固定的文件地址增加到类似git clone https://github.com/vim/vim.git  这种方式
+# 如果是以git方式下载,会增加压缩,回传的是在指定目录下的压缩包文件,缩短回传时间
 
 # get file url
+
 getURL(){
 	while [ -z "$URL" ];do
-		read -p "Please input address like https://XXX.tar.gz: " URL
+		read -p "Input address https://XXX.tar.gz: " URL
 	done
-	File=$(basename $URL)
+
+	local len=$(echo $URL | awk -F " " '{print NF}')
+	if [ "$len" -gt 1 ];then
+		CMDType="dir"
+	fi
 }
 
 # get download path
@@ -40,40 +44,55 @@ getDir(){
 }
 
 remoteCMD(){
-	if [ $# -ne 1 ];then
-		echo "please input params"
-		exit 1
-	fi
-	
-	type="$1"
+	local protocol=""
+	expectShell "ssh $RemoteInfo mkdir -p $TMPDir"  
 
-	if [ "$type" = "download" ];then
-		cmd="ssh $RemoteIP wget $URL -O /tmp/$File"
-	elif [ "$type" = "copy" ];then
-		cmd="scp $RemoteIP:/tmp/$File $CURDIR"
-	elif [ "$type" = "clear" ];then
-		cmd="ssh $RemoteIP rm -f /tmp/$File" 
+	if [ "$CMDType" = "file" ];then
+		File=$(basename $URL)
+		expectShell "ssh $RemoteInfo wget $URL -O $TMPDir/$File"
+		expectShell "scp $RemoteInfo:$TMPDir/$File $CURDIR"
+		expectShell "ssh $RemoteInfo rm -rf $TMPDir"
+	elif [ "$CMDType" = "dir" ];then
+		protocol=$(echo $URL | awk -F ' ' '{print $1}')
+
+		# if protocol is git
+		if [ "$protocol" = "git" ];then
+			remoteGitCmd
+		fi
 	else
-		echo "params must be download|copy"
+		echo "param CMDType must is file/dir"
 		exit 1
 	fi
+}
 
+# remote protocol is git
+remoteGitCmd(){
+	File=$(echo $URL | awk -F " " '{print $NF}')
+	File=$(basename $File | awk -F '.' '{print $1}')
+	local tarFile=${File}.tar.gz
+	expectShell "ssh $RemoteInfo \"mkdir -p $TMPDir/$File;$URL $TMPDir/$File\""
+	expectShell "ssh $RemoteInfo \"cd $TMPDir;tar -zcf $tarFile $File\""
+	expectShell "scp $RemoteInfo:$TMPDir/$tarFile $CURDIR"
+	expectShell "ssh $RemoteInfo rm -rf $TMPDir"
+	File=$tarFile
+}
+
+expectShell(){
 expect <<EOF
 	set timeout -1
-	spawn $cmd
+	spawn $@
 	expect {
 		"yes/no" { send "yes\n";exp_continue }
 		"password" { send "$PASSWD\n" }
 	}
 	expect eof
 EOF
-
 }
 
 # environment prepare
 envPre(){
 	# 判断包管理器工具,可以自己随意添加
-	CMD=$(which yum || which apt || which pacman || "none")
+	CMD=$(which yum || which apt || "none")
 	if [ "$CMD" == "none" ];then
 		echo "you system is not support"
 		exit 1
@@ -84,25 +103,42 @@ envPre(){
 		CMD="sudo $CMD"
 	fi
 	
-	which scp &>/dev/null
-	if [ $? -ne 0 ];then
-		$CMD install -y openssh-clients 
-	fi
-	
-	which expect &>/dev/null
-	if [ $? -ne 0 ];then
-		$CMD install -y expect 
-	fi
+	$CMD install -y $CMDList
+}
+
+# print env
+printEnv(){
+	echo $URL
+	echo $File
+	echo $CURDIR
+}
+
+# cur host cmd like clean tmp file
+curHostCMD(){
+	rm -rf $TMPDir
 }
 
 init(){
 	getURL
 	getDir
+	printEnv
 	envPre
-	remoteCMD "download"
-	remoteCMD "copy"
-	remoteCMD "clear"
-	echo "$CURDIR/$FILE download complete!!!"
+	remoteCMD 
+	curHostCMD
+	echo "$CURDIR/$File download complete!!!"
 }
 
-init
+# Global params end 
+RemoteIP=159.138.0.217
+RemoteUser=root
+RemoteInfo=${RemoteUser}@${RemoteIP}
+TMPDir=$(mktemp)
+PASSWD=CloudBU@123
+URL="" # address for download file
+CURDIR=$(realpath .) # tmp file dir
+File="" # download file name
+CMDList="openssh-clients expect" # depend software
+CMDType="file" # params is file|dir
+# Global params end 
+
+init $@
