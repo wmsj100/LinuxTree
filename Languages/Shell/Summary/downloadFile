@@ -1,25 +1,32 @@
 #! /bin/bash
-#
+# 
 # DownFile.sh
 # Copyright (C) 2020  <wanghao@0000206327>
 #
 # Distributed under terms of the MIT license.
-# # ===================> v0.2更新内容如下<====================
+# # ===================> version: v0.2 更新内容如下<====================
 # 脚本需要通过yum|apt下载软件，所以先自行update本地数据库
 # 当前脚本会依赖ssh/scp expect
 # 文件默认下载到当前执行目录
 # 脚本修改为交互式，直接执行命令进入交换界面
-# # ===================> v0.3升级内容如下<====================
+# # ===================> version: v0.3 升级内容如下<====================
 # 香港主机的临时下载目录从固定的/tmp到/tmp的随机目录,防止文件冲突
 # 支持的下载文件从之前固定的文件地址增加到类似git clone https://github.com/vim/vim.git  这种方式
 # 如果是以git方式下载,会增加压缩,回传的是在指定目录下的压缩包文件,缩短回传时间
-# # ===================> v0.2升级内容如下<====================
+# # ===================> version: v0.4 升级内容如下<====================
 # 直接脚本直接调用和交互式切换,如果有传参,则直接调用,没有传参,则进入交互式
 # 参数: 俩个参数
 # param1: 文件下载路径(. 当前路径,获取其他自定义目录)
 # parma2: 文件地址(https://xxx.xxx.tar.gz) 或者类似git clone https://github.com/vim/vim.git  
 # # 如果是git协议下载,必须是https方式,如果是ssh方式因为涉及到上传公钥会导致下载失败,可以切换为https
 # 范例: downloadFile . git clone https://github.com/wmsj100/study_shell.git (在当前目录会下载文件study_shell.tar.gz)
+# # ===================> version: v0.5 升级内容如下<====================
+# 1. 新增脚本升级功能，指定使用139.9.135.47主机的脚本为升级源
+# 使用: downloadFile update
+# 2. 新增版本打印功能
+# 使用: downloadFile version
+# 3. 新增帮助信息
+# 使用: downloadFile help
 
 # get file url
 getURL(){
@@ -163,9 +170,55 @@ automaticCmd(){
 	echo "$CURDIR/$File download complete!!!"
 }
 
+# update downloadFile
+updateShell(){
+	local remoteInfo=root@139.9.135.47
+	expectShell "scp $remoteInfo:/usr/local/bin/downloadFile /usr/local/bin/"
+	echo "downloadFile update!!!"
+}
+
+showUpdateInfo(){
+	echo -E "downloadFile command info:
+	# get tar file to current dir
+	downloadFile . https://xxx.xxx.tar.gz
+	# get tar file to other dir
+	downloadFile /tmp/aa/bb https://xxx.xxx.tar.gz
+	# get git project and compress to project_name.tar.gz to current dir
+	downloadFile . git clone https://xxx.xxx.git
+	# access into interaction shell
+	# you should input address for file or git project and download dir
+	# default download dir is current dir,you can press 'Enter' key
+	downloadFile
+	# update downloadFile shell
+	downloadFile update
+	# show version of shell
+	downloadFile version
+	"
+}
+
 init(){
 	if [ "$#" -gt 0 ];then
-		judgeDealType $@
+		if [ "$#" -eq 1 ];then
+			# if param is update
+			if [ "$1" = "update" ];then
+				updateShell
+			elif [ "$1" = "version" ];then
+				version=$(grep -nr "^#\s.*version:" /usr/local/bin/downloadFile | tail -n 1 | awk -F ' ' '{print $4$5}')
+				if [ -z "$version" ];then
+					echo "Please use 'downloadFile update' to upgrade shell and try again"
+					exit 1
+				else
+					echo $version
+				fi
+			elif [ "$1" = "help" ];then
+				showUpdateInfo
+			else
+				echo "Please input correct params like update|version"
+				exit 1
+			fi
+		else
+			judgeDealType $@
+		fi
 	else
 		interactionShell
 	fi
