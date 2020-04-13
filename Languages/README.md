@@ -25,6 +25,9 @@ mail: wmsj100@hotmail.com
 - WebUI 前端知识
 - Hexo 一个静态博客系统
 - GoLang go语言
+- Scala: 一门多范式的编程语言，设计初衷是要集成面向对象编程和函数式编程的各种特性。
+	- scala运行在java虚拟机上，并兼容现有的java程序
+	- scala源代码被编译成java字节码，所以它可以运行于JVM上，并可以调用现有的java类库
 
 ## 有趣接口
 
