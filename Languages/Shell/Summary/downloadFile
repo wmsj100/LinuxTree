@@ -27,6 +27,8 @@
 # 使用: downloadFile version
 # 3. 新增帮助信息
 # 使用: downloadFile help
+# # ===================> version: v0.6 升级内容如下<====================
+# bug: 修复当前docker没有安装which时的报错问题
 
 # get file url
 getURL(){
@@ -104,13 +106,24 @@ EOF
 
 # environment prepare
 envPre(){
+	local CMD=""
 	# 判断包管理器工具,可以自己随意添加
-	CMD=$(which yum || which apt || "none")
-	if [ "$CMD" == "none" ];then
-		echo "you system is not support"
+	
+	yum --version &>/dev/null
+	if [ $? -eq 0 ];then
+		CMD="yum"
+	fi
+
+	apt --version &>/dev/null
+	if [ $? -eq 0 ];then
+		CMD="apt"
+	fi
+
+	if [ -z "$CMD" ];then
+		echo "You pkg manager is not support"
 		exit 1
 	fi
-	
+
 	# 判断当前登录用户
 	if [ $(whoami) != "root" ];then
 		CMD="sudo $CMD"
