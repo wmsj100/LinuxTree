@@ -29,6 +29,17 @@
 # 使用: downloadFile help
 # # ===================> version: v0.6 升级内容如下<====================
 # bug: 修复当前docker没有安装which时的报错问题
+# # ===================> version: v0.7 升级内容如下<====================
+# add: 优化打印信息，添加颜色打印
+# # ===================> version: v0.8 升级内容如下<====================
+# bug: 修复downloadFile version/update生成临时文件
+# bug: 修复对于软件包管理器的判断逻辑
+# # ===================> version: v0.9 升级内容如下<====================
+# add: 回传文件新增解压缩开关AUROUnzip
+# param: False 关闭自动解压缩，默认值
+# param: True 开启自动解压缩，尝试识别压缩格式并自动去解压缩
+# # ===================> version## v1.0 升级内容如下<====================
+# bug: 修复文件下载错误回传空包的问题
 
 # get file url
 getURL(){
@@ -40,6 +51,21 @@ getURL(){
 	if [ "$len" -gt 1 ];then
 		CMDType="dir"
 	fi
+}
+
+# show success echo
+showOK(){
+	echo -e "\033[32m $@ \033[0m"
+}
+
+# show error echo
+showError(){
+	echo -e "\033[31m $@ \033[0m"
+}
+
+# show error echo
+showPrint(){
+	echo -e "\033[34m $@ \033[0m"
 }
 
 # get download path
@@ -75,7 +101,7 @@ remoteCMD(){
 			remoteGitCmd
 		fi
 	else
-		echo "param CMDType must is file/dir"
+		showError "param CMDType must is file/dir"
 		exit 1
 	fi
 }
@@ -108,20 +134,20 @@ EOF
 envPre(){
 	local CMD=""
 	# 判断包管理器工具,可以自己随意添加
-	
+	TMPDir=$(mktemp)
+	CURDIR=$(realpath $CURDIR) 
+
 	yum --version &>/dev/null
 	if [ $? -eq 0 ];then
 		CMD="yum"
-	fi
-
-	apt --version &>/dev/null
-	if [ $? -eq 0 ];then
-		CMD="apt"
-	fi
-
-	if [ -z "$CMD" ];then
-		echo "You pkg manager is not support"
-		exit 1
+	else
+		apt --version &>/dev/null
+		if [ $? -eq 0 ];then
+			CMD="apt"
+		else
+			showError "You pkg manager is not support"
+			exit 1
+		fi
 	fi
 
 	# 判断当前登录用户
@@ -134,14 +160,49 @@ envPre(){
 
 # print env
 printEnv(){
-	echo $URL
-	echo $File
-	echo $CURDIR
+	showPrint $URL
+	showPrint $File
+	showPrint $CURDIR
+}
+
+# try compress file
+compressFile(){
+	local filePath=$CURDIR/$File
+	local fileType=$(file $filePath | awk -F ' ' '{print $2}')
+	local suffix=$(echo $File | awk -F ' ' '{print $NF}')
+	local fileDir=""
+
+	# filter jar file
+	if [ "$suffix" = "jar" ];then
+		showPrint "Current download file $File is jar"
+		exit 0
+	fi
+
+	cd $CURDIR
+
+	echo $fileType | grep -w -E "^gzip|XZ|POSIX|bzip2$" &>/dev/null
+	if [ $? -eq 0 ];then
+		fileDir=$(tar -tf $File | head -n 1)
+		tar -xvf $File 
+		showOK "Target dir $CURDIR/$fileDir compress ok!!!"
+	elif [ "$fileType" = "Zip" ];then
+		unzip $File
+		showOK "Target file $File uncompress ok !!!"
+	else
+		showPrint "$File can't uncompress please check"
+	fi
 }
 
 # cur host cmd like clean tmp file
 curHostCMD(){
 	rm -rf $TMPDir
+	showOK "$CURDIR/$File download complete!!!"
+
+	# try unzip file
+	if [ "$AUTOUnZip" = "True" ];then
+		showPrint "start try to unzip $File"
+		compressFile
+	fi
 }
 
 # direct use,just use like downloadFile xxx.tar.gz .
@@ -152,7 +213,7 @@ judgeDealType(){
 	local url="$@"
 	
 	if [ ! -d "$curdir" ];then
-		echo "Your current Path is $curdir,Please inpur correct path for download file"
+		showError "Your current Path is $curdir,Please inpur correct path for download file"
 		exit 1
 	fi
 
@@ -180,33 +241,31 @@ automaticCmd(){
 	envPre
 	remoteCMD 
 	curHostCMD
-	echo "$CURDIR/$File download complete!!!"
 }
 
 # update downloadFile
 updateShell(){
 	local remoteInfo=root@139.9.135.47
 	expectShell "scp $remoteInfo:/usr/local/bin/downloadFile /usr/local/bin/"
-	echo "downloadFile update!!!"
+	showOK "downloadFile update!!!"
 }
 
-showUpdateInfo(){
-	echo -E "downloadFile command info:
-	# get tar file to current dir
-	downloadFile . https://xxx.xxx.tar.gz
-	# get tar file to other dir
-	downloadFile /tmp/aa/bb https://xxx.xxx.tar.gz
-	# get git project and compress to project_name.tar.gz to current dir
-	downloadFile . git clone https://xxx.xxx.git
-	# access into interaction shell
-	# you should input address for file or git project and download dir
-	# default download dir is current dir,you can press 'Enter' key
-	downloadFile
-	# update downloadFile shell
-	downloadFile update
-	# show version of shell
-	downloadFile version
-	"
+showHelpInfo(){
+	showPrint "downloadFile command info:"
+	showPrint "# get tar file to current dir"
+	showOK "downloadFile . https://xxx.xxx.tar.gz"
+	showPrint "# get tar file to other dir"
+	showOK "downloadFile /tmp/aa/bb https://xxx.xxx.tar.gz"
+	showPrint "# get git project and compress to project_name.tar.gz to current dir"
+	showOK "downloadFile . git clone https://xxx.xxx.git"
+	showPrint "# access into interaction shell"
+	showPrint "# you should input address for file or git project and download dir"
+	showPrint "# default download dir is current dir,you can press 'Enter' key"
+	showOK "downloadFile"
+	showPrint "# update downloadFile shell"
+	showOK "downloadFile update"
+	showPrint "# show version of shell"
+	showOK "downloadFile version"
 }
 
 init(){
@@ -218,15 +277,15 @@ init(){
 			elif [ "$1" = "version" ];then
 				version=$(grep -nr "^#\s.*version:" /usr/local/bin/downloadFile | tail -n 1 | awk -F ' ' '{print $4$5}')
 				if [ -z "$version" ];then
-					echo "Please use 'downloadFile update' to upgrade shell and try again"
+					showError "Please use 'downloadFile update' to upgrade shell and try again"
 					exit 1
 				else
-					echo $version
+					showOK $version
 				fi
 			elif [ "$1" = "help" ];then
-				showUpdateInfo
+				showHelpInfo
 			else
-				echo "Please input correct params like update|version"
+				showError "Please input correct params like update|version"
 				exit 1
 			fi
 		else
@@ -241,13 +300,14 @@ init(){
 RemoteIP=159.138.0.217
 RemoteUser=root
 RemoteInfo=${RemoteUser}@${RemoteIP}
-TMPDir=$(mktemp)
+TMPDir="" # remoteHost tmp dir
 PASSWD=CloudBU@123
 URL="" # address for download file
-CURDIR=$(realpath .) # tmp file dir
+CURDIR="" # download file dir
 File="" # download file name
-CMDList="openssh-clients expect" # depend software
+CMDList="openssh-clients expect file unzip bzip2 gzip xz" # depend software 
 CMDType="file" # params is file|dir
+AUTOUnZip="True" # False: just download File; True: download and try unzip file
 # Global params end 
 
 init $@
