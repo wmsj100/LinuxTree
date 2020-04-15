@@ -25,6 +25,7 @@ mail: wmsj100@hotmail.com
 
 - [typora](https://www.typora.io/#windows) 一款markdown编辑软件
 - [openoffice](http://www.openoffice.org/download/) apache旗下的开源的跨平台的办公室软件套件,有了开源的方案，国产的wps还有市场吗
+- [boostnote](https://boostnote.io/) 一款开源的笔记软件
 
 ## 代办事项
 ~~None~~
