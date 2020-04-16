@@ -38,6 +38,8 @@
 # add: 回传文件新增解压缩开关AUROUnzip
 # param: False 关闭自动解压缩，默认值
 # param: True 开启自动解压缩，尝试识别压缩格式并自动去解压缩
+# # ===================> version v1.0 升级内容如下<====================
+# update: 优化软件判断，减少界面输出
 # # ===================> version## v1.0 升级内容如下<====================
 # bug: 修复文件下载错误回传空包的问题
 
@@ -130,6 +132,15 @@ expect <<EOF
 EOF
 }
 
+checkCmd(){
+	command -v $1 &>/dev/null
+	if [ $? -eq 0 ];then
+		return 0
+	else
+		return 1
+	fi
+}
+
 # environment prepare
 envPre(){
 	local CMD=""
@@ -137,17 +148,12 @@ envPre(){
 	TMPDir=$(mktemp)
 	CURDIR=$(realpath $CURDIR) 
 
-	yum --version &>/dev/null
-	if [ $? -eq 0 ];then
-		CMD="yum"
-	else
-		apt --version &>/dev/null
-		if [ $? -eq 0 ];then
-			CMD="apt"
-		else
-			showError "You pkg manager is not support"
-			exit 1
-		fi
+	checkCmd yum && CMD="yum"
+	checkCmd apt && CMD="apt"
+
+	if [ -z "$CMD" ];then
+		showError "You pkg manager is not support"
+		exit 1
 	fi
 
 	# 判断当前登录用户
@@ -155,7 +161,14 @@ envPre(){
 		CMD="sudo $CMD"
 	fi
 	
-	$CMD install -y $CMDList
+	showPrint "Checking relay software..."
+	checkCmd ssh || $CMD install -q -y openssh-clients
+	checkCmd expect || $CMD install -q -y expect
+	checkCmd file || $CMD install -q -y file
+	checkCmd unzip || $CMD install -q -y unzip
+	checkCmd bzip2 || $CMD install -q -y bzip2
+	checkCmd gzip || $CMD install -q -y gzip
+	checkCmd xz || $CMD install -q -y xz
 }
 
 # print env
@@ -183,13 +196,14 @@ compressFile(){
 	echo $fileType | grep -w -E "^gzip|XZ|POSIX|bzip2$" &>/dev/null
 	if [ $? -eq 0 ];then
 		fileDir=$(tar -tf $File | head -n 1)
-		tar -xvf $File 
-		showOK "Target dir $CURDIR/$fileDir compress ok!!!"
+		tar -xf $File 
+		showOK "Target dir $CURDIR/$fileDir unzip ok!!!"
 	elif [ "$fileType" = "Zip" ];then
+		fileDir=$(unzip -l $File | head -n 10  | tail -n 1 | awk -F ' ' '{print $NF}' | awk -F '/' '{print $1}')
 		unzip $File
-		showOK "Target file $File uncompress ok !!!"
+		showOK "Target dir $CURDIR/$fileDir unzip ok!!!"
 	else
-		showPrint "$File can't uncompress please check"
+		showPrint "$File can't unzip please check"
 	fi
 }
 
@@ -237,7 +251,7 @@ interactionShell(){
 }
 
 automaticCmd(){
-	printEnv
+	#printEnv
 	envPre
 	remoteCMD 
 	curHostCMD
@@ -305,7 +319,6 @@ PASSWD=CloudBU@123
 URL="" # address for download file
 CURDIR="" # download file dir
 File="" # download file name
-CMDList="openssh-clients expect file unzip bzip2 gzip xz" # depend software 
 CMDType="file" # params is file|dir
 AUTOUnZip="True" # False: just download File; True: download and try unzip file
 # Global params end 
