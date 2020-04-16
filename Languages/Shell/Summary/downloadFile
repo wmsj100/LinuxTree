@@ -40,8 +40,8 @@
 # param: True 开启自动解压缩，尝试识别压缩格式并自动去解压缩
 # # ===================> version v1.0 升级内容如下<====================
 # update: 优化软件判断，减少界面输出
-# # ===================> version## v1.0 升级内容如下<====================
-# bug: 修复文件下载错误回传空包的问题
+# # ===================> version v1.1 升级内容如下<====================
+# bug: 修复文件下载错误回传空包的问题,如果网址不存在，直接返回错误
 
 # get file url
 getURL(){
@@ -92,7 +92,12 @@ remoteCMD(){
 
 	if [ "$CMDType" = "file" ];then
 		File=$(basename $URL)
-		expectShell "ssh $RemoteInfo wget $URL -O $TMPDir/$File"
+		expectShell "ssh $RemoteInfo curl $URL -o $TMPDir/$File"
+
+		if [ $? -ne 0 ];then
+			showError "$URL address is error, please check!!!"
+			exit 1
+		fi
 		expectShell "scp $RemoteInfo:$TMPDir/$File $CURDIR"
 		expectShell "ssh $RemoteInfo rm -rf $TMPDir"
 	elif [ "$CMDType" = "dir" ];then
@@ -114,6 +119,10 @@ remoteGitCmd(){
 	File=$(basename $File | awk -F '.' '{print $1}')
 	local tarFile=${File}.tar.gz
 	expectShell "ssh $RemoteInfo \"mkdir -p $TMPDir/$File;$URL $TMPDir/$File\""
+	if [ $? -ne 0 ];then
+		showError "$URL address is error, please check!!!"
+		exit 1
+	fi
 	expectShell "ssh $RemoteInfo \"cd $TMPDir;tar -zcf $tarFile $File\""
 	expectShell "scp $RemoteInfo:$TMPDir/$tarFile $CURDIR"
 	expectShell "ssh $RemoteInfo rm -rf $TMPDir"
@@ -122,13 +131,15 @@ remoteGitCmd(){
 
 expectShell(){
 expect <<EOF
-	set timeout -1
+	set timeout 3000
 	spawn $@
 	expect {
 		"yes/no" { send "yes\n";exp_continue }
 		"password" { send "$PASSWD\n" }
 	}
 	expect eof
+	catch wait result
+	exit [lindex \$result 3]
 EOF
 }
 
@@ -191,16 +202,14 @@ compressFile(){
 		exit 0
 	fi
 
-	cd $CURDIR
-
 	echo $fileType | grep -w -E "^gzip|XZ|POSIX|bzip2$" &>/dev/null
 	if [ $? -eq 0 ];then
 		fileDir=$(tar -tf $File | head -n 1)
-		tar -xf $File 
+		tar -xf $File -C $CURDIR
 		showOK "Target dir $CURDIR/$fileDir unzip ok!!!"
 	elif [ "$fileType" = "Zip" ];then
 		fileDir=$(unzip -l $File | head -n 10  | tail -n 1 | awk -F ' ' '{print $NF}' | awk -F '/' '{print $1}')
-		unzip $File
+		unzip -oq -d $CURDIR $File
 		showOK "Target dir $CURDIR/$fileDir unzip ok!!!"
 	else
 		showPrint "$File can't unzip please check"
