@@ -19,6 +19,8 @@ email: wmsj100@hotmail.com
 
 - `wget http://prdownloads.sourceforge.net/findbugs/findbugs-3.0.1.tar.gz` 下载在当前目录
 - `wget http://prdownloads.sourceforge.net/findbugs/findbugs-3.0.1.tar.gz -O /tmp/a.tar.gz`下载到指定目录
+- `wget -nv http://xxx.tar.gz -O a.tar.gz` 只显示关键信息，并且了`文件另存为自定义名称
 
 ## 参考
 
+- [wget](https://www.cnblogs.com/ftl1012/p/9265699.html)
