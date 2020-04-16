@@ -32,6 +32,7 @@ mail: wmsj100@hotmail.com
 - unzip test1.zip 解压缩，会覆盖当前目录的test1文件夹内容
 - unzip -l vim.zip 通过“-l”命令只是查看压缩包的内容，而不解压。
 - unzip -O GBK vim.zip 通过“-O”大写O 来指定解压缩的文本编码，把字符转换为GBK格式，但是我通过file命令查看解压缩的文本内容还是UTF-8.
+- unzip -oq -d /tmp a.zip 解压指定解压路径
 
 ## tar包
 
