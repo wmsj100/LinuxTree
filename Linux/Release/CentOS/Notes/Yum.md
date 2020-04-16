@@ -40,6 +40,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 
 ## 使用
 
+- `yum install -q` quite install 静默安装
 - `yum clean packages` 清除缓存目录下的软件包，清空的是(/var/cache/yum)下的缓存
 - `yum clean headers` 清除缓存目录下的headers
 - `yum clean oldheaders` 清除缓存目录下的旧headers
