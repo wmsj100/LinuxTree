@@ -38,20 +38,44 @@
 # add: 回传文件新增解压缩开关AUROUnzip
 # param: False 关闭自动解压缩，默认值
 # param: True 开启自动解压缩，尝试识别压缩格式并自动去解压缩
-# # ===================> version v1.0 升级内容如下<====================
+# # ===================> version: v1.0 升级内容如下<====================
 # update: 优化软件判断，减少界面输出
-# # ===================> version v1.1 升级内容如下<====================
+# # ===================> version: v1.1 升级内容如下<====================
 # bug: 修复文件下载错误回传空包的问题,如果网址不存在，直接返回错误
+# # ===================> version: v1.2 升级内容如下<====================
+# update: 统一tar包和git库的下载方式，统一使用 downloadFile xxx.tar.gz/xxx.git
+# # ===================> version: v1.3 升级内容如下<====================
+# update: 优化下载文件的界面打印，只保留关键信息
+# # ===================> version: v1.4 升级内容如下<====================
+# update: 合并远程操作，减少交互次数，缩短下载时间
+# # ===================> version v1.5 升级内容如下<====================
+# update: 优化界面警告信息
 
 # get file url
 getURL(){
+	CURDIR=$(pwd)
+
 	while [ -z "$URL" ];do
 		read -p "Input address https://XXX.tar.gz: " URL
 	done
 
-	local len=$(echo $URL | awk -F " " '{print NF}')
-	if [ "$len" -gt 1 ];then
-		CMDType="dir"
+	getFileType
+}
+
+# get file suffix tar.gz|.git
+getFileType(){
+	File=${URL##*/}
+	local suffix=${URL##*.}
+
+	if [ "$suffix" = "git" ];then
+		FileType=git
+	elif [ "$suffix" = "svn" ];then
+		FileType=svn
+	elif [ -n "$suffix" ];then
+		FileType=file
+	else
+		showError "$URL address is not a file or git, please check!!!"
+		exit 1
 	fi
 }
 
@@ -83,46 +107,47 @@ getDir(){
 			done
 			CURDIR="$tmp"
 			;;
+		*)
+			CURDIR=$(pwd)
 	esac
 }
 
 remoteCMD(){
-	local protocol=""
-	expectShell "ssh $RemoteInfo mkdir -p $TMPDir"  
-
-	if [ "$CMDType" = "file" ];then
-		File=$(basename $URL)
-		expectShell "ssh $RemoteInfo curl $URL -o $TMPDir/$File"
-
-		if [ $? -ne 0 ];then
-			showError "$URL address is error, please check!!!"
-			exit 1
-		fi
+	if [ "$FileType" = "file" ];then
+		expectShell "ssh $RemoteInfo \"mkdir -p $TMPDir;wget -nv $URL -O $TMPDir/$File\""
+		checkExpectResultCode
 		expectShell "scp $RemoteInfo:$TMPDir/$File $CURDIR"
 		expectShell "ssh $RemoteInfo rm -rf $TMPDir"
-	elif [ "$CMDType" = "dir" ];then
-		protocol=$(echo $URL | awk -F ' ' '{print $1}')
-
-		# if protocol is git
-		if [ "$protocol" = "git" ];then
-			remoteGitCmd
-		fi
+	elif [ "$FileType" = "git" ];then
+		remoteGitCmd
+	elif [ "$FileType" = "svn" ];then
+		remoteSvnCmd
 	else
-		showError "param CMDType must is file/dir"
+		showError "FileType must is file|git|svn"
+		exit 1
+	fi
+}
+
+# svn clone
+remoteSvnCmd(){
+	showError "svn not support, if need, please tell me!!!"
+	exit 1
+}
+
+# check expect result code
+checkExpectResultCode(){
+	if [ $? -ne 0 ];then
+		showError "$URL address is error, please check!!!"
 		exit 1
 	fi
 }
 
 # remote protocol is git
 remoteGitCmd(){
-	File=$(echo $URL | awk -F " " '{print $NF}')
-	File=$(basename $File | awk -F '.' '{print $1}')
+	File=${File%.*}
 	local tarFile=${File}.tar.gz
-	expectShell "ssh $RemoteInfo \"mkdir -p $TMPDir/$File;$URL $TMPDir/$File\""
-	if [ $? -ne 0 ];then
-		showError "$URL address is error, please check!!!"
-		exit 1
-	fi
+	expectShell "ssh $RemoteInfo \"mkdir -p $TMPDir/$File;git clone $URL $TMPDir/$File\""
+	checkExpectResultCode
 	expectShell "ssh $RemoteInfo \"cd $TMPDir;tar -zcf $tarFile $File\""
 	expectShell "scp $RemoteInfo:$TMPDir/$tarFile $CURDIR"
 	expectShell "ssh $RemoteInfo rm -rf $TMPDir"
@@ -222,7 +247,7 @@ curHostCMD(){
 	showOK "$CURDIR/$File download complete!!!"
 
 	# try unzip file
-	if [ "$AUTOUnZip" = "True" ];then
+	if [ "$SwitchZip" = "True" ];then
 		showPrint "start try to unzip $File"
 		compressFile
 	fi
@@ -230,25 +255,15 @@ curHostCMD(){
 
 # direct use,just use like downloadFile xxx.tar.gz .
 judgeDealType(){
-	local curdir=$(realpath $1)
-	local url=""
-	shift
-	local url="$@"
+	CURDIR=$(realpath $1)
+	URL=$2
 	
-	if [ ! -d "$curdir" ];then
+	if [ ! -d "$CURDIR" ];then
 		showError "Your current Path is $curdir,Please inpur correct path for download file"
 		exit 1
 	fi
 
-	CURDIR="$curdir"
-	URL="$url"
-
-	if [ "$#" -eq 1 ];then
-		CMDType="file"
-	else
-		CMDType="dir"
-	fi
-
+	getFileType
 	automaticCmd
 }
 
@@ -328,8 +343,8 @@ PASSWD=CloudBU@123
 URL="" # address for download file
 CURDIR="" # download file dir
 File="" # download file name
-CMDType="file" # params is file|dir
-AUTOUnZip="True" # False: just download File; True: download and try unzip file
+FileType="file" # params is file|git
+SwitchZip="True" # False: just download File; True: download and try unzip file
 # Global params end 
 
 init $@
