@@ -50,6 +50,13 @@
 # update: 合并远程操作，减少交互次数，缩短下载时间
 # # ===================> version v1.5 升级内容如下<====================
 # update: 优化界面警告信息
+# # ===================> version v1.6 升级内容如下<====================
+# add: 新增checkSoInit方法，去checkSo目录给脚本添加可执行权限
+# add: 在/usr/local/bin目录生成可执行文件checkSo
+# use: checkSo ./jython-3.14.jar 在任意目标执行该方法即可，不需要先切换到checkSo所在目录在执行./main.sh /root/xxx.jython.jar
+# # ===================> version v1.7 升级内容如下<====================
+# add: 新增checkSoCreate方法，用于在任意目录创建checkSo目录，并且更新/usr/local/bin/checkSo指向链接
+# use: downloadFile checkSoCreate . #用于在当前目录创建checkSo，拉取139.9.135.47主机/root/checkSo.zip
 
 # get file url
 getURL(){
@@ -114,6 +121,7 @@ getDir(){
 
 remoteCMD(){
 	if [ "$FileType" = "file" ];then
+		showPrint "Waiting to download $TMPDir/$File"
 		expectShell "ssh $RemoteInfo \"mkdir -p $TMPDir;wget -nv $URL -O $TMPDir/$File\""
 		checkExpectResultCode
 		expectShell "scp $RemoteInfo:$TMPDir/$File $CURDIR"
@@ -216,9 +224,8 @@ printEnv(){
 
 # try compress file
 compressFile(){
-	local filePath=$CURDIR/$File
-	local fileType=$(file $filePath | awk -F ' ' '{print $2}')
-	local suffix=$(echo $File | awk -F ' ' '{print $NF}')
+	local fileType=$(file $CURDIR/$File | awk -F ' ' '{print $2}')
+	local suffix=${File##*.}
 	local fileDir=""
 
 	# filter jar file
@@ -283,7 +290,7 @@ automaticCmd(){
 
 # update downloadFile
 updateShell(){
-	local remoteInfo=root@139.9.135.47
+	local remoteInfo=root@${StandHost}
 	expectShell "scp $remoteInfo:/usr/local/bin/downloadFile /usr/local/bin/"
 	showOK "downloadFile update!!!"
 }
@@ -306,6 +313,72 @@ showHelpInfo(){
 	showOK "downloadFile version"
 }
 
+# check shell exec
+checkExecute(){
+	local path=$1
+	local curShell=""
+
+	if [ -z "$path" ];then
+		showError "Please check checkExecute params"
+		exit 1
+	fi
+
+	for curShell in $(find $path -maxdepth 1 -type f -name "*.sh");do
+		if [ ! -x "$curShell" ];then
+			showError "$curShell is not executable,already modify it!"
+			chmod +x "$curShell"
+		fi
+	done
+}
+
+# modify shell absolute path
+createCheckSoShell(){
+	local checkSoFile=/usr/local/bin/checkSo
+	echo -E "#!/bin/bash
+targetFile=\$(realpath \$1)
+cd $1
+for file in JarResult.log NonJarResult.log out.csv
+do
+	echo \"\" > \$file
+done
+./main.sh \$targetFile
+" >"$checkSoFile"
+
+	if [ ! -x "$checkSoFile" ];then
+		chmod +x "$checkSoFile"
+	fi
+}
+
+# create checkSo dir
+checkSoCreate(){
+	local targetPath=$(realpath $1)
+	checkExist $targetPath
+
+	expectShell "scp ${StandHost}:/root/checkSo.zip $targetPath"
+	checkExpectResultCode
+	unzip -oq -d $targetPath $targetPath/checkSo.zip
+	rm -f $targetPath/checkSo.zip
+	showOK "$targetPath/checkSo already ok!!!"
+}
+
+# check dir exist
+checkExist(){
+	local target=$(realpath $1)
+
+	if [ ! -e "$target" ];then
+		showError "$target is not exist,please check!!!"
+		exit 1
+	fi
+}
+
+# checkSo init
+checkSoInit(){
+	local checkSoPath=$(realpath $1)
+	checkExist $checkSoPath
+	checkExecute $checkSoPath
+	createCheckSoShell $checkSoPath
+}
+
 init(){
 	if [ "$#" -gt 0 ];then
 		if [ "$#" -eq 1 ];then
@@ -326,8 +399,19 @@ init(){
 				showError "Please input correct params like update|version"
 				exit 1
 			fi
+		elif [ "$#" -eq 2 ];then
+			if [ "$1" = "checkSoInit" ];then
+				shift
+				checkSoInit $@
+			elif [ "$1" = "checkSoCreate" ];then
+				shift
+				checkSoCreate $@
+			else
+				judgeDealType $@
+			fi
 		else
-			judgeDealType $@
+			showError "Please check your params,params count can't more than 2"
+			exit 1
 		fi
 	else
 		interactionShell
@@ -345,6 +429,7 @@ CURDIR="" # download file dir
 File="" # download file name
 FileType="file" # params is file|git
 SwitchZip="True" # False: just download File; True: download and try unzip file
+StandHost=139.9.135.47
 # Global params end 
 
 init $@
