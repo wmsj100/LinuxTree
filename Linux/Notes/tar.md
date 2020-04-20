@@ -29,10 +29,12 @@ mail: wmsj100@hotmail.com
 
 ## unzip 解压缩
 
-- unzip test1.zip 解压缩，会覆盖当前目录的test1文件夹内容
-- unzip -l vim.zip 通过“-l”命令只是查看压缩包的内容，而不解压。
-- unzip -O GBK vim.zip 通过“-O”大写O 来指定解压缩的文本编码，把字符转换为GBK格式，但是我通过file命令查看解压缩的文本内容还是UTF-8.
-- unzip -oq -d /tmp a.zip 解压指定解压路径
+- `unzip test1.zip` 解压缩，会覆盖当前目录的test1文件夹内容
+- `unzip -l vim.zip` 通过“-l”命令只是查看压缩包的内容，而不解压。
+- `unzip -O GBK vim.zip` 通过“-O”大写O 来指定解压缩的文本编码，把字符转换为GBK格式，但是我通过file命令查看解压缩的文本内容还是UTF-8.
+- `unzip -oq -d /tmp a.zip` 解压指定解压路径
+- `unzip -oq -d /tmp jline-2.14.3.jar *.so 2>/dev/null` 解压jar包，提取jar包中的so动态库文件到目标文件夹tmp中
+	- 这个命令超级厉害，因为只解压so后缀的动态库文件，不需要再去遍历多余的无用的文件，减少文件，增加速度
 
 ## tar包
 
