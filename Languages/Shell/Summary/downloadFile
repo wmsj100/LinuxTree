@@ -65,10 +65,10 @@
 # # ===================> version: v1.1.0 升级内容如下<====================
 # update: 重构关于checkSo的功能，优化checkSo分析结果界面打印，并给出文件路径
 # # ===================> version v1.1.0 升级内容如下<====================
-# brief: 新增checkSoNew,checkSoAnalysis调用脚本自己的代码来分析目标文件是否包含非aarch64的文件
+# brief: 新增checkSoNew,checkSoNewAnalysis调用脚本自己的代码来分析目标文件是否包含非aarch64的文件
 # add: checkSoNew 在/usr/local/bin目录生成checkSo脚本，具体调用执行的分析动作
 # use: downloadFile checkSoNew ,该动作生成checkSo文件后，可以执行 checkSo xxx.jar来分析
-# add: checkSoAnalysis xxx.jar 真正执行分析的调用，checkSo脚本也是调用这个方法实现分析
+# add: checkSoNewAnalysis xxx.jar 真正执行分析的调用，checkSo脚本也是调用这个方法实现分析
 # show: 会在界面打印关于目标的信息，也会在当前目录生成一个目标文件的log xxx.jar.log
 
 # get file url
@@ -348,7 +348,7 @@ checkExecute(){
 
 	for curShell in $(find $path -maxdepth 1 -type f -name "*.sh");do
 		if [ ! -x "$curShell" ];then
-			showError "$curShell is not executable,already modify it!"
+			showPrint "$curShell is not executable,already modify it!"
 			chmod +x "$curShell"
 		fi
 	done
@@ -358,13 +358,7 @@ checkExecute(){
 createCheckSoShell(){
 	local checkSoFile=/usr/local/bin/checkSo
 	echo -E "#!/bin/bash
-targetFile=\$(realpath \$1)
-cd $1
-for file in JarResult.log NonJarResult.log out.csv
-do
-	echo \"\" > \$file
-done
-./main.sh \$targetFile
+downloadFile checkSoAnalysis \$@
 " >"$checkSoFile"
 
 	if [ ! -x "$checkSoFile" ];then
@@ -386,6 +380,7 @@ checkSoPull(){
 	showOK "$checkSoPath already ok!!!"
 	checkExecute $checkSoPath
 	createCheckSoShell $checkSoPath
+	sed -i "s|^CheckSoGlobalPath=.*|CheckSoGlobalPath=${checkSoPath}|g" /usr/local/bin/downloadFile
 }
 
 # check dir exist
@@ -402,8 +397,8 @@ checkExist(){
 createNewCheckSoShell(){
 	local checkSoFile=/usr/local/bin/checkSo
 	echo -E "#!/bin/bash
-downloadFile checkSoAnalysis \$@
-	" >"$checkSoFile"
+downloadFile checkSoNewAnalysis \$@
+" >"$checkSoFile"
 
 	if [ ! -x "$checkSoFile" ];then
 		chmod +x "$checkSoFile"
@@ -411,7 +406,7 @@ downloadFile checkSoAnalysis \$@
 }
 
 # analysis tar/jar/rpm
-checkSoAnalysis(){
+checkSoNewAnalysis(){
 	local path=$1
 	unzipCheckSo $path
 	searchSo $path
@@ -437,6 +432,61 @@ unzipCheckSo(){
 	fi
 }
 
+checkSoAnalysis(){
+	local targetFile=$(realpath $1)
+
+	if [ ! -d "$CheckSoGlobalPath" ];then
+		showError "$CheckSoGlobalPath is not exist, Please check"
+		exit 1
+	fi
+
+	cd $CheckSoGlobalPath
+
+	for file in $JarLogName $OutLogName $NonJarLogName
+	do
+		echo "" > $file
+	done
+
+	./main.sh $targetFile
+	checkSoLog $targetFile
+}
+
+checkSoLog(){
+	local targetFile=$1
+	local targetDir=${targetFile%/*}
+	local log=${targetFile}.log
+	local nonJarLog=""
+	local outLog=""
+	local jarLog=""
+
+	[ -f "$log" ] && rm "$log"
+	cd $CheckSoGlobalPath
+
+	nonJarLog=$(cat $NonJarLogName | grep -Ev "^$|UTC" 2>/dev/null)
+	if [ -n "$nonJarLog" ];then
+		echo -E "$CheckSoGlobalPath/$NonJarLogName ==> $nonJarLog" >> $log
+		showError "$nonJarLog Check $CheckSoGlobalPath/$NonJarLogName"
+	fi
+
+	outLog=$(cat $OutLogName | grep -Ev "^$" 2>/dev/null)
+	if [ -n "$outLog" ];then
+		echo -E "$CheckSoGlobalPath/$OutLogName ==> $outLog" >> $log
+		showError "$outLog Check $CheckSoGlobalPath/$OutLogName"
+	fi
+
+	jarLog=$(cat $JarLogName | grep -Ev "^$" 2>/dev/null)
+	if [ -n "$jarLog" ];then
+		echo -E "$CheckSoGlobalPath/$JarLogName ==> $jarLog" >> $log
+		showError "$jarLog Check $CheckSoGlobalPath/$JarLogName"
+	fi
+
+	if [ -f "$log" ];then
+		showPrint "Detail log $log"
+	else
+		showOK "$targetFile is OK XD!!!"
+	fi
+}
+
 init(){
 	if [ "$#" -gt 0 ];then
 		# if param is update
@@ -454,10 +504,12 @@ init(){
 			showHelpInfo
 		elif [ "$1" = "checkSoPull" ];then
 			checkSoPull $2
-		elif [ "$1" = "checkSoNew" ];then
-			createNewCheckSoShell
 		elif [ "$1" = "checkSoAnalysis" ];then
 			checkSoAnalysis $2
+		elif [ "$1" = "checkSoNew" ];then
+			createNewCheckSoShell
+		elif [ "$1" = "checkSoNewAnalysis" ];then
+			checkSoNewAnalysis $2
 		else
 			judgeDealType $@
 		fi
@@ -480,7 +532,12 @@ SwitchZip="True" # False: just download File; True: download and try unzip file
 StandHost=139.9.135.47
 
 ## checkSo Global params
+# CheckSoGlobalPath is cur host checkSo path, when use checkSoPull chang is
+CheckSoGlobalPath=/tmp/tmp/aa/bb/cc/checkSo
 DefaultPlatform="AArch64" # target compile platform is aarch64
+JarLogName="JarResult.log"
+OutLogName="out.csv"
+NonJarLogName="NonJarResult.log"
 ## checkSo Global params end
 
 # Global params end 
