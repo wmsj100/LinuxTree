@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-04-01 10:18:56 Sun
-modify: 2020-03-10 16:43:41 
+modify: 2020-04-21 09:02:01 
 tag: [readme]
 categories: Linux
 author: wmsj100
@@ -26,6 +26,8 @@ mail: wmsj100@hotmail.com
 - [typora](https://www.typora.io/#windows) 一款markdown编辑软件
 - [openoffice](http://www.openoffice.org/download/) apache旗下的开源的跨平台的办公室软件套件,有了开源的方案，国产的wps还有市场吗
 - [boostnote](https://boostnote.io/) 一款开源的笔记软件
+- [一些小软件集合](https://www.horstmuc.de/win.htm)
+- [MemPad](https://www.horstmuc.de/wmem.htm) 这是我在16年时候非常喜欢的一个软件，支持树形分布，记录笔记很方便
 
 ## 代办事项
 ~~None~~
