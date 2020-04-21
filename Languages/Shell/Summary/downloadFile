@@ -40,27 +40,29 @@
 # param: True 开启自动解压缩，尝试识别压缩格式并自动去解压缩
 # # ===================> version: v1.0 升级内容如下<====================
 # update: 优化软件判断，减少界面输出
-# # ===================> version: v1.1 升级内容如下<====================
+# # ===================> version: v1.0.1 升级内容如下<====================
 # bug: 修复文件下载错误回传空包的问题,如果网址不存在，直接返回错误
-# # ===================> version: v1.2 升级内容如下<====================
+# # ===================> version: v1.0.22 升级内容如下<====================
 # update: 统一tar包和git库的下载方式，统一使用 downloadFile xxx.tar.gz/xxx.git
-# # ===================> version: v1.3 升级内容如下<====================
+# # ===================> version: v1.0.3 升级内容如下<====================
 # update: 优化下载文件的界面打印，只保留关键信息
-# # ===================> version: v1.4 升级内容如下<====================
+# # ===================> version: v1.0.4 升级内容如下<====================
 # update: 合并远程操作，减少交互次数，缩短下载时间
-# # ===================> version: v1.5 升级内容如下<====================
+# # ===================> version: v1.0.5 升级内容如下<====================
 # update: 优化界面警告信息
-# # ===================> version: v1.6 升级内容如下<====================
+# # ===================> version: v1.0.6 升级内容如下<====================
 # add: 新增checkSoInit方法，去checkSo目录给脚本添加可执行权限
 # add: 在/usr/local/bin目录生成可执行文件checkSo
 # use: checkSo ./jython-3.14.jar 在任意目标执行该方法即可，不需要先切换到checkSo所在目录在执行./main.sh /root/xxx.jython.jar
-# # ===================> version: v1.7 升级内容如下<====================
+# # ===================> version: v1.0.7 升级内容如下<====================
 # add: 新增checkSoCreate方法，用于在任意目录创建checkSo目录，并且更新/usr/local/bin/checkSo指向链接
 # use: downloadFile checkSoCreate . #用于在当前目录创建checkSo，拉取139.9.135.47主机/root/checkSo.zip
-# # ===================> version: v1.8 升级内容如下<====================
+# # ===================> version: v1.0.8 升级内容如下<====================
 # update: checkSoCreate 改名为checkSoPull
-# update: checkSoInit功能整合到checkSoPull
-# # ===================> version: v1.9 升级内容如下<====================
+# delete: checkSoInit功能整合到checkSoPull
+# # ===================> version: v1.0.9 升级内容如下<====================
+# update: 优化脚本参数输入判断，取消参数数量限制，只识别目标参数是否存在，默认第一个参数为下载路径
+# # ===================> version: v1.0.9 升级内容如下<====================
 # add: 新增对于目标文件的二进制扫描，默认是Aarch64，不依赖与之前的checkSo目录
 # use: checkSo xxx.jar
 
@@ -272,7 +274,7 @@ judgeDealType(){
 	URL=$2
 	
 	if [ ! -d "$CURDIR" ];then
-		showError "Your current Path is $curdir,Please inpur correct path for download file"
+		showError "Your current Path is $CURDIR,Please inpur correct path for download file"
 		exit 1
 	fi
 
@@ -381,47 +383,26 @@ checkExist(){
 	fi
 }
 
-# checkSo init
-checkSoInit(){
-	local checkSoPath=$(realpath $1)
-	checkExist $checkSoPath
-	checkExecute $checkSoPath
-	createCheckSoShell $checkSoPath
-}
-
 init(){
 	if [ "$#" -gt 0 ];then
-		if [ "$#" -eq 1 ];then
-			# if param is update
-			if [ "$1" = "update" ];then
-				updateShell
-			elif [ "$1" = "version" ];then
-				version=$(grep -nr "^#\s.*version:" /usr/local/bin/downloadFile | tail -n 1 | awk -F ' ' '{print $4$5}')
-				if [ -z "$version" ];then
-					showError "Please use 'downloadFile update' to upgrade shell and try again"
-					exit 1
-				else
-					showOK $version
-				fi
-			elif [ "$1" = "help" ];then
-				showHelpInfo
-			else
-				showError "Please input correct params like update|version"
+		# if param is update
+		if [ "$1" = "update" ];then
+			updateShell
+		elif [ "$1" = "version" ];then
+			version=$(grep -nr "^#\s.*version:" /usr/local/bin/downloadFile | tail -n 1 | awk -F ' ' '{print $4$5}')
+			if [ -z "$version" ];then
+				showError "Please use 'downloadFile update' to upgrade shell and try again"
 				exit 1
-			fi
-		elif [ "$#" -eq 2 ];then
-			if [ "$1" = "checkSoInit" ];then
-				shift
-				checkSoInit $@
-			elif [ "$1" = "checkSoPull" ];then
-				shift
-				checkSoPull $@
 			else
-				judgeDealType $@
+				showOK $version
 			fi
+		elif [ "$1" = "help" ];then
+			showHelpInfo
+		elif [ "$1" = "checkSoPull" ];then
+			shift
+			checkSoPull $@
 		else
-			showError "Please check your params,params count can't more than 2"
-			exit 1
+			judgeDealType $@
 		fi
 	else
 		interactionShell
