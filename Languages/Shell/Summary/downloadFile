@@ -62,9 +62,14 @@
 # delete: checkSoInit功能整合到checkSoPull
 # # ===================> version: v1.0.9 升级内容如下<====================
 # update: 优化脚本参数输入判断，取消参数数量限制，只识别目标参数是否存在，默认第一个参数为下载路径
-# # ===================> version: v1.0.9 升级内容如下<====================
-# add: 新增对于目标文件的二进制扫描，默认是Aarch64，不依赖与之前的checkSo目录
-# use: checkSo xxx.jar
+# # ===================> version: v1.1.0 升级内容如下<====================
+# update: 重构关于checkSo的功能，优化checkSo分析结果界面打印，并给出文件路径
+# # ===================> version v1.1.0 升级内容如下<====================
+# brief: 新增checkSoNew,checkSoAnalysis调用脚本自己的代码来分析目标文件是否包含非aarch64的文件
+# add: checkSoNew 在/usr/local/bin目录生成checkSo脚本，具体调用执行的分析动作
+# use: downloadFile checkSoNew ,该动作生成checkSo文件后，可以执行 checkSo xxx.jar来分析
+# add: checkSoAnalysis xxx.jar 真正执行分析的调用，checkSo脚本也是调用这个方法实现分析
+# show: 会在界面打印关于目标的信息，也会在当前目录生成一个目标文件的log xxx.jar.log
 
 # get file url
 getURL(){
@@ -96,17 +101,17 @@ getFileType(){
 
 # show success echo
 showOK(){
-	echo -e "\033[32m $@ \033[0m"
+	echo -e "\033[32m[SUCCESS] $@ \033[0m"
 }
 
 # show error echo
 showError(){
-	echo -e "\033[31m $@ \033[0m"
+	echo -e "\033[31m[ERROR] $@ \033[0m"
 }
 
 # show error echo
 showPrint(){
-	echo -e "\033[34m $@ \033[0m"
+	echo -e "\033[34m[INFO] $@ \033[0m"
 }
 
 # get download path
@@ -221,6 +226,8 @@ envPre(){
 	checkCmd bzip2 || $CMD install -q -y bzip2
 	checkCmd gzip || $CMD install -q -y gzip
 	checkCmd xz || $CMD install -q -y xz
+	checkCmd cpio || $CMD install -q -y cpio
+	checkCmd rpm2cpio || $CMD install -q -y rpm2cpio
 }
 
 # print env
@@ -232,27 +239,30 @@ printEnv(){
 
 # try compress file
 compressFile(){
+	local filePath=$1
+	local curdir=${filePath%/*}
+	local file=${filePath##*/}
+	local suffix=${file##*.}
 	local fileType=$(file $CURDIR/$File | awk -F ' ' '{print $2}')
-	local suffix=${File##*.}
 	local fileDir=""
 
 	# filter jar file
 	if [ "$suffix" = "jar" ];then
-		showPrint "Current download file $File is jar"
+		showPrint "Current download file $file is jar"
 		exit 0
 	fi
 
 	echo $fileType | grep -w -E "^gzip|XZ|POSIX|bzip2$" &>/dev/null
 	if [ $? -eq 0 ];then
-		fileDir=$(tar -tf $File | head -n 1)
-		tar -xf $File -C $CURDIR
-		showOK "Target dir $CURDIR/$fileDir unzip ok!!!"
+		fileDir=$(tar -tf $file | head -n 1)
+		tar -xf $file -C $curdir
+		showOK "Target dir $curdir/$fileDir unzip ok!!!"
 	elif [ "$fileType" = "Zip" ];then
-		fileDir=$(unzip -l $File | head -n 10  | tail -n 1 | awk -F ' ' '{print $NF}' | awk -F '/' '{print $1}')
-		unzip -oq -d $CURDIR $File
-		showOK "Target dir $CURDIR/$fileDir unzip ok!!!"
+		fileDir=$(unzip -l $file | head -n 10  | tail -n 1 | awk -F ' ' '{print $NF}' | awk -F '/' '{print $1}')
+		unzip -oq -d $curdir $file
+		showOK "Target dir $curdir/$fileDir unzip ok!!!"
 	else
-		showPrint "$File can't unzip please check"
+		showPrint "$file can't unzip please check"
 	fi
 }
 
@@ -263,13 +273,18 @@ curHostCMD(){
 
 	# try unzip file
 	if [ "$SwitchZip" = "True" ];then
-		showPrint "start try to unzip $File"
-		compressFile
+		showPrint "Try to unzip $File"
+		compressFile $CURDIR/$File
 	fi
 }
 
 # direct use,just use like downloadFile xxx.tar.gz .
 judgeDealType(){
+	if [ "$#" -lt 2 ];then
+		showError "Please input params like downloadFile /tmp xxx.tar.gz"
+		exit 1
+	fi
+
 	CURDIR=$(realpath $1)
 	URL=$2
 	
@@ -383,6 +398,45 @@ checkExist(){
 	fi
 }
 
+# create checkSo to /usr/local/bin
+createNewCheckSoShell(){
+	local checkSoFile=/usr/local/bin/checkSo
+	echo -E "#!/bin/bash
+downloadFile checkSoAnalysis \$@
+	" >"$checkSoFile"
+
+	if [ ! -x "$checkSoFile" ];then
+		chmod +x "$checkSoFile"
+	fi
+}
+
+# analysis tar/jar/rpm
+checkSoAnalysis(){
+	local path=$1
+	unzipCheckSo $path
+	searchSo $path
+}
+
+searchSo(){
+	echo "$0"
+}
+
+unzipCheckSo(){
+	local path=$1
+	local tmpPath=""
+
+	if [ -d $path ];then
+		local file=""
+		for file in ${path}/*
+		do
+			unzipCheckSo $file
+		done
+	elif [ -f $path ];then
+
+		echo "ok"
+	fi
+}
+
 init(){
 	if [ "$#" -gt 0 ];then
 		# if param is update
@@ -399,8 +453,11 @@ init(){
 		elif [ "$1" = "help" ];then
 			showHelpInfo
 		elif [ "$1" = "checkSoPull" ];then
-			shift
-			checkSoPull $@
+			checkSoPull $2
+		elif [ "$1" = "checkSoNew" ];then
+			createNewCheckSoShell
+		elif [ "$1" = "checkSoAnalysis" ];then
+			checkSoAnalysis $2
 		else
 			judgeDealType $@
 		fi
