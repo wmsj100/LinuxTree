@@ -72,6 +72,8 @@
 # use: downloadFile checkSoNew ,该动作生成checkSo文件后，可以执行 checkSo xxx.jar来分析
 # add: checkSoNewAnalysis xxx.jar 真正执行分析的调用，checkSo脚本也是调用这个方法实现分析
 # show: 会在界面打印关于目标的信息，也会在当前目录生成一个目标文件的log xxx.jar.log
+# # ===================> version: v1.1.2 升级内容如下<====================
+# add: 新增对于日志文件的分析和界面呈现
 
 # get file url
 getURL(){
@@ -411,13 +413,13 @@ downloadFile checkSoNewAnalysis \$@
 # analysis tar/jar/rpm
 checkSoNewAnalysis(){
 	local targetPath=$(realpath $1)
-	local unzipPath="${CheckSoTmpPath}/unzip/"
 	checkExist $targetPath
 	rm -rf $CheckSoTmpPath
-	mkdir -p $unzipPath
-	touch ${CheckSoTmpPath}/{soResult.log,soCount.log}
-	cp -rf $targetPath $unzipPath # copy file to tmp
-	checkTargetFileFromTmp $unzipPath
+	mkdir -p $CheckSoTmpPath
+	cp -rf $targetPath $CheckSoTmpPath # copy file to tmp
+	showPrint "Starting unzip $targetPath,Please wait!!!"
+	checkTargetFileFromTmp $CheckSoTmpPath
+	cp ${CheckSoTmpPath}/soResult.log ${targetPath}.log
 }
 
 # unzip file
@@ -426,15 +428,21 @@ unzipFileToDir(){
 	local filePath=$2
 	local unzipPath="${filePath}-unpack"
 	local curPath=$(pwd)
+	local suffix=${filePath##*.}
 
 	mkdir -p $unzipPath
+	showPrint "Unpack $filePath"
 
 	if [ "$unzipType" = "tar" ];then
 		tar -xf $filePath -C $unzipPath 2>/dev/null
 		rm -f $filePath # unzip file and delete zip file
 		checkTargetFileFromTmp $unzipPath
 	elif [ "$unzipType" = "Zip" ];then
-		unzip -oq -d $unzipPath $filePath 2>/dev/null
+		if [ "$suffix" = "jar" ];then
+			unzip -oq -d $unzipPath $filePath *.so 2>/dev/null
+		else
+			unzip -oq -d $unzipPath $filePath 2>/dev/null
+		fi
 		rm -f $filePath
 		checkTargetFileFromTmp $unzipPath
 	elif [ "$unzipType" = "RPM" ];then
@@ -458,7 +466,7 @@ checkSoFile(){
 	echo $machine | grep -iw "$DefaultPlatform" &>/dev/null
 	if [ $? -ne 0 ];then
 		showError "${filePath} is $machine"  
-		echo "$filePath" >> $CheckSoTmpPath/soResult.log
+		echo "$filePath ==> $machine" >> $CheckSoTmpPath/soResult.log
 	fi
 }
 
@@ -466,6 +474,12 @@ checkSoFile(){
 judgeFileForCheckSo(){
 	local filePath=$1
 	local fileType=$(file $filePath | awk -F ' ' '{print $2}')
+	local suffix=${filePath##*.}
+
+	# skip whl package
+	if [ "$suffix" = "whl" ];then
+		return 0
+	fi
 
 	echo $fileType | grep -w -E "^gzip|XZ|POSIX|bzip2$" &>/dev/null
 	if [ $? -eq 0 ];then
@@ -609,7 +623,7 @@ StandHost=139.9.135.47
 ## checkSo Global params
 # CheckSoGlobalPath is cur host checkSo path, when use checkSoPull chang is
 CheckSoGlobalPath=/opt/tools/installed/checkSo
-CheckSoTmpPath=/tmp/CheckSo/TempPath # unzip file to here
+CheckSoTmpPath=/tmp/CheckSo-unpack # unzip file to here
 DefaultPlatform="AArch64" # target compile platform is aarch64
 JarLogName="JarResult.log"
 OutLogName="out.csv"
