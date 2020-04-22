@@ -368,7 +368,7 @@ downloadFile checkSoAnalysis \$@
 	fi
 }
 
-# create checkSo dir
+# create checkSo dir,use checkSo code to analysis target
 checkSoPull(){
 	local targetPath=$(realpath $1)
 	local checkSoZipPath=$targetPath/checkSo.zip
@@ -395,7 +395,7 @@ checkExist(){
 	fi
 }
 
-# create checkSo to /usr/local/bin
+# create checkSo to /usr/local/bin, use downloadFile to analysis code
 createNewCheckSoShell(){
 	local checkSoFile=/usr/local/bin/checkSo
 	echo -E "#!/bin/bash
@@ -409,7 +409,8 @@ downloadFile checkSoNewAnalysis \$@
 
 # analysis tar/jar/rpm
 checkSoNewAnalysis(){
-	local path=$1
+	local targetPath=$1
+	checkExist $targetPath
 	unzipCheckSo $path
 	searchSo $path
 }
@@ -436,6 +437,7 @@ unzipCheckSo(){
 
 checkSoAnalysis(){
 	local targetFile=$(realpath $1)
+	checkExist $targetFile
 
 	if [ ! -d "$CheckSoGlobalPath" ];then
 		showError "$CheckSoGlobalPath is not exist, Please check"
