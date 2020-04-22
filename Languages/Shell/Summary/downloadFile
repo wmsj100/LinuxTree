@@ -64,6 +64,8 @@
 # update: 优化脚本参数输入判断，取消参数数量限制，只识别目标参数是否存在，默认第一个参数为下载路径
 # # ===================> version: v1.1.0 升级内容如下<====================
 # update: 重构关于checkSo的功能，优化checkSo分析结果界面打印，并给出文件路径
+# # ===================> version: v1.1.1 升级内容如下<====================
+# add: 添加push方法，只对开发维护人员
 # # ===================> version v1.1.0 升级内容如下<====================
 # brief: 新增checkSoNew,checkSoNewAnalysis调用脚本自己的代码来分析目标文件是否包含非aarch64的文件
 # add: checkSoNew 在/usr/local/bin目录生成checkSo脚本，具体调用执行的分析动作
@@ -462,7 +464,7 @@ checkSoLog(){
 	[ -f "$log" ] && rm "$log"
 	cd $CheckSoGlobalPath
 
-	nonJarLog=$(cat $NonJarLogName | grep -Ev "^$|UTC" 2>/dev/null)
+	nonJarLog=$(cat $NonJarLogName | grep -Ev "^$|UTC|CST|2020$" 2>/dev/null)
 	if [ -n "$nonJarLog" ];then
 		echo -E "$CheckSoGlobalPath/$NonJarLogName ==> $nonJarLog" >> $log
 		showError "$nonJarLog Check $CheckSoGlobalPath/$NonJarLogName"
@@ -487,6 +489,16 @@ checkSoLog(){
 	fi
 }
 
+# push downloadFile to remote host 139.9.135.47
+# just use for developer,Please think more
+pushDownloadFileToRemoteHost(){
+	local remoteInfo=root@${StandHost}
+	showPrint "This will force cover remote host file use local host"
+	expectShell "scp /usr/local/bin/downloadFile $remoteInfo:/usr/local/bin/downloadFile" 
+	checkExpectResultCode
+	showOK "Push downloadFile ok!!!"
+}
+
 init(){
 	if [ "$#" -gt 0 ];then
 		# if param is update
@@ -502,6 +514,8 @@ init(){
 			fi
 		elif [ "$1" = "help" ];then
 			showHelpInfo
+		elif [ "$1" = "push" ];then
+			pushDownloadFileToRemoteHost
 		elif [ "$1" = "checkSoPull" ];then
 			checkSoPull $2
 		elif [ "$1" = "checkSoAnalysis" ];then
@@ -528,12 +542,12 @@ URL="" # address for download file
 CURDIR="" # download file dir
 File="" # download file name
 FileType="file" # params is file|git
-SwitchZip="True" # False: just download File; True: download and try unzip file
+SwitchZip="False" # False: just download File; True: download and try unzip file
 StandHost=139.9.135.47
 
 ## checkSo Global params
 # CheckSoGlobalPath is cur host checkSo path, when use checkSoPull chang is
-CheckSoGlobalPath=/tmp/tmp/aa/bb/cc/checkSo
+CheckSoGlobalPath=/opt/tools/installed/checkSo
 DefaultPlatform="AArch64" # target compile platform is aarch64
 JarLogName="JarResult.log"
 OutLogName="out.csv"
