@@ -66,7 +66,7 @@
 # update: 重构关于checkSo的功能，优化checkSo分析结果界面打印，并给出文件路径
 # # ===================> version: v1.1.1 升级内容如下<====================
 # add: 添加push方法，只对开发维护人员
-# # ===================> version v1.1.0 升级内容如下<====================
+# # ===================> version: v1.1.0 升级内容如下<====================
 # brief: 新增checkSoNew,checkSoNewAnalysis调用脚本自己的代码来分析目标文件是否包含非aarch64的文件
 # add: checkSoNew 在/usr/local/bin目录生成checkSo脚本，具体调用执行的分析动作
 # use: downloadFile checkSoNew ,该动作生成checkSo文件后，可以执行 checkSo xxx.jar来分析
@@ -405,33 +405,92 @@ downloadFile checkSoNewAnalysis \$@
 	if [ ! -x "$checkSoFile" ];then
 		chmod +x "$checkSoFile"
 	fi
+	showOK "$checkSoFile ok,you can use checkSo to analysis file!!!"
 }
 
 # analysis tar/jar/rpm
 checkSoNewAnalysis(){
-	local targetPath=$1
+	local targetPath=$(realpath $1)
+	local unzipPath="${CheckSoTmpPath}/unzip/"
 	checkExist $targetPath
-	unzipCheckSo $path
-	searchSo $path
+	rm -rf $CheckSoTmpPath
+	mkdir -p $unzipPath
+	touch ${CheckSoTmpPath}/{soResult.log,soCount.log}
+	cp -rf $targetPath $unzipPath # copy file to tmp
+	checkTargetFileFromTmp $unzipPath
 }
 
-searchSo(){
-	echo "$0"
+# unzip file
+unzipFileToDir(){
+	local unzipType=$1
+	local filePath=$2
+	local unzipPath="${filePath}-unpack"
+	local curPath=$(pwd)
+
+	mkdir -p $unzipPath
+
+	if [ "$unzipType" = "tar" ];then
+		tar -xf $filePath -C $unzipPath 2>/dev/null
+		rm -f $filePath # unzip file and delete zip file
+		checkTargetFileFromTmp $unzipPath
+	elif [ "$unzipType" = "Zip" ];then
+		unzip -oq -d $unzipPath $filePath 2>/dev/null
+		rm -f $filePath
+		checkTargetFileFromTmp $unzipPath
+	elif [ "$unzipType" = "RPM" ];then
+		cd $unzipPath
+		rpm2cpio $filePath | cpio -idm 2>/dev/null
+		cd $curPath
+		rm -f $filePath
+		checkTargetFileFromTmp $unzipPath
+	elif [ -z "$unzipType" ];then
+		showError "Please input param like tar/zip/rpm"
+		exit 1
+	else
+		showPrint "$filePath don't need check"
+	fi
 }
 
-unzipCheckSo(){
-	local path=$1
-	local tmpPath=""
+# check file is aarch64
+checkSoFile(){
+	local filePath=$1
+	local machine=$(readelf -h $filePath | grep -w Machine | awk -F ' ' '{print $NF}')
+	echo $machine | grep -iw "$DefaultPlatform" &>/dev/null
+	if [ $? -ne 0 ];then
+		showError "${filePath} is $machine"  
+		echo "$filePath" >> $CheckSoTmpPath/soResult.log
+	fi
+}
 
-	if [ -d $path ];then
+# judge file is target for checkSo
+judgeFileForCheckSo(){
+	local filePath=$1
+	local fileType=$(file $filePath | awk -F ' ' '{print $2}')
+
+	echo $fileType | grep -w -E "^gzip|XZ|POSIX|bzip2$" &>/dev/null
+	if [ $? -eq 0 ];then
+		unzipFileToDir "tar" $filePath
+	elif [ "$fileType" = "Zip" ];then
+		unzipFileToDir "Zip" $filePath
+	elif [ "$fileType" = "RPM" ];then
+		unzipFileToDir "RPM" $filePath
+	elif [ "$fileType" = "ELF" ];then
+		checkSoFile $filePath
+	fi
+}
+
+# copy dir or file to temp
+checkTargetFileFromTmp(){
+	local targetPath=$1
+
+	if [ -d $targetPath ];then
 		local file=""
-		for file in ${path}/*
+		for file in $(ls -A $targetPath)
 		do
-			unzipCheckSo $file
+			checkTargetFileFromTmp ${targetPath}/$file
 		done
-	elif [ -f $path ];then
-
-		echo "ok"
+	elif [ -f $targetPath ];then
+		judgeFileForCheckSo $targetPath
 	fi
 }
 
@@ -550,6 +609,7 @@ StandHost=139.9.135.47
 ## checkSo Global params
 # CheckSoGlobalPath is cur host checkSo path, when use checkSoPull chang is
 CheckSoGlobalPath=/opt/tools/installed/checkSo
+CheckSoTmpPath=/tmp/CheckSo/TempPath # unzip file to here
 DefaultPlatform="AArch64" # target compile platform is aarch64
 JarLogName="JarResult.log"
 OutLogName="out.csv"
