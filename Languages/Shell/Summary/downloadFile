@@ -519,11 +519,15 @@ checkTargetFileFromTmp(){
 	local targetPath=$1
 	local file=""
 	local fileList=""
+	local skipDotDir="git|github|svn"
+	local skipDotSuffix="py|PY|pyc|pyw|derived|decTest|ht|sh|txt|whl|yml|xml|png|gif|jgp|jpeg|svg|woff|woff2|json|ico|pem|log|java|html|css|js|ts|bat|exe|c|md|doc|egg-info|class|jsp|properties|MF"
+	local skipSuffix="NOTICE|LICENSE|DEPENDENCIES|README"
 
 	if [ -f "$targetPath" ];then
+#		echo "scan $targetPath"
 		judgeFileForCheckSo $targetPath
 	elif [ -d "$targetPath" ];then
-		fileList=$(find $targetPath -type f)
+		fileList=$(find $targetPath -type f | egrep -wv "\.($skipDotDir)" | egrep -v "\.($skipDotSuffix)$" | egrep -v "(${skipSuffix})$")
 		if [ -n "$fileList" ];then
 			for file in $fileList
 			do
