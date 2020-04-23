@@ -413,13 +413,18 @@ downloadFile checkSoNewAnalysis \$@
 # analysis tar/jar/rpm
 checkSoNewAnalysis(){
 	local targetPath=$(realpath $1)
+	local soResult=${CheckSoTmpPath}/soResult.log
 	checkExist $targetPath
 	rm -rf $CheckSoTmpPath
 	mkdir -p $CheckSoTmpPath
 	cp -rf $targetPath $CheckSoTmpPath # copy file to tmp
 	showPrint "Starting unzip $targetPath,Please wait!!!"
 	checkTargetFileFromTmp $CheckSoTmpPath
-	cp ${CheckSoTmpPath}/soResult.log ${targetPath}.log
+	if [ -f "$soResult" ];then
+		cp $soResult ${targetPath}.log
+	else
+		showOK "$targetPath is ok XD!!!"
+	fi
 }
 
 # unzip file
@@ -622,7 +627,7 @@ StandHost=139.9.135.47
 
 ## checkSo Global params
 # CheckSoGlobalPath is cur host checkSo path, when use checkSoPull chang is
-CheckSoGlobalPath=/opt/tools/installed/checkSo
+CheckSoGlobalPath=/opt/checkSo
 CheckSoTmpPath=/tmp/CheckSo-unpack # unzip file to here
 DefaultPlatform="AArch64" # target compile platform is aarch64
 JarLogName="JarResult.log"
