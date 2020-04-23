@@ -78,6 +78,7 @@ mail: wmsj100@hotmail.com
 - grep -n 'good|gold' h1  在标准的grep中无法搜索出任何结果
 - grep -n -E 'good|gold' h1
 - egrep -n 'good|gold' h1 上面俩个结果一样
+- egrep "\.(java|xml)$" 查找特定后缀的文件
 - 在标准的grep中如果在扩展字符前面添加'\'，grep会自动启用扩展选项'-E'
 - grep -n 'good\|gold' h1  启用了扩展
 - grep -n 'o\+' h1  搜索至少包含一个o的行

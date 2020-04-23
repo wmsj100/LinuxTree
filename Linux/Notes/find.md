@@ -68,6 +68,7 @@ categories: Linux
 - find . -type f -user root 打印当前目录下所有root拥有的文件
 - find . -type f \( ! -perm 777 -and ! -perm 644 \) 打印当前目录下所有权限不是777 和644的文件
 - find . \( -newer test_export1.sh -or -name "test_f*" \) -type f ! -path "./.git/*" 查找文件比`test_export1.sh`新或者名称为`test_f`开头的类型是文件，且要过滤掉`.git`目录
+- find -type f | egrep "\.(java|html)" 查找特定后缀的文件
 
 ## exec 高级命令
 - find . -name "*.php" -exec ls -l {} \; 查找php文件并且显示其详情 \*
