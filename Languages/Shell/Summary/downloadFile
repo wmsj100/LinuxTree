@@ -518,15 +518,18 @@ judgeFileForCheckSo(){
 checkTargetFileFromTmp(){
 	local targetPath=$1
 	local file=""
+	local fileList=""
 
 	if [ -f "$targetPath" ];then
 		judgeFileForCheckSo $targetPath
 	elif [ -d "$targetPath" ];then
-		for file in $(ls -A $targetPath)
-		do
-			file=${file##*/}
-			checkTargetFileFromTmp ${targetPath}/$file
-		done
+		fileList=$(find $targetPath -type f)
+		if [ -n "$fileList" ];then
+			for file in $fileList
+			do
+				checkTargetFileFromTmp $file
+			done
+		fi
 	fi
 }
 
