@@ -66,19 +66,21 @@
 # update: 重构关于checkSo的功能，优化checkSo分析结果界面打印，并给出文件路径
 # # ===================> version: v1.1.1 升级内容如下<====================
 # add: 添加push方法，只对开发维护人员
-# # ===================> version: v1.1.0 升级内容如下<====================
+# # ===================> version: v1.1.2 升级内容如下<====================
 # brief: 新增checkSoNew,checkSoNewAnalysis调用脚本自己的代码来分析目标文件是否包含非aarch64的文件
 # add: checkSoNew 在/usr/local/bin目录生成checkSo脚本，具体调用执行的分析动作
 # use: downloadFile checkSoNew ,该动作生成checkSo文件后，可以执行 checkSo xxx.jar来分析
 # add: checkSoNewAnalysis xxx.jar 真正执行分析的调用，checkSo脚本也是调用这个方法实现分析
 # show: 会在界面打印关于目标的信息，也会在当前目录生成一个目标文件的log xxx.jar.log
-# # ===================> version: v1.1.2 升级内容如下<====================
-# add: 新增对于日志文件的分析和界面呈现
 # # ===================> version: v1.1.3 升级内容如下<====================
-# bug: 修改来block和pipe文件的报错，添加对于目录的判断
+# add: 新增对于日志文件的分析和界面呈现
 # # ===================> version: v1.1.4 升级内容如下<====================
+# bug: 修改来block和pipe文件的报错，添加对于目录的判断
+# # ===================> version: v1.1.5 升级内容如下<====================
 # update: 修改文件遍历从for修改为find
-# # ===================> version v1.1.3 升级内容如下<====================
+# # ===================> version: v1.1.6 升级内容如下<====================
+# update: 添加黑名单过滤机制
+# # ===================> version v1.1.7 升级内容如下<====================
 # bug: 待修复，如果下载网址错误导致临时目录没有清理
 
 # get file url
@@ -489,11 +491,6 @@ judgeFileForCheckSo(){
 	local filePath=$1
 	local fileType=$(file $filePath | awk -F ' ' '{print $2}')
 	local suffix=${filePath##*.}
-
-	# skip whl package
-	if [ "$suffix" = "whl" ];then
-		return 0
-	fi
 
 	echo $fileType | grep -w -E "^gzip|XZ|POSIX|bzip2$" &>/dev/null
 	if [ $? -eq 0 ];then
