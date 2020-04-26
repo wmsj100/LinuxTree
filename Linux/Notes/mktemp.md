@@ -1,7 +1,7 @@
 ---
 title: mktemp
 date: 2020-03-23 20:37:41
-modify: 
+modify: 2020-04-26 16:00:59  
 tags: [Notes]
 categories: Linux
 author: wmsj100
@@ -19,6 +19,7 @@ email: wmsj100@hotmail.com
 
 - `mktemp` `/tmp/tmp.4BVheIfjk5` 创建临时随即名称文件
 - `mktemp -d` `/tmp/tmp.St5DNyI9gE/` 创建临时目录
+- `mktemp -u` 不创建任何目录或文件，只是打印目录名称
 
 ## 参考
 
