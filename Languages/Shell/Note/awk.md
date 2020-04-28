@@ -24,6 +24,7 @@ email: wmsj100@hotmail.com
 - `grep -nrw 'blog' . | awk -F ':' '{print $1}'` 找出所有包含blog的文件，并且按照分隔符':'打印第一列。
 - `grep -nrw 'blog' . | awk -F ':' '{print $1} | sort | uniq`
 - `sed -i 's/blog/yiqin/g'  `grep -rw 'blog' | awk -F ':' '{print $1}' | sort | uniq`` 去重并且用sed进行替换
+- `echo $a | awk -F ' ' '{print $(NF-1)}'` 获取倒数第二列
 
 ## 参考
 
