@@ -22,5 +22,9 @@ email: wmsj100@hotmail.com
 - `command`也会去查找别名
 - 现在使用command替换which
 
+## 问题
+
+- 如果现在把`yum remove zip`卸载掉zip，然后通过`command -v zip` `/usr/bin/zip`发现还是给出了路径，猜测是通过查询数据库，不是实时搜索的
+
 ## 参考
 
