@@ -1,7 +1,7 @@
 ---
 title: while循环
 date: 2019-04-12 18:06:52	
-modify: 
+modify: 2020-04-28 12:47:14  
 tag: [while]
 categories: Shell 
 author: wmsj100
@@ -25,6 +25,13 @@ do
     echo "cur num is $num"
     num=$(expr $num + 1)
 done
+```
+
+```shell
+while read link
+do
+	# xxx
+done < file
 ```
 
 ## 参考
