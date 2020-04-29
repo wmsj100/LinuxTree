@@ -1,7 +1,7 @@
 ---
 title: cpio
 date: Mon 19 Feb 2018 09:29:02 AM CST
-modify: 2020-04-20 17:33:56 
+modify: 2020-04-29 14:31:04 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -30,6 +30,7 @@ mail: wmsj100@hotmail.com
 - 默认情况下，cpio创建二进制格式存档，以便与旧的cpio程序兼容。
 - 从档案中提取时，cpio会自动识别正在读取的归档类型，并可以读取在具有不同字节顺序的计算机上创建的归档。
 - cpio 也是备份命令，可以备份任何东西，包括设备文件，这个命令不会主动去找文件，需要配合find等命令通过管道或重定向来实现。
+- 使用cpio打包的文件格式是cpio，通过file可以查看到，本来计划用它来修改和重新打包rpm包，发现不行，无法识别
 
 ## 参数
 
