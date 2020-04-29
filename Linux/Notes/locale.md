@@ -56,9 +56,14 @@ LC_MEASUREMENT="en_US.UTF-8"
 LC_IDENTIFICATION="en_US.UTF-8"
 LC_ALL=
 ```
-- `vi /etc/sysconfig/i18n`
-``` 
-LC_ALL=C
-export LC_ALL
+- 解决：centos7
 ```
-- source /etc/sysconfig/i18n
+vi /etc/environment
+LANG=en_US.UTF-8
+LC_ALL=
+```
+- `localedef -v -c -i en_US -f UTF-8 en_US.UTF-8` 执行这个命令就可以生成local文件
+
+## 参考文档
+
+- [locale error](https://segmentfault.com/a/1190000004378075)
