@@ -57,3 +57,4 @@ email: wmsj100@hotmail.com
 - [centos rpmbuild wiki](https://wiki.centos.org/zh/HowTos/SetupRpmBuildEnvironment)
 - [rpmbuild 构建](http://www.myjishu.com/?p=259)
 - [rpmbuild 构建](https://blog.csdn.net/u012373815/article/details/73257754)
+- [rpmbuild修改内容并重新打包](https://blog.csdn.net/hmxz2nn/article/details/98765997)
