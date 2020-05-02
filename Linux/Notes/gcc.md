@@ -65,6 +65,11 @@ email: wmsj100@hotmail.com
 - 查询资料有俩个方法可以解决，一个是在编译时候指定当前动态库，当时测试失败了，升级gcc-5.4.0
 - 导出环境变量`export DL_LIBRARY_PATH_=/usr/local/lib`，然后再执行编译就好了。
 
+## 配置交叉编译工具
+
+- 下载工具包[gcc-linaro-5.5.0-2017.10-x86_64_aarch64-linux-gnu.tar.xz](https://releases.linaro.org/components/toolchain/binaries/latest-5/aarch64-linux-gnu/gcc-linaro-5.5.0-2017.10-x86_64_aarch64-linux-gnu.tar.xz)
+
+
 ## 参考
 
 - [gcc 源码安装](https://www.cnblogs.com/as007012/articles/10045011.html)
