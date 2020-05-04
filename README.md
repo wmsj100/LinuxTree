@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-04-05 09:03:43 Thu
-modify: 2020-03-31 14:42:23 
+modify: 2020-05-04 14:13:15 
 tag: [readme]
 categories: README
 author: wmsj100
@@ -24,6 +24,9 @@ mail: wmsj100@hotmail.com
 - Cloud 关于云服务的知识点，涉及云上的框架和软件
 
 ## 网站收藏
+
+- 学校网站
+	- [北京大学数学科学学院](http://www.math.pku.edu.cn/puremath/index.htm)
 
 - 搜索引擎
 	- [https://mengso.com/](https://mengso.com/)
