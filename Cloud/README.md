@@ -22,6 +22,7 @@ email: wmsj100@hotmail.com
 - Distribute: 关于分布式的概念
 - MiddleWare: 云上使用的中间件
 - System: 云服务系统
+- Hadoop 分布式存储和计算的代表
 
 ## 参考
 
