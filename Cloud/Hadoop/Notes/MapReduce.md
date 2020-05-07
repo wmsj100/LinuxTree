@@ -47,6 +47,19 @@ email: wmsj100@hotmail.com
 	- Reduce worker程序遍历排序后的中间数据，对于每一个唯一的中间key值，Reduce workder程序将这个key值和它相关的中间value值的集合(这个集合是有Reduce worker产生的，它存放的是同一个key对应的value值)传递给用户自定义的Reduce函数。
 		- Reduce函数的输出被追加到所属分区的输出文件。
 
+## 移动计算 VS 移动数据
+
+- MapReduce用直接在HDFS上运行防止来大量数据移动，用分布式加速了数据处理
+- MapReduce是离线批量计算的代表，采用移动计算优于移动数据的理念，计算任务通常直接在HDFS的datanode上运行，这样避免了数据的移动(当前reduce阶段还是需要节点间传输数据)，并且采用并行计算的方式，大大减少处理时间。
+
+## MapReduce缺点
+
+- API复杂
+- 不能有效利用内存
+	- map任务在处理数据后，会根据reduce的个数，生成对应个数中间文件，这些文件报错在磁盘上，map计算完成后reduce将文件fetch过来进行汇总。
+	- 无论输入源数据有多少，哪怕内存放得下，中间结果还是得需要落盘，而io是计算机中最耗时的操作。
+	- 无论源数据有多少，shuffle过程的中间数据都需要落盘，效率较低，不能很好的利用内存。
+- MapReduce只提供来map和reduce函数，api不够友好，编写代码时，首先都需要将计算思想转化成MapReduce模型，非常反人类，而且稍微复杂点的计算需要多次迭代
 ## 参考
 
 - [mapreduce介绍](https://blog.csdn.net/suifeng3051/article/details/41651851)

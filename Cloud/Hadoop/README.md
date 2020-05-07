@@ -18,6 +18,7 @@ email: wmsj100@hotmail.com
 
 - Notes: 基础笔记
 - Summary: 整理的总结
+- Statics: 收藏的文件或图片
 
 ## 参考
 
