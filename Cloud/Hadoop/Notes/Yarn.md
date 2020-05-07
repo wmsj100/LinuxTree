@@ -77,3 +77,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [yarn 解析](https://blog.csdn.net/suifeng3051/article/details/49486927)
