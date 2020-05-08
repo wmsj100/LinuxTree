@@ -46,4 +46,5 @@ Linux 开发/游戏后台开发
 ## 学习网址
 
 - [中国大学MOOC](https://www.icourse163.org) 这是网易搭建的大学公开课
+- [Linux命令大全](https://man.linuxde.net/)
 
