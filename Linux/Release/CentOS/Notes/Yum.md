@@ -46,6 +46,7 @@ gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7
 - `yum clean oldheaders` 清除缓存目录下的旧headers
 - `yum clean all` 清除缓存目录下的软件包
 - `yum list` 显示所有已经安装和可以安装的程序包
+- `yum list installed` 查看所有已经安装的包
 - `yum list tree` 显示安装包信息
 - `yum info tree` 显示tree的详细信息
 - `yum install -y httpd` yum自动安装
