@@ -44,6 +44,7 @@ email: wmsj100@hotmail.com
 	- `rm -rf /usr/lib64/libstdc++.so.6`
 	- `cp /usr/local/gcc/lib64/libstdc++.so.6.0.24 /usr/lib64/`
 	- `ln -s /usr/lib64/libstdc++.so.6.0.24 /usr/lib64/libstdc++.so.6`
+	- `ln -s /usr/local/gcc/lib64/libatomic.so.1 /usr/lib64/libatomic.so.1`
 
 ## 遇到问题
 
