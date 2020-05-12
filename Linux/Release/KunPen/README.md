@@ -22,3 +22,4 @@ email: wmsj100@hotmail.com
 ## 参考
 
 - [鲲鹏入门知识](https://bbs.huaweicloud.com/forum/thread-29729-1-1.html)
+- [鲲鹏兼容列表](http://ic-openlabs.huawei.com/openlab/#/unioncompaty)

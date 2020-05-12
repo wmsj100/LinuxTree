@@ -17,3 +17,6 @@ email: wmsj100@hotmail.com
 ## 参考
 
 - [.NET 官方文档](https://docs.microsoft.com/zh-cn/dotnet/standard/components)
+- [.NET5宣传](https://www.cnbeta.com/articles/tech/844587.htm)
+- [.NET Core](https://www.zhihu.com/question/26591815)
+- [.NET wikipidea](https://zh.wikipedia.org/wiki/.NET%E6%A1%86%E6%9E%B6)
