@@ -28,6 +28,7 @@ mail: wmsj100@hotmail.com
 - [boostnote](https://boostnote.io/) 一款开源的笔记软件
 - [一些小软件集合](https://www.horstmuc.de/win.htm)
 - [MemPad](https://www.horstmuc.de/wmem.htm) 这是我在16年时候非常喜欢的一个软件，支持树形分布，记录笔记很方便
+- [eDiary](http://www.haoxg.net/ediary/download.html) 一款开源的日记本
 
 ## 代办事项
 ~~None~~

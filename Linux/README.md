@@ -18,6 +18,7 @@ mail: wmsj100@hotmail.com
 - SoftWare Linux好用的软件
 - Network 关于网络的知识点
 - Release 不同的发行版
+- SunFa 常见算法
 
 ## 软件
 
