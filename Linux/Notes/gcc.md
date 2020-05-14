@@ -73,6 +73,8 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [gcc 编译安装](https://stackoverflow.com/questions/9450394/how-to-install-gcc-piece-by-piece-with-gmp-mpfr-mpc-elf-without-shared-libra)
+- [gcc 依赖软件](ftp://gcc.gnu.org/pub/gcc/infrastructure)
 - [gcc 源码安装](https://www.cnblogs.com/as007012/articles/10045011.html)
 - [gcc 源码安装参考](https://blog.csdn.net/lucboll/article/details/93464729)
 - [gcc 源码安装](https://www.huaweicloud.com/kunpeng/software/gcc.html)
