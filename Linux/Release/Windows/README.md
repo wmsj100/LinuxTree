@@ -29,6 +29,7 @@ mail: wmsj100@hotmail.com
 - [一些小软件集合](https://www.horstmuc.de/win.htm)
 - [MemPad](https://www.horstmuc.de/wmem.htm) 这是我在16年时候非常喜欢的一个软件，支持树形分布，记录笔记很方便
 - [eDiary](http://www.haoxg.net/ediary/download.html) 一款开源的日记本
+- [XYPlorer](https://www.upload.ee/download/11271702/c52c36a9b3ee17424c77/XYPlorer_Pro_v20.80.0500.zip)很强大的文档管理器
 
 ## 代办事项
 ~~None~~
