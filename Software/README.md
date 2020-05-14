@@ -19,6 +19,7 @@ email: wmsj100@hotmail.com
 - Git: 版本管理工具
 - Hexo: 静态博客搭建工具
 - Vim: 宇宙最强编辑器
+- JMeter: 接口测试工具
 
 ## 参考
 
