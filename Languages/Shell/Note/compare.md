@@ -1,7 +1,7 @@
 ---
 title: 比较
 date: 2019-04-12 14:47:39	
-modify: 2019-05-01 23:11:49	 
+modify: 2020-05-14 23:08:02 
 tag: [basic]
 categories: Shell 
 author: wmsj100
@@ -39,6 +39,9 @@ mail: wmsj100@hotmail.com
 - -u 
 - -w 文件可写
 - -x 文件可执行
+- -h file exist and is a symbolic link
+- -b block file
+- -p pipe file
 
 ## 使用
 - 通常在if条件句中使用
