@@ -1,7 +1,7 @@
 ---
 title: lsblk
 date: 2020-03-21 08:35:42
-modify: 
+modify: 2020-05-17 15:06:36 
 tags: [Notes]
 categories: Linux
 author: wmsj100
@@ -13,6 +13,8 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 列出磁盘的简单信息,包括挂载点,磁盘容量
+- 该工具用于列出所有可用块设备的信息，而且还能显示他们之间的依赖关系。
+- lsblk包含于`util-linux`工具包中
 
 ## 使用
 
