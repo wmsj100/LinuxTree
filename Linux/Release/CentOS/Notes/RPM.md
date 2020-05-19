@@ -29,6 +29,10 @@ email: wmsj100@hotmail.com
 - `rpm -qif /usr/bin/sudo` 返回软件包的有关信息
 - `rpm -qlf /usr/bin/sudo` 返回软件包的文件列表
 
+## 范例
+
+- `rpm -ql $(rpm -qa | grep mysql) | grep "etc/"` 查找mysql的所有配置文件
+
 ## 参考
 
 - [rpm 讲解](https://www.cnblogs.com/ftl1012/p/rpm.html)
