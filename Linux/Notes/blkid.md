@@ -13,6 +13,7 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 查看磁盘的UUID,或者磁盘文件系统类型
+- 使用这个命令必须安装“e2fsprogs”软件包
 
 ## 使用
 
@@ -37,3 +38,4 @@ wmsj100@UbuntuOS:~/Documents/GitHub/LinuxTree/Linux/Notes$ blkid
 
 ## 参考
 
+- [blkid](https://man.linuxde.net/blkid)
