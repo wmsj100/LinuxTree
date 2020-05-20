@@ -20,10 +20,18 @@ email: wmsj100@hotmail.com
 - `sudo mysqldump django1 -u root --tables blog > /tmp/blog.sql`
 - 可以同时导出多张表
 - `sudo mysqldump django_study4 -u root --tables app1_articlelist app1_chinaadd app1_areatree app1_chinadayaddlist app1_chinadaylist app1_dailydeadratehistory app1_dailyhealratehistory app1_dailyhistory app1_dailynewaddhistory app1_wuhandaylist> data.sql`
+- `sudo mysqldump -u root -p django_study4 > data1.sql` 导出整个数据库
 
 ## 导入数据
 
 - `sudo mysql myweb < articlelist.sql --default-character-set=utf8`
+
+## 按照数据库导入
+
+- `sudo mysql -u root -p`
+- `use django_study4`
+- `source /tmp/data.sql` 
+- 这样就把`django_study4`整个数据库导入成功
 
 ## 参考
 
