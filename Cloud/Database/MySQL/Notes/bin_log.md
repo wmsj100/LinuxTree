@@ -14,9 +14,17 @@ email: wmsj100@hotmail.com
 
 - bin_log就是binary log，二进制日志文件，这个文件记录了mysql所有的dml操作。
 - 通过binlog日志我们可以做数据恢复，实现主从复制。
+- ubuntu默认是关闭binlog，centos默认开启
+
+## ubuntu开启binlog
+
+- `vi /etc/mysql/mysql.conf.d/mysqld.cnf`
+- 搜索log_bin，该参数默认是注释状态，同时还需要修改上面的`server-id=1`的注释
 
 ## 查看
 
+- `show master logs;` 查看binlog的日志
+- `show binlog events in 'mysql-bin.000001';` 查看binlog具体内容
 - `show variables like '%log_bin%';`
 ```
 
@@ -33,6 +41,11 @@ mysql> show variables like '%log_bin%';
 +---------------------------------+-----------------------------+
 ```
 
+## 使用
+
+- `mysqlbinlog --no-defaults /var/lib/mysql/binlog.000008 --start-position 155 --stop-position 533`
+
 ## 参考
 
 - [mysql bin-log](https://blog.csdn.net/king_kgh/article/details/74800513)
+- [mysql binlog开启](https://blog.csdn.net/king_kgh/article/details/74800513)
