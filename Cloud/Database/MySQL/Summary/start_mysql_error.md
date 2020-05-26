@@ -16,6 +16,7 @@ email: wmsj100@hotmail.com
 
 ## 分析
 
+- `mysqld --initialize` 确定数据库是否执行了初始化操作 
 - 确定mysql的datadir目录权限是否正确，应该是`mysql:mysql`
 - 确定mysql的pid目录权限是否正确`ll /var/run/mysql`
 - 查看mysql的日志文件`vi /var/log/mysqld.log`
