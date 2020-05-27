@@ -1,6 +1,7 @@
 ---
 title: grep 查找文件的匹配文本
 date: Tue 22 Feb 2018 9:35:46 PM CST
+modify: 2020-05-27 15:19:45 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -26,6 +27,10 @@ mail: wmsj100@hotmail.com
 - A after的意思，除了列出该行外，后续的n行也列出来
 - B before 前面的n行也列出来
 - --color=auto 将找到的关键词部分加上颜色显示
+- l 列出有被查找内容的文件，且第一次查找到目标内容就停止查找
+	- `grep -lr 'hello' ./*` 列出当前目录内用于hello内容的所有文件，直接列出的文件名，之前为了做到相同效果的做法是
+	- `grep -nr 'hello' ./* | awk -F ':' '{print $1}' | sort | uniq` 和上面对比一下效率，真的是天壤之别，感觉好愚蠢
+- L 列出没有目标内容的文件，和l相反内容
 
 ## 实例
 - grep 'root' /etc/passwd --color=auto
