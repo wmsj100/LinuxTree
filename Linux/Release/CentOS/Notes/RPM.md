@@ -1,7 +1,7 @@
 ---
 title: RPM
 date: 2020-03-31 14:52:21
-modify: 
+modify: 2020-05-27 16:25:07 
 tags: [Notes]
 categories: CentOS
 author: wmsj100
@@ -21,13 +21,14 @@ email: wmsj100@hotmail.com
 
 - `rpm -ivh your-package` 直接安装
 - `rpm --force -ivh your-package` 强制安装
+- `rpm --force --nodeps -ivh your-package` 强制安装，并且忽略依赖
 - `rpm -ql which` 查询
 - `rpm -e which` 卸载
 - `rpm -qa` 列出所有安装过的包
 - `rpm -q which` 获取软件包的文件全名 `which-2.20-7.el7.aarch64`
-- `rpm -qf /usr/bin/sudo` 返回软件包的全名
+- `rpm -qf /usr/bin/sudo` 返回当前文件所属的rpm包
 - `rpm -qif /usr/bin/sudo` 返回软件包的有关信息
-- `rpm -qlf /usr/bin/sudo` 返回软件包的文件列表
+- `rpm -qlf /usr/bin/sudo` 返回软件包的所有文件列表
 
 ## 范例
 
