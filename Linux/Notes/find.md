@@ -1,9 +1,11 @@
 ---
 title: find
 date: 2019-04-20 09:11:55	
-modify:
+modify: 2020-05-28 16:39:48 
 tags: [find]
 categories: Linux
+author: wmsj100
+email: wmsj100@hotmail.com
 ---
 
 # find
@@ -63,7 +65,7 @@ categories: Linux
 
 ---
 
-- find . -type l -name "*.txt" 打印当前目录下所有以txt结尾的符号链接 \*
+- find . -type l -name "*.txt" 打印当前目录下所有以txt结尾的符号链接 \*, 查找所有的软链接文件
 - find . -type f -name "*.php" -perm 777 查找当前目录下的所有权限为777的php文件 \*
 - find . -type f -user root 打印当前目录下所有root拥有的文件
 - find . -type f \( ! -perm 777 -and ! -perm 644 \) 打印当前目录下所有权限不是777 和644的文件
