@@ -1,7 +1,7 @@
 ---
 title: 文件打包与解压缩
 date: Sun 18 Feb 2018 05:02:50 PM CST
-modify: 2020-02-19 08:09:52 
+modify: 2020-05-28 20:46:32 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -38,6 +38,10 @@ mail: wmsj100@hotmail.com
 	- -x 解压缩gzip包
 - `tar -Jcf bak.tar.xz bak.log --remove-files` 打包压缩包并且删除源文件
 - `tar --concatenate --file a.tar b.tar` 合并b.tar到a.tar包
+
+### tar 打包不包含指定路径
+
+- `tar -zcvf tar -zcvf sbt-0.13.15-lib.tar.gz -C root/ .` 这样打包会不包含root/路径
 
 ## 安装tar.gz软件包
 
