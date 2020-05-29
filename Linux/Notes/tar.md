@@ -42,6 +42,7 @@ mail: wmsj100@hotmail.com
 ### tar 打包不包含指定路径
 
 - `tar -zcvf tar -zcvf sbt-0.13.15-lib.tar.gz -C root/ .` 这样打包会不包含root/路径
+- 对于解包的时候不需要进行目录调整，因为如果有需要在打包的时候就已经调整了。
 
 ## 安装tar.gz软件包
 
