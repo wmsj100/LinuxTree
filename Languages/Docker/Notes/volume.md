@@ -1,7 +1,7 @@
 ---
 title: volume
 date: 2020-03-05 22:25:05
-modify: 
+modify: 2020-06-02 11:02:38 
 tags: [Notes]
 categories: Docker
 author: wmsj100
@@ -13,6 +13,7 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 卷存储，是docker的持久存储，可以和容器挂载，且支持不同驱动
+- 数据卷是可以在多个容器中共享的，如此来实现容器数据共享，就是说一个数据卷可以在多个容器创建时候进行mount挂载
 
 ## 命令
 
@@ -32,3 +33,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [docker数据卷](https://www.cnblogs.com/sparkdev/p/8504050.html)
