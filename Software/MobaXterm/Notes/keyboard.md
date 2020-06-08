@@ -18,6 +18,7 @@ email: wmsj100@hotmail.com
 
 - `ctrl + alt + left` 上一个页签
 - `ctrl + alt + right` 下一个页签
+- `ctrl + shift + F3` 在当前窗口查询文字
 
 ## 参考
 
