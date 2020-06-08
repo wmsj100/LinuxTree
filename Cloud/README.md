@@ -23,8 +23,12 @@ email: wmsj100@hotmail.com
 - MiddleWare: 云上使用的中间件
 - System: 云服务系统
 - Hadoop 分布式存储和计算的代表
+- Spark 分布式计算，处理实时数据
 - OpenStack: 当前最主流的云操作系统
 - VMware: 之前很流行的虚拟化系统
 
-## 参考
+
+## 网址收藏
+
+- [https://w3sun.com/273.html](https://w3sun.com/273.html)
 
