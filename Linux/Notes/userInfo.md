@@ -1,7 +1,7 @@
 ---
 title: 用户信息
 date: Tue 20 Feb 2018 10:35:46 PM CST
-modify: 2020-03-10 13:24:05 
+modify: 2020-06-17 15:31:29 
 tag: [linux,user,sys]
 categories: Linux
 author: wmsj100
@@ -15,6 +15,7 @@ mail: wmsj100@hotmail.com
 - useradd test1 
 - useradd -g group1 test1
 - useradd -m test1 创建用户同时创建家目录
+- 创建用户名时候系统不区分大小写，即便是使用大写创建的用户，登录时候也要选择小写模式来登录
 
 ## usermod 修改用户信息
 
