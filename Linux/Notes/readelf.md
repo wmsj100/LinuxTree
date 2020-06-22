@@ -1,7 +1,7 @@
 ---
 title: readelf
 date: 2020-04-13 12:19:30
-modify: 
+modify: 2020-06-22 18:00:08 
 tags: [Notes]
 categories: Linux
 author: wmsj100
@@ -15,6 +15,7 @@ email: wmsj100@hotmail.com
 - ELF Executable and Linking Format
 - 定义了目标文件内部信息如何组成和组织的文件格式。
 - 内核会根据这些信息加载可执行文件，内核根据这些信息可以知道从文件哪里获取代码，从哪里获取初始化数据，在哪里应该加载共享库
+- `apt install binutils` 该软件是gun的工具包的一个工具，需要通过这种方式来安装
 
 ```
 [root@ecs0005 lib64]# readelf -h libstdc++.so.6.0.19
