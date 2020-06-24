@@ -1,7 +1,7 @@
 ---
 title: 变量和参数
 date: 2017-12-03 08:22:56	
-modify: 2019-04-22 23:00:43	
+modify: 2020-06-24 17:59:40 
 tag: [shell,params]
 categories: Linux
 author: wmsj100
@@ -13,6 +13,23 @@ mail: wmsj100@hotmail.com
 - 这意味着shell不会区分变量类型，即使给变量赋值整数或小数，都会被视为字符串
 - shell和一些工具程序会在需要时候把数值型字符串转换为对应的数值
 - shell区分大小写
+
+## 嵌套变量
+
+```shell
+sql0='sql com0'
+sql1='sql com1'
+sql2='sql com2'
+mysql='mysql -u root -p 123 -e'
+
+for num in $(seq 0 2)
+do
+	cmd=$(eval echo '$'sql$num)
+	$mysql $cmd
+done
+```
+- 通过上面的例子可以看到要借助eval来实现变量的嵌套使用。
+- 而且需要借助中间值cmd来保存变量值
 
 ## 定义变量
 - var=value
