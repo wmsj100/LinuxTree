@@ -1,0 +1,9 @@
+FROM alpine:3.11
+ADD ./dotnet-sdk-3.1.301-linux-arm64.tar.gz /usr/lib/dotnet/
+RUN sed -i "s@http://dl-cdn.alpinelinux.org/@https://mirrors.huaweicloud.com/@g" /etc/apk/repositories && apk add lttng-ust libcurl openssl krb5-libs icu zlib libunwind libuuid
+COPY ./glibc-* /root/
+COPY ./libstdc++.so.6.0.24 /usr/lib/
+RUN apk add --allow-untrusted /root/glibc-* && rm -f /root/glibc-* && ln -sf /usr/lib/libstdc++.so.6.0.24 /usr/lib/libstdc++.so.6
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+ENV DOTNET_ROOT=/usr/lib/dotnet
+ENV PATH=$PATH:$DOTNET_ROOT

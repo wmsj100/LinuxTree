@@ -1,0 +1,8 @@
+FROM centos:7
+ADD ./dotnet-sdk-3.1.301-linux-arm64.tar.gz /usr/lib/dotnet/
+RUN yum install yum-utils epel-release -y && yum install -y lttng-ust libcurl openssl-libs krb5-libs libicu zlib libunwind libuuid && yum clean all
+COPY ./libstdc++.so.6.0.24 /usr/lib64/
+RUN ln -sf /usr/lib64/libstdc++.so.6.0.24 /usr/lib64/libstdc++.so.6 && ldconfig
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+ENV DOTNET_ROOT=/usr/lib/dotnet
+ENV PATH=$PATH:$DOTNET_ROOT

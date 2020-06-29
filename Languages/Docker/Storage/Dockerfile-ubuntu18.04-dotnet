@@ -1,0 +1,5 @@
+FROM ubuntu:18.04
+ADD ./dotnet-sdk-3.1.301-linux-arm64.tar.gz /usr/lib/dotnet/
+COPY ./sources.list /etc/apt/sources.list
+RUN apt-get update && apt-get install -y libssl1.1 && ln -sf /usr/lib/dotnet/dotnet /usr/bin/dotnet
+ENV DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
