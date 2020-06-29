@@ -1,7 +1,7 @@
 ---
 title: locale 语系
 date: Tue 20 Feb 2018 11:52:53 AM CST
-modify: 2020-04-29 19:44:58 
+modify: 2020-06-29 16:18:54 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -19,7 +19,13 @@ mail: wmsj100@hotmail.com
 - locale 没有参数，显示当前环境的语系配置信息，其中重要的参数时`LANG`其它参数都是在这个参数的基础上动态变更的。
 - 如果要修改语系，只需要修改`LANG`这个值就可以。
 - LANG=zh_CN.utf8 这样就把语系修改为中文语系了。
-- 
+
+## 使用
+
+- `locale -a` 查看当前安装的语言
+- `apt install locales` 安装locale的工具
+- `locale-gen en_US.UTF-8`
+- `update-locale LANG=en_US.UTF-8`
 
 ## 问题
 
@@ -67,3 +73,4 @@ LC_ALL=
 ## 参考文档
 
 - [locale error](https://segmentfault.com/a/1190000004378075)
+- [locale](https://leimao.github.io/blog/Docker-Locale/)
