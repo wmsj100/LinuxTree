@@ -1,7 +1,7 @@
 ---
 title: locale 语系
 date: Tue 20 Feb 2018 11:52:53 AM CST
-modify: 2020-06-29 16:18:54 
+modify: 2020-06-30 10:47:52 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -69,6 +69,11 @@ LANG=en_US.UTF-8
 LC_ALL=
 ```
 - `localedef -v -c -i en_US -f UTF-8 en_US.UTF-8` 执行这个命令就可以生成local文件
+
+## locale设置
+
+- ubuntu系统是通过`apt install locales`来安装工具，然后用`locale-gen en_US.UTF-8`来更改的，
+- centos直接用localedef -v -c -i en_US -f UTF-8 en_US.UTF-8` 来实现环境更改的。
 
 ## 参考文档
 
