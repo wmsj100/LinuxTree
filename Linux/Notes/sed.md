@@ -1,7 +1,7 @@
 ---
 title: 基础知识 
 date: 2018-07-08 16:02:16	
-modify: 2020-03-11 13:44:52 
+modify: 2020-06-30 10:28:06 
 tag: [sed]
 categories: Linux 
 author: wmsj100
@@ -22,6 +22,10 @@ mail: wmsj100@hotmail.com
 - `set -i "s|\<Arch\>|ArchLinux|g" `grep -rw "Arch" | awk -F ':' '{print $1}' | sort | uniq` 修改当前目录下的所有文件,把Arch替换为ArchLinux
 	- `\<` 匹配单词的开头
 	- `\>` 匹配单词的结尾
+
+## 批量插入文件
+
+- `sed -i '3 r b.txt' a.txt` 在文件a.txt中的第3行后面插入b.txt文件，这个命令也可以适用于在批量文件中插入一个文件
 
 ## 参考
 
