@@ -1,7 +1,7 @@
 ---
 title: grep 查找文件的匹配文本
 date: Tue 22 Feb 2018 9:35:46 PM CST
-modify: 2020-05-27 15:19:45 
+modify: 2020-06-30 10:32:52 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -47,6 +47,7 @@ mail: wmsj100@hotmail.com
 
 ## 实例
 - grep -E "^0[0-9]{2,3}-[0-9]{8,9}(-[0-9]{3,4})?$" 匹配电话号码，区号0开头，3-4位，号码8-9位，哟可能会有分机号，3-4位。
+- grep -E "aa|bb|cc" == egrep "aa|bb|cc" 在文件中查找aa|bb|cc
 **使用最广泛的命令之一，用来对文件内容按行进行模式匹配查找**
 
 - 在命令行的正在表达式中 '.' 和 '*' 代表的意思如下：
