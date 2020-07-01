@@ -1,7 +1,7 @@
 ---
 title: 基础知识 
 date: 2018-07-08 16:02:16	
-modify: 2020-06-30 10:28:06 
+modify: 2020-07-01 18:46:35 
 tag: [sed]
 categories: Linux 
 author: wmsj100
@@ -26,6 +26,12 @@ mail: wmsj100@hotmail.com
 ## 批量插入文件
 
 - `sed -i '3 r b.txt' a.txt` 在文件a.txt中的第3行后面插入b.txt文件，这个命令也可以适用于在批量文件中插入一个文件
+
+## 删除
+
+- `sed -i '/<mirrors>/,/<\/mirrors>/d' a.xml` 删除<mirrors>和</mirrors>之间的文本
+- `sed -i '1,2d' file` 删除1，2行
+- `sed -i '2,$d' file` 删除1行后面的所以内容
 
 ## 参考
 
