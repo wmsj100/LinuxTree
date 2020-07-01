@@ -1,7 +1,7 @@
 ---
 title: Yum
 date: 2020-03-31 15:08:20
-modify: 
+modify: 2020-07-01 15:11:42 
 tags: [Notes]
 categories: CentOS
 author: wmsj100
@@ -18,6 +18,10 @@ email: wmsj100@hotmail.com
 - yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令间接而又好记。
 - yum的一切信息都存储在一个`/etc/yum.repos.d`目录下的配置文件中，这个目录有很多文件，通常以`.repo`结尾
 - repo文件是yum源的配置文件，通常一个repo文件定义了一个或多个软件仓库的细节内容，例如需要从哪里下载需要安装和升级的软件包，该文件将被yum读取和应用。
+
+## 查询命令归属
+
+- `yum whatprovides ip` 可以查询到该命令所属的包名称
 
 ## repo配置解析
 
