@@ -1,7 +1,7 @@
 ---
 title: maven
 date: 2020-05-29 09:58:20
-modify: 2020-06-03 18:27:23  
+modify: 2020-07-01 10:37:35 
 tags: [Notes]
 categories: Java
 author: wmsj100
@@ -15,6 +15,10 @@ email: wmsj100@hotmail.com
 - maven是java的jar包的管理器，java项目依赖的jar包通过maven来管理。
 - maven配置源之后就从源优先下载，
 - maven的下载地址就是按照地址拆分的，本地的maven仓库也是按照链接来拆的。
+
+## clean
+
+- `mvn clean` 会把当前目录构建的target目录删除重新构建文件，建议每次执行前使用clean，clean不会把已经下载到本地maven的jar包删除
 
 ## 命令
 
