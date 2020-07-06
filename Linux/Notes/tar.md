@@ -1,7 +1,7 @@
 ---
 title: 文件打包与解压缩
 date: Sun 18 Feb 2018 05:02:50 PM CST
-modify: 2020-05-28 20:46:32 
+modify: 2020-07-06 19:56:45 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -41,7 +41,7 @@ mail: wmsj100@hotmail.com
 
 ### tar 打包不包含指定路径
 
-- `tar -zcvf tar -zcvf sbt-0.13.15-lib.tar.gz -C root/ .` 这样打包会不包含root/路径
+- `tar -zcvf /tmp/downloadFile.tar.gz -C /usr/local downloadFile` 打包downloadFile, 会先进入/usr/local, 然后执行tar的打包操作
 - 对于解包的时候不需要进行目录调整，因为如果有需要在打包的时候就已经调整了。
 
 ## 安装tar.gz软件包
