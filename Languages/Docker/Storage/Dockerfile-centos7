@@ -1,0 +1,9 @@
+FROM centos:7
+COPY ./software /root/Downloads
+RUN yum update -y && yum install -y yum-utils iproute2 git vim binutils curl wget tree bash-completion zip unzip gzip bzip2 java-1.8.0-openjdk java-1.8.0-openjdk-devel && yum remove -y vim-minimal && yum clean all && tar -xf /root/Downloads/downloadFile.tar.gz -C /root && bash /root/downloadFile/init.sh /usr/local && tar -xf /root/Downloads/vim-plugs.tar.gz -C /root && mv /root/Downloads/.vimrc /root && unzip /root/Downloads/apache-maven-3.6.3-bin.zip -d /opt && rm -rf /root/Downloads && ln -s /usr/bin/vim /usr/bin/vi && git config --global color.status auto && git config --global color.diff auto && git config --global credential.helper cache
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+ENV M2_HOME /opt/apache-maven-3.6.3/
+ENV MAVEN_HOME $M2_HOME
+ENV PATH $PATH:$M2_HOME/bin
