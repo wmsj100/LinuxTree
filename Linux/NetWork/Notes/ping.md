@@ -1,7 +1,7 @@
 ---
 title: ping
 date: 2020-03-15 14:43:55
-modify: 
+modify: 2020-07-08 00:43:34 
 tags: [Notes]
 categories: Linux
 author: wmsj100
@@ -13,6 +13,7 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 测试网络是否连同,请求是否可以到达
+- `apt install inetutils-ping` 安装ping工具
 
 ## 使用
 
