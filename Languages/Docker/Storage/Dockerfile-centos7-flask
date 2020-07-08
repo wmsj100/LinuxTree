@@ -1,0 +1,27 @@
+FROM centos:7
+COPY ./software/downloadFile.tar.gz ./software/vim-plugs.tar.gz ./software/CentOS-AltArch-7.repo ./software/.vimrc ./software/pip.conf /root/Downloads/
+WORKDIR /root/Downloads
+RUN mv /root/Downloads/CentOS-AltArch-7.repo /etc/yum.repos.d/CentOS-Base.repo \
+	&& yum clean all \
+	&& yum makecache \
+	&& yum install -y iproute2 vim binutils curl wget tree bash-completion zip git unzip gzip bzip2 gcc gcc-c++ python3-devel python3-pip \
+	&& yum remove -y vim-minimal \
+	&& yum clean all \
+	&& tar -xf downloadFile.tar.gz \
+	&& bash downloadFile/init.sh /usr/local \
+	&& tar -xf ./vim-plugs.tar.gz -C /root \
+	&& mv .vimrc /root \
+	&& git config --global color.status auto \
+        && git config --global color.diff auto \
+        && git config --global credential.helper store \
+	&& ln -sf /usr/bin/vim /usr/bin/vi \
+	&& mkdir /root/.pip \
+	&& mv pip.conf /root/.pip/ \
+	&& rm -rf /root/Downloads
+
+RUN python3 -m pip install -U pip \
+	&& python3 -m pip install flask uwsgi
+
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8

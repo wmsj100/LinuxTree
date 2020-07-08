@@ -1,0 +1,31 @@
+FROM centos:7 as build
+COPY ./software/CentOS-AltArch-7.repo /etc/yum.repos.d/CentOS-Base.repo
+COPY ./software/nginx-1.19.0.tar.gz /root/
+
+RUN yum clean all \
+	&& yum makecache \
+	&& yum install -y gcc zlib zlib-devel openssl openssl-devel pcre pcre-devel \
+	&& yum clean all \
+	&& tar -xvf /root/nginx-1.19.0.tar.gz -C /root \
+	&& groupadd www \
+	&& useradd -g www www \
+	&& cd /root/nginx-1.19.0 \
+	&& ./configure --user=www --group=www --prefix=/usr/local/nginx --with-http_ssl_module --with-http_stub_status_module --with-http_realip_module --with-threads \
+	&& make -j8 \
+	&& make install
+
+FROM centos:7 as dev
+LABEL maintainer wanghao054@chinasoftinc.com
+COPY --from=build /usr/local/nginx /usr/local/nginx
+COPY ./software/CentOS-AltArch-7.repo /etc/yum.repos.d/CentOS-Base.repo
+RUN yum clean all \
+	&& yum makecache \
+	&& yum install -y zlib openssl pcre \
+	&& yum clean all \
+	&& groupadd www \
+	&& useradd -g www www \
+	&& ln -sf /usr/local/nginx/sbin/nginx /usr/local/bin/nginx 
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+EXPOSE 80
