@@ -1,7 +1,7 @@
 ---
 title: pacman
 date: 2020-03-14 08:33:49
-modify: 
+modify: 2020-07-09 23:16:14 
 tags: [Notes]
 categories: ArchLinux
 author: wmsj100
@@ -24,6 +24,7 @@ email: wmsj100@hotmail.com
 
 - 在arch下安装软件包时,未更新系统前,不要更新软件包数据库,因为可能某些软件包不再出现在官方库
 - `sudo pacman -Syu docker` 更新系统并安装软件包
+- `sudo pacman -S --noconfirm zip` 直接默认安装软件,类似`yum install -y zip`
 
 ### 查询软件包
 
