@@ -1,14 +1,18 @@
 FROM centos:7
 COPY ./conf/.vimrc /root/.vimrc
 COPY ./conf/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
+COPY ./conf/pip.conf /root/.pip/pip.conf
 RUN yum clean all \
 	&& yum makecache \
-	&& yum install -y iproute2 vim binutils curl wget tree bash-completion zip unzip gzip bzip2 \
+	&& yum install -y iproute vim binutils curl wget tree bash-completion zip unzip gzip bzip2 gcc python3-devel python3-pip python3-wheel \
 	&& yum remove -y vim-minimal \
 	&& yum clean all \
 	&& ln -s /usr/bin/vim /usr/bin/vi 
 
 WORKDIR /webapp
+
+RUN python3 -m pip install -U pip \
+	&& pip3 install uwsgi flask
 
 ENV LC_ALL en_US.UTF-8
 ENV LANG en_US.UTF-8
