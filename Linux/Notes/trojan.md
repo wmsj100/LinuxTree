@@ -1,7 +1,7 @@
 ---
 title: trojan
 date: 2020-03-23 18:26:24
-modify: 
+modify: 2020-07-13 09:37:28  
 tags: [Storage]
 categories: Ubuntu
 author: wmsj100
@@ -49,6 +49,13 @@ email: wmsj100@hotmail.com
 - 下载二进制包,解压到目录,并进入目录
 - 解压之后进去配置`config.json`文件,是trojan的一个配置
 - `sudo ./trojan` 就可以执行了,执行过程中可以配合火狐浏览器的插件`omega`,就按照自动的插件配置就好.这样可以在界面实时查看访问日志
+
+## 端口占用
+
+- windows启动trojan客户端时候直接闪退，不管是不是以管理员权限启动，报错` fatal: bind: 以一种访问权限不允许的方式做了一个访问套接字的尝试。`
+- 查询资料是端口占用
+- `netstat -nao` 看到`1080`端口是被占用的，trojan默认监听的是1080端口
+- 重新修改配置文件，修改端口到1104，然后重启trojan，启动成功。
 
 ## 参考
 
