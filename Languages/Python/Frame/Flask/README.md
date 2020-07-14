@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2020-01-10 12:17:32
-modify: 2020-02-10 23:19:24 
+modify: 2020-07-14 20:40:52 
 tags: [Flask]
 categories: Frame
 author: wmsj100
@@ -23,3 +23,4 @@ email: wmsj100@hotmail.com
 
 - [flask文档](https://dormousehole.readthedocs.io/en/latest/index.html)
 - [flask入门教程](http://www.pythondoc.com/flask-mega-tutorial/index.html)
+- [flask入门教程](https://read.helloflask.com/c6-template2#zi-ding-yi-cuo-wu-ye-mian)
