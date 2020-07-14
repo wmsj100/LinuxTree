@@ -19,3 +19,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [内存](https://juejin.im/post/5d84bd1f6fb9a06b2d780df7)
