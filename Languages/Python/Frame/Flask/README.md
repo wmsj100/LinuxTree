@@ -18,6 +18,7 @@ email: wmsj100@hotmail.com
 
 - `Notes`: flask的基础知识
 - `Storages`: 存储的flask的配置文件
+- `Summary`: 自己总结
 
 ## 参考
 
