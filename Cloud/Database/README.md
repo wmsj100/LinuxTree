@@ -20,6 +20,7 @@ email: wmsj100@hotmail.com
 - MySQL: 结构化存储数据库
 - Redis: key-value存储数据库
 - SQLite: 轻量级数据库，不需要专门的配置
+- Oracle: 大型数据库
 
 ## 参考
 
