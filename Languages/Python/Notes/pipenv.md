@@ -1,6 +1,6 @@
 ---
 title: pipenv
-date: 2020-02-02 13:00:34
+date: 2020-07-20 11:18:16
 modify: 
 tags: [Notes]
 categories: Python
@@ -12,29 +12,27 @@ email: wmsj100@hotmail.com
 
 ## 概要
 
-- `pipenv`是可以替换`pip`的一种更加高级的包管理器，是`python`的项目的依赖管理器，可以简化依赖关系管理的常见使用情况。
+- `pipenv` 是python的一个包管理器，集成了pip, virtualenv还有自己的依赖管理的操作。
+- 通过pipenv管理的依赖会出生成俩个文件`Pipfile`和`Pipfile.lock`，前者保存的软件，后者是该软件的所有依赖的软件对应的shd512公钥签名
+- 使用了pipenv来管理软件就省去了自己部署virtualenv或者是执行`python -m venv env36`类似这样的操作了，而且对于依赖的包管理器更加精确，可以确保当前环境是完全可以复制和重新构建的。
 
-## 换源
+## 命令
 
-- `pipenv`和`pip`类似，也需要更换源，默认是官网，速度太慢
-- 进入到要安装的项目目录，执行`pipenv install requests`，会先执行创建`virtualenv`等虚拟环境准备，然后开始下载`requests`，会卡在install阶段，然后停止下载，当前目录会生成一个文件`Pipfile`
-- 修改`Pipfile`文件的source，更换`url`为国内源。
-```Pipfile
-[[source]]
-name = "pypi"
-url = "https://pypi.tuna.tsinghua.edu.cn/simple/"
-verify_ssl = true
+- `pipenv install` 依据当前目录的Pipfile来安装软件
+- `pipenv install flask uwsgi` 安装指定软件并更新`Pipfile.lock`文件
+- `pipenv uninstall` 卸载所有软件
+- `pipenv shell` 进入pipenv的环境
+- `pipenv run uwsgi --init uwsgi.ini` 使用pipenv的环境的命令来执行命令
 
-[dev-packages]
+## docker
 
-[packages]
-requests = "*"
+- 在docker里使用pipenv需要执行如下命令
+- `pipenv install --deploy --ignore-pipfile` 
+	- `deploy` 如果Pipfile.lock文件过期，这样不会报错
+	- `ignore-pipfile` 
+- `CMD ["pipenv", "run", "--ini", "uwsgi.ini"]`
 
-[requires]
-python_version = "3.7"
-```
 
 ## 参考
 
-- [pipenv介绍](https://www.jianshu.com/p/d08a4aa0008e)
-- [pipenv换源](https://blog.csdn.net/jpch89/article/details/81952416)
+- [docker pipenv](https://stackoverflow.com/questions/46503947/how-to-get-pipenv-running-in-docker)
