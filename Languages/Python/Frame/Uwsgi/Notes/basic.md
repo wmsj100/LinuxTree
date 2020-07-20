@@ -1,7 +1,7 @@
 ---
 title: basic
 date: 2020-01-11 10:05:29
-modify: 
+modify: 2020-07-20 09:27:42  
 tags: [Notes]
 categories: Uwsgi
 author: wmsj100
@@ -21,6 +21,8 @@ email: wmsj100@hotmail.com
 ## 使用
 
 - `sudo apt install uwsgi`
+- `pip install uwsgi` 如果使用pip来安装时候需要依赖gcc来执行编译操作，
+	- `yum install gcc`
 - `uwsgi --socket :8083 --wsgi-file /home/pi/Documents/mydjango/test.py` 这样可以启动一个端口为8083的web服务器，
 - `uwsgi --http :8084 --wsgi-file /test.py` 这样可以开启一个http的端口服务器
 - test.py的内容如下
