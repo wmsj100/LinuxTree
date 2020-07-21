@@ -1,7 +1,7 @@
 ---
 title: 模块
 date: Sun 31 Dec 2017 03:53:39 PM CST
-modify: 2020-02-11 08:07:07 
+modify: 2020-07-21 11:57:59 
 tag: [python]
 categories: Python
 author: wmsj100
@@ -9,6 +9,14 @@ mail: wmsj100@hotmail.com
 ---
 
 # 模块
+
+## 概要
+
+- 模块尽可能存放到包中，
+- 每个包需要有文件`__init__.py`文件
+- 从包中调用模块时候`from model.test1 import class1`
+- 包内的文件不能互相依赖，否则可能出现依赖死循环，包内的文件只能被包外的文件调用
+- 如果包内的文件需要调用包外的文件，需要修改sys.path`import sys; sys.path.append('..')` 把父目录引入路径，但觉得这样不规范，不建议使用
 
 ## 基础概念
 
@@ -61,3 +69,7 @@ if __name__ == '__main__':
     print(test.info)
     print('name is ',__name__)
 ```
+
+## 参考
+
+- [python 模块依赖](https://blog.csdn.net/d200746/article/details/103530943)
