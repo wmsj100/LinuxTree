@@ -1,7 +1,7 @@
 ---
 title: datetime
 date: 2019-04-10 14:15:27	
-modify: 
+modify: 2020-07-23 11:05:05 
 tag: [Note]
 categories: Python
 author: wmsj100
@@ -12,6 +12,12 @@ mail: wmsj100@hotmail.com
 
 ## 概述
 - datetime模块重新封装了time模块，提供更多接口，提供的类date,time,datetime,timedelta,tzinfo
+
+## 格式化指定字符串
+
+- `Wed, 22 Jul 2020 21:04:11 GMT` 目标字符串
+- `datetime.datetime.strptime(b, "%a, %d %b %Y %H:%M:%S %Z")` 返回一个datetime对象
+- `datetime.strftime("%Y-%m-%d %H:%M:%S")` 这样就返回一个符合要求的字符串
 
 ## date
 ```python
