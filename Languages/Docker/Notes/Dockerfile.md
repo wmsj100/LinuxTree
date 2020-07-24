@@ -1,7 +1,7 @@
 ---
 title: Dockerfile
 date: 2020-03-08 15:18:46
-modify: 
+modify: 2020-07-24 14:36:13 
 tags: [Notes]
 categories: Docker
 author: wmsj100
@@ -13,6 +13,11 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 是构建docker镜像的依据
+
+## 总结
+
+- `COPY ./instance /webapp` webapp已经存在，通过这样的命令执行拷贝会失效，因为会被误解为要用instance 覆盖webapp，
+- `COPY ./instance /webapp/instance` 这是正确的写法
 
 ## 命令
 
