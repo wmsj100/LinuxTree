@@ -22,6 +22,7 @@ email: wmsj100@hotmail.com
 - `python manage.py db downgrade` 在当前的提交执行降级操作，
 - 每个commitid都对应一个upgrade和downgrade操作
 - 这个工具和Django自带的migrate工具类似
+- 使用这个工具最大的好处是可以把数据库的结构也纳入版本管理中，且可以随时回退操作
 
 ## 范例
 
