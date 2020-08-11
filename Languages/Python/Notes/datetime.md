@@ -19,6 +19,12 @@ mail: wmsj100@hotmail.com
 - `datetime.datetime.strptime(b, "%a, %d %b %Y %H:%M:%S %Z")` 返回一个datetime对象
 - `datetime.strftime("%Y-%m-%d %H:%M:%S")` 这样就返回一个符合要求的字符串
 
+## 时间戳
+
+- `a = datetime.datetime.now()`
+- `b = a.timetuple()`
+- `c = time.mktime(b)` 获取时间戳
+
 ## date
 ```python
 d1 = datetime.date(2019,04,10)
