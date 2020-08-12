@@ -25,3 +25,4 @@ email: wmsj100@hotmail.com
 - [flask文档](https://dormousehole.readthedocs.io/en/latest/index.html)
 - [flask入门教程](http://www.pythondoc.com/flask-mega-tutorial/index.html)
 - [flask入门教程](https://read.helloflask.com/c6-template2#zi-ding-yi-cuo-wu-ye-mian)
+- [flask教程](https://www.bookstack.cn/read/The-Flask-Mega-Tutorial-zh/README.md)
