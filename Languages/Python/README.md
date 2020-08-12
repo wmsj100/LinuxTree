@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-04-13 22:05:37 Fri
-modify: 2020-02-02 22:29:41 
+modify: 2020-07-24 12:19:49
 tag: [readme]
 categories: Python
 author: wmsj100
@@ -31,6 +31,10 @@ mail: wmsj100@hotmail.com
 ## 爬虫
 
 - pip install requests selenium beautifulsoup4 pyquery pymysql pymongo redis flask django jupyter
+
+## 工作面板
+
+- https://spacewander.github.io/explore-flask-zh/9-static_files.html
 
 ## 网站
 

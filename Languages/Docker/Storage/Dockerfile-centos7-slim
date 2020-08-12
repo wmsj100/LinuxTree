@@ -1,4 +1,8 @@
 FROM centos:7
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
+ENV TZ=Asia/Shanghai
 COPY ./conf/.vimrc /root/.vimrc
 COPY ./conf/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo
 RUN yum clean all \
@@ -9,7 +13,3 @@ RUN yum clean all \
 	&& ln -s /usr/bin/vim /usr/bin/vi 
 
 WORKDIR /webapp
-
-ENV LC_ALL en_US.UTF-8
-ENV LANG en_US.UTF-8
-ENV LANGUAGE en_US.UTF-8

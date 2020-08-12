@@ -1,0 +1,43 @@
+FROM alpine
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV TZ=Asia/Shanghai 
+ENV LD_LIBRARY_PATH=/opt/instantclient_12_2
+
+COPY ./docker/instantclient-basiclite-linux.x64-12.2.0.1.0.zip /tmp/instantclient-basiclite-linux.x64-12.2.0.1.0.zip
+COPY ./docker/pip.conf /root/.pip/pip.conf
+COPY ./docker/vimrc /root/.vimrc
+COPY ./Pipfile* /webapp/
+
+RUN unzip /tmp/instantclient-basiclite-linux.x64-12.2.0.1.0.zip -d /opt \
+	&& cd /opt/instantclient_12_2/ \
+	&& ln -s libclntsh.so.12.1  libclntsh.so \
+	&& ln -s /usr/lib/libnsl.so.2.0.0  /usr/lib/libnsl.so.1 \
+	&& rm -f /tmp/instantclient-basiclite-linux.x64-12.2.0.1.0.zip 
+
+RUN sed -i "s@http://dl-cdn.alpinelinux.org/@https://mirrors.huaweicloud.com/@g" /etc/apk/repositories \
+	&& apk add --no-cache ca-certificates python3-dev libaio libnsl \
+	&& apk add --no-cache --virtual=build-deps build-base linux-headers npm 
+
+WORKDIR /webapp
+
+RUN pip3 install -U pip \
+	&& pip3 install pipenv \
+	&& pipenv install --deploy --ignore-pipfile 
+
+COPY . /webapp
+
+RUN npm config set registry https://registry.npm.taobao.org \
+	&& npm install \
+	&& npm cache clean --force \
+	&& apk del build-deps 
+
+RUN mkdir -p static/lib \
+	&& cp -a node_modules/bootstrap/dist static/lib/bootstrap \
+	&& cp -a node_modules/jquery/dist static/lib/jquery \
+	&& cp -a node_modules/popper.js/dist/ static/lib/popper \
+	&& mkdir log \
+	&& touch log/app.log \
+	&& rm -rf node_modules ~/.npm docker 
+
+CMD ["pipenv", "run", "uwsgi", "--ini", "uwsgi.ini"]
