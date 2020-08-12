@@ -1,7 +1,7 @@
 ---
 title: pip
 date: 2018-03-18 22:38:10 Sun
-modify: 2020-01-09 22:18:20
+modify: 2020-08-12 09:41:09 
 tag: [pip,python,tool]
 categories: Python
 author: wmsj100
@@ -20,6 +20,10 @@ mail: wmsj100@hotmail.com
 ---
 - `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` 
 - `python get-pip.py`
+
+## 指定版本
+
+- `pip install asgiref==3.2.7` 俩个等于号
 
 ## 配置pip源
 
