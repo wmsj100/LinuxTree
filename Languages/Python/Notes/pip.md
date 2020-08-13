@@ -1,7 +1,7 @@
 ---
 title: pip
 date: 2018-03-18 22:38:10 Sun
-modify: 2020-08-12 09:41:09 
+modify: 2020-08-13 11:01:14 
 tag: [pip,python,tool]
 categories: Python
 author: wmsj100
@@ -24,6 +24,31 @@ mail: wmsj100@hotmail.com
 ## 指定版本
 
 - `pip install asgiref==3.2.7` 俩个等于号
+
+## pip源码编译
+
+- `pip install git+https://github.com/pymssql/pymssql.git`
+- `pip install /tmp/a.tar`
+- `pip install ./pymssql`
+- 上面三种方式都可以通过源码编译的方式来安装包
+
+## pip 查看包信息
+
+- `pip list` 获取包名称
+- `pip show scipy` 可以获取包信息
+```pip
+Name: scipy
+Version: 1.4.1
+Summary: SciPy: Scientific Library for Python
+Home-page: https://www.scipy.org
+Author: None
+Author-email: None
+License: BSD
+Location: /root/.local/share/virtualenvs/root-BuDEOXnJ/lib64/python3.6/site-packages
+Requires: numpy
+Required-by: scikit-learn, seaborn, pyltr
+(root) [root@pythonTest ~]# cd /root/.local/share/virtualenvs/root-BuDEOXnJ/lib64/python3.6/site-packages/
+``` 
 
 ## 配置pip源
 
