@@ -19,6 +19,7 @@ mail: wmsj100@hotmail.com
 - Network 关于网络的知识点
 - Release 不同的发行版
 - SunFa 常见算法
+- Compile 编译问题
 
 ## 软件
 
