@@ -50,6 +50,11 @@ Required-by: scikit-learn, seaborn, pyltr
 (root) [root@pythonTest ~]# cd /root/.local/share/virtualenvs/root-BuDEOXnJ/lib64/python3.6/site-packages/
 ``` 
 
+## pip 导出列表
+
+- `pip freeze > requirements.txt`
+- `pip install -r requirements.txt`
+
 ## 配置pip源
 
 ### linux
