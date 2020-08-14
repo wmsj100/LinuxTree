@@ -18,7 +18,6 @@ mail: wmsj100@hotmail.com
 - Flask  基于python的一个轻量化的框架
 - Uwsgi 基于python的一个web服务网关接口框架，可以实现python和nginx的交换
 - Supervisor 是一个进程管理工具，基于python
-- Libs 框架的简单认识和使用
 
 ## 代办
 ~~None~~
