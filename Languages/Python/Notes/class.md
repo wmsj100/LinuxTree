@@ -1,7 +1,7 @@
 ---
 title: 类
 date: Sun 31 Dec 2017 11:50:57 AM CST
-modify: 2020-01-12 23:03:44 
+modify: 2020-08-17 10:10:02 
 tag: [python]
 categories: Linux
 author: wmsj100
@@ -46,3 +46,13 @@ class Person:
 
 - python类方法和实例方法相似，它最少也要包含一个参数，通常命名为`cls`，
 - `@classmethod`类方法需要这个修饰符进行修饰
+
+## 类引入
+
+- 引入类后可以直接调用类的内部属性和方法，
+- 对于常量属性可以直接调用
+```python
+from config import BaseConfig
+
+a = BaseConfig.CELERY_BROKER_URL
+```
