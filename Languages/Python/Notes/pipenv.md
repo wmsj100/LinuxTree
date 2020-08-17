@@ -1,7 +1,7 @@
 ---
 title: pipenv
 date: 2020-07-20 11:18:16
-modify: 
+modify: 2020-08-17 19:13:56 
 tags: [Notes]
 categories: Python
 author: wmsj100
@@ -23,6 +23,7 @@ email: wmsj100@hotmail.com
 - `pipenv uninstall` 卸载所有软件
 - `pipenv shell` 进入pipenv的环境
 - `pipenv run uwsgi --init uwsgi.ini` 使用pipenv的环境的命令来执行命令
+- `pipenv run bash test1.sh` 脚本的命令会在pipenv的环境下执行
 
 ## docker
 
