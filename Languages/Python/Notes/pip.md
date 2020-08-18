@@ -1,7 +1,7 @@
 ---
 title: pip
 date: 2018-03-18 22:38:10 Sun
-modify: 2020-08-13 11:01:14 
+modify: 2020-08-18 10:39:47 
 tag: [pip,python,tool]
 categories: Python
 author: wmsj100
@@ -31,6 +31,12 @@ mail: wmsj100@hotmail.com
 - `pip install /tmp/a.tar`
 - `pip install ./pymssql`
 - 上面三种方式都可以通过源码编译的方式来安装包
+
+## pip离线下载
+
+- `pip3 download -r requirements.txt` 这样会在当前目录下载whl或tar包
+- `pip install xxx.whl`
+- `pip install xxx.tar.gz`
 
 ## pip 查看包信息
 
