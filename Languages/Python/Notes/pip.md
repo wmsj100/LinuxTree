@@ -76,6 +76,10 @@ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 - 如果要执行上面的sudo命令来执行pip，需要在/root/下也创建相应的pip的配置文件
 - `pip3 install --upgrade pip` 升级pip
 
+## 基础配置
+
+- `pip install pyarrow==0.11.1 --no-clean` 安装并且不清理安装包。
+
 ### windows
 
 - mkdir ~/pip
