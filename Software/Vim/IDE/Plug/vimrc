@@ -22,9 +22,48 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'altercation/vim-colors-solarized'
 Plug 'aperezdc/vim-template'
 Plug 'boydos/emmet-vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'fatih/vim-go'
+Plug 'Valloric/YouCompleteMe'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tell-k/vim-autopep8'
+Plug 'nvie/vim-flake8'
+Plug 'jiangmiao/auto-pairs'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'preservim/nerdcommenter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
+
 map <F2>  :NERDTreeToggle<CR>
 iab xtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
-let g:ycm_global_ycm_extra_conf='/home/wmsj100/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf='/home/ubuntu/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
+
+let g:email = 'wanghao054@chinasoftinc.com'
+let g:username = 'wanghao'
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+"autocmd BufWritePost *.py call flake8#Flake8()
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
