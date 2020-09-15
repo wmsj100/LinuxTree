@@ -1,3 +1,13 @@
+---
+title: vim自动化
+date: 2020-09-15 10:19:08 
+modify: 
+tag: [config]
+categories: VIM
+author: wmsj100
+mail: wmsj100@hotmail.com
+---
+
 # vim 基础操作
 
 ## vim6种模式
@@ -74,3 +84,8 @@
 - /字符 向下查找目标字符
 - ?字符 向上查找目标字符
 - 进入查找之后，输入n或者N可以继续查找:
+
+## 回退到上一步
+
+- `ctrl + o`
+- `''` 俩次点击单引号
