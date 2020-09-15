@@ -35,3 +35,4 @@ python aa.zip
 ```
 ## 参考
 
+- [python compileall](https://www.cnblogs.com/bonelee/p/8619391.html)
