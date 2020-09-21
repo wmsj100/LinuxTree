@@ -31,16 +31,24 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'preservim/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'maksimr/vim-jsbeautify'
 call plug#end()
 
 map <F2>  :NERDTreeToggle<CR>
+nmap qq :%s/\s\+$//<CR>
 iab xtime <c-r>=strftime("%Y-%m-%d %H:%M:%S")<cr>
 let g:ycm_global_ycm_extra_conf='/home/ubuntu/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
+map <c-f> :call HtmlBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
 let g:email = 'wanghao054@chinasoftinc.com'
 let g:username = 'wanghao'
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
 "autocmd BufWritePost *.py call flake8#Flake8()
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 let g:rbpt_colorpairs = [
     \ ['brown',       'RoyalBlue3'],
