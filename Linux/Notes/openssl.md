@@ -51,8 +51,11 @@ IP.2 = 111.229.241.222
 ## 生成证书
 
 - `openssl req -new -x509 -keyout cakey.key -out cacert.crt -config ssl.conf -days 365`
+- `openssl req -new -x509 -newkey rsa:4096 -keyout cakey.key -out cacert.crt -config openssl.cnf -days 365`
+- `openssl req -x509 -new -nodes -sha256 -utf8 -days 3650 -newkey rsa:2048 -keyout server.key -out server.crt -config ssl.conf`
 - 通过上面的命令可以生成一个有效期365天的证书,
 - 执行命令期间需要输入证书的秘密
 
 ## 参考
 
+- [openssl](https://medium.com/@charming_rust_oyster_221/flask-%E9%85%8D%E7%BD%AE-https-%E7%B6%B2%E7%AB%99-ssl-%E5%AE%89%E5%85%A8%E8%AA%8D%E8%AD%89-36dfeb609fa8)
