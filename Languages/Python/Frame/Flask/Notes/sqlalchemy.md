@@ -20,3 +20,4 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [sqlalchemy notin_](https://myapollo.com.tw/zh-tw/sqlalchemy-orm-in-and-not-in-statement/)
