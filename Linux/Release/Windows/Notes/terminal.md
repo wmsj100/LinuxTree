@@ -1,7 +1,7 @@
 ---
 title: terminal
 date: 2020-10-09 14:50:50
-modify: 
+modify: 2020-10-10 09:17:21  
 tags: [Notes]
 categories: Windows
 author: wmsj100
@@ -13,6 +13,15 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - windows推出的terminal，非常好用
+
+## 快捷键
+
+- `ctrl + shift + space` 打开菜单
+- `shift + alt + -` 水平分割窗口，默认登录power shell
+- `shift + alt + +` 垂直分割窗口，默认登录power shell
+- `shift + alt + up` 向上调整窗口尺寸
+- `shift + alt + down` 向下调整窗口尺寸
+- `shift + alt + d` 基于当前环境切分窗口
 
 ## 基础配置
 
