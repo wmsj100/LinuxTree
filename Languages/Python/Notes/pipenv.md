@@ -1,7 +1,7 @@
 ---
 title: pipenv
 date: 2020-07-20 11:18:16
-modify: 2020-08-17 19:13:56 
+modify: 2020-10-12 10:20:57 
 tags: [Notes]
 categories: Python
 author: wmsj100
@@ -24,6 +24,12 @@ email: wmsj100@hotmail.com
 - `pipenv shell` 进入pipenv的环境
 - `pipenv run uwsgi --init uwsgi.ini` 使用pipenv的环境的命令来执行命令
 - `pipenv run bash test1.sh` 脚本的命令会在pipenv的环境下执行
+- `pipenv lock` 生成lock文件
+
+## 使用
+
+- `pipenv install`安装报错，命令会自动生成Pipfile文件，该文件中有源地址配置`url = "http://pypi.doubanio.com/simple"`，
+- 如果报错可能是因为手动把`https`修改为了`http`导致包找不到的报错。
 
 ## docker
 
