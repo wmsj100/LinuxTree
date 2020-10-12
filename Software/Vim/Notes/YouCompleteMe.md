@@ -1,7 +1,7 @@
 ---
 title: YouCompleteMe
 date: 2020-03-02 09:31:48
-modify: 
+modify: 2020-10-12 10:29:04  
 tags: [Notes]
 categories: Vim
 author: wmsj100
@@ -22,6 +22,7 @@ email: wmsj100@hotmail.com
 - `cd ~/.vim/bundle/YouCompleteMe`
 - `./install.py --clang-completer` 前提是有安装`Cmake`，`sudo apt install cmake`
 - `let g:ycm_global_ycm_extra_conf='/home/pi/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'` 编辑`~/.vimrc`文件，添加该句
+- `let g:ycm_server_python_interpreter='/usr/bin/python3'` 如果要支持python3，需要配置
 
 ## 参考
 
