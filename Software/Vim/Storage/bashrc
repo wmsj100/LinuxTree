@@ -1,0 +1,28 @@
+export PATH=$PATH:/home/ubuntu/.local/bin
+alias ll='ls -l -a --color=auto'
+# parmas start
+export linux=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Notes
+export docker=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/Docker/Notes
+export python=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/Python/Notes
+export network=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/NetWork/Notes
+export diary=/home/ubuntu/Documents/GitHub/MyDream/Diary/2020/October
+export article=/home/ubuntu/Documents/GitHub/MyDream/Article/2020/October
+export shell=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/Shell/Note
+export golang=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/GoLang/Notes
+export language=/home/ubuntu/Documents/GitHub/LinuxTree/Languages
+export mysql=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/MySQL/Notes
+export ubuntu=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/Ubuntu/Notes
+export centos=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/CentOS/Notes
+export git=/home/ubuntu/Documents/GitHub/LinuxTree/Software/Git/Notes
+export vim=/home/ubuntu/Documents/GitHub/LinuxTree/Software/Vim/Notes
+export cloud=/home/ubuntu/Documents/GitHub/LinuxTree/Cloud/
+export archLinux=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/ArchLinux/Notes
+export verify=/home/ubuntu/Documents/GitHub/python-oracle-verify/webapp
+export raspberryPi=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/RaspberryPi/Notes
+export release=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release
+export centos=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/CentOS/Notes
+export ubuntu=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/Ubuntu/Notes
+export github=/home/ubuntu/Documents/GitHub
+export workspace=/home/ubuntu/Workspace/python/dev-envs
+export oracle=/home/ubuntu/Documents/GitHub/oracle-varify
+# params end
