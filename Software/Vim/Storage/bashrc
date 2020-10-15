@@ -1,5 +1,10 @@
 export PATH=$PATH:/home/ubuntu/.local/bin
+# alias start
 alias ll='ls -l -a --color=auto'
+today_zero=$(date "+%Y-%m-%d 00:00")
+alias today-git-log="git log --pretty=oneline --after='${today_zero}'"
+# alias end
+#
 # parmas start
 export linux=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Notes
 export docker=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/Docker/Notes
@@ -10,7 +15,7 @@ export article=/home/ubuntu/Documents/GitHub/MyDream/Article/2020/October
 export shell=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/Shell/Note
 export golang=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/GoLang/Notes
 export language=/home/ubuntu/Documents/GitHub/LinuxTree/Languages
-export mysql=/home/ubuntu/Documents/GitHub/LinuxTree/Languages/MySQL/Notes
+export mysql=/home/ubuntu/Documents/GitHub/LinuxTree/Cloud/Database/MySQL/Notes
 export ubuntu=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/Ubuntu/Notes
 export centos=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/CentOS/Notes
 export git=/home/ubuntu/Documents/GitHub/LinuxTree/Software/Git/Notes
@@ -22,6 +27,7 @@ export raspberryPi=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/Raspber
 export release=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release
 export centos=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/CentOS/Notes
 export ubuntu=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/Ubuntu/Notes
+export windows=/home/ubuntu/Documents/GitHub/LinuxTree/Linux/Release/Windows/Notes
 export github=/home/ubuntu/Documents/GitHub
 export workspace=/home/ubuntu/Workspace/python/dev-envs
 export oracle=/home/ubuntu/Documents/GitHub/oracle-varify
