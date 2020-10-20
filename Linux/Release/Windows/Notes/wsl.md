@@ -1,7 +1,7 @@
 ---
 title: wsl
 date: 2020-10-09 15:23:35
-modify: 
+modify: 2020-10-20 18:25:17  
 tags: [Notes]
 categories: Windows
 author: wmsj100
@@ -17,6 +17,7 @@ email: wmsj100@hotmail.com
 - wsl搭配windows terminal来使用更好。
 - 进入windows terminal 执行`wsl`自动进入linux系统
 - 有了wsl，把windows作为开发环境更加方便。
+- 进入wsl虚拟机执行`ip addr show eth0`获取ip地址，可以通过该ip地址来服务web服务
 
 ## 参考
 
