@@ -1,7 +1,7 @@
 ---
 title: table
 date: 2020-07-23 10:20:45
-modify: 
+modify: 2020-11-03 11:40:01  
 tags: [Notes]
 categories: layui
 author: wmsj100
@@ -13,6 +13,11 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - 如果表格只显示sucess，msg的值，很可能是因为没有配置response
+
+## 复选框
+
+- 对于复选框，如果要格式化数据，需要定义parseData中定义，因为它可以获取到数值，response只是定义返回数据格式。
+- `item.LAY_CHECKED = true;` 设置每一条数据的该参数可以让checkbox处于checked状态
 
 ## 代码
 
