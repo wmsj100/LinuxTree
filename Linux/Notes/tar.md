@@ -1,7 +1,7 @@
 ---
 title: 文件打包与解压缩
 date: Sun 18 Feb 2018 05:02:50 PM CST
-modify: 2020-07-06 19:56:45 
+modify: 2020-11-17 10:16:15 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -38,6 +38,13 @@ mail: wmsj100@hotmail.com
 	- -x 解压缩gzip包
 - `tar -Jcf bak.tar.xz bak.log --remove-files` 打包压缩包并且删除源文件
 - `tar --concatenate --file a.tar b.tar` 合并b.tar到a.tar包
+
+## tar 打指定大小的压缩包
+
+- `tar -jzvf aa.tar.bz2 aa` 打压缩包
+- `split -b 30M -d -a 1 aa.tar.bz2 aa.tar.bz2.` 分割压缩包为指定大小,最后指定分割后的包名称
+- `tar -jzvf aa.tar.bz2 aa | aplit -b 30M -d -a 1 - aa.tar.bz2.`
+- `cat aa.tar.bz2.* | tar -jxv -C /opt` 把分割的包解压到指定目录
 
 ### tar 打包不包含指定路径
 
