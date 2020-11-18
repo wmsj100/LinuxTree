@@ -1,7 +1,7 @@
 ---
 title: compileall
 date: 2020-09-15 16:44:17
-modify: 
+modify: 2020-11-18 17:52:03  
 tags: [Notes]
 categories: Python
 author: wmsj100
@@ -22,6 +22,7 @@ email: wmsj100@hotmail.com
 - 通过下面这个脚本就可以实现python的代码的编译和打包
 - 打包的前提需要安装rename
 - webapp包内有入口文件`__main__.py`且该文件有`__name__ == '__main__'`入口逻辑
+- `python -m compileall webapp` 直接批量递归目录webapp的所有python文件转为pyc文件
 
 ```python
 python3 -O -m webapp
