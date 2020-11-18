@@ -21,5 +21,10 @@ email: wmsj100@hotmail.com
 - 还可以转换文件名为随机值
 - 可以把所有代码转换为hex值，这样转过的文件完全不可读。
 
+### 使用
+
+- `python intensio_obfuscator.py -i webapp/ -o dist/ -mlen lower -ind 2 -rts`
+- `python intensio_obfuscator -h` 查看帮助
+
 ## 参考
 
