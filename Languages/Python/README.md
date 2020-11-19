@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-04-13 22:05:37 Fri
-modify: 2020-08-14 14:18:15 
+modify: 2020-11-19 16:01:58 
 tag: [readme]
 categories: Python
 author: wmsj100
@@ -15,6 +15,7 @@ mail: wmsj100@hotmail.com
 ## 概要
 
 - 该目录主要是关于python的知识点整理！
+- 读python的官方文档
 
 ## 成长路线
 
@@ -39,6 +40,7 @@ mail: wmsj100@hotmail.com
 
 ## 网站
 
+- [python doc](https://docs.python.org/zh-tw/3/whatsnew/index.html)
 - [python学习资料](https://my.oschina.net/u/3887904/blog/1842003)
 - [python最佳实践指南(开源书籍)](https://pythonguidecn.readthedocs.io/zh/latest/)
 - [python入门学习](http://c.biancheng.net/view/vip_5879.html)
