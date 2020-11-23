@@ -1,7 +1,7 @@
 ---
 title: README
 date: 2018-03-05 11:12
-modify: 2020-01-11 10:48:10 
+modify: 2020-11-23 09:29:40 
 tag: [linux,readme]
 categories: Linux
 author: wmsj100
@@ -18,7 +18,6 @@ mail: wmsj100@hotmail.com
 - SoftWare Linux好用的软件
 - Network 关于网络的知识点
 - Release 不同的发行版
-- SunFa 常见算法
 - Compile 编译问题
 
 ## 软件
