@@ -1,7 +1,7 @@
 ---
 title: grep 查找文件的匹配文本
 date: Tue 22 Feb 2018 9:35:46 PM CST
-modify: 2020-06-30 10:32:52 
+modify: 2020-11-26 16:41:03 
 tag: [linux]
 categories: Linux
 author: wmsj100
@@ -31,6 +31,7 @@ mail: wmsj100@hotmail.com
 	- `grep -lr 'hello' ./*` 列出当前目录内用于hello内容的所有文件，直接列出的文件名，之前为了做到相同效果的做法是
 	- `grep -nr 'hello' ./* | awk -F ':' '{print $1}' | sort | uniq` 和上面对比一下效率，真的是天壤之别，感觉好愚蠢
 - L 列出没有目标内容的文件，和l相反内容
+- q --quiet 安静模式，不管是否匹配到内容都不输出内容,通过`$?`来判断是否有匹配结果
 
 ## 实例
 - grep 'root' /etc/passwd --color=auto
