@@ -13,6 +13,7 @@ email: wmsj100@hotmail.com
 ## 概要
 
 - id命令可以展示用户的uid和gid
+- root用户的`uid/gid`都是0，所以可以通过id值是否为0来判断当前执行用户是否为root
 
 ## 使用
 
