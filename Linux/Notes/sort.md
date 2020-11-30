@@ -1,7 +1,7 @@
 ---
 title: sort
 date: 2020-03-12 11:36:27 
-modify: 
+modify: 2020-11-30 17:02:29  
 tags: [basic]
 categories: Linux
 author: wmsj100
@@ -22,8 +22,8 @@ email: wmsj100@hotmail.com
 ## 实例
 
 - du -s /usr/share/* | sort -nr | head -10 获取share文件夹内占用空间最大的前10个文件
-
 - ll | sort -nr -k 5 | head -10  对ll的详情按照文件大小从大到小顺序排序。打印前10个  
+- `cat luna_pinyin_export.txt | awk -F ' ' '{print $1"\ " $NF}' | sort -nr -k 2| less` 按照空格拆分取第一列和最后一列，然后以最后一列的数值逆序排列
 
 '''data.txt
 a  5 20/10/2014

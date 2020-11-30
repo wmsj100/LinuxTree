@@ -14,3 +14,5 @@ email: wmsj100@hotmail.com
 
 ## 参考
 
+- [daemon](https://www.geeksforgeeks.org/what-is-init-d-in-linux-service-management/)
+- [daemon linux](https://man7.org/linux/man-pages/man7/daemon.7.html)
